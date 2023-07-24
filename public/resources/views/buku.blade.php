@@ -47,7 +47,7 @@
             <div class="grid grid-cols-4 gap-x-6 gap-y-8">
                 @foreach ($buku as $item)
                 <figure class="group relative">
-                    <a href="/" class="absolute z-10 h-full w-full object-cover"></a>
+                    <a href="{{route('detail-buku', $item->slug)}}" class="absolute z-10 h-full w-full object-cover"></a>
 
                     <img class="mb-6 w-full" src="{{ $item->image}}" style="height: 251px;" alt="Book Photo 1">
 
@@ -65,7 +65,7 @@
                         {{ Str::title(Str::lower($item->judul)) }}
                     </figcaption>
 
-                    <p class="text-[#515151]">by James Clear</p>
+                    <p class="text-[#515151]">By {{$item->penulis}}</p>
                 </figure>
                 @endforeach
             </div>

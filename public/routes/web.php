@@ -23,6 +23,8 @@ Route::get('/', function () {
 });
 
 Route::get('/buku/{slug}', [BukuController::class, 'index']);
+Route::get('/buku-detail/{slug}', [BukuController::class, 'detail'])->name('detail-buku');
+
 
 Route::get('/test', [TestController::class, 'index']);
 

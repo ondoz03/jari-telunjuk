@@ -15,4 +15,10 @@ class BukuController extends Controller
 
         return view('buku', compact('buku'));
     }
+
+    public function detail($slug)
+    {
+        $buku = Buku::where('slug', $slug)->with('detail_buku.kategori')->first();
+        return view('detail-buku', compact('buku'));
+    }
 }

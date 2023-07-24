@@ -5,7 +5,7 @@
 <head>
     <base href="">
     <title>Jari Telunjuk</title>
-
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="shortcut icon" href="{{ asset('assets/admin/media/logos/favicon.ico') }}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <link href="{{ asset('public/assets/admin/plugins/custom/leaflet/leaflet.bundle.css') }}" rel="stylesheet" type="text/css" />
