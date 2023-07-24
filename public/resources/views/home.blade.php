@@ -24,46 +24,46 @@
         <section class="-mb-12 flex w-full items-center gap-2 xl:-mb-24 xl:gap-6 astro-J7PV25F6">
             <div class="flex w-1/5 flex-col items-start gap-2 xl:gap-6 astro-J7PV25F6">
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('public/assets/media')}}/book-photo-1.png" alt="Book Photo 1">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-1.png" alt="Book Photo 1">
             </div>
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('public/assets/media')}}/book-photo-2.png" alt="Book Photo 2">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-2.png" alt="Book Photo 2">
             </div>
             </div>
 
             <div class="mt-16 flex w-1/5 flex-col items-start gap-2 xl:mt-32 xl:gap-6 astro-J7PV25F6">
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('public/assets/media')}}/book-photo-3.png" alt="Book Photo 3">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-3.png" alt="Book Photo 3">
             </div>
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('public/assets/media')}}/book-photo-4.png" alt="Book Photo 4">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-4.png" alt="Book Photo 4">
             </div>
             </div>
 
             <div class="mt-28 flex w-1/5 flex-col items-start gap-2 xl:mt-56 xl:gap-6 astro-J7PV25F6">
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('public/assets/media')}}/book-photo-5.png" alt="Book Photo 5">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-5.png" alt="Book Photo 5">
             </div>
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('public/assets/media')}}/book-photo-6.png" alt="Book Photo 6">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-6.png" alt="Book Photo 6">
             </div>
             </div>
 
             <div class="mt-16 flex w-1/5 flex-col items-start gap-2 xl:mt-32 xl:gap-6 astro-J7PV25F6">
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('public/assets/media')}}/book-photo-7.png" alt="Book Photo 7">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-7.png" alt="Book Photo 7">
             </div>
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('public/assets/media')}}/book-photo-8.png" alt="Book Photo 8">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-8.png" alt="Book Photo 8">
             </div>
             </div>
 
             <div class="flex w-1/5 flex-col items-start gap-2 xl:gap-6 astro-J7PV25F6">
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('public/assets/media')}}/book-photo-9.png" alt="Book Photo 9">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-9.png" alt="Book Photo 9">
             </div>
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('public/assets/media')}}/book-photo-10.png" alt="Book Photo 10">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-10.png" alt="Book Photo 10">
             </div>
             </div>
         </section>
@@ -77,14 +77,14 @@
 
             <section class="grid grid-cols-2 gap-4 xl:grid-cols-4 xl:gap-12 astro-J7PV25F6">
             <figure class="space-y-2 xl:space-y-10 astro-J7PV25F6">
-                <img src="{{ asset('public/assets/media')}}/benefit-1.png" alt="Benefit 1" class="astro-J7PV25F6">
+                <img src="{{ asset('/assets/media')}}/benefit-1.png" alt="Benefit 1" class="astro-J7PV25F6">
                 <figcaption class="text-sm leading-[22px] xl:text-base xl:leading-6 astro-J7PV25F6">
                 Rekomendasi buku berdasarkan selera/ kebutuhan
                 </figcaption>
             </figure>
 
             <figure class="space-y-2 xl:space-y-10 astro-J7PV25F6">
-                <img src="{{ asset('public/assets/media')}}/benefit-2.png" alt="Benefit 2" class="astro-J7PV25F6">
+                <img src="{{ asset('/assets/media')}}/benefit-2.png" alt="Benefit 2" class="astro-J7PV25F6">
                 <figcaption class="text-sm leading-[22px] xl:text-base xl:leading-6 astro-J7PV25F6">
                 Tracking buku apa saja yang Anda baca, sudah dibaca ataupun akan
                 dibaca.
@@ -92,7 +92,7 @@
             </figure>
 
             <figure class="space-y-2 xl:space-y-10 astro-J7PV25F6">
-                <img src="{{ asset('public/assets/media')}}/benefit-3.png" alt="Benefit 3" class="astro-J7PV25F6">
+                <img src="{{ asset('/assets/media')}}/benefit-3.png" alt="Benefit 3" class="astro-J7PV25F6">
                 <figcaption class="text-sm leading-[22px] xl:text-base xl:leading-6 astro-J7PV25F6">
                 Berbagi daftar buku favorit atau buku yang akan Anda baca dengan
                 teman ataupun komunitas
@@ -100,7 +100,7 @@
             </figure>
 
             <figure class="space-y-2 xl:space-y-10 astro-J7PV25F6">
-                <img src="{{ asset('public/assets/media')}}/benefit-4.png" alt="Benefit 4" class="astro-J7PV25F6">
+                <img src="{{ asset('/assets/media')}}/benefit-4.png" alt="Benefit 4" class="astro-J7PV25F6">
                 <figcaption class="text-sm leading-[22px] xl:text-base xl:leading-6 astro-J7PV25F6">
                 Daftar buku ter-update
                 </figcaption>
@@ -129,16 +129,16 @@
             </svg>
 
             <figure class="relative h-64 w-full shadow-2xl xl:h-96 astro-J7PV25F6">
-                <img class="h-full w-full object-cover astro-J7PV25F6" src="{{asset('public/assets/media')}}/book-photo-1.png" alt="Book 1">
+                <img class="h-full w-full object-cover astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-1.png" alt="Book 1">
             </figure>
             <figure class="relative h-64 w-full shadow-2xl xl:h-96 astro-J7PV25F6">
-                <img class="h-full w-full object-cover astro-J7PV25F6" src="{{asset('public/assets/media')}}/book-photo-2.png" alt="Book 2">
+                <img class="h-full w-full object-cover astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-2.png" alt="Book 2">
             </figure>
             <figure class="relative h-64 w-full shadow-2xl xl:h-96 astro-J7PV25F6">
-                <img class="h-full w-full object-cover astro-J7PV25F6" src="{{asset('public/assets/media')}}/book-photo-3.png" alt="Book 3">
+                <img class="h-full w-full object-cover astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-3.png" alt="Book 3">
             </figure>
             <figure class="relative h-64 w-full shadow-2xl xl:h-96 astro-J7PV25F6">
-                <img class="h-full w-full object-cover astro-J7PV25F6" src="{{asset('public/assets/media')}}/book-photo-4.png" alt="Book 4">
+                <img class="h-full w-full object-cover astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-4.png" alt="Book 4">
             </figure>
             </div>
 
@@ -166,7 +166,7 @@
                 <p class="text-base font-normal leading-6 astro-J7PV25F6">JOHN KIM~</p>
                 </div>
 
-                <img class="h-64 w-auto shadow-2xl 2xl:h-96 astro-J7PV25F6" src="{{asset('public/assets/media')}}/book-photo-5.png" alt="Book 8">
+                <img class="h-64 w-auto shadow-2xl 2xl:h-96 astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-5.png" alt="Book 8">
 
                 <div class="mb-16 max-w-[180px] self-end astro-J7PV25F6">
                 <h5 class="text-lg font-semibold leading-6 astro-J7PV25F6">
@@ -189,7 +189,7 @@
             </h3>
 
             <div class="flex flex-wrap items-start justify-between gap-8 xl:items-center astro-J7PV25F6">
-            <img class="h-64 w-full xl:w-auto astro-J7PV25F6" src="{{ asset('public/assets/media')}}/category-ill-1.jpg" alt="Category illustration">
+            <img class="h-64 w-full xl:w-auto astro-J7PV25F6" src="{{ asset('/assets/media')}}/category-ill-1.jpg" alt="Category illustration">
                 @php
                     $itemsPerNav = 5;
                     $numNavBlocks = ceil(count(GeneralHelper::getKategory()) / $itemsPerNav);
