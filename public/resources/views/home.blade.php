@@ -1,7 +1,7 @@
 @extends('layouts.layouts')
 
 @section('header-js')
-    <script type="module" src="{{ asset('public/assets')}}/front/hoisted.119cf4f1.js"></script>
+    <script type="module" src="{{ asset('/assets')}}/front/hoisted.119cf4f1.js"></script>
 @endsection
 @section('content')
 <main class="relative">
