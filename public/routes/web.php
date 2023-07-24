@@ -22,7 +22,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/buku/{slug}', [BukuController::class, 'index']);
+Route::get('/buku/{slug}', [BukuController::class, 'index'])->name('buku');
 Route::get('/buku-detail/{slug}', [BukuController::class, 'detail'])->name('detail-buku');
 
 

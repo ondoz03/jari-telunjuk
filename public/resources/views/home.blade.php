@@ -200,7 +200,7 @@
                     @if ($index % $itemsPerNav === 0)
                         <nav class="flex flex-col items-start gap-3 astro-J7PV25F6">
                     @endif
-                        <a class="text-sm leading-5 text-[#128C55] hover:underline xl:text-base astro-J7PV25F6" href="{{'buku/'. $item->slug}}">{{$item->name}}</a>
+                        <a class="text-sm leading-5 text-[#128C55] hover:underline xl:text-base astro-J7PV25F6" href="{{ route("buku", $item->slug)}}">{{$item->name}}</a>
                     @if (($index + 1) % $itemsPerNav === 0 || ($index + 1) === count(GeneralHelper::getKategory()))
                         </nav>
                     @endif
