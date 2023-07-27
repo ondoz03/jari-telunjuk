@@ -44,7 +44,7 @@
               </div>
             </header>
 
-            <div class="grid grid-cols-4 gap-x-6 gap-y-8">
+            <div class="grid grid-cols-2 gap-x-6 gap-y-8 xl:grid-cols-4">
                 @foreach ($buku as $item)
                 <figure class="group relative">
                     <a href="{{route('detail-buku', $item->slug)}}" class="absolute z-10 h-full w-full object-cover"></a>

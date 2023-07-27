@@ -1,12 +1,13 @@
 @extends('layouts.layouts')
 @section('content')
-<main class="relative">
-    <main class="relative min-h-screen w-full pb-16 pt-28">
-      <div class="container mx-auto max-w-screen-xl px-12">
-        <div class="relative grid grid-cols-12 gap-10">
-          <section class="relative col-span-8 flex min-h-screen items-start gap-8">
-            <section class="sticky left-0 top-24 flex w-full flex-col items-center gap-5">
-              <div class="relative h-auto w-full">
+<main class="relative w-full">
+
+    <main class="relative min-h-screen w-full pb-10 pt-20 xl:pb-16 xl:pt-28">
+      <div class="container mx-auto max-w-screen-xl px-4 xl:px-12">
+        <div class="relative grid grid-cols-1 gap-10 xl:grid-cols-12">
+          <section class="relative col-span-1 flex min-h-screen flex-row items-start gap-8 xl:col-span-8">
+            <section class="hidden w-full flex-col items-center gap-5 xl:sticky xl:left-0 xl:top-24 xl:flex">
+              <div class="relative h-auto w-full min-w-[12.5rem] max-w-[12.5rem]">
                 <img class="h-full w-full object-cover" src="{{$buku->image}}" alt="Book 5">
               </div>
 
@@ -75,15 +76,20 @@
               </div>
             </section>
 
-            <div class="space-y-3">
-              <h1 class="font-arvo text-[34px] leading-none">
-                {{$buku->judul}}
+            <div class="flex flex-col items-center space-y-3 xl:items-start">
+              <div class="relative mb-3 block h-auto w-40 xl:hidden">
+                <img class="h-full w-full object-cover" src="/book-photo-5.png" alt="Book 5">
+              </div>
+
+              <h1 class="w-80 text-center font-arvo text-2xl leading-7 xl:w-full xl:text-start xl:text-[34px] xl:leading-none">
+               {{$buku->judul}}
               </h1>
-              <p class="text-lg font-semibold">
+
+              <p class="text-sm font-semibold xl:text-lg">
                 by <a class="hover:underline" href="/">{{$buku->penulis}}</a>
               </p>
 
-              <div class="flex items-center gap-1.5">
+              <div class="hidden items-center gap-1.5">
                 <div class="flex items-center gap-1">
                   <svg class="h-8 w-8 fill-[#FAB801]" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                           <path fill-rule="evenodd" clip-rule="evenodd" d="M23.416 27.6957C23.3133 27.6957 23.2093 27.6731 23.1133 27.6224L16 23.8811L8.88667 27.6224C8.668 27.7371 8.40133 27.7184 8.20133 27.5731C8 27.4264 7.9 27.1811 7.94267 26.9371L9.30133 19.0157L3.54667 13.4064C3.368 13.2331 3.30533 12.9731 3.38133 12.7397C3.45733 12.5037 3.66133 12.3317 3.90667 12.2971L11.86 11.1397L15.4173 3.93306C15.6373 3.48773 16.3627 3.48773 16.5827 3.93306L20.14 11.1397L28.0933 12.2971C28.3387 12.3317 28.5427 12.5037 28.6187 12.7397C28.6947 12.9731 28.632 13.2331 28.4533 13.4064L22.6987 19.0157L24.0573 26.9371C24.1 27.1811 24 27.4264 23.7987 27.5731C23.6853 27.6544 23.552 27.6957 23.416 27.6957Z"></path>
@@ -100,7 +106,17 @@
                 <p>5/5</p>
               </div>
 
-              <div class="flex items-center gap-3 border-b border-[#dcdcdc] pb-8">
+              <div class="flex w-full items-center justify-center gap-3 xl:hidden">
+                <a href="/" class="w-60 rounded-full bg-[#128C55] px-5 py-3 text-center text-base leading-6 text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
+                  Buy this book ?
+                </a>
+              </div>
+
+              <div class="block w-full pb-3 pt-4 xl:hidden">
+                <div class="h-px w-full bg-[#DCDCDC]"></div>
+              </div>
+
+              <div class="hidden items-center gap-3 border-b border-[#dcdcdc] pb-8 xl:hidden">
                 <a href="/" class="rounded-full bg-[#128C55] px-5 py-4 text-base leading-6 text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
                   Kindle Store $13.99
                 </a>
@@ -114,49 +130,84 @@
                 </a>
               </div>
 
-              <div class="Description text-base text-[#515151]">
+              <div class="Description text-base xl:border-t xl:border-stone-300 xl:pt-4">
                 <h5 class="font-arvo text-lg font-bold leading-[34px] text-[#212121]">
                   About this edition
                 </h5>
 
-                <p class="font-semibold leading-6">
-                    {{ Str::limit($buku->detail_buku->description, 250, '...')}}
-                </p>
+                <article id="wrapper-desc" class="line-clamp-5 text-base font-normal leading-7 text-stone-500 [&>*]:inline [&>*]:text-justify">
+                 {{$buku->detail_buku->description}}
+                </article>
 
-                <div class="mb-5 mt-6 space-y-3">
-                  <p>Hardcover, 378 pages</p>
-                  <p>Published 29 Maret 2022 by Mark Manson</p>
-                </div>
-
-                <div class="flex items-center gap-6">
-                  <h5 class="w-32 font-bold">ISBN</h5>
-
-                  <p>0812997921 (ISBN13: 9780812997927)</p>
-                </div>
-
-                <div class="space-y-3">
-                  <div class="flex items-start gap-6">
-                    <h5 class="w-32 font-bold">Edition Language</h5>
-
-                    <p>English and Bahasa</p>
-                  </div>
-
-                  <div class="flex items-start gap-6">
-                    <h5 class="w-32 font-bold">Other Editions (3)</h5>
-
-                    <div class="flex items-start gap-1.5">
-                      <img class="h-auto w-10" src="/book-photo-5.png" alt="Book photo 5">
-                      <img class="h-auto w-10" src="/book-photo-5.png" alt="Book photo 5">
-                      <img class="h-auto w-10" src="/book-photo-5.png" alt="Book photo 5">
-                    </div>
-                  </div>
-                </div>
+                <button id="read-more" class="mt-4 text-base font-semibold hover:underline">
+                  Baca Selengkapnya
+                </button>
               </div>
+
+              <section class="relative pt-8">
+                <h5 class="font-arvo text-lg font-bold leading-[34px] text-[#212121]">
+                  Details
+                </h5>
+
+                <ul class="w-full space-y-4">
+                  <li class="grid w-full grid-cols-2">
+                    <div class="space-y-0.5">
+                      <h5 class="text-sm font-bold text-stone-500">
+                        Jumlah Halaman
+                      </h5>
+                      <p class="text-base">208.0</p>
+                    </div>
+
+                    <div class="space-y-0.5">
+                      <h5 class="text-sm font-bold text-stone-500">Penerbit</h5>
+                      <a href="/" class="text-base text-[#128C55] hover:underline">Gramedia Widiasarana Indonesia</a>
+                    </div>
+                  </li>
+
+                  <li class="grid w-full grid-cols-2">
+                    <div class="space-y-0.5">
+                      <h5 class="text-sm font-bold text-stone-500">
+                        Tanggal Terbit
+                      </h5>
+                      <p class="text-base">15 Mar 2020</p>
+                    </div>
+
+                    <div class="space-y-0.5">
+                      <h5 class="text-sm font-bold text-stone-500">Berat</h5>
+                      <p class="text-base">0.3 kg</p>
+                    </div>
+                  </li>
+
+                  <li class="grid w-full grid-cols-2">
+                    <div class="space-y-0.5">
+                      <h5 class="text-sm font-bold text-stone-500">ISBN</h5>
+                      <p class="text-base">9786020523835</p>
+                    </div>
+
+                    <div class="space-y-0.5">
+                      <h5 class="text-sm font-bold text-stone-500">Lebar</h5>
+                      <p class="text-base">17.0 cm</p>
+                    </div>
+                  </li>
+
+                  <li class="grid w-full grid-cols-2">
+                    <div class="space-y-0.5">
+                      <h5 class="text-sm font-bold text-stone-500">Bahasa</h5>
+                      <p class="text-base">Indonesia</p>
+                    </div>
+
+                    <div class="space-y-0.5">
+                      <h5 class="text-sm font-bold text-stone-500">Panjang</h5>
+                      <p class="text-base">24.0cm</p>
+                    </div>
+                  </li>
+                </ul>
+              </section>
             </div>
           </section>
 
-          <section class="col-span-4">
-            <h3 class="mb-5 font-arvo text-[34px] font-normal leading-none">
+          <section class="col-span-1 xl:col-span-4">
+            <h3 class="mb-4 font-arvo text-2xl font-normal leading-7 xl:mb-5 xl:text-[34px] xl:leading-none">
               Similar Books
             </h3>
 
@@ -179,6 +230,7 @@
         </div>
       </div>
     </main>
-</main>
+
+  </main>
 @endsection
 

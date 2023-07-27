@@ -13,12 +13,13 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="generator" content="{Astro.generator}">
     <title>Discover books you’ll love! | Jari Telunjuk</title>
-    <link rel="stylesheet" href="{{ asset('/assets')}}/front/blog-detail.3bea6739.css" />
+    <link rel="stylesheet" href="{{ asset('/assets')}}/front/blog-detail.ba35dd2c.css" />
     <link rel="stylesheet" href="{{ asset('/assets')}}/front/index.1e77ef8f.css" />
 
     @yield('header-js')
-    <script type="module" src="{{ asset('/assets')}}/front/hoisted.6632b69c.js"></script>
-    <script type="module" src="{{ asset('/assets')}}/front/hoisted.d78003cb.js"></script>
+    <script type="module" src="{{ asset('/assets')}}/front/hoisted.6695be64.js"></script>
+    <script type="module" src="{{ asset('/assets')}}/front/hoisted.7225d69c.js"></script>
+    <script type="module" src="{{ asset('/assets')}}/front/hoisted.cfa70760.js"></script>
 
 </head>
   <body class="layar-telunjuk relative font-source-sans text-[#2e2e2e]">
