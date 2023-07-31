@@ -149,27 +149,28 @@
                   Details
                 </h5>
 
-                <ul class="w-full space-y-4">
-                  <li class="grid w-full grid-cols-2">
+                <ul class="w-full space-y-4" >
+                  <li class="grid w-full grid-cols-2" style="display: inline-grid;">
                     <div class="space-y-0.5">
                       <h5 class="text-sm font-bold text-stone-500">
                         Jumlah Halaman
                       </h5>
-                      <p class="text-base">208.0</p>
+                      <p class="text-base">{{$buku->detail_buku->jumlah_halaman}}</p>
                     </div>
 
                     <div class="space-y-0.5">
                       <h5 class="text-sm font-bold text-stone-500">Penerbit</h5>
-                      <a href="/" class="text-base text-[#128C55] hover:underline">Gramedia Widiasarana Indonesia</a>
+                      <a href="/" class="text-base text-[#128C55] hover:underline">{!! Str::ucfirst($buku->detail_buku->penerbit) !!} </a>
+
                     </div>
                   </li>
 
-                  <li class="grid w-full grid-cols-2">
+                  <li class="grid w-full grid-cols-2" style="display: inline-grid;">
                     <div class="space-y-0.5">
                       <h5 class="text-sm font-bold text-stone-500">
                         Tanggal Terbit
                       </h5>
-                      <p class="text-base">15 Mar 2020</p>
+                      <p class="text-base">{{date('d M, Y', strtotime($buku->detail_buku->tgl_rilis))}}</p>
                     </div>
 
                     <div class="space-y-0.5">
@@ -178,10 +179,10 @@
                     </div>
                   </li>
 
-                  <li class="grid w-full grid-cols-2">
+                  <li class="grid w-full grid-cols-2" style="display: inline-grid;">
                     <div class="space-y-0.5">
-                      <h5 class="text-sm font-bold text-stone-500">ISBN</h5>
-                      <p class="text-base">9786020523835</p>
+                      <h5 class="text-sm font-bold text-stone-500">Penerbit</h5>
+                      <p class="text-base">{{$buku->detail_buku->penerbit}}</p>
                     </div>
 
                     <div class="space-y-0.5">
@@ -190,7 +191,7 @@
                     </div>
                   </li>
 
-                  <li class="grid w-full grid-cols-2">
+                  <li class="grid w-full grid-cols-2" style="display: inline-grid;">
                     <div class="space-y-0.5">
                       <h5 class="text-sm font-bold text-stone-500">Bahasa</h5>
                       <p class="text-base">Indonesia</p>
@@ -212,19 +213,12 @@
             </h3>
 
             <div class="grid grid-cols-3 gap-2">
-              <a href="/">
-                      <img src="/book-photo-1.png" alt="Book Photo 1">
-                    </a><a href="/">
-                      <img src="/book-photo-2.png" alt="Book Photo 2">
-                    </a><a href="/">
-                      <img src="/book-photo-3.png" alt="Book Photo 3">
-                    </a><a href="/">
-                      <img src="/book-photo-4.png" alt="Book Photo 4">
-                    </a><a href="/">
-                      <img src="/book-photo-5.png" alt="Book Photo 5">
-                    </a><a href="/">
-                      <img src="/book-photo-6.png" alt="Book Photo 6">
-                    </a>
+
+                @foreach (GeneralHelper::getRandomGetBook() as $item)
+                    <a href="{{route('detail-buku', $item->slug)}}">
+                    <img src="{{$item->image}}" alt="Book Photo 1">
+                  </a>
+                @endforeach
             </div>
           </section>
         </div>

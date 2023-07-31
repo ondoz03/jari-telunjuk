@@ -46,7 +46,7 @@
 
             <div class="grid grid-cols-2 gap-x-6 gap-y-8 xl:grid-cols-4">
                 @foreach ($buku as $item)
-                <figure class="group relative">
+                <figure class="group relative item-buku'">
                     <a href="{{route('detail-buku', $item->slug)}}" class="absolute z-10 h-full w-full object-cover"></a>
 
                     <img class="mb-6 w-full" src="{{ $item->image}}" style="height: 251px;" alt="Book Photo 1">
@@ -68,12 +68,16 @@
                     <p class="text-[#515151]">By {{$item->penulis}}</p>
                 </figure>
                 @endforeach
+
+                <div id="relaod-page">
+
+                </div>
             </div>
 
             <div class="mt-8 flex w-full justify-center">
-              <a href="/" class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
+              <button id="llb" class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
                 Lihat Lebih Banyak
-              </a>
+              </button>
             </div>
           </section>
 
@@ -81,34 +85,14 @@
             <div class="space-y-6">
               <h3 class="font-arvo text-[34px] leading-none">Related Category</h3>
               <nav class="flex flex-col items-start gap-3">
-                <a class="text-[#128C55] hover:underline" href="/Art">Art</a>
-                <a class="text-[#128C55] hover:underline" href="/Biography">
-                  Biography
-                </a>
-                <a class="text-[#128C55] hover:underline" href="/Business">
-                  Business
-                </a>
-                <a class="text-[#128C55] hover:underline" href="/Childrens">
-                  Children’s
-                </a>
-                <a class="text-[#128C55] hover:underline" href="/Christian">
-                  Christian
-                </a>
-                <a class="text-[#128C55] hover:underline" href="/Classics">
-                  Classics
-                </a>
-                <a class="text-[#128C55] hover:underline" href="/Comics">
-                  Comics</a>
-                <a class="text-[#128C55] hover:underline" href="/Cookbooks
-                ">
-                  Cookbooks
-                </a>
+                @foreach (GeneralHelper::getRandomGetCategory() as $item)
+                    <a class="text-[#128C55] hover:underline" href="{{route('buku', $item->slug)}}">{{$item->name}}</a>
+                @endforeach
               </nav>
             </div>
 
             <div class="sticky right-0 top-28 h-screen space-y-6">
               <h3 class="font-arvo text-[34px] leading-none">Related Blog</h3>
-
               <div class="flex flex-col items-start gap-4">
                 <a class="relative overflow-hidden" href="/">
                         <figure class="w-full overflow-hidden rounded-lg border border-[#DCDCDC] bg-white shadow-none transition-all duration-300 ease-out hover:shadow-md">
@@ -231,5 +215,76 @@
       </div>
     </main>
 
-      </main>
-      @endsection
+</main>
+@endsection
+@section('js')
+    <script>
+        var page = 1;
+
+        $('#llb').click(function(){
+            if($('#totalData').val() != page){
+                page++;
+                // console.log(page)
+                loadMoreData(page);
+             }
+        });
+
+        function loadMoreData(page) {
+            // console.log('?page=' + page)
+            $.ajax({
+                url: '?page=' + page,
+                type: "get",
+                beforeSend: function()
+                {
+                    showLoadingImage()
+                }
+            })
+            .done(function(data) {
+                if (data.html == " ") {
+                    $('.ajax-load').html("No more records found");
+                    return;
+                }
+                // console.log(page)
+                hideLoadingImage();
+                if(data.total_data !== $('.item-buku').length){
+                    $("#relaod-page").append()
+
+                }else{
+
+                }
+            })
+            .fail(function(jqXHR, ajaxOptions, thrownError) {
+                alert('server not responding...');
+            });
+        }
+
+        function showLoadingImage() {
+            $('#relaod-page').append(`
+                <figure class="group relative">
+                    <a href="{{route('detail-buku', $item->slug)}}" class="absolute z-10 h-full w-full object-cover"></a>
+
+                    <img class="mb-6 w-full" src="{{ $item->image}}" style="height: 251px;" alt="Book Photo 1">
+
+                    <figcaption class="mb-1.5 text-md font-semibold leading-[22px] group-hover:underline" style="
+                    letter-spacing: normal;
+                    color: #151515;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    width: 100%;
+                    text-align: left;
+                    margin-bottom: 5px;" alt="testing">
+                        {{ Str::title(Str::lower($item->judul)) }}
+                    </figcaption>
+
+                    <p class="text-[#515151]">By {{$item->penulis}}</p>
+                </figure>
+            `);
+        }
+
+
+
+    </script>
+@endsection

@@ -2,6 +2,7 @@
 
 namespace App\Helpers;
 
+use Algolia\ScoutExtended\Settings\Status;
 use App\Models\Buku;
 use App\Models\Cart;
 use App\Models\Kategori;
@@ -127,5 +128,23 @@ class GeneralHelper
     {
         $ketegori = Kategori::get();
         return $ketegori;
+    }
+
+
+    public static function getRandomGetBook()
+    {
+        $buku = Buku::inRandomOrder()
+            ->limit(6)
+            ->get();
+        return $buku;
+    }
+
+    public static function getRandomGetCategory()
+    {
+        $kategory = Kategori::inRandomOrder()
+            ->limit(8)
+            ->get();
+
+        return $kategory;
     }
 }
