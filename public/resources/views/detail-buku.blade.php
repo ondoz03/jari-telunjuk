@@ -1,4 +1,7 @@
 @extends('layouts.layouts')
+@section('title')
+    <title> {{$buku->judul}} - Jari Telunjuk</title>
+@endsection
 @section('content')
 <main class="relative w-full">
 

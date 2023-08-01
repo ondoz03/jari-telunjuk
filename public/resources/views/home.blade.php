@@ -1,4 +1,7 @@
 @extends('layouts.layouts')
+@section('title')
+    <title>Discover books you’ll love! | Jari Telunjuk</title>
+@endsection
 
 @section('header-js')
     <script type="module" src="{{ asset('/assets')}}/front/hoisted.25b3dcdb.js"></script>
@@ -24,46 +27,46 @@
         <section class="-mb-12 flex w-full items-center gap-2 xl:-mb-24 xl:gap-6 astro-J7PV25F6">
             <div class="flex w-1/5 flex-col items-start gap-2 xl:gap-6 astro-J7PV25F6">
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-1.png" alt="Book Photo 1">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{GeneralHelper::getRandomFirstBook()}}" alt="Book Photo 1">
             </div>
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-2.png" alt="Book Photo 2">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{GeneralHelper::getRandomFirstBook()}}" alt="Book Photo 2">
             </div>
             </div>
 
             <div class="mt-16 flex w-1/5 flex-col items-start gap-2 xl:mt-32 xl:gap-6 astro-J7PV25F6">
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-3.png" alt="Book Photo 3">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{GeneralHelper::getRandomFirstBook()}}" alt="Book Photo 3">
             </div>
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-4.png" alt="Book Photo 4">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{GeneralHelper::getRandomFirstBook()}}" alt="Book Photo 4">
             </div>
             </div>
 
             <div class="mt-28 flex w-1/5 flex-col items-start gap-2 xl:mt-56 xl:gap-6 astro-J7PV25F6">
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-5.png" alt="Book Photo 5">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{GeneralHelper::getRandomFirstBook()}}" alt="Book Photo 5">
             </div>
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-6.png" alt="Book Photo 6">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{GeneralHelper::getRandomFirstBook()}}" alt="Book Photo 6">
             </div>
             </div>
 
             <div class="mt-16 flex w-1/5 flex-col items-start gap-2 xl:mt-32 xl:gap-6 astro-J7PV25F6">
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-7.png" alt="Book Photo 7">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{GeneralHelper::getRandomFirstBook()}}" alt="Book Photo 7">
             </div>
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-8.png" alt="Book Photo 8">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{GeneralHelper::getRandomFirstBook()}}" alt="Book Photo 8">
             </div>
             </div>
 
             <div class="flex w-1/5 flex-col items-start gap-2 xl:gap-6 astro-J7PV25F6">
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-9.png" alt="Book Photo 9">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{GeneralHelper::getRandomFirstBook()}}" alt="Book Photo 9">
             </div>
             <div class="relative h-auto w-full astro-J7PV25F6">
-                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-10.png" alt="Book Photo 10">
+                <img class="h-full w-full object-cover object-top astro-J7PV25F6" src="{{GeneralHelper::getRandomFirstBook()}}" alt="Book Photo 10">
             </div>
             </div>
         </section>

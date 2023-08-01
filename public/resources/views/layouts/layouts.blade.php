@@ -12,7 +12,7 @@
     <link href="https://fonts.cdnfonts.com/css/source-sans-pro" rel="stylesheet">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="generator" content="{Astro.generator}">
-    <title>Discover books you’ll love! | Jari Telunjuk</title>
+    @yield('title')
     <link rel="stylesheet" href="{{ asset('/assets')}}/front/blog-detail.ba35dd2c.css" />
     <link rel="stylesheet" href="{{ asset('/assets')}}/front/index.1e77ef8f.css" />
 
@@ -21,6 +21,7 @@
     <script type="module" src="{{ asset('/assets')}}/front/hoisted.7225d69c.js"></script>
     <script type="module" src="{{ asset('/assets')}}/front/hoisted.cfa70760.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
 </head>
   <body class="layar-telunjuk relative font-source-sans text-[#2e2e2e]">
     @include('layouts.partials.header-mobile')
@@ -33,6 +34,7 @@
     <!--end::Content-->
     <!--begin::Footer-->
     @include('layouts.partials.footer')
+
 
     @yield('js')
 
