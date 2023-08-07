@@ -65,6 +65,7 @@
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                 <th class="min-w-15px">No</th>
                                 <th class="min-w-125px">Nama Kategori</th>
+                                <th class="min-w-125px">Description</th>
                             </tr>
                             <!--end::Table row-->
                         </thead>
@@ -82,6 +83,10 @@
                                     <td>
                                         <a href="#"
                                             class="text-gray-600 text-hover-primary mb-1">{{ $item->name }}</a>
+                                    </td>
+                                    <td>
+                                        <a href="#"
+                                           class="text-gray-600 text-hover-primary mb-1">{{ $item->description }}</a>
                                     </td>
                                     <!--end::Email=-->
                                     <!--begin::Action=-->
@@ -214,6 +219,10 @@
                                             name="name" placeholder="Name Kategori" required />
                                         <!--end::Input-->
                                     </div>
+                                    <div class="fv-row mb-7">
+                                        <label class="required fs-6 fw-bold mb-2" for="pesan">Description </label>
+                                        <textarea class="form-control form-control-solid" id="pesan" name="description" rows="4" required></textarea>
+                                    </div>
                                     <!--end::Input group-->
                                 </div>
                                 <!--end::Scroll-->
@@ -291,6 +300,11 @@
                                         <input type="text" class="form-control form-control-solid" placeholder=""
                                             name="name" id="name" placeholder="Name Kategori" />
                                         <!--end::Input-->
+                                    </div>
+
+                                    <div class="fv-row mb-7">
+                                        <label class="required fs-6 fw-bold mb-2" for="pesan">Description </label>
+                                        <textarea class="form-control form-control-solid" id="description" name="description" rows="4" required></textarea>
                                     </div>
                                     <!--end::Input group-->
                                 </div>
@@ -372,6 +386,7 @@
                 success: function(result) {
                     $("#uuid").val(result.uuid);
                     $('#name').val(result.name)
+                    $('#description').val(result.description)
                 },
             });
         });

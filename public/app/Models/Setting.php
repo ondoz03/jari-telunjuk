@@ -12,7 +12,6 @@ class Setting extends Model
 
     protected $fillable = [
         'uuid',
-        'uuid',
         'key',
         'value'
     ];

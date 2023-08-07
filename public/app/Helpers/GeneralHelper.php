@@ -11,6 +11,8 @@ use App\Models\User;
 use Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
+use BendeckDavid\GraphqlClient\Facades\GraphQL;
+
 
 class GeneralHelper
 {
@@ -157,5 +159,51 @@ class GeneralHelper
             ->get();
 
         return $kategory;
+    }
+
+    public static function getPost()
+    {
+        $data = GraphQL::query('
+            posts(first:3) {
+                nodes {
+                  date
+                  id
+                  slug
+                  title
+                  excerpt
+                  featuredImage {
+                    node {
+                      mediaDetails {
+                        file
+                        height
+                        sizes {
+                          sourceUrl
+                          height
+                          width
+                        }
+                      }
+                    }
+                  }
+                  categories {
+                    nodes {
+                      id
+                      name
+                      slug
+                      uri
+                      link
+                    }
+                    pageInfo {
+                      hasNextPage
+                      hasPreviousPage
+                      endCursor
+                      startCursor
+                    }
+                  }
+                }
+             }
+        ')->get();
+
+        return $data['posts']['nodes'];
+
     }
 }

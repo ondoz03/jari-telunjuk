@@ -11,12 +11,11 @@
     <section class="relative mt-20 overflow-hidden xl:mt-32 astro-J7PV25F6">
         <div class="container mx-auto flex max-w-screen-xl flex-col items-center px-4 text-center xl:px-12 astro-J7PV25F6">
         <h1 class="mb-4 font-arvo text-2xl leading-7 xl:mb-6 xl:text-[42px] xl:leading-[34px] astro-J7PV25F6">
-            Discover books you’ll love!
+            {{ GeneralHelper::settingPerpustakan('title_header') }}
         </h1>
         <p class="max-w-[636px] text-base leading-6 astro-J7PV25F6">
-            Enter a book you like and the site will analyse our huge database of
-            real readers' favorite books to provide book recommendations and
-            suggestions for what to read next.
+            {{ GeneralHelper::settingPerpustakan('body_header') }}
+
         </p>
         </div>
 
@@ -225,12 +224,11 @@
 
             <div class="container mx-auto flex max-w-4xl flex-col items-center py-6 text-center astro-J7PV25F6">
             <h3 class="mb-6 font-arvo text-xl font-bold italic leading-8 text-[#2e2e2e] xl:mb-9 xl:text-[34px] xl:leading-[40px] astro-J7PV25F6">
-                “The person, be it gentleman or lady, who has not pleasure in a good
-                novel, must be intolerably stupid.”
+                “{{ GeneralHelper::settingPerpustakan('qoutes_header') }}.”
             </h3>
 
             <p class="mb-6 font-arvo text-base font-medium xl:mb-14 xl:text-2xl astro-J7PV25F6">
-                ~Jane Austen, Northanger Abbey~
+                ~{{ GeneralHelper::settingPerpustakan('by_quotes') }}~
             </p>
 
             <a href="/" class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-3 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 xl:py-4 astro-J7PV25F6">
@@ -253,77 +251,37 @@
             </h3>
 
             <div class="grid grid-cols-2 gap-5 xl:grid-cols-3 astro-J7PV25F6">
-            <figure class="relative w-full overflow-hidden rounded-lg border border-[#DCDCDC] bg-white shadow-none transition-all duration-300 ease-out hover:shadow-md astro-J7PV25F6">
-                    <a class="absolute z-10 h-full w-full astro-J7PV25F6" href="/blog-detail">
 
-                    </a>
+                @foreach(\App\Helpers\GeneralHelper::getPost() as $item)
+                    <figure class="relative w-full overflow-hidden rounded-lg border border-[#DCDCDC] bg-white shadow-none transition-all duration-300 ease-out hover:shadow-md astro-J7PV25F6">
+                        <a class="absolute z-10 h-full w-full astro-J7PV25F6" href="https://www.jaritelunjuk.com/blog/{{$item['slug']}}">
 
-                    <img class="aspect-video h-auto w-full astro-J7PV25F6" src="/blog-1.png" alt="Blog 1">
+                        </a>
 
-                    <div class="w-full px-2 pb-3.5 pt-1.5 xl:p-5 astro-J7PV25F6">
-                        <h5 class="mb-1 text-sm font-bold leading-5 text-[#2e2e2e] xl:mb-5 xl:text-xl xl:leading-[26px] astro-J7PV25F6">
-                        A conversation with Marjan Kamali
-                        </h5>
+                        <img class="aspect-video h-auto w-full astro-J7PV25F6" src="{{$item['featuredImage']['node']['mediaDetails']['sizes'][0]['sourceUrl']}}" alt="Blog 1" style="object-fit: cover;">
 
-                        <p class="mb-1.5 line-clamp-2 text-sm leading-5 text-[#515151] xl:mb-8 xl:text-base astro-J7PV25F6">
-                        In her second novel, The Stationery Shop, Marjan Kamali
-                        weaves a heartbreaking tale
-                        </p>
+                        <div class="w-full px-2 pb-3.5 pt-1.5 xl:p-5 astro-J7PV25F6">
+                            <h5 class="mb-1 text-sm font-bold leading-5 text-[#2e2e2e] xl:mb-5 xl:text-xl xl:leading-[26px] astro-J7PV25F6">
+                                {!! Str::limit($item['title'], 60) !!}
+                             </h5>
 
-                        <p class="text-sm leading-5 text-[#2e2e2e] xl:text-base astro-J7PV25F6">
-                        <span class="astro-J7PV25F6">Reza Adil</span> - <span class="astro-J7PV25F6">25 Januari 2021</span>
-                        </p>
-                    </div>
-                    </figure><figure class="relative w-full overflow-hidden rounded-lg border border-[#DCDCDC] bg-white shadow-none transition-all duration-300 ease-out hover:shadow-md astro-J7PV25F6">
-                    <a class="absolute z-10 h-full w-full astro-J7PV25F6" href="/blog-detail">
+                                {!! Str::limit($item['excerpt'], 120) !!}
 
-                    </a>
-
-                    <img class="aspect-video h-auto w-full astro-J7PV25F6" src="/blog-1.png" alt="Blog 1">
-
-                    <div class="w-full px-2 pb-3.5 pt-1.5 xl:p-5 astro-J7PV25F6">
-                        <h5 class="mb-1 text-sm font-bold leading-5 text-[#2e2e2e] xl:mb-5 xl:text-xl xl:leading-[26px] astro-J7PV25F6">
-                        A conversation with Marjan Kamali
-                        </h5>
-
-                        <p class="mb-1.5 line-clamp-2 text-sm leading-5 text-[#515151] xl:mb-8 xl:text-base astro-J7PV25F6">
-                        In her second novel, The Stationery Shop, Marjan Kamali
-                        weaves a heartbreaking tale
-                        </p>
-
-                        <p class="text-sm leading-5 text-[#2e2e2e] xl:text-base astro-J7PV25F6">
-                        <span class="astro-J7PV25F6">Reza Adil</span> - <span class="astro-J7PV25F6">25 Januari 2021</span>
-                        </p>
-                    </div>
-                    </figure><figure class="relative w-full overflow-hidden rounded-lg border border-[#DCDCDC] bg-white shadow-none transition-all duration-300 ease-out hover:shadow-md astro-J7PV25F6">
-                    <a class="absolute z-10 h-full w-full astro-J7PV25F6" href="/blog-detail">
-
-                    </a>
-
-                    <img class="aspect-video h-auto w-full astro-J7PV25F6" src="/blog-1.png" alt="Blog 1">
-
-                    <div class="w-full px-2 pb-3.5 pt-1.5 xl:p-5 astro-J7PV25F6">
-                        <h5 class="mb-1 text-sm font-bold leading-5 text-[#2e2e2e] xl:mb-5 xl:text-xl xl:leading-[26px] astro-J7PV25F6">
-                        A conversation with Marjan Kamali
-                        </h5>
-
-                        <p class="mb-1.5 line-clamp-2 text-sm leading-5 text-[#515151] xl:mb-8 xl:text-base astro-J7PV25F6">
-                        In her second novel, The Stationery Shop, Marjan Kamali
-                        weaves a heartbreaking tale
-                        </p>
-
-                        <p class="text-sm leading-5 text-[#2e2e2e] xl:text-base astro-J7PV25F6">
-                        <span class="astro-J7PV25F6">Reza Adil</span> - <span class="astro-J7PV25F6">25 Januari 2021</span>
-                        </p>
-                    </div>
+                            <br>
+                             <p class="text-sm leading-5 text-[#2e2e2e] xl:text-base astro-J7PV25F6" style="margin-top:10px">
+                                 <span class="astro-J7PV25F6">Reza Adil</span> - <span class="astro-J7PV25F6">{{date('d, M Y' ,strtotime($item['date'])) }}</span>
+                            </p>
+                        </div>
                     </figure>
+                @endforeach
+
             </div>
 
             <div class="flex w-full justify-center astro-J7PV25F6">
-            <a href="/" class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-3 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 xl:py-4 astro-J7PV25F6">
+            <a href="https://www.jaritelunjuk.com/blog/" class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-3 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 xl:py-4 astro-J7PV25F6">
                 Semua Blog
             </a>
-            </div>
+        </div>
         </div>
         </section>
     </section>

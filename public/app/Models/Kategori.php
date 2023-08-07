@@ -18,7 +18,8 @@ class Kategori extends Model
     protected $fillable = [
         'uuid',
         'name',
-        'slug'
+        'slug',
+        'description'
     ];
 
     protected static function boot()
