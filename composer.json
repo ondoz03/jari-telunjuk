@@ -1,5 +1,0 @@
-{
-    "require": {
-        "bendeckdavid/graphql-client": "^1.3"
-    }
-}
