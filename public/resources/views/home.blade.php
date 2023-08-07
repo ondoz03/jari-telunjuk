@@ -265,11 +265,9 @@
                                 {!! Str::limit($item['title'], 60) !!}
                              </h5>
 
-                                {!! Str::limit($item['excerpt'], 120) !!}
-
                             <br>
                              <p class="text-sm leading-5 text-[#2e2e2e] xl:text-base astro-J7PV25F6" style="margin-top:10px">
-                                 <span class="astro-J7PV25F6">Reza Adil</span> - <span class="astro-J7PV25F6">{{date('d, M Y' ,strtotime($item['date'])) }}</span>
+                                <span class="astro-J7PV25F6">{{date('d, M Y' ,strtotime($item['date'])) }}</span>
                             </p>
                         </div>
                     </figure>
