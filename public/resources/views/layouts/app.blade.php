@@ -79,9 +79,9 @@
         </main>
     </div>
     @yield('footer')
-
+{{--
     <script src="{{asset('assets/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js')}}"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
+        <script>hljs.initHighlightingOnLoad();</script> --}}
 
 </body>
 </html>
