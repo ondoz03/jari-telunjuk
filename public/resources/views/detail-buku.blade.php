@@ -7,6 +7,18 @@
 
     <main class="relative min-h-screen w-full pb-10 pt-20 xl:pb-16 xl:pt-28">
       <div class="container mx-auto max-w-screen-xl px-4 xl:px-12">
+        <header class="pb-6">
+            <!-- Breadcrumb -->
+            <div class="flex items-center gap-1 text-xs text-[#128C55] xl:mb-6 xl:text-sm">
+                <a class="hover:underline" href="/">Category</a>
+
+                <span>&gt;</span>
+                <a class="hover:underline" href="{{ route("buku", $buku->detail_buku->kategori->slug)}}">{{Str::ucfirst($buku->detail_buku->kategori->name)}} </a>
+                <span>&gt;</span>
+                <a class="hover:underline" href="{{route('detail-buku', [$buku->detail_buku->kategori->slug ,$buku->slug])}}">{{Str::ucfirst($buku->judul)}} </a>
+            </div>
+
+        </header>
         <div class="relative grid grid-cols-1 gap-10 xl:grid-cols-12">
           <section class="relative col-span-1 flex min-h-screen flex-row items-start gap-8 xl:col-span-8">
             <section class="hidden w-full flex-col items-center gap-5 xl:sticky xl:left-0 xl:top-24 xl:flex">
@@ -156,8 +168,8 @@
                     </div>
 
                     <div class="space-y-0.5">
-                      <h5 class="text-sm font-bold text-stone-500">Berat</h5>
-                      <p class="text-base">0.3 kg</p>
+                      <h5 class="text-sm font-bold text-stone-500">Penulis</h5>
+                      <p class="text-base">{{$buku->penulis}}</p>
                     </div>
                   </li>
 
@@ -167,10 +179,7 @@
                       <p class="text-base">Indonesia</p>
                     </div>
 
-                    <div class="space-y-0.5">
-                      <h5 class="text-sm font-bold text-stone-500">Panjang</h5>
-                      <p class="text-base">24.0cm</p>
-                    </div>
+
                   </li>
                 </ul>
               </section>
@@ -185,7 +194,7 @@
             <div class="grid grid-cols-3 gap-2">
 
                 @foreach (GeneralHelper::getRandomGetBook() as $item)
-                    <a href="{{route('detail-buku', $item->slug)}}">
+                    <a href="{{route('detail-buku',[$item->detail_buku->kategori->slug, $item->slug])}}">
                     <img src="{{$item->image}}" alt="Book Photo 1">
                   </a>
                 @endforeach

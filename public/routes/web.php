@@ -26,9 +26,12 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/buku/{slug}', [BukuController::class, 'index'])->name('buku');
+Route::get('/{slug}', [BukuController::class, 'index'])->name('buku');
 Route::get('/buku-page/{slug}', [BukuController::class, 'buku'])->name('buku-page');
-Route::get('/buku-detail/{slug}', [BukuController::class, 'detail'])->name('detail-buku');
+
+Route::get('/{category}/{slug}', [BukuController::class, 'detail'])->name('detail-buku');
+Route::get('/search-result', [BukuController::class, 'search'])->name('search-result');
+
 
 
 Route::get('/test', [TestController::class, 'index']);

@@ -12,7 +12,7 @@
                     <a class="hover:underline" href="/">Category</a>
 
                     <span>&gt;</span>
-                    <a class="hover:underline" href="/">{{Str::ucfirst($kategori->name)}} </a>
+                    <a class="hover:underline" href="{{ route("buku", $kategori->slug)}}">{{Str::ucfirst($kategori->name)}} </a>
                 </div>
 
                 <section class="container mx-auto w-full max-w-screen-lg space-y-4 text-center xl:space-y-6">
@@ -41,7 +41,7 @@
                     <div class="grid grid-cols-2 gap-x-6 gap-y-8 xl:grid-cols-4">
                         @foreach ($buku as $item)
                             <figure class="group relative item-buku'">
-                                <a href="{{route('detail-buku', $item->slug)}}" class="absolute z-10 h-full w-full object-cover"></a>
+                                <a href="{{route('detail-buku', [$kategori->slug ,$item->slug])}}" class="absolute z-10 h-full w-full object-cover"></a>
 
                                 <img class="mb-6 w-full" src="{{ $item->image}}" style="height: 251px;" alt="Book Photo 1">
 

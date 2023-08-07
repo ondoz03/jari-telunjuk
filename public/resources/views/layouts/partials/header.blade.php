@@ -6,7 +6,11 @@
         </a>
 
         <div class="relative hidden w-72 xl:block">
-          <input class="w-full rounded-full border border-stone-300 px-6 py-2 text-sm text-[#2e2e2e] outline-none ring-2 ring-transparent placeholder:text-stone-500 focus:border-stone-300 focus:ring-[#DEDEDE]/25" type="text" placeholder="Cari buku...">
+            <form action="{{route('search-result')}}" method="get">
+                @csrf
+                <input name="search" class="w-full rounded-full border border-stone-300 px-6 py-2 text-sm text-[#2e2e2e] outline-none ring-2 ring-transparent placeholder:text-stone-500 focus:border-stone-300 focus:ring-[#DEDEDE]/25" type="text" placeholder="Cari buku...">
+                <input type="hidden" type="submit">
+            </form>
         </div>
       </nav>
 
