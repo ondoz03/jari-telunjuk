@@ -81,7 +81,7 @@
 
             <div class="flex flex-col items-center space-y-3 xl:items-start">
               <div class="relative mb-3 block h-auto w-40 xl:hidden">
-                <img class="h-full w-full object-cover" src="/book-photo-5.png" alt="Book 5">
+                <img class="h-full w-full object-cover" src="{{$buku->image}}" alt="Book 5">
               </div>
 
               <h1 class="w-80 text-center font-arvo text-2xl leading-7 xl:w-full xl:text-start xl:text-[34px] xl:leading-none">
@@ -109,28 +109,8 @@
                 <p>5/5</p>
               </div>
 
-              <div class="flex w-full items-center justify-center gap-3 xl:hidden">
-                <a href="/" class="w-60 rounded-full bg-[#128C55] px-5 py-3 text-center text-base leading-6 text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
-                  Buy this book ?
-                </a>
-              </div>
-
               <div class="block w-full pb-3 pt-4 xl:hidden">
                 <div class="h-px w-full bg-[#DCDCDC]"></div>
-              </div>
-
-              <div class="hidden items-center gap-3 border-b border-[#dcdcdc] pb-8 xl:hidden">
-                <a href="/" class="rounded-full bg-[#128C55] px-5 py-4 text-base leading-6 text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
-                  Kindle Store $13.99
-                </a>
-
-                <a href="/" class="rounded-full bg-[#128C55] px-5 py-4 text-base leading-6 text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
-                  Amazon
-                </a>
-
-                <a href="/" class="rounded-full bg-[#128C55] px-5 py-4 text-base leading-6 text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
-                  Gramedia
-                </a>
               </div>
 
               <div class="Description text-base xl:border-t xl:border-stone-300 xl:pt-4">
@@ -161,11 +141,10 @@
                       <p class="text-base">{{$buku->detail_buku->jumlah_halaman}}</p>
                     </div>
 
-                    <div class="space-y-0.5">
-                      <h5 class="text-sm font-bold text-stone-500">Penerbit</h5>
-                      <a href="/" class="text-base text-[#128C55] hover:underline">{!! Str::ucfirst($buku->detail_buku->penerbit) !!} </a>
-
-                    </div>
+                      <div class="space-y-0.5">
+                          <h5 class="text-sm font-bold text-stone-500">Penerbit</h5>
+                          <p class="text-base">{{$buku->detail_buku->penerbit}}</p>
+                      </div>
                   </li>
 
                   <li class="grid w-full grid-cols-2" style="display: inline-grid;">
@@ -179,18 +158,6 @@
                     <div class="space-y-0.5">
                       <h5 class="text-sm font-bold text-stone-500">Berat</h5>
                       <p class="text-base">0.3 kg</p>
-                    </div>
-                  </li>
-
-                  <li class="grid w-full grid-cols-2" style="display: inline-grid;">
-                    <div class="space-y-0.5">
-                      <h5 class="text-sm font-bold text-stone-500">Penerbit</h5>
-                      <p class="text-base">{{$buku->detail_buku->penerbit}}</p>
-                    </div>
-
-                    <div class="space-y-0.5">
-                      <h5 class="text-sm font-bold text-stone-500">Lebar</h5>
-                      <p class="text-base">17.0 cm</p>
                     </div>
                   </li>
 

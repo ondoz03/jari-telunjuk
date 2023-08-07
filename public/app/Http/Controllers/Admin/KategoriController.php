@@ -27,7 +27,8 @@ class KategoriController extends Controller
         ]);
 
         $kategori =  Kategori::create([
-            'name' => $request->name
+            'name' => $request->name,
+            'description' => $request->description
         ]);
         return back()->withInput();
     }
@@ -42,7 +43,9 @@ class KategoriController extends Controller
     {
         $kategori = Kategori::where('uuid', $uuid)->FirstorFail();
         $kategori->update([
-            'name' => $request->name
+            'name' => $request->name,
+            'description' => $request->description
+
         ]);
 
         return back();

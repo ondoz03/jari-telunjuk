@@ -15,15 +15,30 @@ class SettingController extends Controller
 
     public function update(Request $request)
     {
-        $setting = Setting::where('key', $request->key)->first();
-        if ($setting) {
-            $setting->update([
-                'value' => $request->value
-            ]);
+       if($request->type == 'quotes') {
 
-            return true;
-        } else {
-            return false;
-        }
+           $by_q = Setting::where('key', 'by_quotes')->first();
+           $by_q->update([
+               'value' => $request->by_quotes
+           ]);
+
+           $q_h = Setting::where('key', 'qoutes_header')->first();
+           $q_h->update([
+               'value' => $request->qoutes_header
+           ]);
+
+           return back();
+       }else{
+           $setting = Setting::where('key', $request->key)->first();
+           if ($setting) {
+               $setting->update([
+                   'value' => $request->value
+               ]);
+
+               return true;
+           } else {
+               return false;
+           }
+       }
     }
 }
