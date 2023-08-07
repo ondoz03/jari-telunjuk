@@ -13,8 +13,7 @@
 
     <!-- Scripts -->
     <script src="{{ secure_asset('js/app.js') }}" ></script>
-    {{-- <link href="{{ asset('assets/ckeditor/plugins/codesnippet/lib/highlight/styles/default.css')}}" rel="stylesheet"> --}}
-    {{-- <link href="{{ asset('assets/ckeditor/plugins/codesnippet/lib/highlight/styles/monokai_sublime.css') }}" rel="stylesheet"> --}}
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
