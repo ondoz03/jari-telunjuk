@@ -97,8 +97,6 @@
                                         <h5 class="mb-1 text-sm font-bold leading-5 text-[#2e2e2e] xl:mb-5 xl:text-xl xl:leading-[26px] astro-J7PV25F6">
                                             {!! Str::limit($item['title'], 60) !!}
                                         </h5>
-
-                                        <br>
                                         <p class="text-sm leading-5 text-[#2e2e2e] xl:text-base astro-J7PV25F6" style="margin-top:10px">
                                             <span class="astro-J7PV25F6">{{date('d, M Y' ,strtotime($item['date'])) }}</span>
                                         </p>
