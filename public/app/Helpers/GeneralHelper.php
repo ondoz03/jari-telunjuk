@@ -17,6 +17,7 @@ use BendeckDavid\GraphqlClient\Facades\GraphQL;
 class GeneralHelper
 {
 
+
     public static function menuActive($url)
     {
         $active = request()->is('admin') ? 'active' : '';
@@ -32,6 +33,21 @@ class GeneralHelper
             return '&';
         } elseif (!$loop->first) {
             return ',';
+        }
+    }
+
+
+    public static function settingPerpustakan($key)
+    {
+        $setting = Setting::where('key', $key)->first();
+        if ($setting) {
+            if ($setting->type !== 'file') {
+                return $setting->value;
+            } else {
+                return null;
+            }
+        } else {
+            return null;
         }
     }
 
@@ -64,6 +80,7 @@ class GeneralHelper
         $ketegori = Kategori::get();
         return $ketegori;
     }
+
 
     public static function getRandomGetBook()
     {
