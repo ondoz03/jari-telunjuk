@@ -25,7 +25,7 @@ class BukuController extends Controller
     public function search(Request $request)
     {
         $buku = buku::search($request->search)->query(function ($builder) {
-            $builder->with(['kategori', 'media']);
+            $builder->with(['detail_buku.kategori', 'media']);
         })->orderBy('id', 'desc')->paginate(12);
 
         $kategori = Kategori::all();
@@ -36,17 +36,9 @@ class BukuController extends Controller
 
     public function store(Request $request)
     {
-        // return $request;
-        // $request->validate([
-        //     'title' => ['required'],
-        //     'description' => ['required'],
-        //     'kategori' => ['required'],
-        // ]);
-
         $buku = Buku::create([
             'judul' => $request->judul,
             'penulis' => $request->penulis,
-            'kategori_id' => $request->kategori
         ]);
 
         if ($buku) {
@@ -58,6 +50,7 @@ class BukuController extends Controller
                 'jumlah_halaman' => $request->jumlah_halaman,
                 'jumlah_buku' => $request->jumlah_buku,
                 'description' => $request->description,
+                'kategori_id' => $request->kategori
             ]);
             if ($request->hasFile('image') && $request->file('image')->isValid()) {
                 $buku->addMediaFromRequest('image')->toMediaCollection('default');
@@ -70,7 +63,7 @@ class BukuController extends Controller
 
     public function edit($uuid)
     {
-        $buku = Buku::where('uuid', $uuid)->with('kategori')->with('detail_buku')->FirstorFail();
+        $buku = Buku::where('uuid', $uuid)->with(['detail_buku.kategori', 'media'])->first();
         return response()->json($buku);
     }
 
@@ -82,7 +75,6 @@ class BukuController extends Controller
         $buku->update([
             'judul' => $request->judul,
             'penulis' => $request->penulis,
-            'kategori_id' => $request->kategori
         ]);
 
         $buku->detail_buku()->update([
@@ -92,7 +84,9 @@ class BukuController extends Controller
             'negara' => $request->negara,
             'jumlah_halaman' => $request->jumlah_halaman,
             'jumlah_buku' => $request->jumlah_buku,
-            'description' => $request->description
+            'description' => $request->description,
+            'kategori_id' => $request->kategori
+
         ]);
 
         if ($request->hasFile('image')) {
