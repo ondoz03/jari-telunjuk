@@ -1,6 +1,6 @@
 @extends('layouts.layouts')
 @section('title')
-    <title> Buku {{$buku->judul}} - Karya Penulis {{$buku->penulis}}</title>
+    <title> Buku {{$buku->judul}} - Karya {{$buku->penulis}}</title>
 @endsection
 @section('content')
 <main class="relative w-full">
