@@ -4,7 +4,6 @@
 @endsection
 @section('content')
 <main class="relative w-full">
-
     <main class="relative min-h-screen w-full pb-10 pt-20 xl:pb-16 xl:pt-28">
       <div class="container mx-auto max-w-screen-xl px-4 xl:px-12">
         <header class="pb-6">

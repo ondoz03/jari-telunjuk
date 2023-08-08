@@ -19,6 +19,11 @@ class BukuController extends Controller
 
             $kategori = Kategori::where('slug', $slug)->first();
 
+            if ($request->ajax()) {
+                $view = view('data-buku', compact('buku', 'kategori'))->render();
+                return response()->json(['html' => $view]);
+            }
+
             return view('buku', compact('buku', 'slug', 'kategori'));
         } else {
             $buku = Buku::where('judul', 'like', "%" . $request->search . "%")->paginate(5)->withQueryString();
@@ -27,11 +32,17 @@ class BukuController extends Controller
         }
     }
 
-    public function buku($slug)
+    public function buku($slug, Request $request)
     {
         $buku = Buku::with('media')->whereHas('detail_buku.kategori', function ($q) use ($slug) {
             $q->where('slug', $slug);
         })->with('detail_buku.kategori')->paginate(12);
+
+        if ($request->ajax()) {
+            $view = view('data', compact('posts'))->render();
+
+            return response()->json(['html' => $view]);
+        }
 
         return $buku;
     }

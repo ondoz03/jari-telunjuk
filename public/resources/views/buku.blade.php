@@ -38,36 +38,28 @@
                         </div>
                     </header>
 
-                    <div class="grid grid-cols-2 gap-x-6 gap-y-8 xl:grid-cols-4">
-                        @foreach ($buku as $item)
-                            <figure class="group relative item-buku'">
-                                <a href="{{route('detail-buku', [$kategori->slug ,$item->slug])}}" class="absolute z-10 h-full w-full object-cover"></a>
-
-                                <img class="mb-6 w-full" src="{{ $item->image}}" style="height: 251px;" alt="Book Photo 1">
-
-                                <figcaption class="mb-1.5 text-md font-semibold leading-[22px] group-hover:underline" style="
-                                letter-spacing: normal;
-                                color: #151515;
-                                overflow: hidden;
-                                text-overflow: ellipsis;
-                                display: -webkit-box;
-                                -webkit-line-clamp: 2;
-                                -webkit-box-orient: vertical;
-                                width: 100%;
-                                text-align: left;
-                                margin-bottom: 5px;" alt="testing">
-                                    {{ Str::title(Str::lower($item->judul)) }}
-                                </figcaption>
-
-                                <p class="text-[#515151]">By {{$item->penulis}}</p>
-                            </figure>
-                        @endforeach
+                    <div class="grid grid-cols-2 gap-x-6 gap-y-8 xl:grid-cols-4" id="data-wrapper">
+                        @include('data-buku')
                     </div>
 
                     <div class="mt-8 flex w-full justify-center">
-                        <button id="llb" class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
+                        <button id="llb" class="flex w-60 load-more-data items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
                             Lihat Lebih Banyak
                         </button>
+                        {{-- <div class="text-center">
+                            <button class="btn btn-success load-more-data"><i class="fa fa-refresh"></i> Load More Data...</button>
+                        </div> --}}
+
+                    </div>
+                    <div class="auto-load text-center" style="display: none;">
+                        <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px" y="0px" height="60" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+                            <path fill="#000"
+                                d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+                                <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s"
+                                    from="0 50 50" to="360 50 50" repeatCount="indefinite" />
+                            </path>
+                        </svg>
                     </div>
                 </section>
 
@@ -168,60 +160,36 @@
 @endsection
 @section('js')
     <script>
+        var ENDPOINT = "{{ route("buku", $kategori->slug)}}";
         var page = 1;
-        $(document).ready(function() {
-            url = {!! route('buku-page', $slug) !!}
-            $('#llb').click(function(){
-                // console.log('test');
-                // if($('#totalData').val() != page){
-                // page++;
-                // console.log(page);
-                    $.ajax({
-                        url: url,
-                        type: "GET",
-                        dataType: JSON,
-                        success: function(response){
-                            console.log(response)
-                            // console.log(page)
-                            // console.log(e)
-                        }
-                    });
-                // console.log(page)
-                // loadMoreData(page);
-                // }
-            });
+
+        $(".load-more-data").click(function(){
+            page++;
+            infinteLoadMore(page);
         });
 
-        function loadMoreData(page) {
-            console.log('?page=' + page);
 
-
+        function infinteLoadMore(page) {
+            $.ajax({
+                    url: ENDPOINT + "?page=" + page,
+                    datatype: "html",
+                    type: "get",
+                    beforeSend: function () {
+                        $('.auto-load').show();
+                    }
+                })
+                .done(function (response) {
+                    if (response.html == '') {
+                        $('.auto-load').html("We don't have more data to display :(");
+                        return;
+                    }
+                    $('.auto-load').hide();
+                    $("#data-wrapper").append(response.html);
+                })
+                .fail(function (jqXHR, ajaxOptions, thrownError) {
+                    console.log('Server error occured');
+                });
         }
-
-        // function showLoadingImage() {
-        //     $('#relaod-page').append(`
-        //         <figure class="group relative">
-        //             <a href="" class="absolute z-10 h-full w-full object-cover"></a>
-
-        //             <img class="mb-6 w-full" src="" style="height: 251px;" alt="Book Photo 1">
-
-        //             <figcaption class="mb-1.5 text-md font-semibold leading-[22px] group-hover:underline" style="
-        //             letter-spacing: normal;
-        //             color: #151515;
-        //             overflow: hidden;
-        //             text-overflow: ellipsis;
-        //             display: -webkit-box;
-        //             -webkit-line-clamp: 2;
-        //             -webkit-box-orient: vertical;
-        //             width: 100%;
-        //             text-align: left;
-        //             margin-bottom: 5px;" alt="testing">
-        //             </figcaption>
-
-        //             <p class="text-[#515151]">By </p>
-        //         </figure>
-        //     `);
-        // }
 
 
 
