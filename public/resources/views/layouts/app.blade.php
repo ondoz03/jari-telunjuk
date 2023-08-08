@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 
     <!-- CSRF Token -->
@@ -12,7 +12,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ secure_asset('js/app.js') }}" ></script>
+    <script src="{{ asset('js/app.js') }}" ></script>
 
 
     <!-- Fonts -->
