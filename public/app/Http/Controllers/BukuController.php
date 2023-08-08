@@ -10,9 +10,9 @@ class BukuController extends Controller
 {
     public function index($slug, Request $request)
     {
-        $kategori = Kategori::where('slug', $slug)->firstorfail();
 
         if (empty($request->search)) {
+            $kategori = Kategori::where('slug', $slug)->firstorfail();
             $buku = Buku::with('media')->whereHas('detail_buku.kategori', function ($q) use ($slug) {
                 $q->where('slug', $slug);
             })->with('detail_buku.kategori')->paginate(12);
@@ -39,6 +39,7 @@ class BukuController extends Controller
     public function detail($category, $slug, Request $request)
     {
         $buku = Buku::where('slug', $slug)->with('detail_buku.kategori')->firstorfail();
+
         return view('detail-buku', compact('buku'));
     }
 
