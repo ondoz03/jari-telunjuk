@@ -12,6 +12,8 @@ use App\Http\Controllers\Admin\{
 };
 use Illuminate\Support\Facades\Route;
 
+
+
 Route::get('/', [DashbordController::class, 'index'])->name('index');
 
 Route::resource('kategori', KategoriController::class)->except([

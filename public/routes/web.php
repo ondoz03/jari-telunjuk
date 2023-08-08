@@ -18,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(['prefix' => 'admin'], function () {
+    Auth::routes();
+});
+
 Route::get('/', function () {
     return view('home');
 });
@@ -31,5 +35,3 @@ Route::get('/search-result', [BukuController::class, 'search'])->name('search-re
 
 
 Route::get('/test', [TestController::class, 'index']);
-
-Auth::routes();
