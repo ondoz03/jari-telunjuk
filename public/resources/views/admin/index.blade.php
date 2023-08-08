@@ -12,22 +12,7 @@
                             </h3>
                         </div>
                         <div class="card-body pt-5">
-                            {{-- @foreach ($topBook as $item)
-                                <div class="d-flex align-items-sm-center mb-7">
-                                    <div class="symbol symbol-50px me-5">
-                                        <img src="{!! $item->buku->image !!}" class="h-50 align-self-center" alt="" />
-                                    </div>
-                                    <div class="d-flex align-items-center flex-row-fluid flex-wrap">
-                                        <div class="flex-grow-1 me-2">
-                                            <a href="#"
-                                                class="text-gray-800 text-hover-primary fs-6 fw-bolder">{{ $item->buku->judul }}</a>
-                                            <span class="text-muted fw-bold d-block fs-7">Penulis:
-                                                {{ $item->buku->penulis }}</span>
-                                        </div>
-                                        <span class="badge badge-light fw-bolder my-2">{{ $item->total }}</span>
-                                    </div>
-                                </div>
-                            @endforeach --}}
+
                         </div>
                     </div>
                 </div>

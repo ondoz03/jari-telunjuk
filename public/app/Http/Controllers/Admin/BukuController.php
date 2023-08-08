@@ -13,11 +13,16 @@ class BukuController extends Controller
 {
     public function index(Request $request)
     {
-        $buku = Cache::remember('key-books', 3, function () use ($request) {
-            return Buku::search($request->search)->query(function ($builder) {
+        if ($request->has('category')) {
+            $buku = Buku::with('media')->whereHas('detail_buku.kategori', function ($q) use ($request) {
+                $q->where('slug', $request->category);
+            })->with(['detail_buku.kategori'])->orderBy('id', 'desc')->paginate(12);
+        } else {
+            $buku = Buku::search($request->search)->query(function ($builder) {
                 $builder->with(['detail_buku.kategori', 'media']);
             })->orderBy('id', 'desc')->paginate(12);
-        });
+        }
+
         $kategori = Kategori::all();
         return view('admin.buku.index', compact('buku', 'kategori'));
     }

@@ -1,6 +1,7 @@
 @extends('layouts.layouts')
 @section('title')
     <title>Daftar Buku {{ Str::ucfirst($kategori->name)}} - Jari Telunjuk</title>
+
 @endsection
 @section('content')
 <main class="relative">

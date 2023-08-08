@@ -1,16 +1,10 @@
 @extends('layouts.admin.app')
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-        <!--begin::Container-->
         <div class="container-xxl" id="kt_content_container">
-            <!--begin::Card-->
             <div class="card">
-                <!--begin::Card body-->
-                <!--begin::Card header-->
                 <div class="card-header border-0 pt-6">
-                    <!--begin::Card title-->
                     <div class="card-title">
-                        <!--begin::Search-->
                         <form method="get" action="{{ route('admin.kategori.search') }}" class="w-100 position-relative me-3"
                             autocomplete="off">
                             <div class="d-flex align-items-center position-relative my-1">
@@ -28,20 +22,12 @@
                                     class="form-control form-control-solid w-250px ps-15" placeholder="Search Kategori" />
                             </div>
                         </form>
-                        <!--end::Search-->
                     </div>
-                    <!--begin::Card title-->
-                    <!--begin::Card toolbar-->
                     <div class="card-toolbar">
-                        <!--begin::Toolbar-->
                         <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
-                            <!--begin::Add customer-->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#kt_modal_add_customer">Add Kategori</button>
-                            <!--end::Add customer-->
                         </div>
-                        <!--end::Toolbar-->
-                        <!--begin::Group actions-->
                         <div class="d-flex justify-content-end align-items-center d-none"
                             data-kt-customer-table-toolbar="selected">
                             <div class="fw-bolder me-5">
@@ -50,36 +36,23 @@
                             <button type="button" class="btn btn-danger"
                                 data-kt-customer-table-select="delete_selected">Delete Selected</button>
                         </div>
-                        <!--end::Group actions-->
                     </div>
-                    <!--end::Card toolbar-->
                 </div>
-                <!--end::Card header-->
-                <!--begin::Card body-->
                 <div class="card-body pt-0">
-                    <!--begin::Table-->
                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
-                        <!--begin::Table head-->
                         <thead>
-                            <!--begin::Table row-->
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                 <th class="min-w-15px">No</th>
                                 <th class="min-w-125px">Nama Kategori</th>
                                 <th class="min-w-125px">Description</th>
                             </tr>
-                            <!--end::Table row-->
                         </thead>
-                        <!--end::Table head-->
-                        <!--begin::Table body-->
                         <tbody class="fw-bold text-gray-600">
                             @forelse ($kategori as $item)
                                 <tr>
-                                    <!--begin::Name=-->
                                     <td>
                                         {{ $loop->iteration }}
                                     </td>
-                                    <!--end::Name=-->
-                                    <!--begin::Email=-->
                                     <td>
                                         <a href="#"
                                             class="text-gray-600 text-hover-primary mb-1">{{ $item->name }}</a>
@@ -88,12 +61,9 @@
                                         <a href="#"
                                            class="text-gray-600 text-hover-primary mb-1">{{ $item->description }}</a>
                                     </td>
-                                    <!--end::Email=-->
-                                    <!--begin::Action=-->
                                     <td class="text-end">
                                         <a href="#" class="btn btn-sm btn-light btn-active-light-primary"
                                             data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
-                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
                                             <span class="svg-icon svg-icon-5 m-0">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none">
@@ -102,86 +72,55 @@
                                                         fill="black" />
                                                 </svg>
                                             </span>
-                                            <!--end::Svg Icon-->
                                         </a>
-                                        <!--begin::Menu-->
                                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4"
                                             data-kt-menu="true">
-                                            <!--begin::Menu item-->
                                             <div class="menu-item px-3">
                                                 <a href="#" class="menu-link px-3 edit" data-bs-toggle="modal"
                                                     data-bs-target="#kt_modal_edit_customer"
                                                     data-uuid={{ $item->uuid }}>Edit</a>
                                             </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
                                             <div class="menu-item px-3">
                                                 <a href="#" class="menu-link px-3 delete" data-bs-toggle="modal"
                                                     data-bs-target="#confirmModal" data-uuid={{ $item->uuid }}>Delete</a>
                                             </div>
-                                            <!--end::Menu item-->
                                         </div>
-                                        <!--end::Menu-->
                                     </td>
-                                    <!--end::Action=-->
                                 </tr>
 
                             @empty
                                 <div class="card-body p-0">
-                                    <!--begin::Wrapper-->
                                     <div class="card-px text-center py-20 my-10">
-                                        <!--begin::Title-->
                                         <h2 class="fs-2x fw-bolder mb-10">Welcome!</h2>
-                                        <!--end::Title-->
-                                        <!--begin::Description-->
                                         <p class="text-gray-400 fs-4 fw-bold mb-10">There are no customers added yet.
                                             <br />Kickstart your CRM by adding a your first customer
                                         </p>
-                                        <!--end::Description-->
-                                        <!--begin::Action-->
                                         <a href="#" class="btn btn-primary" data-bs-toggle="modal"
                                             data-bs-target="#kt_modal_add_customer">Add Customer</a>
-                                        <!--end::Action-->
                                     </div>
-                                    <!--end::Wrapper-->
-                                    <!--begin::Illustration-->
                                     <div class="text-center px-4">
                                         <img class="mw-100 mh-300px" alt=""
                                             src="assets/media/illustrations/sigma-1/2.png" />
                                     </div>
-                                    <!--end::Illustration-->
                                 </div>
                             @endforelse
 
                         </tbody>
-                        <!--end::Table body-->
                     </table>
                     {{ $kategori->withQueryString()->links('vendor.pagination.bootstrap-4') }}
-                    <!--end::Table-->
                 </div>
-                <!--end::Card body-->
             </div>
 
-            <!--begin::Modals-->
-            <!--begin::Modal - Kategori - Add-->
             <div class="modal fade" id="kt_modal_add_customer" tabindex="-1" aria-hidden="true">
-                <!--begin::Modal dialog-->
                 <div class="modal-dialog modal-dialog-centered mw-650px">
-                    <!--begin::Modal content-->
                     <div class="modal-content">
-                        <!--begin::Form-->
                         <form class="form" action="{{ route('admin.kategori.store') }}" id="kt_modal_add_customer_form"
                             method="post">
                             @csrf
-                            <!--begin::Modal header-->
                             <div class="modal-header" id="kt_modal_add_customer_header">
-                                <!--begin::Modal title-->
                                 <h2 class="fw-bolder">Add Kategori</h2>
-                                <!--end::Modal title-->
-                                <!--begin::Close-->
                                 <div id="kt_modal_add_customer_close" class="btn btn-icon btn-sm btn-active-icon-primary"
                                     data-bs-dismiss="modal" aria-label="Close">
-                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
                                     <span class="svg-icon svg-icon-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none">
@@ -192,24 +131,15 @@
                                                 rx="1" transform="rotate(45 7.41422 6)" fill="black" />
                                         </svg>
                                     </span>
-                                    <!--end::Svg Icon-->
                                 </div>
-                                <!--end::Close-->
                             </div>
-                            <!--end::Modal header-->
-                            <!--begin::Modal body-->
                             <div class="modal-body py-10 px-lg-17">
-                                <!--begin::Scroll-->
                                 <div class="scroll-y me-n7 pe-7" id="kt_modal_add_customer_scroll" data-kt-scroll="true"
                                     data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto"
                                     data-kt-scroll-dependencies="#kt_modal_add_customer_header"
                                     data-kt-scroll-wrappers="#kt_modal_add_customer_scroll" data-kt-scroll-offset="300px">
-                                    <!--begin::Input group-->
                                     <div class="fv-row mb-7">
-                                        <!--begin::Label-->
                                         <label class="required fs-6 fw-bold mb-2">Name</label>
-                                        <!--end::Label-->
-                                        <!--begin::Input-->
 
                                         {{-- @error('name')
                                             <div class="alert alert-danger">{{ $message }}</div>
@@ -217,58 +147,37 @@
 
                                         <input type="text" class="form-control form-control-solid " placeholder=""
                                             name="name" placeholder="Name Kategori" required />
-                                        <!--end::Input-->
                                     </div>
                                     <div class="fv-row mb-7">
                                         <label class="required fs-6 fw-bold mb-2" for="pesan">Description </label>
                                         <textarea class="form-control form-control-solid" id="pesan" name="description" rows="4" required></textarea>
                                     </div>
-                                    <!--end::Input group-->
                                 </div>
-                                <!--end::Scroll-->
                             </div>
-                            <!--end::Modal body-->
-                            <!--begin::Modal footer-->
                             <div class="modal-footer flex-center">
-                                <!--begin::Button-->
                                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                <!--end::Button-->
-                                <!--begin::Button-->
                                 <button type="submit" id="kt_modal_add_customer_submit" class="btn btn-primary">
                                     <span class="indicator-label">Submit</span>
                                     <span class="indicator-progress">Please wait...
                                         <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                                 </button>
-                                <!--end::Button-->
                             </div>
-                            <!--end::Modal footer-->
                         </form>
-                        <!--end::Form-->
                     </div>
                 </div>
             </div>
-            <!--end::Modal - Kategori - Add-->
 
-            <!--begin::Modal - Kategori - Edit-->
             <div class="modal fade" id="kt_modal_edit_customer" tabindex="-1" aria-hidden="true">
-                <!--begin::Modal dialog-->
                 <div class="modal-dialog modal-dialog-centered mw-650px">
-                    <!--begin::Modal content-->
                     <div class="modal-content">
-                        <!--begin::Form-->
                         <form class="form form-edit" action="#" id="form-edit" method="post">
                             {{ method_field('PUT') }}
                             @csrf
                             <input type="hidden" name="uuid" class="uuid" value="">
-                            <!--begin::Modal header-->
                             <div class="modal-header" id="kt_modal_add_customer_header">
-                                <!--begin::Modal title-->
                                 <h2 class="fw-bolder">Edit Kategori</h2>
-                                <!--end::Modal title-->
-                                <!--begin::Close-->
                                 <div id="kt_modal_add_customer_close" class="btn btn-icon btn-sm btn-active-icon-primary"
                                     data-bs-dismiss="modal" aria-label="Close">
-                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
                                     <span class="svg-icon svg-icon-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none">
@@ -279,60 +188,38 @@
                                                 rx="1" transform="rotate(45 7.41422 6)" fill="black" />
                                         </svg>
                                     </span>
-                                    <!--end::Svg Icon-->
                                 </div>
-                                <!--end::Close-->
                             </div>
-                            <!--end::Modal header-->
-                            <!--begin::Modal body-->
                             <div class="modal-body py-10 px-lg-17">
-                                <!--begin::Scroll-->
                                 <div class="scroll-y me-n7 pe-7" id="kt_modal_add_customer_scroll" data-kt-scroll="true"
                                     data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto"
                                     data-kt-scroll-dependencies="#kt_modal_add_customer_header"
                                     data-kt-scroll-wrappers="#kt_modal_add_customer_scroll" data-kt-scroll-offset="300px">
-                                    <!--begin::Input group-->
                                     <div class="fv-row mb-7">
-                                        <!--begin::Label-->
                                         <label class="required fs-6 fw-bold mb-2">Name</label>
-                                        <!--end::Label-->
-                                        <!--begin::Input-->
                                         <input type="text" class="form-control form-control-solid" placeholder=""
                                             name="name" id="name" placeholder="Name Kategori" />
-                                        <!--end::Input-->
                                     </div>
 
                                     <div class="fv-row mb-7">
                                         <label class="required fs-6 fw-bold mb-2" for="pesan">Description </label>
                                         <textarea class="form-control form-control-solid" id="description" name="description" rows="4" required></textarea>
                                     </div>
-                                    <!--end::Input group-->
                                 </div>
-                                <!--end::Scroll-->
                             </div>
-                            <!--end::Modal body-->
-                            <!--begin::Modal footer-->
                             <div class="modal-footer flex-center">
-                                <!--begin::Button-->
                                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                <!--end::Button-->
-                                <!--begin::Button-->
                                 <button type="submit" id="kt_modal_add_customer_submit" class="btn btn-primary">
                                     <span class="indicator-label">Submit</span>
                                     <span class="indicator-progress">Please wait...
                                         <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                                 </button>
-                                <!--end::Button-->
                             </div>
-                            <!--end::Modal footer-->
                         </form>
-                        <!--end::Form-->
                     </div>
                 </div>
             </div>
-            <!--end::Modal - Kategori - Edit-->
 
-            <!--begin::Modal - Kategori - Delete-->
             <div class="modal fade" id="confirmModal" data-backdrop="static" tabindex="-1" role="dialog"
                 aria-labelledby="staticBackdrop" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -341,7 +228,6 @@
                             <h5 class="modal-title" id="exampleModalLabel">Confirm Delete</h5>
                             <div id="kt_modal_add_customer_close" class="btn btn-icon btn-sm btn-active-icon-primary"
                                 data-bs-dismiss="modal" aria-label="Close">
-                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
                                 <span class="svg-icon svg-icon-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24" fill="none">
@@ -352,7 +238,6 @@
                                             rx="1" transform="rotate(45 7.41422 6)" fill="black" />
                                     </svg>
                                 </span>
-                                <!--end::Svg Icon-->
                             </div>
                         </div>
                         <input type="hidden" name="uuid" id="uuid-delete" value="">
@@ -367,11 +252,8 @@
                     </div>
                 </div>
             </div>
-            <!--end::Modal - Kategori - Edit-->
 
-            <!--end::Modals-->
         </div>
-        <!--end::Container-->
     </div>
 @endsection
 @push('js')

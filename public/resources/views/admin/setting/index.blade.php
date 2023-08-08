@@ -3,35 +3,21 @@
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <div class="container-xxl" id="kt_content_container">
             <div class="card card-docs mb-2">
-                <!--begin::Card Body-->
                 <div class="card-body fs-6 py-15 px-10 py-lg-15 px-lg-15 text-gray-700">
-                    <!--begin::Tabs-->
                     <ul class="nav nav-stretch nav-line-tabs fw-bolder fs-4 border-bottom-2 border-transparent flex-nowrap mb-8" role="tablist" id="kt_illustration_tabs">
-                        <!--begin::Tab item-->
                         <li class="nav-item">
                             <a class="nav-link text-active-primary border-bottom-2 active" data-bs-toggle="tab" href="#kt_illustration_sketchy-1" role="tab">Header Content</a>
                         </li>
-                        <!--end::Tab item-->
-                        <!--begin::Tab item-->
                         <li class="nav-item">
                             <a class="nav-link text-active-primary border-bottom-2" data-bs-toggle="tab" href="#kt_illustration_sigma-1" role="tab">Benefit List</a>
                         </li>
-                        <!--end::Tab item-->
-                        <!--begin::Tab item-->
                         <li class="nav-item">
                             <a class="nav-link text-active-primary border-bottom-2" data-bs-toggle="tab" href="#kt_illustration_dozzy-1" role="tab">Quotes</a>
                         </li>
-                        <!--end::Tab item-->
                     </ul>
-                    <!--end::Tabs-->
-                    <!--begin::Tab content-->
                     <div class="tab-content">
-                        <!--begin::Tab pane-->
                         <div class="tab-pane fade show active" id="kt_illustration_sketchy-1">
-                            <!--begin::Description-->
                             <div class="fw-bold text-gray-600 fs-5 mb-0"></div>
-                            <!--end::Description-->
-                            <!--begin::More-->
                             <div id="kt_account_settings_signin_method" class="collapse show">
                                 <div class="mt-6 border-top">
                                     <div class="d-flex flex-wrap align-items-center mt-6">
@@ -107,314 +93,221 @@
                                 </div>
                             </div>
 
-                            <!--end::Row-->
                         </div>
-                        <!--end::Tab pane-->
-                        <!--begin::Tab pane-->
                         <div class="tab-pane fade" id="kt_illustration_sigma-1">
-                            <!--begin::Description-->
                             <div class="fw-bold text-gray-600 fs-5 mb-0">30 business illustrations in 7 formats Figma, Sketch, Adobe Xd, Ai, PNG, JPG, SVG. Bold and colorful addition to use on your project.</div>
-                            <!--end::Description-->
-                            <!--begin::More-->
                             <div class="mb-5">
                                 <a href="https://keenthemes.com/products/sigma-pro" class="btn btn-flex btn-link btn-color-primary">Learn more
-                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
                                 <span class="svg-icon ms-2 svg-icon-3">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                         <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
                                         <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="black"></path>
                                     </svg>
                                 </span>
-                                <!--end::Svg Icon--></a>
                             </div>
-                            <!--end::More-->
-                            <!--begin::Row-->
                             <div class="row g-10">
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/1.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/1.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/2.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/2.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/3.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/3.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/4.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/4.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/5.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/5.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/6.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/6.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/7.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/7.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/8.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/8.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/9.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/9.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/10.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/10.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/11.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/11.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/12.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/12.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/13.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/13.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/14.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/14.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/15.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/15.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/16.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/16.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/17.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/17.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/18.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/18.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/19.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/19.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                                 <div class="col-lg-4">
-                                    <!--begin::Thumbnail-->
                                     <div class="card overlay border">
                                         <div class="card-body p-0">
                                             <div class="overlay-wrapper h-300px bgi-no-repeat bgi-size-contain bgi-position-center" style="background-image:url('assets/media/illustrations/sigma-1/20.png')"></div>
                                             <div class="overlay-layer card-rounded bg-dark bg-opacity-10 align-items-end pb-3">
-                                                <!--begin::Path-->
                                                 <code class="py-2 px-4">assets/media/illustrations/sigma-1/20.png</code>
-                                                <!--end::Path-->
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end::Thumbnail-->
                                 </div>
                             </div>
-                            <!--end::Row-->
                         </div>
-                        <!--end::Tab pane-->
-                        <!--begin::Tab pane-->
                         <div class="tab-pane fade" id="kt_illustration_dozzy-1">
                             <form href="{{route('admin.setting.update')}}" method="post">
                                 @csrf
@@ -432,12 +325,9 @@
                                 <button type="submit" class="btn btn-primary">Kirim</button>
                             </form>
                         </div>
-                        <!--end::Tab pane-->
 
                     </div>
-                    <!--end::Tab content-->
                 </div>
-                <!--end::Card Body-->
             </div>
 
 

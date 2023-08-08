@@ -22,7 +22,14 @@
                                     class="form-control form-control-solid w-250px ps-15" placeholder="Search Customers" />
                             </div>
                         </form>
+                        <select id="mySel" class="form-select form-select-md form-select-solid" data-control="select2" data-placeholder="Select an Category">
+                            <option></option>
+                            @foreach ($kategori as $item)
+                                <option value="{{$item->slug}}" >{{ $item->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
+
                     <div class="card-toolbar">
                         <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -64,9 +71,9 @@
 
 
                                 <div class="text-center px-4">
-                                    {{-- <img class="mw-100 mh-300px card-rounded-bottom" alt="" src="{{$item->image}}"/> --}}
+
                                     {{-- <a class="d-block overlay" data-fslightbox="lightbox-basic" href="{{ Storage::disk('digitalocean')->url('buku/10/BLK_LPBBDSPDMFI2021591738.jpg');}}"> --}}
-                                    <a class="d-block overlay" data-fslightbox="lightbox-basic" href="{{ $item->image}}">
+                                    <a class="d-block overlay" data-fslightbox="lightbox-basic" href="{{$item->image}}">
 
                                         <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-300px"
                                             style="background-image:url({{ $item->image}})"></div>
@@ -193,6 +200,11 @@
                     window.location.href = "{{ route('admin.buku.index') }}";
                 }
             })
+        });
+
+        $('#mySel').change(function(){
+            sel = $(this).val();
+            window.location.href = "{{route('admin.buku.index')}}" + '?category=' + sel ;
         });
     </script>
 @endpush
