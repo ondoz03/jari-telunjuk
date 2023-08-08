@@ -31,10 +31,5 @@ class AppServiceProvider extends ServiceProvider
         Carbon::setLocale('id');
         date_default_timezone_set('Asia/Jakarta');
         Schema::defaultStringLength(191);
-
-        URL::forceRootUrl(Config::get('app.url'));
-        if (str_contains(Config::get('app.url'), 'https://')) {
-            URL::forceScheme('https');
-        }
     }
 }
