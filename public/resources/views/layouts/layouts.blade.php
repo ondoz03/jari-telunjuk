@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/source-sans-pro" rel="stylesheet">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    {{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
     <meta name="generator" content="{Astro.generator}">
     @yield('title')
     <link rel="stylesheet" href="{{ asset('/assets')}}/front/blog-detail.ba35dd2c.css" />
