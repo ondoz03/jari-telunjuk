@@ -25,7 +25,7 @@
         <div class="flex flex-col items-start gap-3">
           <a class="text-base leading-5" href="/">About</a>
           <a class="text-base leading-5" href="/blog">Blog</a>
-          <a class="text-base leading-5" href="/">Sign In</a>
+          <a class="text-base leading-5" href="{{route('sign-in')}}">Sign In</a>
         </div>
 
         <a href="/" class="w-full rounded-full bg-[#128C55] px-5 py-2 text-center font-bold leading-5 text-white hover:bg-[#128C55]/90">

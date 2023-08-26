@@ -30,10 +30,11 @@
         <div class="flex items-center gap-8">
           <a class="text-base leading-5" href="/">About</a>
           <a class="text-base leading-5" href="/blog">Blog</a>
-          <a class="text-base leading-5" href="/">Sign In</a>
+          <a class="text-base leading-5" href="{{route('sign-in')}}">Sign In</a>
+          <a class="text-base leading-5" href="{{route('home')}}">Home</a>
         </div>
 
-        <a href="/" class="rounded-full bg-[#128C55] px-5 py-2 font-bold leading-5 text-white hover:bg-[#128C55]/90">
+        <a href="{{route('sign-in.sign-up')}}" class="rounded-full bg-[#128C55] px-5 py-2 font-bold leading-5 text-white hover:bg-[#128C55]/90">
           Sign Up
         </a>
       </nav>

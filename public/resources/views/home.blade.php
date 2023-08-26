@@ -131,16 +131,16 @@
             </svg>
 
             <figure class="relative h-64 w-full shadow-2xl xl:h-96 astro-J7PV25F6">
-                <img class="h-full w-full object-cover astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-1.png" alt="Book 1">
+                <img class="h-full w-full object-cover astro-J7PV25F6" src="" alt="Book 1" id="book-homepage-1">
             </figure>
             <figure class="relative h-64 w-full shadow-2xl xl:h-96 astro-J7PV25F6">
-                <img class="h-full w-full object-cover astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-2.png" alt="Book 2">
+                <img class="h-full w-full object-cover astro-J7PV25F6" src="" alt="Book 2" id="book-homepage-2">
             </figure>
             <figure class="relative h-64 w-full shadow-2xl xl:h-96 astro-J7PV25F6">
-                <img class="h-full w-full object-cover astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-3.png" alt="Book 3">
+                <img class="h-full w-full object-cover astro-J7PV25F6" src="" alt="Book 3" id="book-homepage-3">
             </figure>
             <figure class="relative h-64 w-full shadow-2xl xl:h-96 astro-J7PV25F6">
-                <img class="h-full w-full object-cover astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-4.png" alt="Book 4">
+                <img class="h-full w-full object-cover astro-J7PV25F6" src="" alt="Book 4" id="book-homepage-4">
             </figure>
             </div>
 
@@ -162,17 +162,15 @@
 
             <figure class="mb-10 flex items-center justify-center gap-2 xl:gap-10 astro-J7PV25F6">
                 <div class="mt-16 max-w-[180px] space-y-1.5 self-start text-right astro-J7PV25F6">
-                <h5 class="text-lg font-semibold leading-6 astro-J7PV25F6">
-                    I Used To Be A Miserable F*ck
+                <h5 class="text-lg font-semibold leading-6 astro-J7PV25F6" id="book-homepage-5-judul">
                 </h5>
-                <p class="text-base font-normal leading-6 astro-J7PV25F6">JOHN KIM~</p>
+                <p class="text-base font-normal leading-6 astro-J7PV25F6" id="book-homepage-5-penulis"></p>
                 </div>
 
-                <img class="h-64 w-auto shadow-2xl 2xl:h-96 astro-J7PV25F6" src="{{asset('/assets/media')}}/book-photo-5.png" alt="Book 8">
+                <img class="h-64 w-auto shadow-2xl 2xl:h-96 astro-J7PV25F6" src="" alt="Book 8" id="book-homepage-5">
 
                 <div class="mb-16 max-w-[180px] self-end astro-J7PV25F6">
-                <h5 class="text-lg font-semibold leading-6 astro-J7PV25F6">
-                    Steam Punk, Science, Fiction, Fantasy
+                <h5 class="text-lg font-semibold leading-6 astro-J7PV25F6" id="book-homepage-5-kategori">
                 </h5>
                 </div>
             </figure>
@@ -300,338 +298,95 @@
             <main class="modal__content px-4 !font-source-sans xl:px-8 astro-J7PV25F6" id="modal-1-content">
             <div class="flex flex-wrap items-center justify-center gap-3 astro-J7PV25F6">
                 <ul class="flex w-full flex-row flex-wrap gap-3 astro-J7PV25F6">
-                <li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Art" value="Art" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Art" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
+                    @foreach (GeneralHelper::getKategory() as $kategori)
+                    <li class="astro-J7PV25F6">
+                        <input type="checkbox" id="{{$kategori->id.'_kategori'}}" value="{{$kategori->id}}" name="kategori" class="peer hidden astro-J7PV25F6 kategori" required="">
+                        <label for="{{$kategori->id.'_'.$kategori->name}}" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
                             <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Art
+                            {{$kategori->name}}
                             </div>
                             <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
                             <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
                             </svg>
                         </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Biography" value="Biography" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Biography" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Biography
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Business" value="Business" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Business" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Business
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Children’s" value="Children’s" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Children’s" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Children’s
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Christian" value="Christian" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Christian" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Christian
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Classics" value="Classics" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Classics" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Classics
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Comics" value="Comics" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Comics" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Comics
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Cookbooks" value="Cookbooks" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Cookbooks" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Cookbooks
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Ebooks" value="Ebooks" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Ebooks" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Ebooks
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Fantasy" value="Fantasy" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Fantasy" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Fantasy
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Fiction" value="Fiction" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Fiction" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Fiction
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Graphic Noverls" value="Graphic Noverls" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Graphic Noverls" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Graphic Noverls
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Historical Fiction" value="Historical Fiction" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Historical Fiction" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Historical Fiction
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="History" value="History" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="History" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            History
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Horror" value="Horror" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Horror" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Horror
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Memoir" value="Memoir" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Memoir" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Memoir
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Music" value="Music" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Music" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Music
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Mystery" value="Mystery" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Mystery" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Mystery
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Nonfiction" value="Nonfiction" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Nonfiction" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Nonfiction
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Poetry" value="Poetry" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Poetry" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Poetry
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Psychology" value="Psychology" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Psychology" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Psychology
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Romance" value="Romance" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Romance" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Romance
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Science" value="Science" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Science" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Science
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Science Fiction" value="Science Fiction" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Science Fiction" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Science Fiction
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Self Help" value="Self Help" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Self Help" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Self Help
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Sports" value="Sports" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Sports" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Sports
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Thriller" value="Thriller" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Thriller" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Thriller
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Travel" value="Travel" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Travel" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Travel
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li><li class="astro-J7PV25F6">
-                        <input type="checkbox" id="Young Adult" value="Young Adult" class="peer hidden astro-J7PV25F6" required="">
-                        <label for="Young Adult" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            Young Adult
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                        </li>
+                    </li>
+                    @endforeach
+                        
                 </ul>
             </div>
             </main>
             <footer class="flex items-center justify-between bg-[#F9F8F6] p-4 xl:px-8 xl:py-12 astro-J7PV25F6">
-            <button class="text-2xl font-bold leading-7 astro-J7PV25F6">0/5</button>
-            <button class="rounded-full bg-[#128C55] px-6 py-4 font-source-sans text-base font-semibold leading-none tracking-widest text-white astro-J7PV25F6" data-micromodal-close aria-label="Close this dialog window">Selesai</button>
+            <button class="text-2xl font-bold leading-7 astro-J7PV25F6"><span id="countSelectedCategory">0</span>/5</button>
+            <button class="rounded-full bg-[#128C55] px-6 py-4 font-source-sans text-base font-semibold leading-none tracking-widest text-white astro-J7PV25F6" data-micromodal-close aria-label="Close this dialog window" id="submitCategory">Selesai</button>
             </footer>
         </div>
         </div>
     </div>
 </main>
+<script type="text/javascript">
+    $( document ).ready(function() {
+        if (localStorage.getItem("default-recommendation-book")) {
+            refreshDefaultRecommendationBook(JSON.parse(localStorage.getItem("default-recommendation-book")));
+        } else {
+            $.ajax({
+                url: "{{ route('ajax.book-homepage') }}",
+                type: "GET",
+                data: {
+                },
+                success: function(data) {
+                    localStorage.setItem("default-recommendation-book", JSON.stringify(data));
+                    refreshDefaultRecommendationBook(data);
+                },
+            });
+        }
+    });
+
+    $('#book-recommendation').click(function(){
+        $.each(JSON.parse(localStorage.getItem("selected-category-book")), function(index, value){
+            $('#'+value+'_kategori').prop( "checked", true );
+
+        });
+        $("#countSelectedCategory").text( $("input[name='kategori']:checked").length);
+    });
+
+    $('.kategori').click(function(){
+        var numberOfChecked = $("input[name='kategori']:checked").length;
+        if(numberOfChecked > 5) {
+            $(this).prop( "checked", false );
+        }
+        $("#countSelectedCategory").text($("input[name='kategori']:checked").length);
+    });
+
+    $('#submitCategory').click(function(){
+        var arr = [];
+        $.each($("input[name='kategori']:checked"), function(){
+          arr.push($(this).val());
+        });
+        localStorage.setItem("selected-category-book", JSON.stringify(arr));
+    });
+
+
+    function refreshDefaultRecommendationBook(data){
+        order = 1;
+        $.each(data, function (key, item) {
+            $("#book-homepage-"+order).attr("src",item.image);
+            order = order + 1;
+            if (order == 5) {
+                $("#book-homepage-"+order+"-judul").text(item.judul);
+                $("#book-homepage-"+order+"-penulis").text(item.penulis);
+                $("#book-homepage-"+order+"-kategori").text(item.detail_buku.kategori.name);
+            }
+            if (order > 5) {
+                return false;
+            }
+        });
+    }
+    // console.log('sss');
+</script>
 @endsection
+
+
 
 
 

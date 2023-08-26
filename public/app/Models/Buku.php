@@ -74,7 +74,7 @@ class Buku extends Model implements HasMedia
 
     public function detail_buku()
     {
-        return $this->hasOne(DetailBuku::class);
+        return $this->hasOne(DetailBuku::class)->with(['kategori']);
     }
 
     public function getImageAttribute()
