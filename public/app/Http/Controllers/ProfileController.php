@@ -18,10 +18,6 @@ class ProfileController extends Controller
     }
     public function index(){
         $user = User::with('user_recommendation')->find(Auth::user()->id);
-        // foreach ($user->user_recommendation as $key => $value) {
-        //     dump($value->buku->judul);
-        // }
-        // dd($user);
         return view('user.profile', compact('user'));
     }
 }
