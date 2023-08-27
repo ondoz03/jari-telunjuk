@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserDetails;
+use App\Models\UserRecommendation;
 use Auth;
 
 class ProfileController extends Controller
@@ -16,7 +17,11 @@ class ProfileController extends Controller
         }
     }
     public function index(){
-        $user = Auth::user();
+        $user = User::with('user_recommendation')->find(Auth::user()->id);
+        // foreach ($user->user_recommendation as $key => $value) {
+        //     dump($value->buku->judul);
+        // }
+        // dd($user);
         return view('user.profile', compact('user'));
     }
 }

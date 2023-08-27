@@ -28,6 +28,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::group(['prefix' => 'ajax'], function () {
     Route::get('/book-homepage', [BukuController::class, 'getRandomBookHomepage'])->name('ajax.book-homepage');
+    Route::post('/set-session', [SignUpController::class, 'setSession'])->name('ajax.set-session');
 });
 
 Route::group(['prefix' => 'sign-in'], function () {

@@ -43,6 +43,7 @@
                 <form method="POST" class="form-horizontal form-material" id="loginform" action="{{route('sign-in.sign-up.create')}}" enctype="multipart/form-data">
                 @csrf
                     <h3 class="box-title mb-3">Sign Up</h3>
+                    <input type="hidden" id="category_book" name="category_book" value="">
                     <div class="form-group ">
                         <div class="col-xs-12">
                             <input class="form-control" type="text" name="name" required="" placeholder="Nama"> </div>
@@ -104,13 +105,32 @@
         </div>
         
     </section>
+    </main>
+    <script src="{{ asset('/assets/monster-admin')}}/assets/plugins/jquery/jquery.min.js"></script>
+        <script type="text/javascript">
+            $( document ).ready(function() {
+                $("#category_book").val(localStorage.getItem("selected-category-book"));
+
+                $.ajax({
+                     url: "{{ route('ajax.set-session') }}",
+                     type: "POST",
+                     data: { 
+                            "_token": "{{ csrf_token() }}",
+                            category_session: localStorage.getItem("selected-category-book")},
+                     success: function(data) {
+                        console.log('set_session_ok');
+                        console.log(data);
+                    },
+                });   
+            });
+        </script> 
+
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="{{ asset('/assets/monster-admin')}}/assets/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="{{ asset('/assets/monster-admin')}}/assets/plugins/bootstrap/js/popper.min.js"></script>
     <script src="{{ asset('/assets/monster-admin')}}/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
