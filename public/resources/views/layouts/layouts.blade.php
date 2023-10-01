@@ -15,6 +15,7 @@
     @yield('title')
     <link rel="stylesheet" href="{{ asset('/assets')}}/front/blog-detail.ba35dd2c.css" />
     <link rel="stylesheet" href="{{ asset('/assets')}}/front/index.1e77ef8f.css" />
+    <link rel="stylesheet" href="{{ asset('/assets')}}/front/404-recommendation.c48ff23f.css" />
 
     @yield('header-js')
     <script type="module" src="{{ asset('/assets')}}/front/hoisted.6695be64.js"></script>

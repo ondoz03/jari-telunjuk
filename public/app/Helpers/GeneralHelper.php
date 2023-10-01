@@ -154,4 +154,18 @@ class GeneralHelper
 
         return $data['posts']['nodes'];
     }
+
+    public static function authCheck()
+    {
+        if(isset(Auth::user()->id)) {
+            return '1';
+        } else {
+            return '0';
+        }
+    }
+
+    public static function userInfo()
+    {
+        return User::find(Auth::user()->id);
+    }
 }

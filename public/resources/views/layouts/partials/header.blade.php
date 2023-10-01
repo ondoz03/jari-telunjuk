@@ -30,13 +30,25 @@
         <div class="flex items-center gap-8">
           <a class="text-base leading-5" href="/">About</a>
           <a class="text-base leading-5" href="/blog">Blog</a>
+          @if(!GeneralHelper::authCheck()) 
           <a class="text-base leading-5" href="{{route('sign-in')}}">Sign In</a>
+          @endif
           <a class="text-base leading-5" href="{{route('home')}}">Home</a>
         </div>
 
-        <a href="{{route('sign-in.sign-up')}}" class="rounded-full bg-[#128C55] px-5 py-2 font-bold leading-5 text-white hover:bg-[#128C55]/90">
-          Sign Up
-        </a>
+        @if(GeneralHelper::authCheck()) 
+          <button class="flex items-center gap-2">
+            <img class="h-10 w-10 rounded-full border border-stone-300" src="{{GeneralHelper::userInfo()->avatar}}" alt="Author 1">
+
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M5 7L10 14L15 7H5Z" fill="#2E2E2E"></path>
+            </svg>
+          </button>
+        @else
+          <a href="{{route('sign-in.sign-up')}}" class="rounded-full bg-[#128C55] px-5 py-2 font-bold leading-5 text-white hover:bg-[#128C55]/90">
+            Sign Up
+          </a>
+        @endif
       </nav>
     </div>
   </header>

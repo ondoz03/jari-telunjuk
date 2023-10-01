@@ -37,7 +37,18 @@ class SignInController extends Controller
             Auth::login($find_user);
             return redirect()->intended('user');
         } else {
-            dump('login gagal');
+            return redirect()->intended('home');
         }
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+ 
+        request()->session()->invalidate();
+ 
+        request()->session()->regenerateToken();
+ 
+        return redirect()->route('home');
     }
 }

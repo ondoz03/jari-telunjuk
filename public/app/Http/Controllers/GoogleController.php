@@ -18,12 +18,15 @@ class GoogleController extends Controller
 
         $find_user = User::where('email',$user->getEmail())->first();
         if ($find_user) {
+            $find_user->avatar = $user->getAvatar();
+            $find_user->save();
             Auth::login($find_user);
             return redirect()->intended('user');
         } else {
             $new_user = User::create([
                 'name' => $user->getName(),
                 'email' => $user->getEmail(),
+                'avatar' => $user->getAvatar(),
             ]);
             Auth::login($new_user);
             return redirect()->intended('user');

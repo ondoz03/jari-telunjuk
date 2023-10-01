@@ -35,6 +35,7 @@ Route::group(['prefix' => 'sign-in'], function () {
     Route::get('/', [SignInController::class, 'index'])->name('sign-in');
     Route::get('/sign-up', [SignUpController::class, 'index'])->name('sign-in.sign-up');
     Route::post('/', [SignInController::class, 'login'])->name('sign-in.login');
+    Route::post('/logout', [SignInController::class, 'logout'])->name('sign-in.logout');
     Route::post('/sign-up/create', [SignUpController::class, 'store'])->name('sign-in.sign-up.create');
 });
 
@@ -46,6 +47,7 @@ Route::group(['prefix' => 'auth'], function () {
 Route::group(['prefix' => 'user'], function () {
     Route::get('/', [ProfileController::class, 'index'])->name('user.index');
     Route::get('/profile', [ProfileController::class, 'index'])->name('user.profile');
+    Route::get('/logout', [ProfileController::class, 'logout'])->name('user.logout');
 });
 
 

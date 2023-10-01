@@ -283,49 +283,102 @@
 
     <div class="modal micromodal-slide astro-J7PV25F6" id="modal-1" aria-hidden="true">
         <div class="modal__overlay astro-J7PV25F6" tabindex="-1" data-micromodal-close>
-        <div class="modal__container rounded-none xl:rounded-2xl astro-J7PV25F6" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-            <header class="mb-6 mt-11 flex items-center justify-between px-4 xl:justify-center astro-J7PV25F6">
-            <h2 class="text-center font-arvo text-xl leading-none xl:text-[34px] astro-J7PV25F6" id="modal-1-title">
-                Pilih rekomendasi
-            </h2>
+            <div class="modal__container rounded-none xl:rounded-2xl astro-J7PV25F6" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                <div id="modal-1-container">
+                    <header class="mb-6 mt-11 flex items-center justify-between px-4 xl:justify-center astro-J7PV25F6">
+                    <h2 class="text-center font-arvo text-xl leading-none xl:text-[34px] astro-J7PV25F6" id="modal-1-title">
+                        Pilih rekomendasi
+                    </h2>
 
-            <button id="close-modal" type="button" class="block xl:hidden astro-J7PV25F6">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="astro-J7PV25F6">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.6649 18.0492C20.1117 18.496 20.1117 19.2183 19.6649 19.6651C19.442 19.888 19.1495 20 18.8569 20C18.5643 20 18.2718 19.888 18.0489 19.6651L12 13.6161L5.95107 19.6651C5.72822 19.888 5.43566 20 5.1431 20C4.85054 20 4.55798 19.888 4.33513 19.6651C3.88829 19.2183 3.88829 18.496 4.33513 18.0492L10.3841 12.0001L4.33513 5.95111C3.88829 5.50426 3.88829 4.78199 4.33513 4.33514C4.78197 3.88829 5.50423 3.88829 5.95107 4.33514L12 10.3842L18.0489 4.33514C18.4958 3.88829 19.218 3.88829 19.6649 4.33514C20.1117 4.78199 20.1117 5.50426 19.6649 5.95111L13.6159 12.0001L19.6649 18.0492Z" fill="#2E2E2E" class="astro-J7PV25F6"></path>
-                </svg>
-            </button>
-            </header>
-            <main class="modal__content px-4 !font-source-sans xl:px-8 astro-J7PV25F6" id="modal-1-content">
-            <div class="flex flex-wrap items-center justify-center gap-3 astro-J7PV25F6">
-                <ul class="flex w-full flex-row flex-wrap gap-3 astro-J7PV25F6">
-                    @foreach (GeneralHelper::getKategory() as $kategori)
-                    <li class="astro-J7PV25F6">
-                        <input type="checkbox" id="{{$kategori->id.'_kategori'}}" value="{{$kategori->id}}" name="kategori" class="peer hidden astro-J7PV25F6 kategori" required="">
-                        <label for="{{$kategori->id.'_'.$kategori->name}}" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
-                            <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
-                            {{$kategori->name}}
-                            </div>
-                            <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
-                            </svg>
-                        </label>
-                    </li>
-                    @endforeach
-                        
-                </ul>
+                    <button id="close-modal" type="button" class="block xl:hidden astro-J7PV25F6">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="astro-J7PV25F6">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.6649 18.0492C20.1117 18.496 20.1117 19.2183 19.6649 19.6651C19.442 19.888 19.1495 20 18.8569 20C18.5643 20 18.2718 19.888 18.0489 19.6651L12 13.6161L5.95107 19.6651C5.72822 19.888 5.43566 20 5.1431 20C4.85054 20 4.55798 19.888 4.33513 19.6651C3.88829 19.2183 3.88829 18.496 4.33513 18.0492L10.3841 12.0001L4.33513 5.95111C3.88829 5.50426 3.88829 4.78199 4.33513 4.33514C4.78197 3.88829 5.50423 3.88829 5.95107 4.33514L12 10.3842L18.0489 4.33514C18.4958 3.88829 19.218 3.88829 19.6649 4.33514C20.1117 4.78199 20.1117 5.50426 19.6649 5.95111L13.6159 12.0001L19.6649 18.0492Z" fill="#2E2E2E" class="astro-J7PV25F6"></path>
+                        </svg>
+                    </button>
+                    </header>
+                    <main class="modal__content px-4 !font-source-sans xl:px-8 astro-J7PV25F6" id="modal-1-content">
+                    <div class="flex flex-wrap items-center justify-center gap-3 astro-J7PV25F6">
+                        <ul class="flex w-full flex-row flex-wrap gap-3 astro-J7PV25F6">
+                            @foreach (GeneralHelper::getKategory() as $kategori)
+                            <li class="astro-J7PV25F6">
+                                <input type="checkbox" id="{{$kategori->id.'_kategori'}}" value="{{$kategori->id}}" name="kategori" class="peer hidden astro-J7PV25F6 kategori" required="">
+                                <label for="{{$kategori->id.'_'.$kategori->name}}" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
+                                    <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
+                                    {{$kategori->name}}
+                                    </div>
+                                    <svg class="flex-shrink-0 astro-J7PV25F6" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z" fill="#515151" class="astro-J7PV25F6"></path>
+                                    <path d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z" fill="#515151" class="astro-J7PV25F6"></path>
+                                    </svg>
+                                </label>
+                            </li>
+                            @endforeach
+                                
+                        </ul>
+                    </div>
+                    </main>
+                    <footer class="flex items-center justify-between bg-[#F9F8F6] p-4 xl:px-8 xl:py-12 astro-J7PV25F6">
+                    <button class="text-2xl font-bold leading-7 astro-J7PV25F6"><span id="countSelectedCategory">0</span>/5</button>
+                    <button class="rounded-full bg-[#128C55] px-6 py-4 font-source-sans text-base font-semibold leading-none tracking-widest text-white astro-J7PV25F6" aria-label="Close this dialog window" id="submitCategory">Selesai</button>
+                    </footer>
+                </div>
+                <div id="modal-2-container" style="display:none">
+                    <header class="mb-6 mt-11 flex items-center justify-between px-4 xl:justify-center astro-J7PV25F6">
+                    <h2 class="text-center font-arvo text-xl leading-none xl:text-[34px] astro-J7PV25F6" id="modal-2-title">
+                        Rekomendasi Buku Untukmu
+                    </h2>
+
+                    <button id="close-modal" type="button" class="block xl:hidden astro-J7PV25F6">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="astro-J7PV25F6">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.6649 18.0492C20.1117 18.496 20.1117 19.2183 19.6649 19.6651C19.442 19.888 19.1495 20 18.8569 20C18.5643 20 18.2718 19.888 18.0489 19.6651L12 13.6161L5.95107 19.6651C5.72822 19.888 5.43566 20 5.1431 20C4.85054 20 4.55798 19.888 4.33513 19.6651C3.88829 19.2183 3.88829 18.496 4.33513 18.0492L10.3841 12.0001L4.33513 5.95111C3.88829 5.50426 3.88829 4.78199 4.33513 4.33514C4.78197 3.88829 5.50423 3.88829 5.95107 4.33514L12 10.3842L18.0489 4.33514C18.4958 3.88829 19.218 3.88829 19.6649 4.33514C20.1117 4.78199 20.1117 5.50426 19.6649 5.95111L13.6159 12.0001L19.6649 18.0492Z" fill="#2E2E2E" class="astro-J7PV25F6"></path>
+                        </svg>
+                    </button>
+                    </header>
+                    <main class="modal__content px-4 !font-source-sans xl:px-8 astro-J7PV25F6" id="modal-2-content">
+                    <h3 class="bg-white/95 py-4 text-center text-sm leading-5 lg:py-0">
+                      Kami telah memilih rekomendasi yang cocok buat kamu
+                    </h3>
+
+                    <div class="relative z-10 h-[calc(100vh_-_113px)] bg-white/95 px-6 pt-11 lg:h-auto lg:rounded-b-2xl lg:pb-14 lg:pt-11">
+                      <img class="absolute left-1/2 top-1/2 h-auto w-full -translate-x-1/2 -translate-y-1/2" src="{{ asset('/assets')}}/media/books-blur.png" alt="Books Blur">
+                      <div class="relative z-10 flex h-full flex-col items-center">
+                        <h5 class="mb-6 text-center text-base font-bold">
+                          Daftar sekarang untuk melihat rekomendasi.
+                        </h5>
+
+                        <div class="flex w-full max-w-sm flex-col items-start gap-4">
+                          <a href="{{route('auth.google')}}" class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
+                            <img class="h-6 w-6" src="{{ asset('/assets')}}/media/icon-google.png" alt="Icon Google">
+
+                            <p class="text-base font-semibold leading-5">
+                              Sign up with Google
+                            </p>
+                          </a>
+
+                          <button class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
+                            <img class="h-6 w-6" src="{{ asset('/assets')}}/media/icon-facebook.png" alt="Icon facebook">
+
+                            <p class="text-base font-semibold leading-5">
+                              Sign up with Facebook
+                            </p>
+                          </button>
+
+                          <button class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
+                            <img class="h-6 w-6" src="{{ asset('/assets')}}/media/icon-x.png" alt="Icon x">
+
+                            <p class="text-base font-semibold leading-5">Sign up with X</p>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
             </div>
-            </main>
-            <footer class="flex items-center justify-between bg-[#F9F8F6] p-4 xl:px-8 xl:py-12 astro-J7PV25F6">
-            <button class="text-2xl font-bold leading-7 astro-J7PV25F6"><span id="countSelectedCategory">0</span>/5</button>
-            <button class="rounded-full bg-[#128C55] px-6 py-4 font-source-sans text-base font-semibold leading-none tracking-widest text-white astro-J7PV25F6" data-micromodal-close aria-label="Close this dialog window" id="submitCategory">Selesai</button>
-            </footer>
-        </div>
         </div>
     </div>
 </main>
 <script type="text/javascript">
     $( document ).ready(function() {
+
         if (localStorage.getItem("default-recommendation-book")) {
             refreshDefaultRecommendationBook(JSON.parse(localStorage.getItem("default-recommendation-book")));
         } else {
@@ -343,6 +396,8 @@
     });
 
     $('#book-recommendation').click(function(){
+        $("#modal-1-container").show();
+        $("#modal-2-container").hide();
         $.each(JSON.parse(localStorage.getItem("selected-category-book")), function(index, value){
             $('#'+value+'_kategori').prop( "checked", true );
 
@@ -364,6 +419,13 @@
           arr.push($(this).val());
         });
         localStorage.setItem("selected-category-book", JSON.stringify(arr));
+        var check_auth = {{GeneralHelper::authCheck()}};
+        if(check_auth){
+            window.location.href = "{{ route('user.profile')}}";
+        } else {
+            $("#modal-1-container").hide();
+            $("#modal-2-container").show();
+        }
     });
 
 

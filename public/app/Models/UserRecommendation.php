@@ -21,6 +21,6 @@ class UserRecommendation extends Model
 
     public function buku()
     {
-        return $this->belongsTo(Buku::class);
+        return $this->belongsTo(Buku::class)->with('detail_buku');
     }
 }
