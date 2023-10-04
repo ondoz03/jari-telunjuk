@@ -46,29 +46,52 @@ class PeminjamanTest extends Command
      */
     public function handle()
     {
-        // for ($i = 0; $i < 10; $i++) {
-        //     $faker = Factory::create();
-        //     $peminjaman = Peminjaman::create([
-        //         'user_id' => $faker->unique()->numberBetween(1, 11),
-        //         'is_status' => 'pending'
-        //     ]);
-        //     for ($a = 0; $a < 3; $a++) {
-        //         $peminjaman->peminjamanitem()->create([
-        //             'buku_id' => $faker->unique()->numberBetween(27, 41),
-        //             'qty' => 1,
-        //             'is_status' => 'false'
+
+        $userfile = file_get_contents("./books-raw.json");
+
+        $jsonArray = json_decode($userfile);
+
+        // get category
+        // foreach ($jsonArray as $key => $value) {
+        //     foreach ($value->Category as $k => $v) {
+        //         Kategori::UpdateOrCreate([
+        //             'slug' => Str::slug($v)
+        //         ], [
+        //             'name' => Str::title($v)
         //         ]);
+        //         print_r($v);
         //     }
-        //     $this->info($peminjaman->user->name);
         // }
 
-        $buku = Kategori::get();
+        //get buku
+        foreach ($jsonArray as $key => $value) {
 
-        foreach ($buku as $key => $value) {
-            $data = $value->update([
-                'uuid' => Str::uuid()
+            $buku = Buku::create([
+                'judul' => $value->Title,
+                'slug' => $value->Slug,
+                'penulis' => json_encode($value->AuthorName),
+                'isbn' =>  $value->Isbn
             ]);
-            $this->info($value->judul);
+
+            $buku->detail_buku()->create([
+                'tgl_rilis' => date("Y-m-d", strtotime($value->PublishDate)),
+                'bahasa' => $value->Language,
+                'penerbit' => $value->Publisher,
+                'negara' => $value->Language,
+                'jumlah_halaman' => $value->Pages,
+                'jumlah_buku' => 0,
+                'description' => $value->Description,
+            ]);
+
+            $kategory =  Kategori::get();
+            foreach ($kategory as $kis => $val) {
+                foreach ($value->Category as $k => $v) {
+                    if ($val->name === $v) {
+                        $buku->kategori()->attach($val->id);
+                    }
+                }
+            }
+            $this->info($value->Title);
         }
 
         return Command::SUCCESS;

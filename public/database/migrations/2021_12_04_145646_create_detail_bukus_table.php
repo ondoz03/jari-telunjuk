@@ -23,11 +23,9 @@ class CreateDetailBukusTable extends Migration
             $table->integer('jumlah_halaman');
             $table->text('description');
             $table->integer('jumlah_buku')->default(10);
-            $table->unsignedBigInteger('kategori_id')->nullable();
             $table->timestamps();
 
             $table->foreign('buku_id')->references('id')->on('bukus')->onDelete('cascade');
-            $table->foreign('kategori_id')->references('id')->on('kategoris')->onDelete('cascade');
         });
     }
 

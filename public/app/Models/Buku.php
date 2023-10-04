@@ -21,11 +21,10 @@ use Laravel\Scout\Builder;
 
 class Buku extends Model implements HasMedia
 {
-    use HasFactory, InteractsWithMedia, HasSlug, HasSku, Searchable;
+    use HasFactory, InteractsWithMedia, HasSlug, Searchable;
 
 
     protected $fillable = [
-        'code',
         'uuid',
         'judul',
         'slug',
@@ -50,25 +49,23 @@ class Buku extends Model implements HasMedia
      *
      * @return BinaryCats\Sku\SkuOptions
      */
-    public function skuOptions(): SkuOptions
-    {
-        return SkuOptions::make()
-            ->from('buku.judul')
-            ->target('code')
-            ->using('_')
-            ->forceUnique(false)
-            ->generateOnCreate(true)
-            ->refreshOnUpdate(false);
-    }
+    // public function skuOptions(): SkuOptions
+    // {
+    //     return SkuOptions::make()
+    //         ->from('buku.judul')
+    //         ->target('code')
+    //         ->using('_')
+    //         ->forceUnique(false)
+    //         ->generateOnCreate(true)
+    //         ->refreshOnUpdate(false);
+    // }
 
 
     protected static function boot()
     {
         parent::boot();
         static::creating(function ($q) {
-            $faker = Factory::create();
             $q->uuid = Uuid::uuid4();
-            $q->code = $faker->unique()->ean8();
         });
     }
 
@@ -140,5 +137,10 @@ class Buku extends Model implements HasMedia
             $this->getScoutKeyName(),
             $ids
         )->get();
+    }
+
+    public function kategori()
+    {
+        return $this->belongsToMany(Kategori::class);
     }
 }

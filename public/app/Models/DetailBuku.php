@@ -27,8 +27,8 @@ class DetailBuku extends Model
         return $this->belongsTo(Buku::class);
     }
 
-    public function kategori()
-    {
-        return $this->belongsTo(Kategori::class);
-    }
+    // public function kategori()
+    // {
+    //     return $this->belongsTo(Kategori::class);
+    // }
 }
