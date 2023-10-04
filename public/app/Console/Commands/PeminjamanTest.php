@@ -51,18 +51,6 @@ class PeminjamanTest extends Command
 
         $jsonArray = json_decode($userfile);
 
-        // get category
-        // foreach ($jsonArray as $key => $value) {
-        //     foreach ($value->Category as $k => $v) {
-        //         Kategori::UpdateOrCreate([
-        //             'slug' => Str::slug($v)
-        //         ], [
-        //             'name' => Str::title($v)
-        //         ]);
-        //         print_r($v);
-        //     }
-        // }
-
         //get buku
         foreach ($jsonArray as $key => $value) {
 
