@@ -141,6 +141,6 @@ class Buku extends Model implements HasMedia
 
     public function kategori()
     {
-        return $this->belongsToMany(Kategori::class);
+        return $this->belongsToMany(Kategori::class, 'buku_kategori',  'buku_id', 'kategori_id');
     }
 }

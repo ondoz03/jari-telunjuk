@@ -48,34 +48,19 @@ class PeminjamanTest extends Command
     {
 
         $userfile = file_get_contents("./books-raw.json");
-
         $jsonArray = json_decode($userfile);
+        $data = array_slice($jsonArray, 0, 8);
 
         //get buku
-        foreach ($jsonArray as $key => $value) {
+        foreach ($data as $key => $value) {
 
-            $buku = Buku::create([
-                'judul' => $value->Title,
-                'slug' => $value->Slug,
-                'penulis' => json_encode($value->AuthorName),
-                'isbn' =>  $value->Isbn
-            ]);
-
-            $buku->detail_buku()->create([
-                'tgl_rilis' => date("Y-m-d", strtotime($value->PublishDate)),
-                'bahasa' => $value->Language,
-                'penerbit' => $value->Publisher,
-                'negara' => $value->Language,
-                'jumlah_halaman' => $value->Pages,
-                'jumlah_buku' => 0,
-                'description' => $value->Description,
-            ]);
+            $buku = Buku::where('slug', $value->Slug)->first();
 
             $kategory =  Kategori::get();
             foreach ($kategory as $kis => $val) {
-                foreach ($value->Category as $k => $v) {
-                    if ($val->name === $v) {
-                        $buku->kategori()->attach($val->id);
+                foreach ($value->CategoriesSlug as $k => $v) {
+                    if ($val->slug === $v) {
+                        $buku->kategori()->sync($val->id);
                     }
                 }
             }

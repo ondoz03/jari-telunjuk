@@ -93,12 +93,12 @@ class GeneralHelper
     public static function getRandomFirstBook()
     {
 
-        $buku = Buku::whereHas('detail_buku.kategori', function ($q) {
+        $buku = Buku::whereHas('kategori', function ($q) {
             $q->whereIn('slug', ['fiction-literature', 'non-fiction', 'history', 'psychology', 'romance']);
         })->inRandomOrder()
             ->limit(1)
             ->get();
-        return $buku[0]->image;
+        return $buku;
     }
 
     public static function getRandomGetCategory()

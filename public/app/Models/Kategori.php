@@ -42,7 +42,7 @@ class Kategori extends Model
 
     public function buku()
     {
-        return $this->belongsToMany(Buku::class);
+        return $this->belongsToMany(Buku::class, 'buku_kategori', 'buku_id', 'kategori_id');
     }
 
     /**

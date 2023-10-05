@@ -15,9 +15,15 @@ class HomeController extends Controller
 
     public function index()
     {
-        $topBook = $this->topBook(8);
-        $newBook = GeneralHelper::newBook(12);
-        return view('home', compact('topBook', 'newBook'));
+        // $buku = Buku::whereHas('kategori', function ($q) {
+        //     $q->whereIn('slug', ['fiction-literature', 'non-fiction', 'history', 'psychology', 'romance']);
+        // })->inRandomOrder()
+        //     ->limit(1)
+        //     ->get();
+
+        $buku = Buku::with('kategori')->limit(5)->get();
+        return $buku;
+        // return view('home');
     }
 
     public function search(Request $request)
