@@ -271,24 +271,25 @@
                         <img class="h-64 w-full xl:w-auto astro-J7PV25F6"
                             src="{{ asset('/assets/media') }}/category-ill-1.jpg"
                             alt="Category illustration">
-                        {{-- @php
-                    $itemsPerNav = 5;
-                    $numNavBlocks = ceil(count(GeneralHelper::getKategory()) / $itemsPerNav);
-                    $index = 0;
-                @endphp
+                        @php
+                            $itemsPerNav = 5;
+                            $numNavBlocks = ceil(count(GeneralHelper::getKategory()) / $itemsPerNav);
+                            $index = 0;
+                        @endphp
 
-                @foreach (GeneralHelper::getKategory() as $item)
-                    @if ($index % $itemsPerNav === 0)
-                        <nav class="flex flex-col items-start gap-3 astro-J7PV25F6">
-                    @endif
-                        <a class="text-sm leading-5 text-[#128C55] hover:underline xl:text-base astro-J7PV25F6" href="{{ route("buku", $item->slug)}}">{{$item->name}}</a>
-                    @if (($index + 1) % $itemsPerNav === 0 || $index + 1 === count(GeneralHelper::getKategory()))
-                        </nav>
-                    @endif
-                    @php
-                        $index++
-                    @endphp
-                @endforeach --}}
+                        @foreach (GeneralHelper::getKategory() as $item)
+                            @if ($index % $itemsPerNav === 0)
+                                <nav class="flex flex-col items-start gap-3 astro-J7PV25F6">
+                            @endif
+                            <a class="text-sm leading-5 text-[#128C55] hover:underline xl:text-base astro-J7PV25F6"
+                                href="{{ route('buku', $item->slug) }}">{{ $item->name }}</a>
+                            @if (($index + 1) % $itemsPerNav === 0 || $index + 1 === count(GeneralHelper::getKategory()))
+                                </nav>
+                            @endif
+                            @php
+                                $index++;
+                            @endphp
+                        @endforeach
                     </div>
                 </div>
             </section>

@@ -77,7 +77,28 @@ class GeneralHelper
 
     public static function getKategory()
     {
-        $ketegori = Kategori::get();
+        $ketegori = Kategori::whereIn('name', [
+            'Administrasi',
+            'Akuntansi',
+            'Anak-Anak',
+            'Berdasarkan Kisah Nyata',
+            'Biografi',
+            'Bisnis & Ekonomi',
+            'Drama',
+            'Ekonomi',
+            'Fantasi',
+            'Fiksi',
+            'Filsafat',
+            'Hubungan Masyarakat',
+            'Hukum',
+            'Humor',
+            'Kedokteran',
+            'Motivasi',
+            'Nonfiksi',
+            'Parenting',
+            'Psikologi',
+            'Sejarah',
+        ])->get();
         return $ketegori;
     }
 
