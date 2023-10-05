@@ -84,7 +84,7 @@ class GeneralHelper
 
     public static function getRandomGetBook()
     {
-        $buku = Buku::inRandomOrder()
+        $buku = Buku::whereHas('media')->with('kategori')->inRandomOrder()
             ->limit(6)
             ->get();
         return $buku;
@@ -94,11 +94,11 @@ class GeneralHelper
     {
 
         $buku = Buku::whereHas('kategori', function ($q) {
-            $q->whereIn('slug', ['fiction-literature', 'non-fiction', 'history', 'psychology', 'romance']);
+            $q->whereIn('slug', ['fiction-literature-ebook', 'nonfiksi', 'history-ebook', 'psychology-ebook', 'romantis']);
         })->inRandomOrder()
             ->limit(1)
             ->get();
-        return $buku;
+        return $buku[0]->image;
     }
 
     public static function getRandomGetCategory()

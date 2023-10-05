@@ -76,7 +76,7 @@ class Buku extends Model implements HasMedia
 
     public function getImageAttribute()
     {
-        $media = $this->getMedia('default');
+        $media = $this->getMedia('buku');
         if ($media->count() > 0) {
             $firstMedia = $media->first();
             $name = $firstMedia->id . '/' . $firstMedia->file_name;

@@ -16,14 +16,14 @@ class HomeController extends Controller
     public function index()
     {
         // $buku = Buku::whereHas('kategori', function ($q) {
-        //     $q->whereIn('slug', ['fiction-literature', 'non-fiction', 'history', 'psychology', 'romance']);
+        //     $q->whereIn('slug', ['fiction-literature-ebook', 'nonfiksi', 'history-ebook', 'psychology-ebook', 'romantis']);
         // })->inRandomOrder()
         //     ->limit(1)
         //     ->get();
 
-        $buku = Buku::with('kategori')->limit(5)->get();
-        return $buku;
-        // return view('home');
+        // // $buku = Buku::with('kategori')->limit(5)->get();
+        // return $buku;
+        return view('home');
     }
 
     public function search(Request $request)
