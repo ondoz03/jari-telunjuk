@@ -26,7 +26,7 @@ class BukuController extends Controller
 
             return view('buku', compact('buku', 'slug', 'kategori'));
         } else {
-            $buku = Buku::where('judul', 'like', "%" . $request->search . "%")->paginate(5)->withQueryString();
+            $buku = Buku::has('kategori')->where('judul', 'like', "%" . $request->search . "%")->paginate(5)->withQueryString();
             // return $buku;
             return view('result-search', compact('buku', 'request'));
         }
@@ -57,8 +57,8 @@ class BukuController extends Controller
     public function search(Request $request)
     {
 
-        $buku = Buku::where('judul', 'like', "%" . $request->search . "%")->paginate(5);
-        // return $buku;
+        $buku = Buku::has('kategori')->where('judul', 'like', "%" . $request->search . "%")->paginate(5);
+
         return view('result-search', compact('buku', 'request'));
     }
 }
