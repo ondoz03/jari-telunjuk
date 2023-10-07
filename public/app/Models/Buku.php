@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 use Ramsey\Uuid\Uuid;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
-use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;
+// use Spatie\Sluggable\HasSlug;
+// use Spatie\Sluggable\SlugOptions;
 use BinaryCats\Sku\HasSku;
 use BinaryCats\Sku\Concerns\SkuOptions;
 use Carbon\Carbon;
@@ -21,14 +21,15 @@ use Laravel\Scout\Builder;
 
 class Buku extends Model implements HasMedia
 {
-    use HasFactory, InteractsWithMedia, HasSlug, Searchable;
-
+    use HasFactory, InteractsWithMedia,  Searchable;
+    // HasSlug
 
     protected $fillable = [
         'uuid',
         'judul',
         'slug',
         'penulis',
+        'isbn'
     ];
 
     protected $appends = [
@@ -38,12 +39,12 @@ class Buku extends Model implements HasMedia
     /**
      * Get the options for generating the slug.
      */
-    public function getSlugOptions(): SlugOptions
-    {
-        return SlugOptions::create()
-            ->generateSlugsFrom('judul')
-            ->saveSlugsTo('slug');
-    }
+    // public function getSlugOptions(): SlugOptions
+    // {
+    //     return SlugOptions::create()
+    //         ->generateSlugsFrom('judul')
+    //         ->saveSlugsTo('slug');
+    // }
     /**
      * Get the options for generating the Sku.
      *

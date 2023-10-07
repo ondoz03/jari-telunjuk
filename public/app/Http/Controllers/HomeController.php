@@ -9,20 +9,14 @@ use App\Models\User;
 use App\Rules\CurrentPassword;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Str;
 
 class HomeController extends Controller
 {
 
     public function index()
     {
-        // $buku = Buku::whereHas('kategori', function ($q) {
-        //     $q->whereIn('slug', ['fiction-literature-ebook', 'nonfiksi', 'history-ebook', 'psychology-ebook', 'romantis']);
-        // })->inRandomOrder()
-        //     ->limit(1)
-        //     ->get();
-
-        // // $buku = Buku::with('kategori')->limit(5)->get();
-        // return $buku;
         return view('home');
     }
 
