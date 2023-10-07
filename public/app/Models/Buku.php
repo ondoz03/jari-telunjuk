@@ -70,6 +70,19 @@ class Buku extends Model implements HasMedia
         });
     }
 
+    public function getPenulisAttribute()
+    {
+        $data = json_decode($this->attributes['penulis']);
+
+        $penulis = [];
+        foreach ($data as $key => $value) {
+            $penulis[] =  $value;
+        }
+
+        $penulisString = implode(', ', $penulis);
+        return $penulisString;
+    }
+
     public function detail_buku()
     {
         return $this->hasOne(DetailBuku::class);
