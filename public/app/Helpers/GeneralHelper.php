@@ -122,6 +122,17 @@ class GeneralHelper
         return $buku[0]->image;
     }
 
+    public static function replace_utf8($final)
+    {
+        $final = str_replace("Â", "", $final);
+        $final = str_replace("â€™", "'", $final);
+        $final = str_replace("â€œ", '"', $final);
+        $final = str_replace('â€“', '-', $final);
+        $final = str_replace('â€', '"', $final);
+
+        return $final;
+    }
+
     public static function getRandomGetCategory()
     {
         $kategory = Kategori::inRandomOrder()
