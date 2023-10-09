@@ -4,6 +4,7 @@
 <head>
 
     <meta charset=UTF-8>
+
     <meta name="description"
         content="Astro description">
     <meta name="viewport"
