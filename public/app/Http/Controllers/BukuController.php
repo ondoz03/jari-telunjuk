@@ -51,6 +51,8 @@ class BukuController extends Controller
     {
         $buku = Buku::where('slug', $slug)->with(['detail_buku', 'kategori'])->firstorfail();
 
+        // return $buku;
+
         return view('detail-buku', compact('buku'));
     }
 

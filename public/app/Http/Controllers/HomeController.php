@@ -17,6 +17,8 @@ class HomeController extends Controller
 
     public function index()
     {
+        // $buku = Buku::doesntHave('detail_buku')->get();
+        // return $buku;
         return view('home');
     }
 

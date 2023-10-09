@@ -1,6 +1,11 @@
 @extends('layouts.layouts')
 @section('title')
     <title> Buku {{ $buku->judul }} - Karya {{ $buku->penulis }}</title>
+    <style>
+        .checked {
+            color: orange;
+        }
+    </style>
 @endsection
 @section('content')
     <main class="relative w-full">
@@ -145,6 +150,16 @@
                                 {{ $buku->judul }}
                             </h1>
 
+                            <div class="rating">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <div class="review">Reviews (1)
+                                </div>
+                            </div>
+
                             <p class="text-sm font-semibold xl:text-lg">
                                 by <a class="hover:underline"
                                     href="/">{{ $buku->penulis }}</a>
@@ -207,7 +222,8 @@
                                 </h5>
 
                                 <article id="wrapper-desc"
-                                    class="line-clamp-5 text-base font-normal leading-7 text-stone-500 [&>*]:inline [&>*]:text-justify">
+                                    class="line-clamp-5 text-base font-normal leading-7 text-stone-500 [&>*]:inline [&>*]:text-justify"
+                                    style="white-space: pre-line">
                                     {{ $buku->detail_buku->description }}
                                 </article>
 
@@ -261,8 +277,12 @@
                                             <p class="text-base">Indonesia</p>
                                         </div>
 
-
+                                        <div class="space-y-0.5">
+                                            <h5 class="text-sm font-bold text-stone-500">ISBN</h5>
+                                            <p class="text-base">{{ $buku->isbn ?? '-' }}</p>
+                                        </div>
                                     </li>
+
                                 </ul>
                             </section>
                         </div>
