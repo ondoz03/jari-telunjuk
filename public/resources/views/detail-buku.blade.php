@@ -19,11 +19,11 @@
 
                         <span>&gt;</span>
                         <a class="hover:underline"
-                            href="{{ route('buku', $buku->kategori[0]->slug) }}">{{ Str::ucfirst($buku->kategori[0]->name) }}
+                            href="{{ route('buku', $kategori->slug) }}">{{ Str::ucfirst($kategori->name) }}
                         </a>
                         <span>&gt;</span>
                         <a class="hover:underline"
-                            href="{{ route('detail-buku', [$buku->kategori[0]->slug, $buku->slug]) }}">{{ Str::ucfirst($buku->judul) }}
+                            href="{{ route('detail-buku', [$kategori->slug, $buku->slug]) }}">{{ Str::ucfirst($buku->judul) }}
                         </a>
                     </div>
 

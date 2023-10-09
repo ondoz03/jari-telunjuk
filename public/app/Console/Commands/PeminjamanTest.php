@@ -51,6 +51,7 @@ class PeminjamanTest extends Command
         $data = json_decode($userfile);
         $jsonArray = array_slice($data, 3674);
 
+        //  get save data
         // foreach ($jsonArray as $key => $value) {
         //     $buku = Buku::where('judul', $value->Title)->orWhere('slug', Str::slug($value->Title, '-'))->orwhere('slug', $value->Slug)->orwhereHas('detail_buku', function ($q) use ($value) {
         //         $q->where('description', $value->Description);
@@ -77,6 +78,8 @@ class PeminjamanTest extends Command
         //         $this->info($value->Title . '- ' . $key + 3674);
         //     }
         // }
+
+
 
         $buku = Buku::doesntHave('kategori')->get();
 

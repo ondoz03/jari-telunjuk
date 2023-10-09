@@ -135,7 +135,7 @@ class GeneralHelper
 
     public static function getRandomGetCategory()
     {
-        $kategory = Kategori::inRandomOrder()
+        $kategory = Kategori::has('buku')->inRandomOrder()
             ->limit(8)
             ->get();
 

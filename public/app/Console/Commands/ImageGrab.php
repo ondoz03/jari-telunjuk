@@ -38,32 +38,26 @@ class ImageGrab extends Command
      */
     public function handle()
     {
-        // $data = [];
-        // $url = [];
-        // $arr = [];
-        // $i = 1;
-        // $buku = Buku::take(1)->get();
-        // foreach ($buku as $keys => $value) {
-        //     try {
-        //         $url = 'https://ebooks.gramedia.com/id/buku/' . $value->slug;
 
-        //         $value
-        //             ->addMediaFromUrl($data[$keys]['image'])
-        //             ->toMediaCollection();
+        #created
 
-        //         $this->info("[" . $i++ . "]" . $value->judul);
-        //     } catch (\Throwable $th) {
-        //         continue;
-        //     }
+        // $userfile = file_get_contents("./books-raw.json");
+
+        // $jsonArray = json_decode($userfile);
+
+        // foreach ($jsonArray as $key => $value) {
+        //     $buku = Buku::where('slug', $value->Slug)->first();
+        //     $buku
+        //         ->addMediaFromUrl($value->Images[0])
+        //         ->toMediaCollection('buku', 'digitalocean');
+        //     $this->info($value->Images[0]);
         // }
 
-        $userfile = file_get_contents("./books-raw.json");
 
-        $jsonArray = json_decode($userfile);
+        #update
 
-        foreach ($jsonArray as $key => $value) {
-            $buku = Buku::where('slug', $value->Slug)->first();
-            $this->info($value->Images[0]);
-        }
+        $buku = Buku::whereHas('media', function ($q) {
+            $q->whereBetween('size', [0, 1000]);
+        })->get();
     }
 }

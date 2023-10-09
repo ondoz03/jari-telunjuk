@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helpers\GeneralHelper;
 use App\Models\Buku;
+use App\Models\Kategori;
 use App\Models\PeminjamanItem;
 use App\Models\User;
 use App\Rules\CurrentPassword;
@@ -17,8 +18,12 @@ class HomeController extends Controller
 
     public function index()
     {
-        // $buku = Buku::doesntHave('detail_buku')->get();
-        // return $buku;
+        $buku = Buku::whereHas('media', function ($q) {
+            $q->whereBetween('size', [0, 1000]);
+        })->get();
+
+        return $buku;
+
         return view('home');
     }
 
