@@ -18,11 +18,9 @@ class HomeController extends Controller
 
     public function index()
     {
-        $buku = Buku::whereHas('media', function ($q) {
-            $q->whereBetween('size', [0, 1000]);
-        })->get();
+        // $buku = Buku::find();
 
-        return $buku;
+        // return $buku;
 
         return view('home');
     }
