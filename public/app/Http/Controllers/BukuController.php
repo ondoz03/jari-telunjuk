@@ -10,32 +10,30 @@ class BukuController extends Controller
 {
     public function index($slug, Request $request)
     {
+        $kategori = Kategori::where('name', $slug)->orwhere('slug', $slug)->first();
 
-        $kategori = Kategori::where('slug', $slug)->firstorfail();
-        if (empty($request->search)) {
-            $buku = Buku::with('media')->whereHas('kategori', function ($q) use ($slug) {
-                $q->where('slug', $slug);
-            })->with('kategori')->paginate(12);
+        if ($kategori) {
+            if (empty($request->search)) {
+                $buku = Buku::with('media')->whereHas('kategori', function ($q) use ($slug) {
+                    $q->where('slug', $slug);
+                })->with('kategori')->paginate(12);
 
 
-            if ($request->ajax()) {
-                $view = view('data-buku', compact('buku', 'kategori'))->render();
-                return response()->json(['html' => $view]);
-            }
+                if ($request->ajax()) {
+                    $view = view('data-buku', compact('buku', 'kategori'))->render();
+                    return response()->json(['html' => $view]);
+                }
 
-            return view('buku', compact('buku', 'slug', 'kategori'));
-        } else {
-            if (!empty($request->type)) {
-
+                return view('buku', compact('buku', 'slug', 'kategori'));
+            } else {
                 $buku = Buku::whereHas('kategori', function ($q) use ($slug) {
                     $q->where('name', $slug);
                 })->where('judul', 'like', "%" . $request->search . "%")->paginate(12)->withQueryString();
 
                 return view('buku', compact('buku', 'slug', 'kategori'));
-            } else {
-                $buku = Buku::where('judul', 'like', "%" . $request->search . "%")->orwhere('penulis', 'like', "%" . $request->search . "%")->paginate(5)->withQueryString();
-                return view('result-search', compact('buku', 'request'));
             }
+        } else {
+            return self::search($request);
         }
     }
 
@@ -67,9 +65,7 @@ class BukuController extends Controller
 
     public function search(Request $request)
     {
-
-        $buku = Buku::has('kategori')->where('judul', 'like', "%" . $request->search . "%")->paginate(5);
-
+        $buku = Buku::where('judul', 'like', "%" . $request->search . "%")->orwhere('penulis', 'like', "%" . $request->search . "%")->paginate(5)->withQueryString();
         return view('result-search', compact('buku', 'request'));
     }
 }

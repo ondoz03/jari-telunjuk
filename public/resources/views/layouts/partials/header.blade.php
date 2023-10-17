@@ -21,6 +21,9 @@
                         type="text"
                         placeholder="Cari buku...">
                     <input type="hidden"
+                        name="type"
+                        value="buku">
+                    <input type="hidden"
                         type="submit">
                 </form>
             </div>
@@ -33,6 +36,9 @@
                     class="w-full rounded-full border border-stone-300 px-4 py-1 text-sm text-[#2e2e2e] outline-none ring-2 ring-transparent placeholder:text-stone-500 focus:border-stone-300 focus:ring-[#DEDEDE]/25"
                     type="text"
                     placeholder="Cari buku...">
+                <input type="hidden"
+                    name="type"
+                    value="buku">
                 <input type="hidden"
                     type="submit">
             </form>
