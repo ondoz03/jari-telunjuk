@@ -222,9 +222,17 @@
     <script>
         var ENDPOINT = "{{ route('buku', $kategori->slug) }}";
         var page = 1;
+        var loadMoreClicks = 0;
+        var maxClicks = 8;
 
         $(".load-more-data").click(function() {
+            if (loadMoreClicks >= maxClicks) {
+                alert("Maximum limit reached");
+                return;
+            }
+
             page++;
+            loadMoreClicks++;
             infinteLoadMore(page);
         });
 
