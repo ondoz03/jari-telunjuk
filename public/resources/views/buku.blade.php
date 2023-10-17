@@ -227,7 +227,7 @@
 
         $(".load-more-data").click(function() {
             if (loadMoreClicks >= maxClicks) {
-                alert("Maximum limit reached");
+                $(this).hide();
                 return;
             }
 
