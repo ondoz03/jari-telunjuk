@@ -10,16 +10,16 @@
 
         <figcaption class="mb-1.5 text-md font-semibold leading-[22px] group-hover:underline"
             style="
-    letter-spacing: normal;
-    color: #151515;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    width: 100%;
-    text-align: left;
-    margin-bottom: 5px;"
+            letter-spacing: normal;
+            color: #151515;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 5px;"
             alt="testing">
             {{ Str::title(Str::lower($item->judul)) }}
         </figcaption>

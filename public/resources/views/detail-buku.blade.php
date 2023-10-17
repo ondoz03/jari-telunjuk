@@ -295,8 +295,8 @@
 
                         <div class="grid grid-cols-3 gap-2">
 
-                            @foreach (GeneralHelper::getRandomGetBook() as $item)
-                                <a href="{{ route('detail-buku', [$item->kategori[0]->slug, $item->slug]) }}">
+                            @foreach (GeneralHelper::getRandomGetBook($kategori->slug) as $item)
+                                <a href="{{ route('detail-buku', [$kategori->slug, $item->slug]) }}">
                                     {{-- <a href=""> --}}
                                     <img src="{{ $item->image }}"
                                         alt="Book Photo 1">

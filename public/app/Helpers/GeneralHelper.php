@@ -103,9 +103,11 @@ class GeneralHelper
     }
 
 
-    public static function getRandomGetBook()
+    public static function getRandomGetBook($nameKategori)
     {
-        $buku = Buku::whereHas('media')->with('kategori')->inRandomOrder()
+        $buku = Buku::whereHas('media')->whereHas('kategori', function ($q) use ($nameKategori) {
+            $q->where('name', $nameKategori);
+        })->with('kategori')->inRandomOrder()
             ->limit(6)
             ->get();
         return $buku;

@@ -96,7 +96,7 @@ class Buku extends Model implements HasMedia
             $name = $firstMedia->id . '/' . $firstMedia->file_name;
             // $url = GeneralHelper::getFileUrl('buku/' . $name);
             // $url = 'https://ik.imagekit.io/jo9x79wnz/' . $name;
-            $url = 'https://jaritelunjuk.sgp1.cdn.digitaloceanspaces.com/' . 'buku/' . $name;
+            $url = 'https://cdn.jaritelunjuk.com/' . 'buku/' . $name;
             return $url;
         } else {
             return 'https://ui-avatars.com/api/?name=' . urlencode($this->attributes['judul']);
