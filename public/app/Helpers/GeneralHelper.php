@@ -81,10 +81,10 @@ class GeneralHelper
             'Administrasi',
             'Akuntansi',
             'Anak-Anak',
-            'Berdasarkan Kisah Nyata',
-            'Biografi',
+            'Konstitusi',
+            'Antologi',
             'Bisnis & Ekonomi',
-            'Drama',
+            'Anak Muda',
             'Ekonomi',
             'Fantasi',
             'Fiksi',
@@ -92,13 +92,14 @@ class GeneralHelper
             'Hubungan Masyarakat',
             'Hukum',
             'Humor',
-            'Kedokteran',
+            'Antropologi',
             'Motivasi',
             'Nonfiksi',
             'Parenting',
             'Psikologi',
             'Sejarah',
         ])->get();
+
         return $ketegori;
     }
 
