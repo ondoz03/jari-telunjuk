@@ -95,11 +95,9 @@
 
                                         </h5>
 
-                                        <p class="line-clamp-2 pb-1.5 text-sm text-[#515151] xl:text-base">
-                                            {{-- {!! Str::limit($item['content'], 300) !!} --}}
+                                        {{-- <p class="line-clamp-2 pb-1.5 text-sm text-[#515151] xl:text-base">
                                             {!! Str::limit($item['content'], 150) !!}
-
-                                        </p>
+                                        </p> --}}
 
                                         <p class="relative z-20 space-x-2 text-sm xl:text-base">
                                             <span>Category</span>
@@ -112,10 +110,10 @@
 
                                         </p>
 
-                                        <p class="text-sm xl:text-base">
+                                        {{-- <p class="text-sm xl:text-base">
                                             {{ $item['author']['node']['name'] }} -
                                             {{ date('d, M Y', strtotime($item['date'])) }}
-                                        </p>
+                                        </p> --}}
                                     </div>
                                 </figure>
                             @endforeach
