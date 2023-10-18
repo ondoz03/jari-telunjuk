@@ -150,43 +150,71 @@ class GeneralHelper
         $data = GraphQL::query('
             posts(first:3) {
                 nodes {
-                  date
-                  id
-                  slug
-                  title
-                  excerpt
-                  featuredImage {
+                    date
+                    id
+                    slug
+                    title
+                    excerpt
+                    featuredImage {
                     node {
-                      mediaDetails {
+                        mediaDetails {
                         file
                         height
                         sizes {
-                          sourceUrl
-                          height
-                          width
+                            sourceUrl
+                            height
+                            width
                         }
-                      }
+                        }
                     }
-                  }
-                  categories {
+                    }
+                    categories {
                     nodes {
-                      id
-                      name
-                      slug
-                      uri
-                      link
+                        id
+                        name
+                        slug
+                        uri
+                        link
                     }
                     pageInfo {
-                      hasNextPage
-                      hasPreviousPage
-                      endCursor
-                      startCursor
+                        hasNextPage
+                        hasPreviousPage
+                        endCursor
+                        startCursor
                     }
-                  }
+                    }
                 }
-             }
+            }
         ')->get();
 
         return $data['posts']['nodes'];
+    }
+
+    public static function getPostPopuler()
+    {
+        $data = GraphQL::query('
+            popularPosts(first: 5) {
+              nodes {
+                id
+                title
+                date
+                link
+                author {
+                node {
+                    name
+                }
+                }
+                categories {
+                nodes {
+                    name
+                    link
+                }
+                }
+                content
+              }
+            }
+        ')->get();
+
+        return $data['popularPosts']['nodes'];
     }
 }

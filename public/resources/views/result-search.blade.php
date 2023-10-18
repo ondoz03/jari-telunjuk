@@ -80,166 +80,45 @@
                         </h3>
 
                         <div class="space-y-4 xl:space-y-6">
-                            <figure class="group relative flex w-full items-start gap-3 xl:gap-4">
-                                <a class="absolute z-10 h-full w-full"
-                                    href="/"></a>
+                            @foreach (\App\Helpers\GeneralHelper::getPostPopuler() as $key => $item)
+                                <figure class="group relative flex w-full items-start gap-3 xl:gap-4">
+                                    <a class="absolute z-10 h-full w-full"
+                                        href="{{ $item['link'] }}"></a>
 
-                                <h3 class="font-arvo text-2xl font-bold italic leading-[26px] opacity-20">
-                                    01
-                                </h3>
+                                    <h3 class="font-arvo text-2xl font-bold italic leading-[26px] opacity-20">
+                                        0{{ $key + 1 }}
+                                    </h3>
 
-                                <div class="flex-1 space-y-2">
-                                    <h5 class="text-lg font-semibold leading-5 group-hover:underline xl:text-xl">
-                                        Sell Yourself to Success In Career and Life
-                                    </h5>
+                                    <div class="flex-1 space-y-2">
+                                        <h5 class="text-lg font-semibold leading-5 group-hover:underline xl:text-xl">
+                                            {!! $item['title'] !!}
 
-                                    <p class="line-clamp-2 pb-1.5 text-sm text-[#515151] xl:text-base">
-                                        In her second novel, The Stationery Shop, Marjan Kamali
-                                        weaves a heartbreaking tale. No matter your occupation,
-                                        you’re going...
-                                    </p>
+                                        </h5>
 
-                                    <p class="relative z-20 space-x-2 text-sm xl:text-base">
-                                        <span>Category</span>
-                                        <a href="/category"
-                                            class="text-[#128C55] hover:underline">
-                                            Self Improvement
-                                        </a>
-                                    </p>
+                                        <p class="line-clamp-2 pb-1.5 text-sm text-[#515151] xl:text-base">
+                                            {{-- {!! Str::limit($item['content'], 300) !!} --}}
+                                            {!! Str::limit($item['content'], 150) !!}
 
-                                    <p class="text-sm xl:text-base">
-                                        Reza Adil - 25 Januari 2021
-                                    </p>
-                                </div>
-                            </figure>
-                            <figure class="group relative flex w-full items-start gap-3 xl:gap-4">
-                                <a class="absolute z-10 h-full w-full"
-                                    href="/"></a>
+                                        </p>
 
-                                <h3 class="font-arvo text-2xl font-bold italic leading-[26px] opacity-20">
-                                    02
-                                </h3>
+                                        <p class="relative z-20 space-x-2 text-sm xl:text-base">
+                                            <span>Category</span>
+                                            @foreach ($item['categories']['nodes'] as $category)
+                                                <a href="{{ $category['link'] }}"
+                                                    class="text-[#128C55] hover:underline">
+                                                    {{ $category['name'] }}
+                                                </a>
+                                            @endforeach
 
-                                <div class="flex-1 space-y-2">
-                                    <h5 class="text-lg font-semibold leading-5 group-hover:underline xl:text-xl">
-                                        Sell Yourself to Success In Career and Life
-                                    </h5>
+                                        </p>
 
-                                    <p class="line-clamp-2 pb-1.5 text-sm text-[#515151] xl:text-base">
-                                        In her second novel, The Stationery Shop, Marjan Kamali
-                                        weaves a heartbreaking tale. No matter your occupation,
-                                        you’re going...
-                                    </p>
-
-                                    <p class="relative z-20 space-x-2 text-sm xl:text-base">
-                                        <span>Category</span>
-                                        <a href="/category"
-                                            class="text-[#128C55] hover:underline">
-                                            Self Improvement
-                                        </a>
-                                    </p>
-
-                                    <p class="text-sm xl:text-base">
-                                        Reza Adil - 25 Januari 2021
-                                    </p>
-                                </div>
-                            </figure>
-                            <figure class="group relative flex w-full items-start gap-3 xl:gap-4">
-                                <a class="absolute z-10 h-full w-full"
-                                    href="/"></a>
-
-                                <h3 class="font-arvo text-2xl font-bold italic leading-[26px] opacity-20">
-                                    03
-                                </h3>
-
-                                <div class="flex-1 space-y-2">
-                                    <h5 class="text-lg font-semibold leading-5 group-hover:underline xl:text-xl">
-                                        Sell Yourself to Success In Career and Life
-                                    </h5>
-
-                                    <p class="line-clamp-2 pb-1.5 text-sm text-[#515151] xl:text-base">
-                                        In her second novel, The Stationery Shop, Marjan Kamali
-                                        weaves a heartbreaking tale. No matter your occupation,
-                                        you’re going...
-                                    </p>
-
-                                    <p class="relative z-20 space-x-2 text-sm xl:text-base">
-                                        <span>Category</span>
-                                        <a href="/category"
-                                            class="text-[#128C55] hover:underline">
-                                            Self Improvement
-                                        </a>
-                                    </p>
-
-                                    <p class="text-sm xl:text-base">
-                                        Reza Adil - 25 Januari 2021
-                                    </p>
-                                </div>
-                            </figure>
-                            <figure class="group relative flex w-full items-start gap-3 xl:gap-4">
-                                <a class="absolute z-10 h-full w-full"
-                                    href="/"></a>
-
-                                <h3 class="font-arvo text-2xl font-bold italic leading-[26px] opacity-20">
-                                    04
-                                </h3>
-
-                                <div class="flex-1 space-y-2">
-                                    <h5 class="text-lg font-semibold leading-5 group-hover:underline xl:text-xl">
-                                        Sell Yourself to Success In Career and Life
-                                    </h5>
-
-                                    <p class="line-clamp-2 pb-1.5 text-sm text-[#515151] xl:text-base">
-                                        In her second novel, The Stationery Shop, Marjan Kamali
-                                        weaves a heartbreaking tale. No matter your occupation,
-                                        you’re going...
-                                    </p>
-
-                                    <p class="relative z-20 space-x-2 text-sm xl:text-base">
-                                        <span>Category</span>
-                                        <a href="/category"
-                                            class="text-[#128C55] hover:underline">
-                                            Self Improvement
-                                        </a>
-                                    </p>
-
-                                    <p class="text-sm xl:text-base">
-                                        Reza Adil - 25 Januari 2021
-                                    </p>
-                                </div>
-                            </figure>
-                            <figure class="group relative flex w-full items-start gap-3 xl:gap-4">
-                                <a class="absolute z-10 h-full w-full"
-                                    href="/"></a>
-
-                                <h3 class="font-arvo text-2xl font-bold italic leading-[26px] opacity-20">
-                                    05
-                                </h3>
-
-                                <div class="flex-1 space-y-2">
-                                    <h5 class="text-lg font-semibold leading-5 group-hover:underline xl:text-xl">
-                                        Sell Yourself to Success In Career and Life
-                                    </h5>
-
-                                    <p class="line-clamp-2 pb-1.5 text-sm text-[#515151] xl:text-base">
-                                        In her second novel, The Stationery Shop, Marjan Kamali
-                                        weaves a heartbreaking tale. No matter your occupation,
-                                        you’re going...
-                                    </p>
-
-                                    <p class="relative z-20 space-x-2 text-sm xl:text-base">
-                                        <span>Category</span>
-                                        <a href="/category"
-                                            class="text-[#128C55] hover:underline">
-                                            Self Improvement
-                                        </a>
-                                    </p>
-
-                                    <p class="text-sm xl:text-base">
-                                        Reza Adil - 25 Januari 2021
-                                    </p>
-                                </div>
-                            </figure>
+                                        <p class="text-sm xl:text-base">
+                                            {{ $item['author']['node']['name'] }} -
+                                            {{ date('d, M Y', strtotime($item['date'])) }}
+                                        </p>
+                                    </div>
+                                </figure>
+                            @endforeach
                         </div>
                     </section>
                 </div>
