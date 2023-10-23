@@ -77,14 +77,38 @@ class GeneralHelper
 
     public static function getKategory()
     {
-        $ketegori = Kategori::get();
+        $ketegori = Kategori::whereIn('name', [
+            'Administrasi',
+            'Akuntansi',
+            'Anak-Anak',
+            'Konstitusi',
+            'Antologi',
+            'Bisnis & Ekonomi',
+            'Anak Muda',
+            'Ekonomi',
+            'Fantasi',
+            'Fiksi',
+            'Filsafat',
+            'Hubungan Masyarakat',
+            'Hukum',
+            'Humor',
+            'Antropologi',
+            'Motivasi',
+            'Nonfiksi',
+            'Parenting',
+            'Psikologi',
+            'Sejarah',
+        ])->get();
+
         return $ketegori;
     }
 
 
-    public static function getRandomGetBook()
+    public static function getRandomGetBook($nameKategori)
     {
-        $buku = Buku::inRandomOrder()
+        $buku = Buku::whereHas('media')->whereHas('kategori', function ($q) use ($nameKategori) {
+            $q->where('name', $nameKategori);
+        })->with('kategori')->inRandomOrder()
             ->limit(6)
             ->get();
         return $buku;
@@ -93,17 +117,28 @@ class GeneralHelper
     public static function getRandomFirstBook()
     {
 
-        $buku = Buku::whereHas('detail_buku.kategori', function ($q) {
-            $q->whereIn('slug', ['fiction-literature', 'non-fiction', 'history', 'psychology', 'romance']);
+        $buku = Buku::whereHas('kategori', function ($q) {
+            $q->whereIn('slug', ['fiction-literature-ebook', 'nonfiksi', 'history-ebook', 'psychology-ebook', 'romantis']);
         })->inRandomOrder()
             ->limit(1)
             ->get();
         return $buku[0]->image;
     }
 
+    public static function replace_utf8($final)
+    {
+        $final = str_replace("Â", "", $final);
+        $final = str_replace("â€™", "'", $final);
+        $final = str_replace("â€œ", '"', $final);
+        $final = str_replace('â€“', '-', $final);
+        $final = str_replace('â€', '"', $final);
+
+        return $final;
+    }
+
     public static function getRandomGetCategory()
     {
-        $kategory = Kategori::inRandomOrder()
+        $kategory = Kategori::has('buku')->inRandomOrder()
             ->limit(8)
             ->get();
 
@@ -115,41 +150,41 @@ class GeneralHelper
         $data = GraphQL::query('
             posts(first:3) {
                 nodes {
-                  date
-                  id
-                  slug
-                  title
-                  excerpt
-                  featuredImage {
+                    date
+                    id
+                    slug
+                    title
+                    excerpt
+                    featuredImage {
                     node {
-                      mediaDetails {
+                        mediaDetails {
                         file
                         height
                         sizes {
-                          sourceUrl
-                          height
-                          width
+                            sourceUrl
+                            height
+                            width
                         }
-                      }
+                        }
                     }
-                  }
-                  categories {
+                    }
+                    categories {
                     nodes {
-                      id
-                      name
-                      slug
-                      uri
-                      link
+                        id
+                        name
+                        slug
+                        uri
+                        link
                     }
                     pageInfo {
-                      hasNextPage
-                      hasPreviousPage
-                      endCursor
-                      startCursor
+                        hasNextPage
+                        hasPreviousPage
+                        endCursor
+                        startCursor
                     }
-                  }
+                    }
                 }
-             }
+            }
         ')->get();
 
         return $data['posts']['nodes'];
@@ -167,5 +202,54 @@ class GeneralHelper
     public static function userInfo()
     {
         return User::find(Auth::user()->id);
+    }
+
+    public static function getPostPopuler()
+    {
+        $data = GraphQL::query('
+            popularPosts(first: 5) {
+              nodes {
+                id
+                title
+                date
+                link
+                author {
+                node {
+                    name
+                }
+                }
+                categories {
+                nodes {
+                    name
+                    link
+                }
+                }
+                content
+              }
+            }
+        ')->get();
+
+        return $data['popularPosts']['nodes'];
+    }
+
+    public static function getBookBySelectedCategory()
+    {
+        $category_session = json_decode(session('category_session'));
+        if (empty($category_session)) {
+            $buku = Buku::inRandomOrder()
+            ->limit(5)
+            ->get();
+        } else {
+            $buku = Buku::whereHas('kategori', function ($q) use ($category_session) {
+                $q->whereIn('kategori_id', $category_session);
+            })
+            ->inRandomOrder()
+            ->limit(5)
+            ->get();
+        }
+        // return json_encode($buku);
+        // return response()->json($buku);
+        // return $buku;
+        return json_encode($buku->toArray());
     }
 }

@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 use Ramsey\Uuid\Uuid;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
-use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;
+// use Spatie\Sluggable\HasSlug;
+// use Spatie\Sluggable\SlugOptions;
 use BinaryCats\Sku\HasSku;
 use BinaryCats\Sku\Concerns\SkuOptions;
 use Carbon\Carbon;
@@ -21,15 +21,15 @@ use Laravel\Scout\Builder;
 
 class Buku extends Model implements HasMedia
 {
-    use HasFactory, InteractsWithMedia, HasSlug, HasSku, Searchable;
-
+    use HasFactory, InteractsWithMedia,  Searchable;
+    // HasSlug
 
     protected $fillable = [
-        'code',
         'uuid',
         'judul',
         'slug',
         'penulis',
+        'isbn'
     ];
 
     protected $appends = [
@@ -39,52 +39,64 @@ class Buku extends Model implements HasMedia
     /**
      * Get the options for generating the slug.
      */
-    public function getSlugOptions(): SlugOptions
-    {
-        return SlugOptions::create()
-            ->generateSlugsFrom('judul')
-            ->saveSlugsTo('slug');
-    }
+    // public function getSlugOptions(): SlugOptions
+    // {
+    //     return SlugOptions::create()
+    //         ->generateSlugsFrom('judul')
+    //         ->saveSlugsTo('slug');
+    // }
     /**
      * Get the options for generating the Sku.
      *
      * @return BinaryCats\Sku\SkuOptions
      */
-    public function skuOptions(): SkuOptions
-    {
-        return SkuOptions::make()
-            ->from('buku.judul')
-            ->target('code')
-            ->using('_')
-            ->forceUnique(false)
-            ->generateOnCreate(true)
-            ->refreshOnUpdate(false);
-    }
+    // public function skuOptions(): SkuOptions
+    // {
+    //     return SkuOptions::make()
+    //         ->from('buku.judul')
+    //         ->target('code')
+    //         ->using('_')
+    //         ->forceUnique(false)
+    //         ->generateOnCreate(true)
+    //         ->refreshOnUpdate(false);
+    // }
 
 
     protected static function boot()
     {
         parent::boot();
         static::creating(function ($q) {
-            $faker = Factory::create();
             $q->uuid = Uuid::uuid4();
-            $q->code = $faker->unique()->ean8();
         });
+    }
+
+    public function getPenulisAttribute()
+    {
+        $data = json_decode($this->attributes['penulis']);
+
+        $penulis = [];
+        foreach ($data as $key => $value) {
+            $penulis[] =  $value;
+        }
+
+        $penulisString = implode(', ', $penulis);
+        return $penulisString;
     }
 
     public function detail_buku()
     {
-        return $this->hasOne(DetailBuku::class)->with(['kategori']);
+        return $this->hasOne(DetailBuku::class);
     }
 
     public function getImageAttribute()
     {
-        $media = $this->getMedia('default');
+        $media = $this->getMedia('buku');
         if ($media->count() > 0) {
             $firstMedia = $media->first();
             $name = $firstMedia->id . '/' . $firstMedia->file_name;
             // $url = GeneralHelper::getFileUrl('buku/' . $name);
-            $url = 'https://ik.imagekit.io/jo9x79wnz/' . $name;
+            // $url = 'https://ik.imagekit.io/jo9x79wnz/' . $name;
+            $url = 'https://cdn.jaritelunjuk.com/' . 'buku/' . $name;
             return $url;
         } else {
             return 'https://ui-avatars.com/api/?name=' . urlencode($this->attributes['judul']);
@@ -140,5 +152,10 @@ class Buku extends Model implements HasMedia
             $this->getScoutKeyName(),
             $ids
         )->get();
+    }
+
+    public function kategori()
+    {
+        return $this->belongsToMany(Kategori::class, 'buku_kategori',  'buku_id', 'kategori_id');
     }
 }

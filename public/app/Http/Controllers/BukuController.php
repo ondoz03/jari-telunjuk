@@ -10,33 +10,38 @@ class BukuController extends Controller
 {
     public function index($slug, Request $request)
     {
+        $kategori = Kategori::where('name', $slug)->orwhere('slug', $slug)->first();
 
-        if (empty($request->search)) {
-            $kategori = Kategori::where('slug', $slug)->firstorfail();
-            $buku = Buku::with('media')->whereHas('detail_buku.kategori', function ($q) use ($slug) {
-                $q->where('slug', $slug);
-            })->with('detail_buku.kategori')->paginate(12);
+        if ($kategori) {
+            if (empty($request->search)) {
+                $buku = Buku::with('media')->whereHas('kategori', function ($q) use ($slug) {
+                    $q->where('slug', $slug);
+                })->with('kategori')->paginate(12);
 
-            $kategori = Kategori::where('slug', $slug)->first();
 
-            if ($request->ajax()) {
-                $view = view('data-buku', compact('buku', 'kategori'))->render();
-                return response()->json(['html' => $view]);
+                if ($request->ajax()) {
+                    $view = view('data-buku', compact('buku', 'kategori'))->render();
+                    return response()->json(['html' => $view]);
+                }
+
+                return view('buku', compact('buku', 'slug', 'kategori'));
+            } else {
+                $buku = Buku::whereHas('kategori', function ($q) use ($slug) {
+                    $q->where('name', $slug);
+                })->where('judul', 'like', "%" . $request->search . "%")->paginate(12)->withQueryString();
+
+                return view('buku', compact('buku', 'slug', 'kategori'));
             }
-
-            return view('buku', compact('buku', 'slug', 'kategori'));
         } else {
-            $buku = Buku::where('judul', 'like', "%" . $request->search . "%")->paginate(5)->withQueryString();
-            // return $buku;
-            return view('result-search', compact('buku', 'request'));
+            return self::search($request);
         }
     }
 
     public function buku($slug, Request $request)
     {
-        $buku = Buku::with('media')->whereHas('detail_buku.kategori', function ($q) use ($slug) {
+        $buku = Buku::with('media')->whereHas('kategori', function ($q) use ($slug) {
             $q->where('slug', $slug);
-        })->with('detail_buku.kategori')->paginate(12);
+        })->paginate(12);
 
         if ($request->ajax()) {
             $view = view('data', compact('posts'))->render();
@@ -49,24 +54,28 @@ class BukuController extends Controller
 
     public function detail($category, $slug, Request $request)
     {
-        $buku = Buku::where('slug', $slug)->with('detail_buku.kategori')->firstorfail();
+        $buku = Buku::where('slug', $slug)->with(['detail_buku', 'kategori'])->firstorfail();
 
-        return view('detail-buku', compact('buku'));
+        $kategori = Kategori::where('slug', $category)->first();
+
+        // return $buku;
+
+        return view('detail-buku', compact('buku', 'kategori'));
     }
 
     public function search(Request $request)
     {
-
-        $buku = Buku::where('judul', 'like', "%" . $request->search . "%")->paginate(5);
-        // return $buku;
+        $buku = Buku::where('judul', 'like', "%" . $request->search . "%")->orwhere('penulis', 'like', "%" . $request->search . "%")->paginate(5)->withQueryString();
         return view('result-search', compact('buku', 'request'));
     }
 
     public function getRandomBookHomepage(Request $request)
     {
-        $buku = Buku::with(['detail_buku'])->whereHas('detail_buku.kategori', function ($q) {
-            $q->whereIn('slug', ['fiction-literature', 'non-fiction', 'history', 'psychology', 'romance']);
-        })->inRandomOrder()
+        $buku = Buku::with(['detail_buku', 'kategori'])
+        // ->whereHas('kategori', function ($q) {
+        //     $q->whereIn('slug', ['fiction-literature', 'non-fiction', 'history', 'psychology', 'romance']);
+        // })
+        ->inRandomOrder()
             ->limit(8)
             ->get();
         return response()->json($buku);

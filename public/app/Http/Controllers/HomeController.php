@@ -4,20 +4,26 @@ namespace App\Http\Controllers;
 
 use App\Helpers\GeneralHelper;
 use App\Models\Buku;
+use App\Models\Kategori;
 use App\Models\PeminjamanItem;
 use App\Models\User;
 use App\Rules\CurrentPassword;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Str;
+use Session;
 
 class HomeController extends Controller
 {
 
     public function index()
     {
-        $topBook = $this->topBook(8);
-        $newBook = GeneralHelper::newBook(12);
-        return view('home', compact('topBook', 'newBook'));
+        // $buku = Buku::find();
+
+        // return $buku;
+
+        return view('home');
     }
 
     public function search(Request $request)
@@ -28,5 +34,17 @@ class HomeController extends Controller
 
         return view('buku', compact('buku'));
         // return $search;
+    }
+
+    public function setSession(Request $request){
+        if(!empty($request->category_session)) {
+            Session::put('category_session', $request->category_session);
+        }
+
+        if(!empty($request->selected_book_session)) {
+            Session::put('selected_book_session', $request->selected_book_session);
+        }
+
+        return Session::all();
     }
 }

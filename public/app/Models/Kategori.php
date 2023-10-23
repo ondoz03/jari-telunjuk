@@ -40,9 +40,9 @@ class Kategori extends Model
             ->saveSlugsTo('slug');
     }
 
-    public function detail_buku()
+    public function buku()
     {
-        return $this->hasOne(DetailBuku::class);
+        return $this->belongsToMany(Buku::class, 'buku_kategori', 'kategori_id', 'buku_id');
     }
 
     /**

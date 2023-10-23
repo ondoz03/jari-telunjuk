@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Helpers\GeneralHelper;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -27,8 +28,13 @@ class DetailBuku extends Model
         return $this->belongsTo(Buku::class);
     }
 
-    public function kategori()
+    public function getDescriptionAttribute()
     {
-        return $this->belongsTo(Kategori::class);
+        return GeneralHelper::replace_utf8($this->attributes['description']);
     }
+
+    // public function kategori()
+    // {
+    //     return $this->belongsTo(Kategori::class);
+    // }
 }

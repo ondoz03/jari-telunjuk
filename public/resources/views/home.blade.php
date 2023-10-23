@@ -175,7 +175,7 @@
                 </div>
             </figure>
 
-            <button id="book-recommendation" type="button" class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 astro-J7PV25F6">
+            <button id="book-recommendation" type="button" class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 ">
                 Coba Rekomendasi Buku
             </button>
             </div>
@@ -200,12 +200,13 @@
                     @if ($index % $itemsPerNav === 0)
                         <nav class="flex flex-col items-start gap-3 astro-J7PV25F6">
                     @endif
-                        <a class="text-sm leading-5 text-[#128C55] hover:underline xl:text-base astro-J7PV25F6" href="{{ route("buku", $item->slug)}}">{{$item->name}}</a>
-                    @if (($index + 1) % $itemsPerNav === 0 || ($index + 1) === count(GeneralHelper::getKategory()))
+                    <a class="text-sm leading-5 text-[#128C55] hover:underline xl:text-base astro-J7PV25F6"
+                        href="{{ route('buku', $item->slug) }}">{{ $item->name }}</a>
+                    @if (($index + 1) % $itemsPerNav === 0 || $index + 1 === count(GeneralHelper::getKategory()))
                         </nav>
                     @endif
                     @php
-                        $index++
+                        $index++;
                     @endphp
                 @endforeach
             </div>
@@ -302,7 +303,7 @@
                             @foreach (GeneralHelper::getKategory() as $kategori)
                             <li class="astro-J7PV25F6">
                                 <input type="checkbox" id="{{$kategori->id.'_kategori'}}" value="{{$kategori->id}}" name="kategori" class="peer hidden astro-J7PV25F6 kategori" required="">
-                                <label for="{{$kategori->id.'_'.$kategori->name}}" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
+                                <label for="{{$kategori->id.'_kategori'}}" class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-3 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:bg-[#128C55]/10 peer-checked:text-gray-600 xl:p-4 astro-J7PV25F6">
                                     <div class="w-full text-sm font-semibold xl:text-lg astro-J7PV25F6">
                                     {{$kategori->name}}
                                     </div>
@@ -323,6 +324,67 @@
                     </footer>
                 </div>
                 <div id="modal-2-container" style="display:none">
+                    <header class="mb-6 mt-11 flex items-center justify-between px-4 xl:justify-center astro-J7PV25F6">
+                        <h2 class="text-center font-arvo text-xl leading-none xl:text-[34px] astro-J7PV25F6" id="modal-2-title">
+                            Pilih Buku
+                        </h2>
+
+                        <button id="close-modal" type="button" class="block xl:hidden astro-J7PV25F6">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="astro-J7PV25F6">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.6649 18.0492C20.1117 18.496 20.1117 19.2183 19.6649 19.6651C19.442 19.888 19.1495 20 18.8569 20C18.5643 20 18.2718 19.888 18.0489 19.6651L12 13.6161L5.95107 19.6651C5.72822 19.888 5.43566 20 5.1431 20C4.85054 20 4.55798 19.888 4.33513 19.6651C3.88829 19.2183 3.88829 18.496 4.33513 18.0492L10.3841 12.0001L4.33513 5.95111C3.88829 5.50426 3.88829 4.78199 4.33513 4.33514C4.78197 3.88829 5.50423 3.88829 5.95107 4.33514L12 10.3842L18.0489 4.33514C18.4958 3.88829 19.218 3.88829 19.6649 4.33514C20.1117 4.78199 20.1117 5.50426 19.6649 5.95111L13.6159 12.0001L19.6649 18.0492Z" fill="#2E2E2E" class="astro-J7PV25F6"></path>
+                            </svg>
+                        </button>
+                        
+                    </header>
+                    <p class="mb-5 text-center font-normal leading-6 text-[#636363]">
+                        Kami menampilkan sesuai kategori yang kamu pilih.
+                    </p>
+
+                    <!-- search -->
+                    <div
+                    class="flex w-full items-center justify-center gap-4 px-4 lg:px-0"
+                    >
+                        <div class="relative w-full lg:max-w-sm">
+                          <svg
+                            class="absolute left-4 top-1/2 z-10 h-6 w-6 -translate-y-1/2 lg:left-6"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M5 10C5 6.691 7.691 4 11 4C14.309 4 17 6.691 17 10C17 13.309 14.309 16 11 16C7.691 16 5 13.309 5 10ZM21.707 19.293L17.312 14.897C18.366 13.542 19 11.846 19 10C19 5.589 15.411 2 11 2C6.589 2 3 5.589 3 10C3 14.411 6.589 18 11 18C12.846 18 14.542 17.366 15.897 16.312L20.293 20.707C20.488 20.902 20.744 21 21 21C21.256 21 21.512 20.902 21.707 20.707C22.098 20.316 22.098 19.684 21.707 19.293Z"
+                              fill="#8D8D8D"></path>
+                          </svg>
+
+                          <input
+                            type="text"
+                            class="w-full rounded-full border border-[#dedede] py-2 pl-12 lg:pl-16"
+                            placeholder="Cari judul buku sesuai kategori..."
+                          />
+                        </div>
+
+                        <button class="block flex-shrink-0 text-sm lg:hidden">Cari</button>
+                    </div>
+                    <main class="modal__content px-4 !font-source-sans xl:px-8 astro-J7PV25F6" id="modal-2-content">
+                    <div
+                        class="grid w-full grid-cols-3 place-items-center justify-center gap-4 lg:grid-cols-7 lg:gap-6"
+                        id="book-list-recommendation"
+                      >
+                             
+                      
+                      </div>
+                    </main>
+                    <footer class="flex items-center justify-between bg-[#F9F8F6] p-4 xl:px-8 xl:py-12 astro-J7PV25F6">
+                    <button class="text-2xl font-bold leading-7 astro-J7PV25F6"><span id="countSelectedCategory">0</span>/5</button>
+                    <div class="flex w-full flex-row gap-2 lg:w-auto lg:gap-4">
+                        <button class="rounded-full border border-[#222222] bg-white px-6 py-4 font-source-sans text-base font-semibold leading-none tracking-widest text-[#222222] astro-J7PV25F6" aria-label="Close this dialog window" id="sebelumnya_book">Sebelumnya</button>
+                        <button class="rounded-full bg-[#128C55] px-6 py-4 font-source-sans text-base font-semibold leading-none tracking-widest text-white astro-J7PV25F6" aria-label="Close this dialog window" id="submitBook">Selesai</button>
+                    </div>
+                    </footer>
+                </div>
+                <div id="modal-3-container" style="display:none">
                     <header class="mb-6 mt-11 flex items-center justify-between px-4 xl:justify-center astro-J7PV25F6">
                     <h2 class="text-center font-arvo text-xl leading-none xl:text-[34px] astro-J7PV25F6" id="modal-2-title">
                         Rekomendasi Buku Untukmu
@@ -372,6 +434,65 @@
                       </div>
                     </div>
                 </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal micromodal-slide astro-J7PV25F6" id="modal-login" aria-hidden="true">
+        <div class="modal__overlay astro-J7PV25F6" tabindex="-1" data-micromodal-close>
+            <div class="modal__container rounded-none xl:rounded-2xl astro-J7PV25F6" role="dialog" aria-modal="true" aria-labelledby="modal-login-title">
+                <div id="modal-login-container" >
+                    <header class="mb-6 mt-11 flex items-center justify-between px-4 xl:justify-center astro-J7PV25F6">
+                    <h2 class="text-center font-arvo text-xl leading-none xl:text-[34px] astro-J7PV25F6" id="modal-2-title">
+                        Rekomendasi Buku Untukmu
+                    </h2>
+
+                    <button id="close-modal" type="button" class="block xl:hidden astro-J7PV25F6">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="astro-J7PV25F6">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.6649 18.0492C20.1117 18.496 20.1117 19.2183 19.6649 19.6651C19.442 19.888 19.1495 20 18.8569 20C18.5643 20 18.2718 19.888 18.0489 19.6651L12 13.6161L5.95107 19.6651C5.72822 19.888 5.43566 20 5.1431 20C4.85054 20 4.55798 19.888 4.33513 19.6651C3.88829 19.2183 3.88829 18.496 4.33513 18.0492L10.3841 12.0001L4.33513 5.95111C3.88829 5.50426 3.88829 4.78199 4.33513 4.33514C4.78197 3.88829 5.50423 3.88829 5.95107 4.33514L12 10.3842L18.0489 4.33514C18.4958 3.88829 19.218 3.88829 19.6649 4.33514C20.1117 4.78199 20.1117 5.50426 19.6649 5.95111L13.6159 12.0001L19.6649 18.0492Z" fill="#2E2E2E" class="astro-J7PV25F6"></path>
+                        </svg>
+                    </button>
+                    </header>
+                    <main class="modal__content px-4 !font-source-sans xl:px-8 astro-J7PV25F6" id="modal-2-content">
+                    <h3 class="bg-white/95 py-4 text-center text-sm leading-5 lg:py-0">
+                      Kami telah memilih rekomendasi yang cocok buat kamu
+                    </h3>
+
+                    <div class="relative z-10 h-[calc(100vh_-_113px)] bg-white/95 px-6 pt-11 lg:h-auto lg:rounded-b-2xl lg:pb-14 lg:pt-11">
+                      <img class="absolute left-1/2 top-1/2 h-auto w-full -translate-x-1/2 -translate-y-1/2" src="{{ asset('/assets')}}/media/books-blur.png" alt="Books Blur">
+                      <div class="relative z-10 flex h-full flex-col items-center">
+                        <h5 class="mb-6 text-center text-base font-bold">
+                          Daftar sekarang untuk melihat rekomendasi.
+                        </h5>
+
+                        <div class="flex w-full max-w-sm flex-col items-start gap-4">
+                          <a href="{{route('auth.google')}}" class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
+                            <img class="h-6 w-6" src="{{ asset('/assets')}}/media/icon-google.png" alt="Icon Google">
+
+                            <p class="text-base font-semibold leading-5">
+                              Sign up with Google
+                            </p>
+                          </a>
+
+                          <button class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
+                            <img class="h-6 w-6" src="{{ asset('/assets')}}/media/icon-facebook.png" alt="Icon facebook">
+
+                            <p class="text-base font-semibold leading-5">
+                              Sign up with Facebook
+                            </p>
+                          </button>
+
+                          <button class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
+                            <img class="h-6 w-6" src="{{ asset('/assets')}}/media/icon-x.png" alt="Icon x">
+
+                            <p class="text-base font-semibold leading-5">Sign up with X</p>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -398,6 +519,7 @@
     $('#book-recommendation').click(function(){
         $("#modal-1-container").show();
         $("#modal-2-container").hide();
+        $("#modal-3-container").hide();
         $.each(JSON.parse(localStorage.getItem("selected-category-book")), function(index, value){
             $('#'+value+'_kategori').prop( "checked", true );
 
@@ -405,6 +527,9 @@
         $("#countSelectedCategory").text( $("input[name='kategori']:checked").length);
     });
 
+    $('#btn-modal-login').click(function(){
+        $("#modal-login").show();
+    });
     $('.kategori').click(function(){
         var numberOfChecked = $("input[name='kategori']:checked").length;
         if(numberOfChecked > 5) {
@@ -419,13 +544,39 @@
           arr.push($(this).val());
         });
         localStorage.setItem("selected-category-book", JSON.stringify(arr));
+        setSessionCategory();
+        listBookByCategory();
+        // var check_auth = {{GeneralHelper::authCheck()}};
+
+        // var check_auth = {{GeneralHelper::authCheck()}};
+        // if(check_auth){
+        //     window.location.href = "{{ route('user.profile')}}";
+        // } else {
+            $("#modal-1-container").hide();
+            $("#modal-2-container").show();
+        // }
+    });
+
+    $('#submitBook').click(function(){
+        var arr = [];
+        $.each($("input[name='book_selected']:checked"), function(){
+          arr.push($(this).val());
+        });
+        localStorage.setItem("selected-book", JSON.stringify(arr));
+        setSessionSelectedBook();
         var check_auth = {{GeneralHelper::authCheck()}};
         if(check_auth){
             window.location.href = "{{ route('user.profile')}}";
         } else {
             $("#modal-1-container").hide();
-            $("#modal-2-container").show();
+            $("#modal-2-container").hide();
+            $("#modal-3-container").show();
         }
+    });
+
+    $('#sebelumnya_book').click(function(){
+        $("#modal-1-container").show();
+        $("#modal-2-container").hide();
     });
 
 
@@ -433,7 +584,6 @@
         order = 1;
         $.each(data, function (key, item) {
             $("#book-homepage-"+order).attr("src",item.image);
-            order = order + 1;
             if (order == 5) {
                 $("#book-homepage-"+order+"-judul").text(item.judul);
                 $("#book-homepage-"+order+"-penulis").text(item.penulis);
@@ -442,9 +592,113 @@
             if (order > 5) {
                 return false;
             }
+            order = order + 1;
         });
     }
+
+    function setSessionCategory(){
+        $("#category_book").val(localStorage.getItem("selected-category-book"));
+        $.ajax({
+             url: "{{ route('ajax.set-session-global') }}",
+             type: "POST",
+             data: { 
+                    "_token": "{{ csrf_token() }}",
+                    category_session: localStorage.getItem("selected-category-book")},
+             success: function(data) {
+                console.log('set_session_ok');
+                console.log(data);
+            },
+        }); 
+    }
+    function setSessionSelectedBook(){
+        $.ajax({
+             url: "{{ route('ajax.set-session-global') }}",
+             type: "POST",
+             data: { 
+                    "_token": "{{ csrf_token() }}",
+                    selected_book_session: localStorage.getItem("selected-book")},
+             success: function(data) {
+                console.log('set_session_selected_book_ok');
+            },
+        }); 
+    }
+    function listBookByCategory(){
+        console.log('run list_book');
+        var list_book = {!! json_encode(GeneralHelper::getBookBySelectedCategory(), JSON_HEX_TAG) !!};
+        console.log(list_book);
+        var list_book = JSON.parse(list_book);
+        var html = '';
+        $.each(list_book, function(index, value){
+            html = html + '<div>\
+                                <input type="checkbox" id="list_book_'+index+'" value="'+value.id+'" class="checkbox peer hidden" name="book_selected"/>\
+                                <label for="list_book_'+index+'" class="w-full cursor-pointer font-normal peer-checked:font-semibold [&>img]:shadow-sm peer-checked:[&>img]:shadow-2xl">\
+                                  <figure class="relative space-y-3">\
+                                    <img class="h-auto w-full" src="'+value.image+'" alt="'+value.judul+'" />\
+                                    <h5 class="pointer-events-none text-sm leading-5">\
+                                      '+value.judul+'\
+                                    </h5>\
+                                  </figure>\
+                                </label>\
+                              </div>\
+                              ';
+        });
+
+        $("#book-list-recommendation").html(html);
+
+    }
     // console.log('sss');
+</script>
+<script>
+  //-----------------------------------------------------------------------------//
+  const modal_chooseBook = document.querySelector("#modal_choose-book");
+  const modal_chooseBook_overlay = document.querySelector(
+    "#modal_choose-book #overlay"
+  );
+
+  modal_chooseBook_overlay.addEventListener("click", () => {
+    if (modal_chooseBook.classList.contains("flex")) {
+      modal_chooseBook.classList.remove("flex");
+      modal_chooseBook.classList.add("hidden");
+    }
+  });
+  //-----------------------------------------------------------------------------//
+  const close_modal = document.querySelector("#close-modal");
+
+  close_modal.addEventListener("click", () => {
+    if (modal_chooseBook.classList.contains("flex")) {
+      modal_chooseBook.classList.remove("flex");
+      modal_chooseBook.classList.add("hidden");
+    }
+  });
+  //-----------------------------------------------------------------------------//
+  const valueList = document.querySelector("#valueList");
+  let valueListText = `<span> Buku dipilih</span>`;
+
+  let listArray = [];
+
+  const checkboxes = document.querySelectorAll(".checkbox");
+  const next_btn: HTMLElement = document.querySelector("#next-btn");
+
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener("click", () => {
+      if (checkbox.checked) {
+        listArray.push(checkbox.value);
+        valueList.innerHTML = listArray.length + valueListText;
+      } else {
+        listArray = listArray.filter((e) => e !== checkbox.value);
+        valueList.innerHTML = listArray.length + valueListText;
+      }
+
+      if (listArray.length > 3) {
+        next_btn.classList.remove("bg-[#72D1A6]");
+        next_btn.classList.add("bg-[#128C55]");
+      } else {
+        next_btn.classList.remove("bg-[#128C55]");
+        next_btn.classList.add("bg-[#72D1A6]");
+      }
+    });
+  });
+  //-----------------------------------------------------------------------------//
 </script>
 @endsection
 

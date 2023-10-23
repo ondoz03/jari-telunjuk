@@ -46,30 +46,49 @@ class PeminjamanTest extends Command
      */
     public function handle()
     {
-        // for ($i = 0; $i < 10; $i++) {
-        //     $faker = Factory::create();
-        //     $peminjaman = Peminjaman::create([
-        //         'user_id' => $faker->unique()->numberBetween(1, 11),
-        //         'is_status' => 'pending'
-        //     ]);
-        //     for ($a = 0; $a < 3; $a++) {
-        //         $peminjaman->peminjamanitem()->create([
-        //             'buku_id' => $faker->unique()->numberBetween(27, 41),
-        //             'qty' => 1,
-        //             'is_status' => 'false'
+
+        $userfile = file_get_contents("./books-raw.json");
+        $data = json_decode($userfile);
+        $jsonArray = array_slice($data, 3674);
+
+        //  get save data
+        // foreach ($jsonArray as $key => $value) {
+        //     $buku = Buku::where('judul', $value->Title)->orWhere('slug', Str::slug($value->Title, '-'))->orwhere('slug', $value->Slug)->orwhereHas('detail_buku', function ($q) use ($value) {
+        //         $q->where('description', $value->Description);
+        //     })->first();
+
+        //     if ($buku) {
+        //         $buku->update([
+        //             'isbn' => $value->Isbn
         //         ]);
+        //         $kategory =  Kategori::get();
+        //         $arr = [];
+
+        //         foreach ($kategory as $kis => $val) {
+        //             foreach ($value->Category as $k => $v) {
+        //                 if ($val->name === $v) {
+        //                     array_push($arr, $val->id);
+        //                 }
+        //             }
+        //         }
+        //         $buku->kategori()->sync($arr);
+
+        //         $this->info($value->Title . '- ' . $key + 3674);
+        //     } else {
+        //         $this->info($value->Title . '- ' . $key + 3674);
         //     }
-        //     $this->info($peminjaman->user->name);
         // }
 
-        $buku = Kategori::get();
+
+
+        $buku = Buku::doesntHave('kategori')->get();
 
         foreach ($buku as $key => $value) {
-            $data = $value->update([
-                'uuid' => Str::uuid()
-            ]);
-            $this->info($value->judul);
+            $value->kategori()->sync(44);
+            $this->info($value->Title . '- ' . $key);
         }
+
+
 
         return Command::SUCCESS;
     }
