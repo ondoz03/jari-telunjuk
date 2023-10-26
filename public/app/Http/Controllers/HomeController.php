@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Str;
+use Session;
 
 class HomeController extends Controller
 {
@@ -33,5 +34,17 @@ class HomeController extends Controller
 
         return view('buku', compact('buku'));
         // return $search;
+    }
+
+    public function setSession(Request $request){
+        if(!empty($request->category_session)) {
+            Session::put('category_session', $request->category_session);
+        }
+
+        if(!empty($request->selected_book_session)) {
+            Session::put('selected_book_session', $request->selected_book_session);
+        }
+
+        return Session::all();
     }
 }

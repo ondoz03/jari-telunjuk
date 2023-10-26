@@ -26,14 +26,13 @@
         content="{Astro.generator}">
 
     @yield('title')
-
+    <link rel="stylesheet" href="{{ asset('/assets')}}/front/blog-detail.ba35dd2c.css" />
+    <link rel="stylesheet" href="{{ asset('/assets')}}/front/index.1e77ef8f.css" />
+    <link rel="stylesheet" href="{{ asset('/assets')}}/front/404-recommendation.c48ff23f.css" />
     <link rel="stylesheet"
         href="{{ asset('/assets') }}/front/404-recommendation.2e871350.css" />
     <link rel="stylesheet"
         href="{{ asset('/assets') }}/front/index.1e77ef8f.css" />
-
-
-
 
     @yield('header-js')
 
@@ -59,14 +58,9 @@
         src="{{ asset('/assets') }}/front/hoisted.cfa70760.js"></script>
     <script type="module"
         src="{{ asset('/assets') }}/front/hoisted.f5ae75b8.js"></script>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-
 
 
 </head>

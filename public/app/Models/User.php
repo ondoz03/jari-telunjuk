@@ -77,6 +77,11 @@ class User extends Authenticatable implements HasMedia
         return $this->hasOne(UserDetails::class);
     }
 
+    public function user_recommendation()
+    {
+        return $this->hasMany(UserRecommendation::class)->with('buku');
+    }
+
     public function peminjaman()
     {
         return $this->hasMany(Peminjaman::class);

@@ -190,6 +190,20 @@ class GeneralHelper
         return $data['posts']['nodes'];
     }
 
+    public static function authCheck()
+    {
+        if(isset(Auth::user()->id)) {
+            return '1';
+        } else {
+            return '0';
+        }
+    }
+
+    public static function userInfo()
+    {
+        return User::find(Auth::user()->id);
+    }
+
     public static function getPostPopuler()
     {
         $data = GraphQL::query('
@@ -216,5 +230,26 @@ class GeneralHelper
         ')->get();
 
         return $data['popularPosts']['nodes'];
+    }
+
+    public static function getBookBySelectedCategory()
+    {
+        $category_session = json_decode(session('category_session'));
+        if (empty($category_session)) {
+            $buku = Buku::inRandomOrder()
+            ->limit(5)
+            ->get();
+        } else {
+            $buku = Buku::whereHas('kategori', function ($q) use ($category_session) {
+                $q->whereIn('kategori_id', $category_session);
+            })
+            ->inRandomOrder()
+            ->limit(5)
+            ->get();
+        }
+        // return json_encode($buku);
+        // return response()->json($buku);
+        // return $buku;
+        return json_encode($buku->toArray());
     }
 }

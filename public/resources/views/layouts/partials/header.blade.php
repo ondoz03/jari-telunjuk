@@ -70,55 +70,31 @@
             </svg>
         </nav>
 
-        <nav id="nav-standard"
-            class="hidden items-center gap-6 xl:flex">
-            <div class="flex items-center gap-8">
-                <a class="text-base font-semibold leading-5"
-                    href="/">Home</a>
-                <a class="text-base leading-5"
-                    href="/">About</a>
-                <a class="text-base leading-5"
-                    href="/blog">Blog</a>
-                <a class="text-base leading-5"
-                    href="/">Sign In</a>
-            </div>
+      <nav id="nav-standard" class="hidden items-center gap-6 xl:flex">
+        <div class="flex items-center gap-8">
+          <a class="text-base leading-5" href="/">About</a>
+          <a class="text-base leading-5" href="/blog">Blog</a>
+          @if(!GeneralHelper::authCheck()) 
+          <a class="text-base leading-5" href="{{route('sign-in')}}">Sign In</a>
+          @endif
+          <a class="text-base leading-5" href="{{route('home')}}">Home</a>
+        </div>
 
-            <a href="/"
-                class="rounded-full bg-[#128C55] px-5 py-2 font-bold leading-5 text-white hover:bg-[#128C55]/90">
-                Sign Up
-            </a>
-        </nav>
+        @if(GeneralHelper::authCheck()) 
+          <button class="flex items-center gap-2">
+            <img class="h-10 w-10 rounded-full border border-stone-300" src="{{GeneralHelper::userInfo()->avatar}}" alt="Author 1">
 
-        <nav id="nav-logged-in"
-            class="hidden items-center gap-6 xl:hidden">
-            <div class="flex items-center gap-8">
-                <a class="text-base font-semibold leading-5"
-                    href="/">Home</a>
-                <a class="text-base leading-5"
-                    href="/">Kategori</a>
-                <a class="text-base leading-5"
-                    href="/">About</a>
-                <a class="text-base leading-5"
-                    href="/blog">Blog</a>
-            </div>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M5 7L10 14L15 7H5Z" fill="#2E2E2E"></path>
+            </svg>
+          </button>
+        @else
+          <button class="rounded-full bg-[#128C55] px-5 py-2 font-bold leading-5 text-white hover:bg-[#128C55]/90" id="btn-modal-login">
+            Sign Up
+          </button>
+        @endif
+      </nav>
 
-            <button class="flex items-center gap-2">
-                <img class="h-10 w-10 rounded-full border border-stone-300"
-                    src="/author-photo-1.png"
-                    alt="Author 1">
-
-                <svg width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M5 7L10 14L15 7H5Z"
-                        fill="#2E2E2E"></path>
-                </svg>
-            </button>
-        </nav>
     </div>
 </header>
 
@@ -162,7 +138,7 @@
             <!-- If not Logged In -->
 
             <a href="/"
-                class="relative w-full rounded-full bg-[#128C55] px-5 py-2 text-center font-bold leading-5 text-white hover:bg-[#128C55]/90">
+                class="relative w-full rounded-full bg-[#128C55] px-5 py-2 text-center font-bold leading-5 text-white hover:bg-[#128C55]/90" id="btn-modal-login">
                 Sign Up
             </a>
 

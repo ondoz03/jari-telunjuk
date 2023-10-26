@@ -68,4 +68,16 @@ class BukuController extends Controller
         $buku = Buku::where('judul', 'like', "%" . $request->search . "%")->orwhere('penulis', 'like', "%" . $request->search . "%")->paginate(5)->withQueryString();
         return view('result-search', compact('buku', 'request'));
     }
+
+    public function getRandomBookHomepage(Request $request)
+    {
+        $buku = Buku::with(['detail_buku', 'kategori'])
+        // ->whereHas('kategori', function ($q) {
+        //     $q->whereIn('slug', ['fiction-literature', 'non-fiction', 'history', 'psychology', 'romance']);
+        // })
+        ->inRandomOrder()
+            ->limit(8)
+            ->get();
+        return response()->json($buku);
+    }
 }
