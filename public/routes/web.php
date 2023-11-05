@@ -8,6 +8,8 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\TwitterController;
+use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +46,10 @@ Route::group(['prefix' => 'sign-in'], function () {
 Route::group(['prefix' => 'auth'], function () {
     Route::get('/google', [GoogleController::class, 'redirectToGoogle'])->name('auth.google');
     Route::get('/google/callback', [GoogleController::class, 'callback'])->name('auth.google.callback');
+    Route::get('/twitter', [TwitterController::class, 'redirectToTwitter'])->name('auth.twitter');
+    Route::get('/twitter/callback', [TwitterController::class, 'callback'])->name('auth.twitter.callback');
+    Route::get('/facebook', [FacebookController::class, 'redirectToFacebook'])->name('auth.facebook');
+    Route::get('/facebook/callback', [FacebookController::class, 'callback'])->name('auth.facebook.callback');
 });
 
 Route::group(['prefix' => 'user'], function () {
