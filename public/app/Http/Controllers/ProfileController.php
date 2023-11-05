@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserDetails;
 use App\Models\UserRecommendation;
+use App\Models\UserWantRead;
 use Auth;
 
 class ProfileController extends Controller
@@ -20,7 +21,7 @@ class ProfileController extends Controller
         if (empty(Auth::user())) {   // Check is user logged in
             return redirect()->route('home');
         }
-        $user = User::with('user_recommendation')->find(Auth::user()->id);
+        $user = User::with('user_recommendation','user_want_read')->find(Auth::user()->id);
         return view('user.profile', compact('user'));
     }
 
@@ -33,5 +34,22 @@ class ProfileController extends Controller
         request()->session()->regenerateToken();
  
         return redirect()->route('home');
+    }
+
+    public function setWantToRead(Request $request){
+        if(!empty($request->buku_id) && !empty(Auth::user())) {
+            if ($request->type == 'add') {
+                UserWantRead::create([
+                    'user_id' => Auth::user()->id,
+                    'buku_id' => $request->buku_id
+                ]);
+                return true;
+            } else if ($request->type == 'delete') {
+                UserWantRead::where('user_id', Auth::user()->id)
+                    ->where('buku_id', $request->buku_id)->delete();
+                return true;
+            }
+        }
+        return false;
     }
 }

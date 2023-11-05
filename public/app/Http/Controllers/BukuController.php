@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Buku;
 use App\Models\Kategori;
+use App\Models\UserWantRead;
 use Illuminate\Http\Request;
+use Auth;
 
 class BukuController extends Controller
 {
@@ -58,9 +60,13 @@ class BukuController extends Controller
 
         $kategori = Kategori::where('slug', $category)->first();
 
+        $user_want_read = [];
+        if (!empty(Auth::user())) {
+            $user_want_read = UserWantRead::where('user_id', Auth::user()->id)->pluck('buku_id')->toArray();
+        }
         // return $buku;
 
-        return view('detail-buku', compact('buku', 'kategori'));
+        return view('detail-buku', compact('buku', 'kategori', 'user_want_read'));
     }
 
     public function search(Request $request)

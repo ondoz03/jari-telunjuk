@@ -33,6 +33,7 @@ Route::group(['prefix' => 'ajax'], function () {
     Route::get('/book-homepage', [BukuController::class, 'getRandomBookHomepage'])->name('ajax.book-homepage');
     Route::post('/set-session', [SignUpController::class, 'setSession'])->name('ajax.set-session');
     Route::post('/set-session-global', [HomeController::class, 'setSession'])->name('ajax.set-session-global');
+    Route::post('/set-want-to-read', [ProfileController::class, 'setWantToRead'])->name('ajax.set-want-to-read');
 });
 
 Route::group(['prefix' => 'sign-in'], function () {
