@@ -28,6 +28,22 @@ class SettingController extends Controller
            ]);
 
            return back();
+       }elseif($request->type == 'faq'){
+
+        $by_q = Setting::where('key', 'faq')->first();
+
+        $data = [];
+
+        foreach ($request->title as $key => $value) {
+            $data[$key]['title'] = $value;
+            $data[$key]['description'] = $request['description'][$key];
+        }
+
+        $by_q->update([
+            'value' => json_encode($data)
+        ]);
+
+        return back();
        }else{
            $setting = Setting::where('key', $request->key)->first();
            if ($setting) {

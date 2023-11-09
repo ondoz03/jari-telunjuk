@@ -143,70 +143,30 @@
                         <h3 class="mb-6 font-arvo text-[34px] leading-none">FAQ</h3>
 
                         <div class="space-y-3">
-                            <section class="menu space-y-2 border-b border-stone-300 pb-3">
-                                <button type="button"
-                                    class="header flex w-full items-center justify-between">
-                                    <h5 class="text-lg font-bold">What is FAQ?</h5>
 
-                                    <svg class="arrow-down_icon h-5 w-5 rotate-0 fill-[#2e2e2e]"
-                                        fill="currentColor"
-                                        viewBox="0 0 20 20"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            clip-rule="evenodd"
-                                            d="M15.7072 7.70725L10.7073 12.7073C10.5122 12.9023 10.2562 13.0002 10.0002 13.0002C9.74425 13.0002 9.48825 12.9023 9.29325 12.7073L4.29325 7.70725C3.90225 7.31625 3.90225 6.68425 4.29325 6.29325C4.68425 5.90225 5.31625 5.90225 5.70725 6.29325L10.0002 10.5862L14.2933 6.29325C14.6842 5.90225 15.3162 5.90225 15.7072 6.29325C16.0982 6.68425 16.0982 7.31625 15.7072 7.70725Z">
-                                        </path>
-                                    </svg>
-                                </button>
+                            @forelse (json_decode(GeneralHelper::settingPerpustakan('faq')) as $key => $item)
+                                <section class="menu space-y-2 border-b border-stone-300 pb-3">
+                                    <button type="button"
+                                        class="header flex w-full items-center justify-between">
+                                        <h5 class="text-lg font-bold">{{$item->title}}</h5>
 
-                                <main class="content hidden">
-                                    Nunc vitae euismod velit, ac commodo nulla. Quisque ultrices sed
-                                    ipsum ut fermentum.
-                                </main>
-                            </section>
+                                        <svg class="arrow-down_icon h-5 w-5 rotate-0 fill-[#2e2e2e]"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M15.7072 7.70725L10.7073 12.7073C10.5122 12.9023 10.2562 13.0002 10.0002 13.0002C9.74425 13.0002 9.48825 12.9023 9.29325 12.7073L4.29325 7.70725C3.90225 7.31625 3.90225 6.68425 4.29325 6.29325C4.68425 5.90225 5.31625 5.90225 5.70725 6.29325L10.0002 10.5862L14.2933 6.29325C14.6842 5.90225 15.3162 5.90225 15.7072 6.29325C16.0982 6.68425 16.0982 7.31625 15.7072 7.70725Z">
+                                            </path>
+                                        </svg>
+                                    </button>
 
-                            <section class="menu space-y-2 border-b border-stone-300 pb-3">
-                                <button type="button"
-                                    class="header flex w-full items-center justify-between">
-                                    <h5 class="text-lg font-bold">What is FAQ?</h5>
-
-                                    <svg class="arrow-down_icon h-5 w-5 rotate-0 fill-[#2e2e2e]"
-                                        fill="currentColor"
-                                        viewBox="0 0 20 20"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            clip-rule="evenodd"
-                                            d="M15.7072 7.70725L10.7073 12.7073C10.5122 12.9023 10.2562 13.0002 10.0002 13.0002C9.74425 13.0002 9.48825 12.9023 9.29325 12.7073L4.29325 7.70725C3.90225 7.31625 3.90225 6.68425 4.29325 6.29325C4.68425 5.90225 5.31625 5.90225 5.70725 6.29325L10.0002 10.5862L14.2933 6.29325C14.6842 5.90225 15.3162 5.90225 15.7072 6.29325C16.0982 6.68425 16.0982 7.31625 15.7072 7.70725Z">
-                                        </path>
-                                    </svg>
-                                </button>
-
-                                <main class="content hidden">
-                                    Nunc vitae euismod velit, ac commodo nulla. Quisque ultrices sed
-                                    ipsum ut fermentum.
-                                </main>
-                            </section>
-                            <section class="menu space-y-2 border-b border-stone-300 pb-3">
-                                <button type="button"
-                                    class="header flex w-full items-center justify-between">
-                                    <h5 class="text-lg font-bold">What is FAQ?</h5>
-
-                                    <svg class="arrow-down_icon h-5 w-5 rotate-0 fill-[#2e2e2e]"
-                                        fill="currentColor"
-                                        viewBox="0 0 20 20"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            clip-rule="evenodd"
-                                            d="M15.7072 7.70725L10.7073 12.7073C10.5122 12.9023 10.2562 13.0002 10.0002 13.0002C9.74425 13.0002 9.48825 12.9023 9.29325 12.7073L4.29325 7.70725C3.90225 7.31625 3.90225 6.68425 4.29325 6.29325C4.68425 5.90225 5.31625 5.90225 5.70725 6.29325L10.0002 10.5862L14.2933 6.29325C14.6842 5.90225 15.3162 5.90225 15.7072 6.29325C16.0982 6.68425 16.0982 7.31625 15.7072 7.70725Z">
-                                        </path>
-                                    </svg>
-                                </button>
-
-                                <main class="content hidden">
-                                    Nunc vitae euismod velit, ac commodo nulla. Quisque ultrices sed
-                                    ipsum ut fermentum.
-                                </main>
-                            </section>
+                                    <main class="content hidden">
+                                        {{$item->description}}
+                                    </main>
+                                </section>
+                            @empty
+                            @endforelse
                         </div>
                     </section>
 

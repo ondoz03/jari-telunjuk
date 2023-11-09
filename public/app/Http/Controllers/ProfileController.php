@@ -9,6 +9,8 @@ use App\Models\UserDetails;
 use App\Models\UserRecommendation;
 use App\Models\UserWantRead;
 use Auth;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
 
 class ProfileController extends Controller
 {
@@ -29,12 +31,10 @@ class ProfileController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-
         request()->session()->invalidate();
-
         request()->session()->regenerateToken();
 
-        return redirect()->route('home');
+        return back();
     }
 
     public function setWantToRead(Request $request){

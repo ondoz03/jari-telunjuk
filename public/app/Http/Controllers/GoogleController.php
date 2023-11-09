@@ -12,13 +12,15 @@ use App\Models\Buku;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Auth;
-use Session;
+use Illuminate\Support\Facades\Session;
+
 class GoogleController extends Controller
 {
     public function redirectToGoogle(){
+        Session::put('redirect_back', url()->previous());
         return Socialite::driver('google')->redirect();
     }
-    public function callback(){
+    public function callback(Request $request){
         $user = Socialite::driver('google')->user();
 
         $find_user = User::where('email',$user->getEmail())->first();
@@ -26,7 +28,10 @@ class GoogleController extends Controller
             $find_user->avatar = $user->getAvatar();
             $find_user->save();
             Auth::login($find_user);
-            return redirect()->intended('user');
+
+          return redirect(Session::pull('redirect_back'));
+
+
         } else {
             $new_user = User::create([
                 'name' => $user->getName(),
@@ -50,7 +55,7 @@ class GoogleController extends Controller
                     ]);
                 }
             }
-            return redirect()->intended('user');
+            return Session::put('redirect_back');
         }
 
 

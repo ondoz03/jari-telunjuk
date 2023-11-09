@@ -12,6 +12,7 @@ use App\Http\Controllers\TwitterController;
 use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +58,7 @@ Route::group(['prefix' => 'auth'], function () {
 Route::group(['prefix' => 'user'], function () {
     Route::get('/', [ProfileController::class, 'index'])->name('user.index');
     Route::get('/profile', [ProfileController::class, 'index'])->name('user.profile');
-    Route::get('/logout', [ProfileController::class, 'logout'])->name('user.logout');
+    Route::get('/logout' , [ProfileController::class, 'logout'])->name('user.logout');
 });
 
 

@@ -73,6 +73,7 @@
       <nav id="nav-standard" class="hidden items-center gap-6 xl:flex">
         <div class="flex items-center gap-8">
           <a class="text-base leading-5" href="/">About</a>
+
           <a class="text-base leading-5" href="/blog">Blog</a>
           @if(!GeneralHelper::authCheck())
           <a class="text-base leading-5" href="{{route('sign-in')}}">Sign In</a>
