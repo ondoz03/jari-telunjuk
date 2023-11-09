@@ -34,6 +34,7 @@ Route::group(['prefix' => 'ajax'], function () {
     Route::post('/set-session', [SignUpController::class, 'setSession'])->name('ajax.set-session');
     Route::post('/set-session-global', [HomeController::class, 'setSession'])->name('ajax.set-session-global');
     Route::post('/set-want-to-read', [ProfileController::class, 'setWantToRead'])->name('ajax.set-want-to-read');
+    Route::post('/review-book', [ProfileController::class, 'reviewBook'])->name('ajax.review-book');
 });
 
 Route::group(['prefix' => 'sign-in'], function () {

@@ -6,6 +6,7 @@ use Algolia\ScoutExtended\Settings\Status;
 use App\Models\Buku;
 use App\Models\Cart;
 use App\Models\Kategori;
+use App\Models\Review;
 use App\Models\Setting;
 use App\Models\User;
 use Auth;
@@ -251,5 +252,11 @@ class GeneralHelper
         // return response()->json($buku);
         // return $buku;
         return json_encode($buku->toArray());
+    }
+
+    public static function rating($buku_id)
+    {
+        $star = Review::where('buku_id', $buku_id)->where('user_id', Auth::user()->id)->firstorfail();
+        return $star->rating;
     }
 }

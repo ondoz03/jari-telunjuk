@@ -72,6 +72,11 @@ class BukuController extends Controller
     public function search(Request $request)
     {
         $buku = Buku::where('judul', 'like', "%" . $request->search . "%")->orwhere('penulis', 'like', "%" . $request->search . "%")->paginate(5)->withQueryString();
+        if ($request->ajax()) {
+            $view = view('data-result-search', compact('buku'))->render();
+
+            return response()->json(['html' => $view]);
+        }
         return view('result-search', compact('buku', 'request'));
     }
 
