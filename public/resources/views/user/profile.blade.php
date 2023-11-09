@@ -12,16 +12,23 @@
       
   <div class="container relative mx-auto grid h-full min-h-screen max-w-screen-xl grid-cols-1 px-4 lg:grid-cols-12 lg:gap-10 xl:px-12">
     <section class="col-span-1 mt-20 min-h-screen lg:col-span-9 lg:mt-28">
-      <h1 class="mb-4 font-arvo text-2xl leading-7 lg:text-3xl">Rekomendasi untuk {{$user->name}}</h1>
+      <nav class="mb-4 flex items-center justify-between lg:mb-6">
+        <h1 class="mb-4 font-arvo text-2xl leading-7 lg:text-3xl">Want to Read</h1>
+        <div class="hidden lg:block">
+          <a class="relative flex items-center justify-center rounded-full bg-[#128C55] px-6 py-2 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90" href="{{ route('buku', 'buku') }}">
+            Tambahkan Buku
+          </a>
+        </div>
+      </nav>
 
-      @if(count($user->user_recommendation) > 0)
+      @if(count($user->user_want_read) > 0)
         <div class="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
-          @foreach ($user->user_recommendation as $item)
+          @foreach ($user->user_want_read as $item)
           <figure class="space-y-2.5 lg:space-y-5">
               <img src="{{$item->buku->image}}" alt="Rekomendasi 1">
 
               <figcaption class="space-y-2">
-                <a href="/" class="hover:underline">
+                <a href="{{ route('detail-buku', [$item->buku->kategori->first()->slug, $item->buku->slug]) }}" class="hover:underline">
                   <h5 class="line-clamp-2 text-base font-semibold leading-[1.25] lg:text-lg lg:leading-[1.125]">
                     {{$item->buku->judul}}
                   </h5>
@@ -36,7 +43,41 @@
         </div>
       @else
         <div class="flex flex-col items-center gap-6">
-          <img class="h-auto w-56" src="/rekomendasi-404.png" alt="Recommendation 404">
+          <img class="h-auto w-56" src="{{ asset('/assets/media') }}/rekomendasi-404.png" alt="Recommendation 404">
+
+          <h5 class="text-base font-semibold">
+            Anda belum memiliki daftar buku yang ingin di baca.
+          </h5>
+        </div>
+      @endif
+
+      <div class="my-8 hidden h-px w-full bg-[#dcdcdc] lg:block"></div>
+
+      <h1 class="mb-4 font-arvo text-2xl leading-7 lg:text-3xl">Rekomendasi untuk {{$user->name}}</h1>
+
+      @if(count($user->user_recommendation) > 0)
+        <div class="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
+          @foreach ($user->user_recommendation as $item)
+          <figure class="space-y-2.5 lg:space-y-5">
+              <img src="{{$item->buku->image}}" alt="Rekomendasi 1">
+
+              <figcaption class="space-y-2">
+                <a href="{{ route('detail-buku', [$item->buku->kategori->first()->slug, $item->buku->slug]) }}" class="hover:underline">
+                  <h5 class="line-clamp-2 text-base font-semibold leading-[1.25] lg:text-lg lg:leading-[1.125]">
+                    {{$item->buku->judul}}
+                  </h5>
+                </a>
+
+                <a href="/" class="text-sm text-[#515151] hover:underline">
+                  by {{$item->buku->penulis}}
+                </a>
+              </figcaption>
+          </figure>
+          @endforeach
+        </div>
+      @else
+        <div class="flex flex-col items-center gap-6">
+          <img class="h-auto w-56" src="{{ asset('/assets/media') }}/rekomendasi-404.png" alt="Recommendation 404">
 
           <h5 class="text-base font-semibold">
             Anda belum mendapatkan rekomendasi buku.

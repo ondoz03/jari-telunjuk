@@ -14,12 +14,12 @@ class BukuController extends Controller
     public function index(Request $request)
     {
         if ($request->has('category')) {
-            $buku = Buku::with('media')->whereHas('detail_buku.kategori', function ($q) use ($request) {
+            $buku = Buku::with(['kategori', 'media'])->whereHas('kategori', function ($q) use ($request) {
                 $q->where('slug', $request->category);
-            })->with(['detail_buku.kategori'])->orderBy('id', 'desc')->paginate(12);
+            })->with(['kategori'])->orderBy('id', 'desc')->paginate(12);
         } else {
             $buku = Buku::search($request->search)->query(function ($builder) {
-                $builder->with(['detail_buku.kategori', 'media']);
+                $builder->with(['kategori', 'media']);
             })->orderBy('id', 'desc')->paginate(12);
         }
 
@@ -30,7 +30,7 @@ class BukuController extends Controller
     public function search(Request $request)
     {
         $buku = buku::search($request->search)->query(function ($builder) {
-            $builder->with(['detail_buku.kategori', 'media']);
+            $builder->with(['kategori', 'media']);
         })->orderBy('id', 'desc')->paginate(12);
 
         $kategori = Kategori::all();
@@ -61,14 +61,13 @@ class BukuController extends Controller
                 $buku->addMediaFromRequest('image')->toMediaCollection('default');
             }
             return back();
-        } else {
             return false;
         }
     }
 
     public function edit($uuid)
     {
-        $buku = Buku::where('uuid', $uuid)->with(['detail_buku.kategori', 'media'])->first();
+        $buku = Buku::where('uuid', $uuid)->with(['kategori', 'media'])->first();
         return response()->json($buku);
     }
 

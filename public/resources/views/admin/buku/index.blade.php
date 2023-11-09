@@ -86,7 +86,7 @@
                             </div>
                             <div class="card-footer">
                                 <span class="text-gray-600 fs-8">Kategori : </span>
-                                <a href="#" class="text-gray-600 fs-8">{{ $item->detail_buku->kategori->name ?? 'Kosong' }} </a>
+                                <a href="#" class="text-gray-600 fs-8">{{ isset($item->kategori->first()->name) ? $item->kategori->pluck('name')->implode(', ') : 'Kosong' }} </a>
                             </div>
                         </div>
                     </div>
