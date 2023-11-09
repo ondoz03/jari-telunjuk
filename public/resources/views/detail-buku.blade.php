@@ -475,7 +475,7 @@
                         star: star
                     },
                     success: function(data) {
-                        // location.reload()
+                        location.reload()
                     },
                 });
             }else{
