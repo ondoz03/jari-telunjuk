@@ -30,7 +30,11 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 
+
+Route::get('/testing', [TestController::class, 'index'])->name('ajax.testing');
+
 Route::group(['prefix' => 'ajax'], function () {
+
     Route::get('/book-homepage', [BukuController::class, 'getRandomBookHomepage'])->name('ajax.book-homepage');
     Route::post('/set-session', [SignUpController::class, 'setSession'])->name('ajax.set-session');
     Route::post('/set-session-global', [HomeController::class, 'setSession'])->name('ajax.set-session-global');
@@ -74,4 +78,3 @@ Route::get('/{slug}', [BukuController::class, 'index'])->name('buku');
 Route::get('/buku-page/{slug}', [BukuController::class, 'buku'])->name('buku-page');
 Route::get('/{category}/{slug}', [BukuController::class, 'detail'])->name('detail-buku');
 Route::get('/search-result', [BukuController::class, 'search'])->name('search-result');
-Route::get('/test', [TestController::class, 'index']);
