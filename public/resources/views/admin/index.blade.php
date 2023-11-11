@@ -8,11 +8,53 @@
                     <div class="card mb-5 mb-xl-8">
                         <div class="card-header border-0 pt-5">
                             <h3 class="card-title align-items-start flex-column">
-                                <span class="card-label fw-bolder text-dark">Top Buku Peminjaman</span>
+                                <span class="card-label fw-bolder text-dark">List Buku Kategori</span>
                             </h3>
                         </div>
                         <div class="card-body pt-5">
+                            <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
+                                <thead>
+                                    <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                        <th class="min-w-15px">No</th>
+                                        <th class="min-w-125px">Nama Kategori</th>
+                                        <th class="min-w-15px">Total Buku</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="fw-bold text-gray-600">
+                                    @forelse ($kategori as $item)
+                                        <tr>
+                                            <td>
+                                                {{$loop->iteration}}
+                                            </td>
+                                            <td>
+                                                <a href="#"
+                                                    class="text-gray-600 text-hover-primary mb-1">{{ $item->name }}</a>
+                                            </td>
+                                            <td>
+                                                <a href="#"
+                                                   class="text-gray-600 text-hover-primary mb-1">{{ $item->buku_count }}</a>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <div class="card-body p-0">
+                                            <div class="card-px text-center py-20 my-10">
+                                                <h2 class="fs-2x fw-bolder mb-10">Welcome!</h2>
+                                                <p class="text-gray-400 fs-4 fw-bold mb-10">There are no customers added yet.
+                                                    <br />Kickstart your CRM by adding a your first customer
+                                                </p>
+                                                <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                                    data-bs-target="#kt_modal_add_customer">Add Customer</a>
+                                            </div>
+                                            <div class="text-center px-4">
+                                                <img class="mw-100 mh-300px" alt=""
+                                                    src="assets/media/illustrations/sigma-1/2.png" />
+                                            </div>
+                                        </div>
+                                    @endforelse
 
+                                </tbody>
+                            </table>
+                            {{ $kategori->withQueryString()->onEachSide(0)->links('vendor.pagination.bootstrap-4'); }}
                         </div>
                     </div>
                 </div>

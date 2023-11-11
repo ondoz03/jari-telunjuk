@@ -35,7 +35,11 @@ class BukuController extends Controller
                 return view('buku', compact('buku', 'slug', 'kategori'));
             }
         } else {
-            return self::search($request);
+            if($request->has('search')){
+                return self::search($request);
+            }else{
+                return abort(404);
+            }
         }
     }
 

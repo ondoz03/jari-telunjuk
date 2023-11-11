@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Buku;
+use App\Models\Kategori;
 use App\Models\Peminjaman;
 use App\Models\PeminjamanItem;
 use App\Models\User;
@@ -18,7 +19,9 @@ class DashbordController extends Controller
 
         $totalBook = Buku::count();
         $totalUser = User::count();
-        return view('admin.index', compact('totalBook', 'totalUser'));
+        $kategori = Kategori::withCount('buku')->orderByDesc('buku_count')->paginate(10);
+
+        return view('admin.index', compact('totalBook', 'totalUser', 'kategori'));
     }
 
 
