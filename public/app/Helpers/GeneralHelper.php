@@ -289,4 +289,22 @@ class GeneralHelper
 
         }
     }
+
+    public static function randomName()
+    {
+        $arr = [
+            "Adisti",
+            "Feby",
+            "Anjani",
+            "Aegis",
+            "Kael",
+            "Luna",
+            "Lina",
+            "Alleria",
+            "Davion",
+            "Lanaya",
+        ];
+
+        return $arr[array_rand($arr)];
+    }
 }

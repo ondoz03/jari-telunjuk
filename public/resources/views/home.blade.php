@@ -150,7 +150,7 @@
                             Rekomendasi Buku
                         </h3>
 
-                        <p class="astro-J7PV25F6">Because Bedul liked...</p>
+                        <p class="astro-J7PV25F6">Because {{GeneralHelper::randomName()}} liked...</p>
                     </header>
 
                     <div class="relative grid w-full grid-cols-2 gap-x-4 gap-y-6 xl:grid-cols-4 xl:gap-16 astro-J7PV25F6">
