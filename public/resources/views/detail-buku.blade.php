@@ -167,7 +167,13 @@
                                 </div>
                             </div>
 
-                            <p class="text-sm font-semibold xl:text-lg"> by <a class="hover:underline" href="/">{{ $buku->penulis }}</a>
+
+
+
+                            <p class="text-sm font-semibold xl:text-lg">
+                                by <a class="hover:underline"
+                                    href="{{ route('author', $buku->penulis) }}">{{ $buku->penulis }}</a>
+
                             </p>
 
                             <div class="hidden items-center gap-1.5">
@@ -395,7 +401,7 @@
 
                                         <div class="space-y-0.5">
                                             <h5 class="text-sm font-bold text-stone-500">Penulis</h5>
-                                            <p class="text-base">{{ $buku->penulis }}</p>
+                                            <a class="text-base" href="{{ route('author', $buku->penulis) }}">{{ $buku->penulis }}</a>
                                         </div>
                                     </li>
 
