@@ -12,10 +12,13 @@ use App\Models\Buku;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Auth;
-use Session;
+use Illuminate\Support\Facades\Session;
+
 class TwitterController extends Controller
 {
     public function redirectToTwitter(){
+        Session::put('redirect_back', url()->previous());
+
         return Socialite::driver('twitter')->redirect();
     }
     public function callback(){
@@ -26,7 +29,8 @@ class TwitterController extends Controller
             $find_user->avatar = $user->getAvatar();
             $find_user->save();
             Auth::login($find_user);
-            return redirect()->intended('user');
+
+            return redirect(Session::pull('redirect_back'));
         } else {
             $new_user = User::create([
                 'name' => $user->getName(),
@@ -50,7 +54,8 @@ class TwitterController extends Controller
                     ]);
                 }
             }
-            return redirect()->intended('user');
+
+            return redirect(Session::pull('redirect_back'));
         }
 
 

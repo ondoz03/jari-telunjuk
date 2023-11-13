@@ -13,6 +13,7 @@ use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AuthorController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,11 +31,16 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 
+
+Route::get('/testing', [TestController::class, 'index'])->name('ajax.testing');
+
 Route::group(['prefix' => 'ajax'], function () {
+
     Route::get('/book-homepage', [BukuController::class, 'getRandomBookHomepage'])->name('ajax.book-homepage');
     Route::post('/set-session', [SignUpController::class, 'setSession'])->name('ajax.set-session');
     Route::post('/set-session-global', [HomeController::class, 'setSession'])->name('ajax.set-session-global');
     Route::post('/set-want-to-read', [ProfileController::class, 'setWantToRead'])->name('ajax.set-want-to-read');
+    Route::post('/review-book', [ProfileController::class, 'reviewBook'])->name('ajax.review-book');
 });
 
 Route::group(['prefix' => 'sign-in'], function () {
@@ -57,7 +63,7 @@ Route::group(['prefix' => 'auth'], function () {
 Route::group(['prefix' => 'user'], function () {
     Route::get('/', [ProfileController::class, 'index'])->name('user.index');
     Route::get('/profile', [ProfileController::class, 'index'])->name('user.profile');
-    Route::get('/logout', [ProfileController::class, 'logout'])->name('user.logout');
+    Route::get('/logout' , [ProfileController::class, 'logout'])->name('user.logout');
 });
 
 Route::group(['prefix' => 'author'], function () {
@@ -75,4 +81,3 @@ Route::get('/{slug}', [BukuController::class, 'index'])->name('buku');
 Route::get('/buku-page/{slug}', [BukuController::class, 'buku'])->name('buku-page');
 Route::get('/{category}/{slug}', [BukuController::class, 'detail'])->name('detail-buku');
 Route::get('/search-result', [BukuController::class, 'search'])->name('search-result');
-Route::get('/test', [TestController::class, 'index']);

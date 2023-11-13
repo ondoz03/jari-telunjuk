@@ -12,10 +12,12 @@ use App\Models\Buku;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Auth;
-use Session;
+use Illuminate\Support\Facades\Session;
+
 class FacebookController extends Controller
 {
     public function redirectToFacebook(){
+        Session::put('redirect_back', url()->previous());
         return Socialite::driver('facebook')->redirect();
     }
     public function callback(){
@@ -26,7 +28,8 @@ class FacebookController extends Controller
             $find_user->avatar = $user->getAvatar();
             $find_user->save();
             Auth::login($find_user);
-            return redirect()->intended('user');
+
+            return redirect(Session::pull('redirect_back'));
         } else {
             $new_user = User::create([
                 'name' => $user->getName(),
@@ -50,7 +53,8 @@ class FacebookController extends Controller
                     ]);
                 }
             }
-            return redirect()->intended('user');
+
+            return redirect(Session::pull('redirect_back'));
         }
 
 

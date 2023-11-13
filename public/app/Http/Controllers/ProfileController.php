@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Review;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserDetails;
 use App\Models\UserRecommendation;
 use App\Models\UserWantRead;
 use Auth;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
 
 class ProfileController extends Controller
 {
     public function __construct()
-    {   
+    {
         if (empty(Auth::user())) {   // Check is user logged in
             return redirect()->route('home');
         }
@@ -28,12 +31,10 @@ class ProfileController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
- 
         request()->session()->invalidate();
- 
         request()->session()->regenerateToken();
- 
-        return redirect()->route('home');
+
+        return back();
     }
 
     public function setWantToRead(Request $request){
@@ -51,5 +52,17 @@ class ProfileController extends Controller
             }
         }
         return false;
+    }
+
+    public function reviewBook(Request $request)
+    {
+        Review::updateOrCreate([
+            'user_id' => Auth::user()->id,
+            'buku_id' => $request->buku_id
+        ],[
+            'star' => $request->star
+        ]);
+
+        return true;
     }
 }

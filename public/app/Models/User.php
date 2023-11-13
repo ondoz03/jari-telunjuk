@@ -87,15 +87,11 @@ class User extends Authenticatable implements HasMedia
         return $this->hasMany(UserWantRead::class)->with('buku');
     }
 
-    public function peminjaman()
+    public function review()
     {
-        return $this->hasMany(Peminjaman::class);
+        return $this->hasMany(Review::class)->with('buku');
     }
 
-    public function cart()
-    {
-        return $this->hasMany(Cart::class);
-    }
 
     /**
      * Get the indexable data array for the model.

@@ -113,18 +113,6 @@ class Buku extends Model implements HasMedia
         }
     }
 
-
-
-    public function peminjamanitem()
-    {
-        return $this->hasMany(PeminjamanItem::class);
-    }
-
-    public function cart()
-    {
-        return $this->hasMany(Cart::class);
-    }
-
     /**
      * Get the indexable data array for the model.
      *
@@ -157,5 +145,34 @@ class Buku extends Model implements HasMedia
     public function kategori()
     {
         return $this->belongsToMany(Kategori::class, 'buku_kategori',  'buku_id', 'kategori_id');
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    public function getCountRatingAttribute()
+    {
+        if ($this->reviews()->count() > 0) {
+            return round($this->reviews()->sum('star') / $this->reviews()->count(), 2);
+        } else {
+            return 0;
+        }
+    }
+
+    public function getRatingAttribute()
+    {
+        $min_stars = 1;
+        $max_stars = 5;
+        $temp_stars = $this->reviews()->count() > 0 ? round($this->reviews()->sum('star') / $this->reviews()->count()) : 0;
+        for ($i = $min_stars; $i <= $max_stars; $i++) {
+            if ($temp_stars >= 1) {
+                echo '<span class="fa fa-star checked"></span>';
+                $temp_stars--;
+            } else {
+                echo '<span class="fa fa-star"></span>';
+            }
+        }
     }
 }
