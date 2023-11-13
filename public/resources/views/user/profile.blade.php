@@ -34,7 +34,7 @@
                   </h5>
                 </a>
 
-                <a href="/" class="text-sm text-[#515151] hover:underline">
+                <a href="{{ route('author', $item->buku->penulis) }}" class="text-sm text-[#515151] hover:underline">
                   by {{$item->buku->penulis}}
                 </a>
               </figcaption>
@@ -68,7 +68,7 @@
                   </h5>
                 </a>
 
-                <a href="/" class="text-sm text-[#515151] hover:underline">
+                <a href="{{ route('author', $item->buku->penulis) }}" class="text-sm text-[#515151] hover:underline">
                   by {{$item->buku->penulis}}
                 </a>
               </figcaption>

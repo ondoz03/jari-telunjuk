@@ -11,6 +11,7 @@ use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\TwitterController;
 use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AuthorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,7 +60,9 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/logout', [ProfileController::class, 'logout'])->name('user.logout');
 });
 
-
+Route::group(['prefix' => 'author'], function () {
+    Route::get('/profile/{slug}', [AuthorController::class, 'author'])->name('author');
+});
 
 Route::get('/', function () {
     return view('home');
