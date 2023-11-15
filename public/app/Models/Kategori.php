@@ -19,7 +19,8 @@ class Kategori extends Model
         'uuid',
         'name',
         'slug',
-        'description'
+        'description',
+        'faq'
     ];
 
     protected static function boot()

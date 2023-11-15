@@ -78,12 +78,11 @@
     @include('layouts.partials.footer')
 
 
-    <div class="modal micromodal-slide astro-J7PV25F6"
-    id="modal-login"
-    aria-hidden="true">
-    <div class="modal__overlay astro-J7PV25F6"
+
+    <div class="modal modal__overlay astro-J7PV25F6"
         tabindex="-1"
-        data-micromodal-close>
+        id="modal-login"
+        data-micromodal-close style="display: none">
         <div class="modal__container rounded-none xl:rounded-2xl astro-J7PV25F6"
             role="dialog"
             aria-modal="true"
@@ -162,7 +161,7 @@
 
                                 <a
                                 onclick="onClose()"
-                                class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
+                                class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4" style="cursor: pointer">
                                 <p class="text-base font-semibold leading-5">Close</p>
                             </a>
                             </div>
@@ -171,6 +170,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
         <div id="modal-signup-new" class="fixed inset-0 z-[999999999] hidden h-full w-full items-center justify-center flex astro-J7PV25F6">

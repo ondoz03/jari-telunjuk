@@ -5,7 +5,7 @@
     {{-- <meta charset="UTF-8"> --}}
     <meta name="viewport"
         content="width=device-width, initial-scale=1">
-    <link href="{{ asset('css/app.css') }}"
+    <link href="{{ asset('assets/css/app.css') }}"
         rel="stylesheet">
 
 
@@ -15,7 +15,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('assets/js/app.js') }}"></script>
 
 
     <!-- Fonts -->
