@@ -141,10 +141,8 @@
                 <div class="grid grid-cols-1 gap-10 pb-20 xl:grid-cols-12">
                     <section class="Accordion col-span-1 xl:col-span-8">
                         <h3 class="mb-6 font-arvo text-[34px] leading-none">FAQ</h3>
-
                         <div class="space-y-3">
-
-                            @forelse (json_decode(GeneralHelper::settingPerpustakan('faq')) as $key => $item)
+                            @forelse (json_decode($kategori->faq) as $key => $item)
                                 <section class="menu space-y-2 border-b border-stone-300 pb-3">
                                     <button type="button"
                                         class="header flex w-full items-center justify-between">

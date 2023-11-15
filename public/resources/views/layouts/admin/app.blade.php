@@ -44,17 +44,34 @@
     <script src="{{ asset('/assets/admin/plugins/custom/leaflet/leaflet.bundle.js') }}"></script>
     <script src="{{ asset('/assets/admin/plugins/custom/fslightbox/fslightbox.bundle.js') }}"></script>
     <script src="{{ asset('/assets/admin/plugins/custom/ckeditor/ckeditor-classic.bundle.js') }}"></script>
-    <script src="{{ asset('/assets/admin/js/custom/modals/select-location.js') }}"></script>
-    <script src="{{ asset('/assets/admin/js/custom/widgets.js') }}"></script>
-    <script src="{{ asset('/assets/admin/js/custom/apps/chat/chat.js') }}"></script>
-    <script src="{{ asset('/assets/admin/js/custom/modals/create-app.js') }}"></script>
-    <script src="{{ asset('/assets/admin/js/custom/modals/upgrade-plan.js') }}"></script>
+
     <script src="{{ asset('js/app.js') }}"></script>
 
 
     @yield('scripts')
 
     @stack('js');
+
+    @if ($message = Session::get('success'))
+    <script>
+        Swal.fire({
+            text: '{{ $message }}',
+            icon: "success",
+            showConfirmButton: false,
+            timer: 1500
+        });
+    </script>
+    @elseif($message = Session::get('error'))
+
+    <script>
+        Swal.fire({
+            text: '{{ $message }}',
+            icon: "error",
+            showConfirmButton: false,
+            timer: 1500
+        });
+    </script>
+    @endif
 
 </body>
 

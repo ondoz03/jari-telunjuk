@@ -44,7 +44,7 @@
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                 <th class="min-w-15px">No</th>
                                 <th class="min-w-125px">Nama Kategori</th>
-                                <th class="min-w-125px">Description</th>
+                                <th class="min-w-125px">Total Buku</th>
                             </tr>
                         </thead>
                         <tbody class="fw-bold text-gray-600">
@@ -59,7 +59,7 @@
                                     </td>
                                     <td>
                                         <a href="#"
-                                           class="text-gray-600 text-hover-primary mb-1">{{ $item->description }}</a>
+                                           class="text-gray-600 text-hover-primary mb-1">{{ $item->buku_count }}</a>
                                     </td>
                                     <td class="text-end">
                                         <a href="#" class="btn btn-sm btn-light btn-active-light-primary"
@@ -75,6 +75,11 @@
                                         </a>
                                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4"
                                             data-kt-menu="true">
+                                            <div class="menu-item px-3">
+                                                <a href="#" class="menu-link px-3 faq" data-bs-toggle="modal"
+                                                    data-bs-target="#kt_modal_faq"
+                                                    data-uuid={{ $item->uuid }}>Add FAQ</a>
+                                            </div>
                                             <div class="menu-item px-3">
                                                 <a href="#" class="menu-link px-3 edit" data-bs-toggle="modal"
                                                     data-bs-target="#kt_modal_edit_customer"
@@ -201,10 +206,6 @@
                                             name="name" id="name" placeholder="Name Kategori" />
                                     </div>
 
-                                    <div class="fv-row mb-7">
-                                        <label class="required fs-6 fw-bold mb-2" for="pesan">Description </label>
-                                        <textarea class="form-control form-control-solid" id="description" name="description" rows="4" required></textarea>
-                                    </div>
                                 </div>
                             </div>
                             <div class="modal-footer flex-center">
@@ -253,10 +254,95 @@
                 </div>
             </div>
 
+            <div class="modal fade" id="kt_modal_faq" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered mw-650px" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">FAQ Kategori</h5>
+                        <div id="kt_modal_add_customer_close" class="btn btn-icon btn-sm btn-active-icon-primary"
+                            data-bs-dismiss="modal" aria-label="Close">
+                            <span class="svg-icon svg-icon-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none">
+                                    <rect opacity="0.5" x="6" y="17.3137" width="16"
+                                        height="2" rx="1" transform="rotate(-45 6 17.3137)"
+                                        fill="black" />
+                                    <rect x="7.41422" y="6" width="16" height="2"
+                                        rx="1" transform="rotate(45 7.41422 6)" fill="black" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form form-faq" action="#" id="form-edit" method="post">
+                            @csrf
+                            <input type="hidden" name="uuid" class="uuid" value="">
+
+                            <div class="form-group mb-5" id="inputContainer">
+                            </div>
+
+                            <div class="form-group mb-5">
+                                <div class="input-set"  data-key="">
+                                    <label for="title1" class="mt-4" >Faq Title :</label>
+                                    <input type="text" class="form-control" name="title[]" placeholder="Enter title" value="">
+
+                                    <label class="pt-5" for="description1">Faq Description :</label>
+                                    <textarea class="form-control" name="description[]" placeholder="Enter description"></textarea>
+                                </div>
+                            </div>
+                            <input type="hidden" name="type" value="faq">
+                            <button type="button" class="btn btn-success" id="addInput">Add Input</button>
+                            <div class="modal-footer flex-center">
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" id="kt_modal_add_customer_submit" class="btn btn-primary">
+                                    <span class="indicator-label">Submit</span>
+                                    <span class="indicator-progress">Please wait...
+                                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
         </div>
     </div>
 @endsection
 @push('js')
+<script>
+    $(document).ready(function() {
+           let counter = 1;
+
+        $('#addInput').on('click', function() {
+           counter++;
+
+           let newInputHtml =
+               `<div class="input-set form-group mt-5">
+                   <label for="title">Title :</label>
+                   <input type="text" class="form-control" name="title[]" placeholder="Enter title">
+
+                   <label  class="mt-3" for="description">Description :</label>
+                   <textarea class="form-control" name="description[]" placeholder="Enter description"></textarea>
+
+                   <button type="button" class="btn btn-danger remove-input mt-3">Remove</button>
+               </div>`;
+
+           $('#inputContainer').append(newInputHtml);
+       });
+
+       // Event delegation for dynamically added "Remove" buttons
+       $('#inputContainer').on('click', '.remove-input', function() {
+           $(this).closest('.input-set').remove();
+       });
+   });
+
+   $('#inputContainer').on('click', '.delete-input', function() {
+           let key = $(this).data('key');
+           $(`.input-set[data-key="${key}"]`).remove();
+   });
+</script>
     <script>
         $(document).on('click', '.edit', function() {
             id = $(this).attr('data-uuid');
@@ -271,6 +357,50 @@
                     $('#description').val(result.description)
                 },
             });
+        });
+
+        $(document).on('click', '.faq', function() {
+            id = $(this).attr('data-uuid');
+            $('.form-faq').attr('action', ajaxUrlAdmin + 'kategori/faq/' + id);
+            $.ajax({
+                url: ajaxUrlAdmin + 'kategori/' + id + '/edit',
+                dataType: "JSON",
+                type: "GET",
+                success: function(result) {
+                    let counter = 1;
+
+                    array = JSON.parse(result.faq);
+
+
+                    array.forEach(function(q) {
+                        counter++;
+
+                        let newInputHtml =
+                        `<div class="input-set form-group mt-5">
+                            <label for="title">Title :</label>
+                            <input type="text" class="form-control" name="title[]" placeholder="Enter title" value="`+q.title+`">
+
+                            <label  class="mt-3" for="description">Description :</label>
+                            <textarea class="form-control" name="description[]" placeholder="Enter description"> `+q.description+`</textarea>
+
+                            <button type="button" class="btn btn-danger remove-input mt-3">Remove</button>
+                        </div>`;
+
+                        $('#inputContainer').append(newInputHtml);
+                    });
+
+                },
+            });
+            // $.ajax({
+            //     url: ajaxUrlAdmin + 'kategori/faq/' + id ,
+            //     dataType: "JSON",
+            //     type: "GET",
+            //     success: function(result) {
+            //         $("#uuid").val(result.uuid);
+            //         $('#name').val(result.name)
+            //         $('#description').val(result.description)
+            //     },
+            // });
         });
 
         $(document).on('click', '.delete', function() {

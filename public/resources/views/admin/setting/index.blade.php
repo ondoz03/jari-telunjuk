@@ -163,33 +163,33 @@
      $(document).ready(function() {
             let counter = 1;
 
-        $('#addInput').on('click', function() {
-                counter++;
+    $('#addInput').on('click', function() {
+            counter++;
 
-                let newInputHtml =
-                    `<div class="input-set form-group mt-5">
-                        <label for="title${counter}">Title ${counter}:</label>
-                        <input type="text" class="form-control" name="title[]" placeholder="Enter title">
+            let newInputHtml =
+                `<div class="input-set form-group mt-5">
+                    <label for="title${counter}">Title ${counter}:</label>
+                    <input type="text" class="form-control" name="title[]" placeholder="Enter title">
 
-                        <label  class="mt-3" for="description${counter}">Description ${counter}:</label>
-                        <textarea class="form-control" name="description[]" placeholder="Enter description"></textarea>
+                    <label  class="mt-3" for="description${counter}">Description ${counter}:</label>
+                    <textarea class="form-control" name="description[]" placeholder="Enter description"></textarea>
 
-                        <button type="button" class="btn btn-danger remove-input mt-3">Remove</button>
-                    </div>`;
+                    <button type="button" class="btn btn-danger remove-input mt-3">Remove</button>
+                </div>`;
 
-                $('#inputContainer').append(newInputHtml);
-            });
-
-            // Event delegation for dynamically added "Remove" buttons
-            $('#inputContainer').on('click', '.remove-input', function() {
-                $(this).closest('.input-set').remove();
-            });
+            $('#inputContainer').append(newInputHtml);
         });
 
-        $('#inputContainer').on('click', '.delete-input', function() {
-                let key = $(this).data('key');
-                $(`.input-set[data-key="${key}"]`).remove();
+        // Event delegation for dynamically added "Remove" buttons
+        $('#inputContainer').on('click', '.remove-input', function() {
+            $(this).closest('.input-set').remove();
         });
+    });
+
+    $('#inputContainer').on('click', '.delete-input', function() {
+            let key = $(this).data('key');
+            $(`.input-set[data-key="${key}"]`).remove();
+    });
 </script>
     <script>
         "use strict";

@@ -10,13 +10,13 @@ class KategoriController extends Controller
 {
     public function index()
     {
-        $kategori = Kategori::orderByDesc('id')->paginate(10);
+        $kategori = Kategori::withCount('buku')->orderByDesc('buku_count')->paginate(10);
         return view('admin.kategori.index', compact('kategori'));
     }
 
     public function search(Request $request)
     {
-        $kategori = Kategori::search($request->search)->paginate(10);
+        $kategori = Kategori::withCount('buku')->orderByDesc('buku_count')->where('name', 'like', "%" . $request->search . "%")->paginate(10);
         return view('admin.kategori.index', compact('kategori'));
     }
 
@@ -30,6 +30,8 @@ class KategoriController extends Controller
             'name' => $request->name,
             'description' => $request->description
         ]);
+
+        session()->flash('success','Add Success');
         return back()->withInput();
     }
 
@@ -45,9 +47,32 @@ class KategoriController extends Controller
         $kategori->update([
             'name' => $request->name,
             'description' => $request->description
+        ]);
+        session()->flash('success','Update Success');
 
+        return back();
+    }
+
+    public function updateFaq(Request $request, $uuid)
+    {
+        $kategori = Kategori::where('uuid', $uuid)->FirstorFail();
+
+
+        $data = [];
+
+        foreach ($request->title as $key => $value) {
+            if($value !== null){
+                $data[$key]['title'] = $value;
+                $data[$key]['description'] = $request['description'][$key];
+            }
+        }
+
+
+        $kategori->update([
+            'faq' => json_encode($data),
         ]);
 
+        session()->flash('success','Add Success');
         return back();
     }
 
@@ -55,5 +80,8 @@ class KategoriController extends Controller
     {
         $kategori = Kategori::where('uuid', $uuid)->FirstOrFail();
         $kategori->delete();
+
+        session()->flash('success','Delete Success');
+        return back();
     }
 }

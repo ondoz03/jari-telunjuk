@@ -5,6 +5,10 @@
         .checked {
             color: orange;
         }
+
+        a:hover svg g path{
+            fill: #128C55;
+        }
     </style>
 @endsection
 @section('content')
@@ -50,11 +54,14 @@
 
                             <div class="flex flex-col items-center gap-6">
                                 <h5 class="text-base">Share</h5>
-                                <div class="flex flex-col items-center gap-6">
+
+                                <div class="flex flex-col items-center gap-2">
+
+
                                     <!-- Twitter -->
-                                    <a href="/">
-                                        <svg width="36"
-                                            height="36"
+                                    <a href="https://twitter.com/intent/tweet?text={{$buku->judul}}&url={{ url()->full()}}" target="_blank">
+                                        <svg width="30"
+                                            height="30"
                                             viewBox="0 0 36 36"
                                             fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -73,10 +80,10 @@
                                         </svg>
                                     </a>
 
-                                    <!-- Instagram -->
-                                    <a href="/">
-                                        <svg width="36"
-                                            height="36"
+                                    {{-- <!-- Instagram -->
+                                    <a href="/" target="_blank">
+                                        <svg width="30"
+                                            height="30"
                                             viewBox="0 0 36 36"
                                             fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -92,20 +99,20 @@
                                                     fill="#515151"></path>
                                             </g>
                                             <defs>
-                                                <clipPath id="clip0_57_246">
+                                                <clipPath id="clip0_57_250">
                                                     <rect width="36"
                                                         height="36"
                                                         fill="white"></rect>
                                                 </clipPath>
                                             </defs>
                                         </svg>
-                                    </a>
+                                    </a> --}}
 
                                     <!-- Facebook -->
 
-                                    <a href="/">
-                                        <svg width="36"
-                                            height="36"
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?= urlencode(url()->full())?>" target="_blank">
+                                        <svg width="30"
+                                            height="30"
                                             viewBox="0 0 36 36"
                                             fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -124,10 +131,11 @@
                                         </svg>
                                     </a>
 
+
                                     <!-- Linkedin -->
-                                    <a href="/">
-                                        <svg width="36"
-                                            height="36"
+                                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= url()->full()?>&title=<?= $buku->judul?>" target="_blank">
+                                        <svg width="30"
+                                            height="30"
                                             viewBox="0 0 36 36"
                                             fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
