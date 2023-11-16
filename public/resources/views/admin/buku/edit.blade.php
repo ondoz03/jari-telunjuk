@@ -112,9 +112,9 @@
                             <label class="fs-6 fw-bold mb-2">Cover Buku</label>
                         </div>
                         <div class=" mb-7 fv-row text-center">
-                            <div class="image-input image-input-empty" data-kt-image-input="true"
-                                style="background-image: url(/assets/admin/media/avatars/blank.png)">
-                                <div class="image-input-wrapper w-125px h-125px"></div>
+                            <div class="image-input image-input-empty image" data-kt-image-input="true"
+                                style="">
+                                <div class="image-input-wrapper w-125px h-175px"></div>
 
                                 <label
                                     class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"

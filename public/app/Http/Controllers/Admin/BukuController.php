@@ -41,9 +41,14 @@ class BukuController extends Controller
 
     public function store(Request $request)
     {
+
+        $penulis = explode(" ,", $request->penulis);
+
+        return $penulis;
+
         $buku = Buku::create([
             'judul' => $request->judul,
-            'penulis' => $request->penulis,
+            'penulis' =>  $penulis,
         ]);
 
         if ($buku) {
@@ -67,18 +72,21 @@ class BukuController extends Controller
 
     public function edit($uuid)
     {
-        $buku = Buku::where('uuid', $uuid)->with(['kategori', 'media'])->first();
+        $buku = Buku::where('uuid', $uuid)->with(['detail_buku','kategori', 'media'])->first();
         return response()->json($buku);
     }
 
     public function update(Request $request, $uuid)
     {
 
+        $penulis = explode(" ,", $request->penulis);
+
+
         $buku = Buku::where('uuid', $uuid)->firstorFail();
 
         $buku->update([
             'judul' => $request->judul,
-            'penulis' => $request->penulis,
+            'penulis' => $penulis,
         ]);
 
         $buku->detail_buku()->update([
@@ -89,8 +97,6 @@ class BukuController extends Controller
             'jumlah_halaman' => $request->jumlah_halaman,
             'jumlah_buku' => $request->jumlah_buku,
             'description' => $request->description,
-            'kategori_id' => $request->kategori
-
         ]);
 
         if ($request->hasFile('image')) {
