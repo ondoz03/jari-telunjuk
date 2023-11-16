@@ -388,14 +388,16 @@
             aria-modal="true"
             aria-labelledby="modal-login-review-title">
             <div id="modal-login-review-container">
-                <header class="mb-6 mt-11 flex items-center justify-between px-4 xl:justify-center astro-J7PV25F6">
+                <header class="mb-6 mt-11 flex items-center justify-between px-4 justify-center astro-J7PV25F6">
                     <h2 class="text-center font-arvo text-xl leading-none xl:text-[34px] astro-J7PV25F6"
                         id="modal-2-title">
-                        Sign Up/Login untuk memberikan Rating
+                        Sign Up/Login <br>
+                        untuk memberikan Rating pada buku.
                     </h2>
                 </header>
                 <main class="modal__content px-4 !font-source-sans xl:px-8 astro-J7PV25F6" id="">
                     <h3 class="bg-white/95 py-4 text-center text-sm leading-5 lg:py-0">
+                        Bergabunglah dengan Jaritelunjuk sekarang dan jadilah bagian dari komunitas pembaca yang aktif dan temukan rekomendasi baru
                     </h3>
 
                     <div class="relative z-10 h-[calc(100vh_-_113px)] bg-white/95 px-6 pt-11 lg:h-auto lg:rounded-b-2xl lg:pb-14 lg:pt-11">
@@ -404,7 +406,7 @@
                             alt="Books Blur">
                         <div class="relative z-10 flex h-full flex-col items-center">
                             <h5 class="mb-6 text-center text-base font-bold">
-                                {{-- Daftar sekarang untuk melihat rekomendasi. --}}
+                                 Daftar sekarang
                             </h5>
 
                             <div class="flex w-full max-w-sm flex-col items-start gap-4">
