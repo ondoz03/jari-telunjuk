@@ -257,80 +257,7 @@
 
                                     <div id="stars"
                                         class="flex items-center">
-                                        <button id="star-btn"
-                                            class="group text-stone-400">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                stroke-width="1.5"
-                                                stroke="currentColor"
-                                                class="h-7 w-7 transition-all duration-100 ease-in">
-                                                <path stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z">
-                                                </path>
-                                            </svg>
-                                        </button>
-
-                                        <button id="star-btn"
-                                            class="group text-stone-400">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                stroke-width="1.5"
-                                                stroke="currentColor"
-                                                class="h-7 w-7 transition-all duration-100 ease-in">
-                                                <path stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z">
-                                                </path>
-                                            </svg>
-                                        </button>
-
-                                        <button id="star-btn"
-                                            class="group text-stone-400">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                stroke-width="1.5"
-                                                stroke="currentColor"
-                                                class="h-7 w-7 transition-all duration-100 ease-in">
-                                                <path stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z">
-                                                </path>
-                                            </svg>
-                                        </button>
-
-                                        <button id="star-btn"
-                                            class="group text-stone-400">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                stroke-width="1.5"
-                                                stroke="currentColor"
-                                                class="h-7 w-7 transition-all duration-100 ease-in">
-                                                <path stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z">
-                                                </path>
-                                            </svg>
-                                        </button>
-
-                                        <button id="star-btn"
-                                            class="group text-stone-400">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                stroke-width="1.5"
-                                                stroke="currentColor"
-                                                class="h-7 w-7 transition-all duration-100 ease-in">
-                                                <path stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z">
-                                                </path>
-                                            </svg>
-                                        </button>
+                                        {{GeneralHelper::rating($buku->id)}}
                                     </div>
                                 </div>
                             </div>
@@ -466,23 +393,6 @@
                         id="modal-2-title">
                         Sign Up/Login untuk memberikan Rating
                     </h2>
-
-                    <button id="close-modal"
-                        type="button"
-                        class="block xl:hidden astro-J7PV25F6">
-                        <svg width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="astro-J7PV25F6">
-                            <path fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M19.6649 18.0492C20.1117 18.496 20.1117 19.2183 19.6649 19.6651C19.442 19.888 19.1495 20 18.8569 20C18.5643 20 18.2718 19.888 18.0489 19.6651L12 13.6161L5.95107 19.6651C5.72822 19.888 5.43566 20 5.1431 20C4.85054 20 4.55798 19.888 4.33513 19.6651C3.88829 19.2183 3.88829 18.496 4.33513 18.0492L10.3841 12.0001L4.33513 5.95111C3.88829 5.50426 3.88829 4.78199 4.33513 4.33514C4.78197 3.88829 5.50423 3.88829 5.95107 4.33514L12 10.3842L18.0489 4.33514C18.4958 3.88829 19.218 3.88829 19.6649 4.33514C20.1117 4.78199 20.1117 5.50426 19.6649 5.95111L13.6159 12.0001L19.6649 18.0492Z"
-                                fill="#2E2E2E"
-                                class="astro-J7PV25F6"></path>
-                        </svg>
-                    </button>
                 </header>
                 <main class="modal__content px-4 !font-source-sans xl:px-8 astro-J7PV25F6" id="">
                     <h3 class="bg-white/95 py-4 text-center text-sm leading-5 lg:py-0">

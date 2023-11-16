@@ -9,7 +9,7 @@
 
             <a class="block flex-shrink-0 text-xl xl:hidden"
                 href="/">
-                j<span class="font-bold">t--</span>
+                <span class="font-bold">--</span>
             </a>
 
             <div class="relative hidden w-72 xl:block">
