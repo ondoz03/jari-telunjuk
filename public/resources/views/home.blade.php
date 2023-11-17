@@ -575,6 +575,20 @@
             $("#modal-book-recommendation-new").addClass("hidden");
         });
 
+        $('#close-modal-index-book').click(function() {
+            $("#modal-book-recommendation-new").addClass("hidden");
+        });
+
+        $('#close-modal-index').click(function() {
+            $("#modal-book-recommendation-new").addClass("hidden");
+        });
+
+        $('#close-icon').click(function() {
+            $("#modal-book-recommendation-new").addClass("hidden");
+        });
+
+        
+
         $('#book-recommendation-new').click(function() {
             if($("#modal-book-recommendation-new").hasClass("hidden")) {
                 $.each(JSON.parse(localStorage.getItem("selected-category-book")), function(index, value) {

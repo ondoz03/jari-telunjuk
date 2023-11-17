@@ -242,14 +242,14 @@ class GeneralHelper
         $category_session = json_decode(session('category_session'));
         if (empty($category_session)) {
             $buku = Buku::inRandomOrder()
-                ->limit(5)
+                ->limit(12)
                 ->get();
         } else {
             $buku = Buku::whereHas('kategori', function ($q) use ($category_session) {
                 $q->whereIn('kategori_id', $category_session);
             })
                 ->inRandomOrder()
-                ->limit(5)
+                ->limit(12)
                 ->get();
         }
         // return json_encode($buku);
