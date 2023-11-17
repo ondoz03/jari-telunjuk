@@ -30,7 +30,7 @@ class TwitterController extends Controller
             $find_user->save();
             Auth::login($find_user);
 
-            return redirect(Session::pull('redirect_back'));
+            return redirect()->route('user.profile');
         } else {
             $new_user = User::create([
                 'name' => $user->getName(),
@@ -55,7 +55,7 @@ class TwitterController extends Controller
                 }
             }
 
-            return redirect(Session::pull('redirect_back'));
+            return redirect()->route('user.profile');
         }
 
 
