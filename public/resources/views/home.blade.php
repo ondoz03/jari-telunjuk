@@ -441,17 +441,17 @@
               <div class="absolute bottom-0 left-0 z-10 flex h-28 w-full flex-col items-start gap-2 border-t bg-[#FCFAF7] p-4 shadow-xl lg:flex-row lg:items-center lg:justify-between lg:border-0 lg:px-14 lg:py-8 lg:shadow-none astro-J7PV25F6">
                 <div class="print-values astro-J7PV25F6">
                   <h5 id="valueList" class="text-base font-bold leading-5 text-[#141414] astro-J7PV25F6">
-                    0 Buku dipilih
+                    <span id="countSelectedBook">0</span> Buku dipilih
                   </h5>
                 </div>
 
                 <div class="flex w-full flex-row gap-2 lg:w-auto lg:gap-4 astro-J7PV25F6">
                   <button id="btn-prev-choose-book" class="w-full rounded-full border border-[#222222] bg-white px-6 py-3 text-base font-bold leading-5 text-[#222222] lg:w-auto lg:py-4 astro-J7PV25F6">
-                    Sebelumnya
+                    Previous
                   </button>
 
-                  <button id="submitBook" class="w-full cursor-pointer rounded-full bg-[#72D1A6] px-6 py-3 text-base font-bold leading-5 text-white lg:w-auto lg:py-4 astro-J7PV25F6">
-                    Selanjutnya
+                  <button id="submitBook" class="w-full rounded-full bg-[#128C55] px-6 py-4 font-source-sans text-base font-semibold leading-none tracking-widest text-white lg:w-full lg:py-4 astro-J7PV25F6">
+                    Next
                   </button>
                 </div>
               </div>
@@ -499,7 +499,7 @@
                 </div>
 
                 <div class="flex w-full flex-row lg:w-auto lg:gap-4 astro-J7PV25F6">
-                  <button id="btn-category-finish" class="w-full rounded-full bg-[#128C55] px-6 py-4 font-source-sans text-base font-semibold leading-none tracking-widest text-white lg:w-full lg:py-4 astro-J7PV25F6" aria-label="Close this dialog window">Selesai</button>
+                  <button id="btn-category-finish" class="w-full rounded-full bg-[#128C55] px-6 py-4 font-source-sans text-base font-semibold leading-none tracking-widest text-white lg:w-full lg:py-4 astro-J7PV25F6" aria-label="Close this dialog window">Next</button>
                 </div>
               </div>
             </div>
@@ -593,6 +593,11 @@
                 $(this).prop("checked", false);
             }
             $("#countSelectedCategory").text($("input[name='kategori']:checked").length);
+        });
+
+        $('.bookpicker').click(function() {
+            var numberOfChecked = $("input[name='book_selected']:checked").length;
+            $("#countSelectedBook").text($("input[name='book_selected']:checked").length);
         });
 
 
@@ -720,7 +725,7 @@
                 var shortText = jQuery.trim(value.judul).substring(0, 30).split(" ").slice(0, -1).join(" ") + "...";
 
                 html = html + '<div class="astro-J7PV25F6">\
-                                  <input type="checkbox" id="list_book_' + index + '" value="' + value.id + '" class="checkbox peer hidden astro-J7PV25F6" name="book_selected">\
+                                  <input type="checkbox" id="list_book_' + index + '" value="' + value.id + '" class="checkbox peer hidden astro-J7PV25F6 bookpicker" name="book_selected">\
                                   <label for="list_book_' + index + '" class="w-full cursor-pointer font-normal peer-checked:font-semibold [&>img]:shadow-sm peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\
                                     <figure class="relative space-y-3 astro-J7PV25F6">\
                                       <img class="h-auto w-full astro-J7PV25F6" src="' + value.image + '" alt="' + value.judul + '">\
@@ -733,6 +738,11 @@
             });
 
             $("#book-list-recommendation").html(html);
+            $('.bookpicker').click(function() {
+                var numberOfChecked = $("input[name='book_selected']:checked").length;
+                $("#countSelectedBook").text($("input[name='book_selected']:checked").length);
+            });
+
 
         }
         // console.log('sss');

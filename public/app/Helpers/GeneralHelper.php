@@ -201,8 +201,12 @@ class GeneralHelper
     }
 
     public static function userInfo()
-    {
-        return User::find(Auth::user()->id);
+    {   
+        if (isset(Auth::user()->id)) {
+            return User::find(Auth::user()->id);
+        } else {
+            return [];
+        }
     }
 
     public static function getPostPopuler()

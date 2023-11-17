@@ -29,7 +29,7 @@ class GoogleController extends Controller
             $find_user->save();
             Auth::login($find_user);
 
-          return redirect(Session::pull('redirect_back'));
+          return redirect()->route('user.profile');
 
 
         } else {
@@ -55,7 +55,7 @@ class GoogleController extends Controller
                     ]);
                 }
             }
-            return Session::put('redirect_back');
+            return redirect()->route('user.profile');
         }
 
 

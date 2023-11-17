@@ -26,10 +26,12 @@
         content="{Astro.generator}">
 
     @yield('title')
-    <link rel="stylesheet"
+    <!-- <link rel="stylesheet"
         href="{{ asset('/assets') }}/front/index.1e77ef8f.css" />
     <link rel="stylesheet"
-        href="{{ asset('/assets') }}/front/404-recommendation.6b58fb12.css" />
+        href="{{ asset('/assets') }}/front/404-recommendation.6b58fb12.css" /> -->
+    <link rel="stylesheet"
+        href="{{ asset('/assets') }}/front/404-recommendation.2b4f8dc8.css" />
     <link rel="stylesheet"
         href="{{ asset('/assets') }}/front/index.1e77ef8f.css" />
 
