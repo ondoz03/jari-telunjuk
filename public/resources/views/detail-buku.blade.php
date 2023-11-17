@@ -422,25 +422,30 @@
     <script type="text/javascript">
 
         function wantToRead(element, id, type){
-            $.ajax({
-                url: "{{ route('ajax.set-want-to-read') }}",
-                type: "POST",
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    buku_id: id,
-                    type: type
-                },
-                success: function(data) {
-                    if (type=='add') {
-                        $(".wantToRead").hide();
-                        $(".noWantToRead").show();
-                    }
-                    if (type=='delete') {
-                        $(".wantToRead").show();
-                        $(".noWantToRead").hide();
-                    }
-                },
-            });
+            if({{GeneralHelper::authCheck()}}){
+                $.ajax({
+                    url: "{{ route('ajax.set-want-to-read') }}",
+                    type: "POST",
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        buku_id: id,
+                        type: type
+                    },
+                    success: function(data) {
+                        if (type=='add') {
+                            $(".wantToRead").hide();
+                            $(".noWantToRead").show();
+                        }
+                        if (type=='delete') {
+                            $(".wantToRead").show();
+                            $(".noWantToRead").hide();
+                        }
+                    },
+                });
+            }else{
+                $("#modal-login-review").show();
+            }
+
         }
 
         function addReview(star){
