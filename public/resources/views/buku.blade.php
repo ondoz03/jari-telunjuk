@@ -1,6 +1,9 @@
 @extends('layouts.layouts')
 @section('title')
     <title>Daftar Buku {{ Str::ucfirst($kategori->name) }} - Jari Telunjuk</title>
+    <script type="application/ld+json">
+          {!! $resultJson !!}
+    </script>
 @endsection
 @section('content')
     <main class="relative">

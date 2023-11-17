@@ -124,7 +124,6 @@
 
                                     <input type="file" id="image" name="image"
                                         accept=".png, .jpg, .jpeg" />
-
                                 </label>
 
                                 <span

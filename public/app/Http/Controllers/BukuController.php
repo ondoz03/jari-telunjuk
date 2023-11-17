@@ -7,12 +7,37 @@ use App\Models\Kategori;
 use App\Models\UserWantRead;
 use Illuminate\Http\Request;
 use Auth;
+use mysql_xdevapi\Result;
 
 class BukuController extends Controller
 {
     public function index($slug, Request $request)
     {
         $kategori = Kategori::where('name', $slug)->orwhere('slug', $slug)->first();
+
+        $dataArray = json_decode($kategori->faq, true);
+        $dataCollection = collect($dataArray);
+
+        $map = $dataCollection->map(function ($q) {
+            return [
+                "@type" => "Question",
+                "name" => $q['title'],
+                "acceptedAnswer" => [
+                    "@type" => "Answer",
+                    "text" => $q['description']
+                ]
+            ];
+        });
+
+        $result = [
+            "@context"=> "https://schema.org",
+            "@type" => "FAQPage",
+            "mainEntity" => $map->toArray()
+        ];
+
+        $decodedJson = json_encode($result, JSON_PRETTY_PRINT);
+        $resultJson = html_entity_decode($decodedJson);
+        $resultJson = str_replace('"@context": "https:\/\/schema.org"', '"@context": "https://schema.org"', $resultJson);
 
         if ($kategori) {
             if (empty($request->search)) {
@@ -26,13 +51,17 @@ class BukuController extends Controller
                     return response()->json(['html' => $view]);
                 }
 
-                return view('buku', compact('buku', 'slug', 'kategori'));
+                //Faq Json
+
+                return view('buku', compact('buku', 'slug', 'kategori', 'resultJson'));
+
+
             } else {
                 $buku = Buku::whereHas('kategori', function ($q) use ($slug) {
                     $q->where('name', $slug);
                 })->where('judul', 'like', "%" . $request->search . "%")->paginate(12)->withQueryString();
 
-                return view('buku', compact('buku', 'slug', 'kategori'));
+                return view('buku', compact('buku', 'slug', 'kategori', 'resultJson'));
             }
         } else {
             if($request->has('search')){

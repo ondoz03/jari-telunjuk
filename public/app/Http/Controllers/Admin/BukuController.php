@@ -24,6 +24,8 @@ class BukuController extends Controller
         }
 
         $kategori = Kategori::all();
+
+
         return view('admin.buku.index', compact('buku', 'kategori'));
     }
 
@@ -48,7 +50,7 @@ class BukuController extends Controller
 
         $buku = Buku::create([
             'judul' => $request->judul,
-            'penulis' =>  $penulis,
+            'penulis' => $penulis,
         ]);
 
         if ($buku) {
@@ -72,7 +74,7 @@ class BukuController extends Controller
 
     public function edit($uuid)
     {
-        $buku = Buku::where('uuid', $uuid)->with(['detail_buku','kategori', 'media'])->first();
+        $buku = Buku::where('uuid', $uuid)->with(['detail_buku', 'kategori', 'media'])->first();
         return response()->json($buku);
     }
 
@@ -80,10 +82,7 @@ class BukuController extends Controller
     {
 
         $penulis = explode(" ,", $request->penulis);
-
-
         $buku = Buku::where('uuid', $uuid)->firstorFail();
-
         $buku->update([
             'judul' => $request->judul,
             'penulis' => $penulis,
@@ -102,7 +101,7 @@ class BukuController extends Controller
         if ($request->hasFile('image')) {
             $buku->clearMediaCollection('default');
             $buku->addMediaFromRequest('image')->toMediaCollection('default');
-        };
+        }
 
         return back();
     }
