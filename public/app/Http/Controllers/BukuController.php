@@ -14,33 +14,39 @@ class BukuController extends Controller
     public function index($slug, Request $request)
     {
         $kategori = Kategori::where('name', $slug)->orwhere('slug', $slug)->first();
-
-        $dataArray = json_decode($kategori->faq, true);
-        $dataCollection = collect($dataArray);
-
-        $map = $dataCollection->map(function ($q) {
-            return [
-                "@type" => "Question",
-                "name" => $q['title'],
-                "acceptedAnswer" => [
-                    "@type" => "Answer",
-                    "text" => $q['description']
-                ]
-            ];
-        });
-
-        $result = [
-            "@context"=> "https://schema.org",
-            "@type" => "FAQPage",
-            "mainEntity" => $map->toArray()
-        ];
-
-        $decodedJson = json_encode($result, JSON_PRETTY_PRINT);
-        $resultJson = html_entity_decode($decodedJson);
-        $resultJson = str_replace('"@context": "https:\/\/schema.org"', '"@context": "https://schema.org"', $resultJson);
+//
+//        return $kategori;
+//
+//
 
         if ($kategori) {
+
+            $dataArray = json_decode($kategori->faq, true);
+            $dataCollection = collect($dataArray);
+
+            $map = $dataCollection->map(function ($q) {
+                return [
+                    "@type" => "Question",
+                    "name" => $q['title'],
+                    "acceptedAnswer" => [
+                        "@type" => "Answer",
+                        "text" => $q['description']
+                    ]
+                ];
+            });
+
+            $result = [
+                "@context" => "https://schema.org",
+                "@type" => "FAQPage",
+                "mainEntity" => $map->toArray()
+            ];
+
+            $decodedJson = json_encode($result, JSON_PRETTY_PRINT);
+            $resultJson = html_entity_decode($decodedJson);
+            $resultJson = str_replace('"@context": "https:\/\/schema.org"', '"@context": "https://schema.org"', $resultJson);
+
             if (empty($request->search)) {
+
                 $buku = Buku::with('media')->whereHas('kategori', function ($q) use ($slug) {
                     $q->where('slug', $slug);
                 })->with('kategori')->paginate(12);

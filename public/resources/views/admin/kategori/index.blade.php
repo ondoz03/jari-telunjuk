@@ -44,6 +44,7 @@
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                 <th class="min-w-15px">No</th>
                                 <th class="min-w-125px">Nama Kategori</th>
+                                <th class="min-w-225px">Deskripsi</th>
                                 <th class="min-w-125px">Total Buku</th>
                             </tr>
                         </thead>
@@ -53,9 +54,13 @@
                                     <td>
                                         {{ $loop->iteration }}
                                     </td>
+
                                     <td>
                                         <a href="#"
                                             class="text-gray-600 text-hover-primary mb-1">{{ $item->name }}</a>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="text-gray-600 text-hover-primary mb-1">{{$item->description}}</a>
                                     </td>
                                     <td>
                                         <a href="#"
@@ -204,6 +209,10 @@
                                         <label class="required fs-6 fw-bold mb-2">Name</label>
                                         <input type="text" class="form-control form-control-solid" placeholder=""
                                             name="name" id="name" placeholder="Name Kategori" />
+                                    </div>
+                                    <div class="fv-row mb-7">
+                                        <label class="required fs-6 fw-bold mb-2" for="description">Description </label>
+                                        <textarea class="form-control form-control-solid" id="description" name="description" rows="4" required></textarea>
                                     </div>
 
                                 </div>
