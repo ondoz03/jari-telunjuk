@@ -9,7 +9,7 @@
 
             <a class="block flex-shrink-0 text-xl xl:hidden"
                 href="/">
-                <span class="font-bold">--</span>
+                <img style="height: 40px;" src="https://www.jaritelunjuk.com/blog/wp-content/uploads/2021/10/Logo.png" alt="Jaritelunjuk Blog">
             </a>
 
             <div class="relative hidden w-72 xl:block">
@@ -29,20 +29,20 @@
             </div>
         </nav>
 
-        <div class="block w-full xl:hidden">
-            <form action="{{ route('search-result') }}"
-                method="get">
-                <input name="search"
-                    class="w-full rounded-full border border-stone-300 px-4 py-1 text-sm text-[#2e2e2e] outline-none ring-2 ring-transparent placeholder:text-stone-500 focus:border-stone-300 focus:ring-[#DEDEDE]/25"
-                    type="text"
-                    placeholder="Cari buku...">
-                <input type="hidden"
-                    name="type"
-                    value="buku">
-                <input type="hidden"
-                    type="submit">
-            </form>
-        </div>
+{{--        <div class="block w-full xl:hidden">--}}
+{{--            <form action="{{ route('search-result') }}"--}}
+{{--                method="get">--}}
+{{--                <input name="search"--}}
+{{--                    class="w-full rounded-full border border-stone-300 px-4 py-1 text-sm text-[#2e2e2e] outline-none ring-2 ring-transparent placeholder:text-stone-500 focus:border-stone-300 focus:ring-[#DEDEDE]/25"--}}
+{{--                    type="text"--}}
+{{--                    placeholder="Cari buku...">--}}
+{{--                <input type="hidden"--}}
+{{--                    name="type"--}}
+{{--                    value="buku">--}}
+{{--                <input type="hidden"--}}
+{{--                    type="submit">--}}
+{{--            </form>--}}
+{{--        </div>--}}
 
         <nav class="flex flex-shrink-0 items-center gap-4 xl:hidden">
             <svg class="bar-3_icon h-6 w-6 cursor-pointer"
@@ -83,6 +83,7 @@
       </nav>
 
       <nav id="nav-logged-in" class="hidden items-center gap-6 {{(GeneralHelper::authCheck()) ? 'xl:flex' : 'xl:hidden'}}">
+
           <div class="flex items-center gap-8">
             <a class="text-base leading-5" href="/">About</a>
             <a class="text-base leading-5" href="/blog">Blog</a>
@@ -132,6 +133,20 @@
 
     <div class="container mx-auto flex max-w-screen-xl items-center justify-between px-4 py-3.5">
         <nav class="flex w-full flex-col items-start gap-6">
+            <div class="block w-full xl:hidden">
+            <form action="{{ route('search-result') }}"
+                  method="get">
+                <input name="search"
+                       class="w-full rounded-full border border-stone-300 px-4 py-1 text-sm text-[#2e2e2e] outline-none ring-2 ring-transparent placeholder:text-stone-500 focus:border-stone-300 focus:ring-[#DEDEDE]/25"
+                       type="text"
+                       placeholder="Cari buku...">
+                <input type="hidden"
+                       name="type"
+                       value="buku">
+                <input type="hidden"
+                       type="submit">
+            </form>
+            </div>
             <div class="flex flex-col items-start gap-3">
                 <a class="text-base leading-5"
                     href="/">Home</a>
