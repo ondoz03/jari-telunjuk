@@ -1,6 +1,28 @@
 @extends('layouts.layouts')
 @section('title')
     <title> Buku {{ $buku->judul }} - Karya {{ $buku->penulis }}</title>
+    <script type="application/ld+json">
+        {
+         "@context": "https://schema.org",
+         "@type": "BreadcrumbList",
+         "itemListElement": [{
+           "@type": "ListItem",
+           "position": 1,
+           "name": "Category",
+           "item": "{{url('/')}}"
+         },{
+           "@type": "ListItem",
+           "position": 2,
+           "name": "{{ Str::ucfirst($kategori->name) }}",
+           "item": "{{ route('buku', $kategori->slug) }}"
+         },{
+           "@type": "ListItem",
+           "position": 3,
+           "name": "{{ Str::ucfirst($buku->judul) }}",
+           "item": "{{ route('detail-buku', [$kategori->slug, $buku->slug]) }}s"
+         }
+       }
+    </script>
     <style>
         .checked {
             color: orange;
