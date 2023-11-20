@@ -4,7 +4,9 @@
         <nav class="flex items-center gap-8">
             <a class="hidden text-xl xl:block"
                 href="/">
-                jari<span class="font-bold">telunjuk--</span>
+{{--                jari<span class="font-bold">telunjuk--</span>--}}
+                <img style="height: 40px;" src="https://www.jaritelunjuk.com/blog/wp-content/uploads/2021/10/Logo.png" alt="Jaritelunjuk Blog">
+
             </a>
 
             <a class="block flex-shrink-0 text-xl xl:hidden"
