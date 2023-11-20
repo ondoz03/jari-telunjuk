@@ -91,27 +91,30 @@
             <a class="text-base leading-5" href="/blog">Blog</a>
             <a class="text-base leading-5" href="{{route('home')}}">Home</a>
           </div>
-
-          <button id="btn-profile" class="flex items-center gap-2">
-            <img class="h-10 w-10 rounded-full border border-stone-300" src="{{(isset(GeneralHelper::userInfo()->avatar)) ? GeneralHelper::userInfo()->avatar : '#'}}" alt="Author 1">
-
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M5 7L10 14L15 7H5Z" fill="#2E2E2E"></path>
-            </svg>
-          </button>
-          <div id="dropdown-profile" class="h-100 absolute top-[3.8rem] z-50 mt-5 hidden w-40 divide-gray-100 bg-white p-4 shadow xl:right-16 2xl:right-44">
-            <div class="flex flex-col gap-3 text-right">
-              <a class="text-base leading-5" href="{{route('user.profile')}}">Profile</a>
-              <a class="text-base leading-5" href="#">Reading Challenge</a>
-              <a class="text-base leading-5" href="#">Book</a>
-              <a class="text-base leading-5" href="#">Help</a>
-              <!-- <a class="text-base leading-5" href="../../blog">Manage Account</a> -->
-              <a class="text-base leading-5 text-red-500" href="{{route('user.logout')}}">Logout</a>
-            </div>
+          <div x-data="{ open: false }" class="flex justify-end">
+              <button @click="open = !open" class="flex items-center gap-2">
+                  <img class="h-10 w-10 rounded-full border border-stone-300" src="{{(isset(GeneralHelper::userInfo()->avatar)) ? GeneralHelper::userInfo()->avatar : '#'}}" alt="Author 1">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5 7L10 14L15 7H5Z" fill="#2E2E2E"></path>
+                  </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div x-show="open" @click.away="open = false" class="absolute right-0 mt-14 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600" style="padding: 15px">
+                  <div class="flex flex-col gap-3 text-right">
+                      <a class="text-base leading-5" href="{{route('user.profile')}}">Profile</a>
+                      <a class="text-base leading-5" href="#">Reading Challenge</a>
+                      <a class="text-base leading-5" href="#">Book</a>
+                      <a class="text-base leading-5" href="#">Help</a>
+                      <!-- <a class="text-base leading-5" href="../../blog">Manage Account</a> -->
+                      <a class="text-base leading-5 text-red-500" href="{{route('user.logout')}}">Logout</a>
+                  </div>
+              </div>
           </div>
+          
       </nav>
     </div>
 </header>
+
 
 <header id="header-phone"
     class="Header fixed inset-0 z-[60] hidden h-screen w-full bg-white">
@@ -176,6 +179,8 @@
             </div>
 
             <div class="{{(GeneralHelper::authCheck()) ? 'flex' : 'hidden'}} flex-col items-start gap-3">
+
+
                 <figure class="h-10 w-10 rounded-full">
                     <img class="h-full w-full object-cover"
                         src="{{(isset(GeneralHelper::userInfo()->avatar)) ? GeneralHelper::userInfo()->avatar : '#'}}"
@@ -194,6 +199,10 @@
 </header>
 
 <script type="text/javascript">
+    function toggleDropdown() {
+        var dropdown = document.getElementById('dropdownDotsHorizontal');
+        dropdown.classList.toggle('hidden');
+    }
 
     $('#btn-profile').click(function() {
         if($("#dropdown-profile").hasClass("block")) {

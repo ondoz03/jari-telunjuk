@@ -24,6 +24,10 @@
     {{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
     <meta name="generator"
         content="{Astro.generator}">
+    <script
+        src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js"
+        defer
+    ></script>
 
     @yield('title')
     <!-- <link rel="stylesheet"
