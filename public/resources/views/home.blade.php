@@ -432,13 +432,13 @@
               </header>
 
               <!-- search found / initial list -->
-              <section class="block h-[calc(100vh_-_288px)] overflow-y-auto p-4 lg:h-auto lg:p-0 astro-J7PV25F6">
-                <div class="grid w-full grid-cols-3 place-items-center justify-center gap-4 lg:grid-cols-7 lg:gap-6 astro-J7PV25F6" id="book-list-recommendation">
+              <section class="block h-[calc(100vh_-_288px)] overflow-y-auto p-4 lg:h-[500px] lg:p-5 astro-J7PV25F6">
+                <div class="grid w-full grid-cols-3 justify-center gap-4 lg:grid-cols-7 lg:gap-6 astro-J7PV25F6" id="book-list-recommendation">
                     
                 </div>
               </section>
 
-              <div class="absolute bottom-0 left-0 z-10 flex h-28 w-full flex-col items-start gap-2 border-t bg-[#FCFAF7] p-4 shadow-xl lg:flex-row lg:items-center lg:justify-between lg:border-0 lg:px-14 lg:py-8 lg:shadow-none astro-J7PV25F6">
+              <div class="absolute bottom-0 left-0 z-10 flex h-32 w-full flex-col items-start gap-2 border-t bg-[#FCFAF7] p-4 shadow-xl lg:absolute lg:bottom-0 lg:h-28 lg:w-full lg:flex-row lg:items-center lg:justify-between lg:border-0 lg:px-14 lg:py-8 lg:shadow-none">
                 <div class="print-values astro-J7PV25F6">
                   <h5 id="valueList" class="text-base font-bold leading-5 text-[#141414] astro-J7PV25F6">
                     <span id="countSelectedBook">0</span> Buku dipilih
@@ -491,7 +491,7 @@
                 <!-- </main> -->
               </section>
 
-              <div class="absolute bottom-0 left-0 z-10 flex h-28 w-full flex-col items-start gap-2 border-t bg-[#FCFAF7] p-4 shadow-xl lg:flex-row lg:items-center lg:justify-between lg:border-0 lg:px-14 lg:py-8 lg:shadow-none astro-J7PV25F6">
+              <div class="absolute bottom-0 left-0 z-10 flex h-32 w-full flex-col items-start gap-2 border-t bg-[#FCFAF7] p-4 shadow-xl lg:absolute lg:bottom-0 lg:h-28 lg:w-full lg:flex-row lg:items-center lg:justify-between lg:border-0 lg:px-14 lg:py-8 lg:shadow-none">
                 <div class="print-values astro-J7PV25F6">
                   <h5  class="text-base font-bold leading-5 text-[#141414] astro-J7PV25F6">
                     <span id="countSelectedCategory">0</span>/5
@@ -742,7 +742,7 @@
                                   <input type="checkbox" id="list_book_' + index + '" value="' + value.id + '" class="checkbox peer hidden astro-J7PV25F6 bookpicker" name="book_selected">\
                                   <label for="list_book_' + index + '" class="w-full cursor-pointer font-normal peer-checked:font-semibold [&>img]:shadow-sm peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\
                                     <figure class="relative space-y-3 astro-J7PV25F6">\
-                                      <img class="h-auto w-full astro-J7PV25F6" src="' + value.image + '" alt="' + value.judul + '">\
+                                      <img style="height:120px !important" class="h-auto w-full astro-J7PV25F6" src="' + value.image + '" alt="' + value.judul + '">\
                                       <h5 class="pointer-events-none text-sm leading-5 astro-J7PV25F6">\
                                          ' + shortText + '\
                                       </h5>\
