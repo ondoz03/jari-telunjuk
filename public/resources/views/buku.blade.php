@@ -15,7 +15,7 @@
            "position": 2,
            "name": "{{ Str::ucfirst($kategori->name) }}",
            "item": "{{ route('buku', $kategori->slug) }}"
-         }
+         }]
        }
     </script>
     <script type="application/ld+json">

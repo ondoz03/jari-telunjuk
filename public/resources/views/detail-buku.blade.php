@@ -20,7 +20,7 @@
            "position": 3,
            "name": "{{ Str::ucfirst($buku->judul) }}",
            "item": "{{ route('detail-buku', [$kategori->slug, $buku->slug]) }}s"
-         }
+         }]
        }
     </script>
     <style>
