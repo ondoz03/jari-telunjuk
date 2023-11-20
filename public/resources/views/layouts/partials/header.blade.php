@@ -99,6 +99,9 @@
           <div id="dropdown-profile" class="h-100 absolute top-[3.8rem] z-50 mt-5 hidden w-40 divide-gray-100 bg-white p-4 shadow xl:right-16 2xl:right-44">
             <div class="flex flex-col gap-3 text-right">
               <a class="text-base leading-5" href="{{route('user.profile')}}">Profile</a>
+              <a class="text-base leading-5" href="#">Reading Challenge</a>
+              <a class="text-base leading-5" href="#">Book</a>
+              <a class="text-base leading-5" href="#">Help</a>
               <!-- <a class="text-base leading-5" href="../../blog">Manage Account</a> -->
               <a class="text-base leading-5 text-red-500" href="{{route('user.logout')}}">Logout</a>
             </div>
@@ -162,12 +165,12 @@
                         alt="Author 1">
                 </figure>
 
-                <a class="text-base leading-5"
-                    href="{{route('user.profile')}}">Profile</a>
-                <!-- <a class="text-base leading-5"
-                    href="/blog">Manage Account</a> -->
-                <a class="text-base leading-5 text-red-500"
-                    href="{{route('user.logout')}}">Logout</a>
+                <a class="text-base leading-5" href="{{route('user.profile')}}">Profile</a>
+                <a class="text-base leading-5" href="#">Reading Challenge</a>
+                <a class="text-base leading-5" href="#">Book</a>
+                <a class="text-base leading-5" href="#">Help</a>
+                <!-- <a class="text-base leading-5" href="/blog">Manage Account</a> -->
+                <a class="text-base leading-5 text-red-500" href="{{route('user.logout')}}">Logout</a>
             </div>
         </nav>
     </div>
