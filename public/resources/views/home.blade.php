@@ -432,7 +432,7 @@
               </header>
 
               <!-- search found / initial list -->
-              <section class="block h-[calc(100vh_-_288px)] overflow-y-auto p-4 lg:h-[500px] lg:p-5 astro-J7PV25F6">
+              <section class="block h-[calc(100vh-288px)] overflow-y-auto p-4 lg:h-[270px] lg:p-5 astro-J7PV25F6">
                 <div class="grid w-full grid-cols-3 justify-center gap-4 lg:grid-cols-7 lg:gap-6 astro-J7PV25F6" id="book-list-recommendation">
                     
                 </div>
@@ -534,7 +534,7 @@
                         <p class="text-base font-semibold leading-5">Sign up with Google</p>
                       </a>
 
-                      <a href="{{ route('auth.facebook') }}" class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
+                      <a href="{{ route('auth.facebook') }}" class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4" style="display:none;">
                         <img class="h-6 w-6" src="{{ asset('/assets/media') }}/icon-facebook.png" alt="Icon facebook">
 
                         <p class="text-base font-semibold leading-5">
@@ -542,7 +542,7 @@
                         </p>
                       </a>
 
-                      <a href="{{ route('auth.twitter') }}" class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
+                      <a href="{{ route('auth.twitter') }}" class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4" style="display:none;">
                         <img class="h-6 w-6" src="{{ asset('/assets/media') }}/icon-x.png" alt="Icon x">
 
                         <p class="text-base font-semibold leading-5">Sign up with X</p>
@@ -740,12 +740,12 @@
 
                 html = html + '<div class="astro-J7PV25F6">\
                                   <input type="checkbox" id="list_book_' + index + '" value="' + value.id + '" class="checkbox peer hidden astro-J7PV25F6 bookpicker" name="book_selected">\
-                                  <label for="list_book_' + index + '" class="w-full cursor-pointer font-normal peer-checked:font-semibold [&>img]:shadow-sm peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\
+                                  <label for="list_book_' + index + '" class="peer-checked:leading-2 w-full cursor-pointer text-sm font-normal peer-checked:bg-red-400 peer-checked:font-[sans-serif] peer-checked:font-semibold lg:peer-checked:text-[0.75rem] [&>img]:shadow-md peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\
                                     <figure class="relative space-y-3 astro-J7PV25F6">\
                                       <img style="height:120px !important" class="h-auto w-full astro-J7PV25F6" src="' + value.image + '" alt="' + value.judul + '">\
-                                      <h5 class="pointer-events-none text-sm leading-5 astro-J7PV25F6">\
+                                      <div class="pointer-events-none leading-5 astro-J7PV25F6">\
                                          ' + shortText + '\
-                                      </h5>\
+                                      </div>\
                                     </figure>\
                                   </label>\
                                 </div>';
