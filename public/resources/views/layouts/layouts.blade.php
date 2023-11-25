@@ -34,8 +34,10 @@
         href="{{ asset('/assets') }}/front/index.1e77ef8f.css" />
     <link rel="stylesheet"
         href="{{ asset('/assets') }}/front/404-recommendation.6b58fb12.css" /> -->
+ <!--    <link rel="stylesheet"
+        href="{{ asset('/assets') }}/front/404-recommendation.2b4f8dc8.css" /> -->
     <link rel="stylesheet"
-        href="{{ asset('/assets') }}/front/404-recommendation.2b4f8dc8.css" />
+        href="{{ asset('/assets') }}/front/404-recommendation.b4f51728.css" />
     <link rel="stylesheet"
         href="{{ asset('/assets') }}/front/index.1e77ef8f.css" />
 
@@ -146,7 +148,7 @@
                                 </a>
 
                                 <a href="{{ route('auth.facebook') }}"
-                                    class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
+                                    class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4" style="display:none;">
                                     <img class="h-6 w-6"
                                         src="{{ asset('/assets') }}/media/icon-facebook.png"
                                         alt="Icon facebook">
@@ -157,7 +159,7 @@
                                 </a>
 
                                 <a href="{{ route('auth.twitter') }}"
-                                    class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
+                                    class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4" style="display:none;">
                                     <img class="h-6 w-6"
                                         src="{{ asset('/assets') }}/media/icon-x.png"
                                         alt="Icon x">
@@ -216,7 +218,7 @@
                         <p class="text-base font-semibold leading-5">Sign up with Google</p>
                       </a>
 
-                      <a href="{{ route('auth.facebook') }}" class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
+                      <a href="{{ route('auth.facebook') }}" class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4" style="display:none;">
                         <img class="h-6 w-6" src="{{ asset('/assets/media') }}/icon-facebook.png" alt="Icon facebook">
 
                         <p class="text-base font-semibold leading-5">
@@ -224,7 +226,7 @@
                         </p>
                       </a>
 
-                      <a href="{{ route('auth.twitter') }}" class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
+                      <a href="{{ route('auth.twitter') }}" class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4" style="display:none;">
                         <img class="h-6 w-6" src="{{ asset('/assets/media') }}/icon-x.png" alt="Icon x">
 
                         <p class="text-base font-semibold leading-5">Sign up with X</p>
