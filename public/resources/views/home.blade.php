@@ -619,6 +619,7 @@
 
 
         $('#btn-category-finish').click(function() {
+            // console.log('waddddd');
             var arr = [];
             $.each($("input[name='kategori']:checked"), function() {
                 arr.push($(this).val());
@@ -721,47 +722,47 @@
         }
 
         function listBookByCategory() {
-            console.log('run list_book');
-            var list_book = {!! json_encode(GeneralHelper::getBookBySelectedCategory(), JSON_HEX_TAG) !!};
-            console.log(list_book);
-            var list_book = JSON.parse(list_book);
-            var html = '';
-            $.each(list_book, function(index, value) {
-                // html = html + '<div>\
-                //                     <input type="checkbox" id="list_book_' + index + '" value="' + value.id + '" class="checkbox peer hidden" name="book_selected"/>\
-                //                     <label for="list_book_' + index + '" class="w-full cursor-pointer font-normal peer-checked:font-semibold [&>img]:shadow-sm peer-checked:[&>img]:shadow-2xl">\
-                //                       <figure class="relative space-y-3">\
-                //                         <img class="h-auto w-full" src="' + value.image + '" alt="' + value.judul + '" />\
-                //                         <h5 class="pointer-events-none text-sm leading-5">\
-                //                           ' + value.judul + '\
-                //                         </h5>\
-                //                       </figure>\
-                //                     </label>\
-                //                   </div>\
-                //                   ';
-                var shortText = jQuery.trim(value.judul).substring(0, 30).split(" ").slice(0, -1).join(" ") + "...";
+            $("#book-list-recommendation").html('');
+            $("#countSelectedBook").text($("input[name='book_selected']:checked").length);
+            // console.log('run list_book');
+            // var list_book = {!! json_encode(GeneralHelper::getBookBySelectedCategory(), JSON_HEX_TAG) !!};
+            // console.log(list_book);
+            // var list_book = JSON.parse(list_book);
+            $.ajax({
+                url: "{{ route('ajax.list-book-recommendation') }}",
+                type: "GET",
+                data: {},
+                success: function(data) {
+                    var list_book = data;
+                    var html = '';
+                    $.each(list_book, function(index, value) {
 
-                html = html + '<div class="astro-J7PV25F6">\
-                                  <input type="checkbox" id="list_book_' + index + '" value="' + value.id + '" class="checkbox peer hidden astro-J7PV25F6 bookpicker" name="book_selected">\
-                                  <label for="list_book_' + index + '" class="peer-checked:leading-2 w-full cursor-pointer text-sm font-normal peer-checked:bg-red-400 peer-checked:font-[sans-serif] peer-checked:font-semibold lg:peer-checked:text-[0.75rem] [&>img]:shadow-md peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\
-                                    <figure class="relative space-y-3 astro-J7PV25F6">\
-                                      <img style="height:120px !important" class="h-auto w-full astro-J7PV25F6" src="' + value.image + '" alt="' + value.judul + '">\
-                                      <div class="pointer-events-none leading-5 astro-J7PV25F6">\
-                                         ' + shortText + '\
-                                      </div>\
-                                    </figure>\
-                                  </label>\
-                                </div>';
-            });
+                        var shortText = jQuery.trim(value.judul).substring(0, 30).split(" ").slice(0, -1).join(" ") + "...";
 
-            $("#book-list-recommendation").html(html);
-            $('.bookpicker').click(function() {
-                var numberOfChecked = $("input[name='book_selected']:checked").length;
-                if (numberOfChecked > 5) {
-                    $(this).prop("checked", false);
-                }
-                $("#countSelectedBook").text($("input[name='book_selected']:checked").length);
+                        html = html + '<div class="astro-J7PV25F6">\
+                                          <input type="checkbox" id="list_book_' + index + '" value="' + value.id + '" class="checkbox peer hidden astro-J7PV25F6 bookpicker" name="book_selected">\
+                                          <label for="list_book_' + index + '" class="peer-checked:leading-2 w-full cursor-pointer text-sm font-normal peer-checked:bg-red-400 peer-checked:font-[sans-serif] peer-checked:font-semibold lg:peer-checked:text-[0.75rem] [&>img]:shadow-md peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\
+                                            <figure class="relative space-y-3 astro-J7PV25F6">\
+                                              <img style="height:120px !important" class="h-auto w-full astro-J7PV25F6" src="' + value.image + '" alt="' + value.judul + '">\
+                                              <div class="pointer-events-none leading-5 astro-J7PV25F6">\
+                                                 ' + shortText + '\
+                                              </div>\
+                                            </figure>\
+                                          </label>\
+                                        </div>';
+                    });
+
+                    $("#book-list-recommendation").html(html);
+                    $('.bookpicker').click(function() {
+                        var numberOfChecked = $("input[name='book_selected']:checked").length;
+                        if (numberOfChecked > 5) {
+                            $(this).prop("checked", false);
+                        }
+                        $("#countSelectedBook").text($("input[name='book_selected']:checked").length);
+                    });
+                },
             });
+            
 
 
         }

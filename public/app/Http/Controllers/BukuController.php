@@ -130,4 +130,23 @@ class BukuController extends Controller
             ->get();
         return response()->json($buku);
     }
+
+    public static function getBookBySelectedCategory()
+    {
+        $category_session = json_decode(session('category_session'));
+        if (empty($category_session)) {
+            $buku = Buku::inRandomOrder()
+                ->limit(14)
+                ->get();
+        } else {
+            $buku = Buku::whereHas('kategori', function ($q) use ($category_session) {
+                $q->whereIn('kategori_id', $category_session);
+            })
+                ->inRandomOrder()
+                ->limit(14)
+                ->get();
+        }
+
+        return response()->json($buku);
+    }
 }

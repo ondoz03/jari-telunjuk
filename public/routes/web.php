@@ -37,6 +37,7 @@ Route::get('/testing', [TestController::class, 'index'])->name('ajax.testing');
 Route::group(['prefix' => 'ajax'], function () {
 
     Route::get('/book-homepage', [BukuController::class, 'getRandomBookHomepage'])->name('ajax.book-homepage');
+    Route::get('/list-book-recommendation', [BukuController::class, 'getBookBySelectedCategory'])->name('ajax.list-book-recommendation');
     Route::post('/set-session', [SignUpController::class, 'setSession'])->name('ajax.set-session');
     Route::post('/set-session-global', [HomeController::class, 'setSession'])->name('ajax.set-session-global');
     Route::post('/set-want-to-read', [ProfileController::class, 'setWantToRead'])->name('ajax.set-want-to-read');
