@@ -198,12 +198,12 @@
                             <div class="flex w-full flex-col items-center justify-center gap-3 xl:hidden">
                                 <div class="flex flex-col items-center gap-3">
                                         <a onclick="wantToRead(this, '{{ $buku->id }}', 'add')" style="{{!in_array($buku->id, $user_want_read) ? '' : 'display: none'}}"
-                                            class="wantToRead w-40 rounded-full bg-[#128C55] px-5 py-3 text-center text-base leading-6 text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
+                                            class="wantToRead w-60 rounded-full bg-[#128C55] px-5 py-3 text-center text-base leading-6 text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
                                             Want to Read
                                         </a>
 
                                         <a onclick="wantToRead(this, '{{ $buku->id }}', 'delete')" style="{{in_array($buku->id, $user_want_read) ? '' : 'display: none;'}}background-color: #f26b6b; transition: opacity 0.3s ease;"
-                                        class="noWantToRead w-40 rounded-full px-5 py-3 text-center text-base leading-6 text-white" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+                                        class="noWantToRead w-60 rounded-full px-5 py-3 text-center text-base leading-6 text-white" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
                                         Remove
                                     </a>
 
