@@ -555,6 +555,18 @@
     </main>
     <script type="text/javascript">
         $(document).ready(function() {
+            $.ajax({
+                url: "{{ route('ajax.set-session-global') }}",
+                type: "POST",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    redirect_profile: 1
+                },
+                success: function(data) {
+                    console.log('set_session_ok');
+                    console.log(data);
+                },
+            });
 
             if (localStorage.getItem("default-recommendation-book")) {
                 refreshDefaultRecommendationBook(JSON.parse(localStorage.getItem("default-recommendation-book")));

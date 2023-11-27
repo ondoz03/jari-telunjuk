@@ -29,8 +29,11 @@ class GoogleController extends Controller
             $find_user->save();
             Auth::login($find_user);
 
-          return redirect()->route('user.profile');
-
+            if(!empty(session('redirect_profile'))) {
+                return redirect()->route('user.profile');
+            } else {
+                return redirect(session('redirect_back'));
+            }
 
         } else {
             $new_user = User::create([
@@ -55,7 +58,11 @@ class GoogleController extends Controller
                     ]);
                 }
             }
-            return redirect()->route('user.profile');
+            if(!empty(session('redirect_profile'))) {
+                return redirect()->route('user.profile');
+            } else {
+                return redirect(session('redirect_back'));
+            }
         }
 
 

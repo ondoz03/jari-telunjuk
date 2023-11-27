@@ -45,6 +45,10 @@ class HomeController extends Controller
             Session::put('selected_book_session', $request->selected_book_session);
         }
 
+        if(isset($request->redirect_profile)) {
+            Session::put('redirect_profile', $request->redirect_profile);
+        }
+
         return Session::all();
     }
 }
