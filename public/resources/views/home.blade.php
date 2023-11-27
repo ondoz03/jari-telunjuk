@@ -438,7 +438,7 @@
                 </div>
               </section>
 
-              <div class="absolute bottom-0 left-0 z-10 flex h-32 w-full flex-col items-start gap-2 border-t bg-[#FCFAF7] p-4 shadow-xl lg:absolute lg:bottom-0 lg:h-28 lg:w-full lg:flex-row lg:items-center lg:justify-between lg:border-0 lg:px-14 lg:py-8 lg:shadow-none">
+              <div class="fixed bottom-0 left-0 z-10 flex h-32 w-full flex-col items-start gap-2 border-t bg-[#FCFAF7] p-4 shadow-xl lg:absolute lg:bottom-0 lg:h-28 lg:w-full lg:flex-row lg:items-center lg:justify-between lg:border-0 lg:px-14 lg:py-8 lg:shadow-none">
                 <div class="print-values astro-J7PV25F6">
                   <h5 id="valueList" class="text-base font-bold leading-5 text-[#141414] astro-J7PV25F6">
                     <span id="countSelectedBook">0</span> Buku dipilih
@@ -491,7 +491,7 @@
                 <!-- </main> -->
               </section>
 
-              <div class="absolute bottom-0 left-0 z-10 flex h-32 w-full flex-col items-start gap-2 border-t bg-[#FCFAF7] p-4 shadow-xl lg:absolute lg:bottom-0 lg:h-28 lg:w-full lg:flex-row lg:items-center lg:justify-between lg:border-0 lg:px-14 lg:py-8 lg:shadow-none">
+              <div class="fixed bottom-0 left-0 z-10 flex h-32 w-full flex-col items-start gap-2 border-t bg-[#FCFAF7] p-4 shadow-xl lg:absolute lg:bottom-0 lg:h-28 lg:w-full lg:flex-row lg:items-center lg:justify-between lg:border-0 lg:px-14 lg:py-8 lg:shadow-none">
                 <div class="print-values astro-J7PV25F6">
                   <h5  class="text-base font-bold leading-5 text-[#141414] astro-J7PV25F6">
                     <span id="countSelectedCategory">0</span>/5
@@ -611,6 +611,9 @@
 
         $('.bookpicker').click(function() {
             var numberOfChecked = $("input[name='book_selected']:checked").length;
+            if (numberOfChecked > 5) {
+                $(this).prop("checked", false);
+            }
             $("#countSelectedBook").text($("input[name='book_selected']:checked").length);
         });
 
@@ -754,6 +757,9 @@
             $("#book-list-recommendation").html(html);
             $('.bookpicker').click(function() {
                 var numberOfChecked = $("input[name='book_selected']:checked").length;
+                if (numberOfChecked > 5) {
+                    $(this).prop("checked", false);
+                }
                 $("#countSelectedBook").text($("input[name='book_selected']:checked").length);
             });
 
