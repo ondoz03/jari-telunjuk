@@ -457,7 +457,12 @@
                 },
             });
         }else{
-            var typeParam = "?type=want_to_read";
+            if(type === 'add'){
+                var typeParam = "?type=want_to_read";
+            } else {
+                var typeParam = "?type=currently_to_read";
+            }
+
             var bukuParam = "&buku=" + id;
 
             var googleLoginUrl = "{!! route('auth.google') !!}" + typeParam + bukuParam;

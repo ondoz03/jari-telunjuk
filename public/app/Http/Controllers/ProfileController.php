@@ -80,8 +80,10 @@ class ProfileController extends Controller
                     ]);
                 return true;
             } else if($request->type == 'update'){
-                UserWantRead::where('user_id', Auth::user()->id)
-                ->where('buku_id', $request->buku_id)->update([
+                UserWantRead::updateorcreate([
+                    'user_id' => Auth::user()->id,
+                    'buku_id' => $request->buku_id,
+                ],[
                     'status' => '2'
                 ]);
                 return true;

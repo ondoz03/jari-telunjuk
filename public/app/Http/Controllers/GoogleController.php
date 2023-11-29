@@ -57,15 +57,19 @@ class GoogleController extends Controller
                             'star' => $star
                         ]);
                     } else if($type === "want_to_read"){
-                        $check = UserWantRead::where('buku_id', $buku)->where('user_id', Auth::user()->id)->first();
-                        if(!$check){
-                            UserWantRead::create([
-                                'user_id' => Auth::user()->id,
-                                'buku_id' => $buku,
-                                'status' => '1'
-                            ]);
-                        }
-
+                        UserWantRead::updateorcreate([
+                            'user_id' => Auth::user()->id,
+                            'buku_id' => $buku,
+                        ],[
+                            'status' => '1'
+                        ]);
+                    } else if ($type === "currently_to_read") {
+                        UserWantRead::updateorcreate([
+                            'user_id' => Auth::user()->id,
+                            'buku_id' => $buku,
+                        ],[
+                            'status' => '2'
+                        ]);
                     }
                 }
 
