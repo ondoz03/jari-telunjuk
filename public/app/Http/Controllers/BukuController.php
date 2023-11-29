@@ -97,7 +97,17 @@ class BukuController extends Controller
 
 
         if (!empty(Auth::user())) {
-            $user_want_read = UserWantRead::where('user_id', Auth::user()->id)->where('buku_id', $buku->id)->first();
+            $data = UserWantRead::where('user_id', Auth::user()->id)->where('buku_id', $buku->id)->first();
+            if($data) {
+                $user_want_read = $data;
+
+            } else {
+                $array = [
+                    'status' => '0'
+                ];
+
+                $user_want_read = (object)$array;
+            }
         } else{
             $array = [
                 'status' => '0'
