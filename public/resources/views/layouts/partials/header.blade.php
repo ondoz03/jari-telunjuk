@@ -139,19 +139,21 @@
     <div class="container mx-auto flex max-w-screen-xl items-center justify-between px-4 py-3.5">
         <nav class="flex w-full flex-col items-start gap-6">
             <div class="block w-full xl:hidden">
-            <form action="{{ route('search-result') }}"
-                  method="get">
-                <input name="search"
-                       class="w-full rounded-full border border-stone-300 px-4 py-1 text-sm text-[#2e2e2e] outline-none ring-2 ring-transparent placeholder:text-stone-500 focus:border-stone-300 focus:ring-[#DEDEDE]/25"
-                       type="text"
-                       placeholder="Cari buku...">
-                <input type="hidden"
-                       name="type"
-                       value="buku">
-                <input type="hidden"
-                       type="submit">
-            </form>
+                <form action="{{ route('search-result') }}"
+                    method="get">
+                    <input name="search"
+                        class="w-full rounded-full border border-stone-300 px-4 py-1 text-sm text-[#2e2e2e] outline-none ring-2 ring-transparent placeholder:text-stone-500 focus:border-stone-300 focus:ring-[#DEDEDE]/25"
+                        type="text"
+                        placeholder="Cari buku...">
+                    <input type="hidden"
+                        name="type"
+                        value="buku">
+                    <input type="hidden"
+                        type="submit">
+                </form>
             </div>
+
+            @guest
             <div class="flex flex-col items-start gap-3">
                 <a class="text-base leading-5"
                     href="/">Home</a>
@@ -160,19 +162,16 @@
                 <a class="text-base leading-5"
                     href="/">About</a>
                 <a class="text-base leading-5"
-                    href="/">Blog</a>
-                <a href="/"
-                    class="relative text-base leading-5">
-                    Sign In
-                </a>
+                    href="/blog">Blog</a>
             </div>
 
-            <!-- If not Logged In -->
 
-            <a href="/"
-                class="{{(!GeneralHelper::authCheck()) ? 'relative' : 'hidden'}} w-full rounded-full bg-[#128C55] px-5 py-2 text-center font-bold leading-5 text-white hover:bg-[#128C55]/90" id="btn-modal-signup">
+            <button
+                class="{{(!GeneralHelper::authCheck()) ? 'relative' : 'hidden'}} w-full rounded-full bg-[#128C55] px-5 py-2 text-center font-bold leading-5 text-white hover:bg-[#128C55]/90 btn-modal-signup" id="btn-modal-signup">
                 Sign Up
-            </a>
+            </button>
+
+            @else
 
             <!-- If alrady Logged in -->
             <div class="{{(GeneralHelper::authCheck()) ? 'relative' : 'hidden'}} my-0 h-px w-full bg-[#EBEBEB]">
@@ -194,26 +193,12 @@
                 <!-- <a class="text-base leading-5" href="/blog">Manage Account</a> -->
                 <a class="text-base leading-5 text-red-500" href="{{route('user.logout')}}">Logout</a>
             </div>
+            @endguest
+
+
         </nav>
     </div>
 </header>
 
-<script type="text/javascript">
-    function toggleDropdown() {
-        var dropdown = document.getElementById('dropdownDotsHorizontal');
-        dropdown.classList.toggle('hidden');
-    }
-
-    $('#btn-profile').click(function() {
-        if($("#dropdown-profile").hasClass("block")) {
-            $("#dropdown-profile").removeClass("block");
-            $("#dropdown-profile").addClass("hidden");
-        } else {
-            $("#dropdown-profile").removeClass("hidden");
-            $("#dropdown-profile").addClass("block");
-        }
-    });
-
-</script>
 
 

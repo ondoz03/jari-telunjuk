@@ -126,7 +126,6 @@
 <body class="layar-telunjuk relative font-source-sans text-[#2e2e2e]">
     <!--begin::Header-->
     @include('layouts.partials.header')
-    @include('layouts.partials.header-mobile')
 
     <!--end::Header-->
     <!--begin::Content-->
@@ -151,23 +150,6 @@
                         id="modal-2-title">
                         Rekomendasi Buku Untukmu
                     </h2>
-
-                    <button id="close-modal"
-                        type="button"
-                        class="block xl:hidden astro-J7PV25F6">
-                        <svg width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="astro-J7PV25F6">
-                            <path fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M19.6649 18.0492C20.1117 18.496 20.1117 19.2183 19.6649 19.6651C19.442 19.888 19.1495 20 18.8569 20C18.5643 20 18.2718 19.888 18.0489 19.6651L12 13.6161L5.95107 19.6651C5.72822 19.888 5.43566 20 5.1431 20C4.85054 20 4.55798 19.888 4.33513 19.6651C3.88829 19.2183 3.88829 18.496 4.33513 18.0492L10.3841 12.0001L4.33513 5.95111C3.88829 5.50426 3.88829 4.78199 4.33513 4.33514C4.78197 3.88829 5.50423 3.88829 5.95107 4.33514L12 10.3842L18.0489 4.33514C18.4958 3.88829 19.218 3.88829 19.6649 4.33514C20.1117 4.78199 20.1117 5.50426 19.6649 5.95111L13.6159 12.0001L19.6649 18.0492Z"
-                                fill="#2E2E2E"
-                                class="astro-J7PV25F6"></path>
-                        </svg>
-                    </button>
                 </header>
                 <main class="modal__content px-4 !font-source-sans xl:px-8 astro-J7PV25F6"
                     id="modal-2-content">
@@ -255,7 +237,10 @@
                 </div>
             </div>
         </div>
-    <script>
+
+
+
+    <script type="text/javascript">
 
         $('#btn-modal-login').click(function() {
             $("#modal-login").show();
@@ -266,14 +251,19 @@
             $("#modal-login").hide();
         }
 
-    </script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById('dropdownDotsHorizontal');
+            dropdown.classList.toggle('hidden');
+        }
 
+        $('.btn-modal-signup').click(function() {
+            $("#header-phone").removeClass("block");
+            $("#header-phone").addClass("hidden");
+            $("#modal-login").show();
+        });
 
-    <script type="text/javascript">
         $('#btn-modal-signup').click(function() {
             $("#modal-signup-new").removeClass("hidden");
-
-
         });
 
         $('#modal-signup-new #close-overlay').click(function() {
