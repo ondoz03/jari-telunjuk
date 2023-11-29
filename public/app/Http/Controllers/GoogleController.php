@@ -42,34 +42,32 @@ class GoogleController extends Controller
             if(!empty(session('redirect_profile'))) {
                 return redirect()->route('user.profile');
             } else {
+                if(!empty(session('param'))){
+                    $data = json_decode(session('param'), true);
 
-                $data = json_decode(session('param'), true);
+                    $type = $data['type'];
+                    $buku = $data['buku'];
+                    if( $type === 'rating'){
+                        $star = $data['star'];
 
-                $type = $data['type'];
-                $buku = $data['buku'];
-                if( $type === 'rating'){
-                    $star = $data['star'];
-
-                    Review::updateorcreate([
-                        'user_id' => Auth::user()->id,
-                        'buku_id' => $buku
-                    ],[
-                        'star' => $star
-                    ]);
-                } else if($type === "want_to_read"){
-                    $check = UserWantRead::where('buku_id', $buku)->where('user_id', Auth::user()->id)->first();
-                    if(!$check){
-                        UserWantRead::create([
+                        Review::updateorcreate([
                             'user_id' => Auth::user()->id,
-                            'buku_id' => $buku,
-                            'status' => '1'
+                            'buku_id' => $buku
+                        ],[
+                            'star' => $star
                         ]);
+                    } else if($type === "want_to_read"){
+                        $check = UserWantRead::where('buku_id', $buku)->where('user_id', Auth::user()->id)->first();
+                        if(!$check){
+                            UserWantRead::create([
+                                'user_id' => Auth::user()->id,
+                                'buku_id' => $buku,
+                                'status' => '1'
+                            ]);
+                        }
+
                     }
-
-                } else if($type === ""){
-
                 }
-
 
                 return redirect(session('redirect_back'));
             }
