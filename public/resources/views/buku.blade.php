@@ -230,6 +230,7 @@
                     }
                     $('.auto-load').hide();
                     $("#data-wrapper").append(response.html);
+                    lazyload()
                 })
                 .fail(function(jqXHR, ajaxOptions, thrownError) {
                     console.log('Server error occured');

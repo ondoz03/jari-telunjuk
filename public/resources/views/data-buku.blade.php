@@ -3,8 +3,8 @@
         <a href="{{ route('detail-buku', [$kategori->slug, $item->slug]) }}"
             class="absolute z-10 h-full w-full object-cover"></a>
 
-        <img class="mb-6 w-full"
-            src="{{ $item->image }}"
+        <img class="mb-6 w-full lazy-img"
+            data-src="{{ $item->image }}"
             style="height: 251px;"
             alt="Book Photo 1">
 

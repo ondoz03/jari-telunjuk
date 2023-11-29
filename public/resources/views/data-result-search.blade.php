@@ -4,8 +4,8 @@
         href="{{ route('detail-buku', [$item->kategori[0]->slug, $item->slug]) }}"></a>
 
     {{-- <img class="aspect-video h-auto w-full rounded-md xl:h-48 xl:w-auto" src="{{$item->image}}" alt="Blog 1 Photo"> --}}
-    <img class="mb-6 w-full rounded-md"
-        src="{{ $item->image }}"
+    <img class="mb-6 w-full rounded-md lazy-img"
+        data-src="{{ $item->image }}"
         style="height: 251px; width:171px"
         alt="Book Photo 1">
 

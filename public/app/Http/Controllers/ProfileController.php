@@ -6,6 +6,7 @@ use App\Models\Review;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserDetails;
+use App\Models\UserKategori;
 use App\Models\UserRecommendation;
 use App\Models\UserWantRead;
 use Auth;
@@ -20,11 +21,36 @@ class ProfileController extends Controller
             return redirect()->route('home');
         }
     }
+
     public function index(){
         if (empty(Auth::user())) {   // Check is user logged in
             return redirect()->route('home');
         }
+
         $user = User::with('user_recommendation','user_want_read')->find(Auth::user()->id);
+
+        if(count($user->user_recommendation) < 1){
+
+            if(!empty(json_decode(session('category_session')))){
+                foreach (json_decode(session('category_session')) as $key => $value) {
+                    UserKategori::create([
+                        'user_id' => Auth::user()->id,
+                        'kategori_id' => $value
+                    ]);
+                }
+            }
+
+            if(!empty(json_decode(session('selected_book_session')))) {
+                foreach (json_decode(session('selected_book_session')) as $key => $value) {
+                    UserRecommendation::create([
+                        'user_id' => Auth::user()->id,
+                        'buku_id' => $value
+                    ]);
+                }
+            }
+        }
+
+
         return view('user.profile', compact('user'));
     }
 
@@ -40,14 +66,24 @@ class ProfileController extends Controller
     public function setWantToRead(Request $request){
         if(!empty($request->buku_id) && !empty(Auth::user())) {
             if ($request->type == 'add') {
-                UserWantRead::create([
+                UserWantRead::updateorcreate([
                     'user_id' => Auth::user()->id,
-                    'buku_id' => $request->buku_id
+                    'buku_id' => $request->buku_id,
+                ],[
+                    'status' => '1'
                 ]);
                 return true;
             } else if ($request->type == 'delete') {
                 UserWantRead::where('user_id', Auth::user()->id)
-                    ->where('buku_id', $request->buku_id)->delete();
+                    ->where('buku_id', $request->buku_id)->update([
+                        'status' => '0'
+                    ]);
+                return true;
+            } else if($request->type == 'update'){
+                UserWantRead::where('user_id', Auth::user()->id)
+                ->where('buku_id', $request->buku_id)->update([
+                    'status' => '2'
+                ]);
                 return true;
             }
         }

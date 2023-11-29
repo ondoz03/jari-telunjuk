@@ -70,6 +70,56 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <style>
+        .lazy-img {
+            filter: blur(10px);
+            border-radius: 9px;
+            background: linear-gradient(165deg);
+        }
+
+        .box-item {
+            width: 86px;
+            height: 120px;
+            background-color: #f0f0f0;
+        }
+
+        .shimmerBG {
+            animation: shimmer 2s linear infinite forwards;
+            background: linear-gradient(to right, #f6f6f6 8%, #e5e5e5 18%, #f6f6f6 33%);
+            background-size: 1200px 100%;
+        }
+
+        .skeleton-paragraph-4 {
+            height: 7px;
+            border-radius: 8px;
+            margin-top: 8px;
+            background-color: #f5f5f5;
+            width: 70%;
+        }
+
+        .skeleton-paragraph-5 {
+            height: 7px;
+            border-radius: 8px;
+            margin-top: 8px;
+            background-color: #f5f5f5;
+            width: 90%;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 100% 0;
+            }
+            100% {
+                background-position: -100% 0;
+            }
+        }
+
+    </style>
+
 
 </head>
 
@@ -147,25 +197,7 @@
                                     </p>
                                 </a>
 
-                                <a href="{{ route('auth.facebook') }}"
-                                    class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4" style="display:none;">
-                                    <img class="h-6 w-6"
-                                        src="{{ asset('/assets') }}/media/icon-facebook.png"
-                                        alt="Icon facebook">
 
-                                    <p class="text-base font-semibold leading-5">
-                                        Sign up with Facebook
-                                    </p>
-                                </a>
-
-                                <a href="{{ route('auth.twitter') }}"
-                                    class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4" style="display:none;">
-                                    <img class="h-6 w-6"
-                                        src="{{ asset('/assets') }}/media/icon-x.png"
-                                        alt="Icon x">
-
-                                    <p class="text-base font-semibold leading-5">Sign up with X</p>
-                                </a>
 
                                 <a
                                 onclick="onClose()"
@@ -218,19 +250,6 @@
                         <p class="text-base font-semibold leading-5">Sign up with Google</p>
                       </a>
 
-                      <a href="{{ route('auth.facebook') }}" class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4" style="display:none;">
-                        <img class="h-6 w-6" src="{{ asset('/assets/media') }}/icon-facebook.png" alt="Icon facebook">
-
-                        <p class="text-base font-semibold leading-5">
-                          Sign up with Facebook
-                        </p>
-                      </a>
-
-                      <a href="{{ route('auth.twitter') }}" class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4" style="display:none;">
-                        <img class="h-6 w-6" src="{{ asset('/assets/media') }}/icon-x.png" alt="Icon x">
-
-                        <p class="text-base font-semibold leading-5">Sign up with X</p>
-                      </a>
                     </div>
                   </div>
                 </div>
@@ -245,21 +264,48 @@
         function onClose()
         {
             $("#modal-login").hide();
-
         }
 
     </script>
-      <script type="text/javascript">
+
+
+    <script type="text/javascript">
         $('#btn-modal-signup').click(function() {
             $("#modal-signup-new").removeClass("hidden");
+
+
         });
 
         $('#modal-signup-new #close-overlay').click(function() {
             $("#modal-signup-new").addClass("hidden");
         });
-  </script>
 
-    @yield('js')
+        lazyload();
+        // lazy load
+        function lazyload()
+        {
+            const imgElements = document.querySelectorAll("img[data-src]");
+            const lazyLoadingImage = (entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                    entry.target.src = entry.target.dataset.src;
+                    entry.target.addEventListener("load", () => {
+                        entry.target.classList.remove("lazy-img");
+                        observer.unobserve(entry.target);
+                    });
+                 });
+            };
+            const lazyLoadingObserver = new IntersectionObserver(lazyLoadingImage, {
+                threshold: 0.9,
+            });
+            imgElements.forEach((img) => lazyLoadingObserver.observe(img));
+        }
+
+
+    </script>
+
+@yield('js')
+
 
 
 </body>

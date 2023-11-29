@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddFieldFaqToKategoriTable extends Migration
+class AddFieldStatusToUserWantReadsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddFieldFaqToKategoriTable extends Migration
      */
     public function up()
     {
-        Schema::table('kategoris', function (Blueprint $table) {
-            $table->text('faq')->default('[]')->after('description');
+        Schema::table('user_want_reads', function (Blueprint $table) {
+            $table->enum('status', ['0','1','2'])->default('0');
         });
     }
 
@@ -25,8 +25,8 @@ class AddFieldFaqToKategoriTable extends Migration
      */
     public function down()
     {
-        Schema::table('kategoris', function (Blueprint $table) {
-            Schema::dropColumn('faq');
+        Schema::table('user_want_reads', function (Blueprint $table) {
+            Schema::dropColumn('status');
         });
     }
 }

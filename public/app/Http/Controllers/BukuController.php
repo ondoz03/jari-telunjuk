@@ -14,10 +14,6 @@ class BukuController extends Controller
     public function index($slug, Request $request)
     {
         $kategori = Kategori::where('name', $slug)->orwhere('slug', $slug)->first();
-//
-//        return $kategori;
-//
-//
 
         if ($kategori) {
 
@@ -99,9 +95,15 @@ class BukuController extends Controller
 
         $kategori = Kategori::where('slug', $category)->first();
 
-        $user_want_read = [];
+
         if (!empty(Auth::user())) {
-            $user_want_read = UserWantRead::where('user_id', Auth::user()->id)->pluck('buku_id')->toArray();
+            $user_want_read = UserWantRead::where('user_id', Auth::user()->id)->where('buku_id', $buku->id)->first();
+        } else{
+            $array = [
+                'status' => '0'
+            ];
+
+            $user_want_read = (object)$array;
         }
         // return $buku;
 

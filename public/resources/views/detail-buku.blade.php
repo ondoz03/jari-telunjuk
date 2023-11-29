@@ -59,8 +59,8 @@
                         <section
                             class="hidden w-full flex-col items-center gap-5 xl:sticky xl:left-0 xl:top-24 xl:flex xl:basis-1/3">
                             <div class="relative h-auto w-full">
-                                <img class="h-full w-full object-cover"
-                                    src="{{ $buku->image }}"
+                                <img class="h-full w-full object-cover lazy-img"
+                                    data-src="{{ $buku->image }}"
                                     alt="Book 5">
                             </div>
 
@@ -149,8 +149,8 @@
 
                         <div class="flex flex-col items-center space-y-3 xl:basis-2/3 xl:items-start">
                             <div class="relative mb-3 block h-auto w-40 xl:hidden">
-                                <img class="h-full w-full object-cover"
-                                    src="{{ $buku->image }}"
+                                <img class="h-full w-full object-cover lazy-img"
+                                    data-src="{{ $buku->image }}"
                                     alt="Book 5">
                             </div>
 
@@ -219,21 +219,21 @@
 
                             <div class="flex w-full flex-col items-center justify-center gap-3 xl:hidden">
                                 <div class="flex flex-col items-center gap-3">
-                                        <a onclick="wantToRead(this, '{{ $buku->id }}', 'add')" style="{{!in_array($buku->id, $user_want_read) ? '' : 'display: none'}}"
+
+                                        <a onclick="wantToRead(this, '{{ $buku->id }}', 'add')" style="{{$user_want_read->status === '0' ||  $user_want_read->status === '2' ? '' : 'display: none'}}"
                                             class="wantToRead w-60 rounded-full bg-[#128C55] px-5 py-3 text-center text-base leading-6 text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
                                             Want to Read
                                         </a>
 
-                                        <a onclick="wantToRead(this, '{{ $buku->id }}', 'delete')" style="{{in_array($buku->id, $user_want_read) ? '' : 'display: none;'}}background-color: #f26b6b; transition: opacity 0.3s ease;"
-                                        class="noWantToRead w-60 rounded-full px-5 py-3 text-center text-base leading-6 text-white" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
-                                        Remove
-                                    </a>
+                                        <a onclick="wantToRead(this, '{{ $buku->id }}', 'delete')" style="{{$user_want_read->status === '1' || $user_want_read->status === '2'  ? '' : 'display: none;'}}background-color: #f26b6b; transition: opacity 0.3s ease;"
+                                            class="noWantToRead w-60 rounded-full px-5 py-3 text-center text-base leading-6 text-white" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+                                            Remove
+                                        </a>
 
-
-                                    <a href="/"
-                                        class="w-60 rounded-full border border-black bg-white px-5 py-3 text-center text-base leading-6 text-black transition-all duration-300 ease-out hover:bg-black/10">
-                                        Currently Read
-                                    </a>
+                                        <a onclick="wantToRead(this, '{{ $buku->id }}', 'update')" style="{{$user_want_read->status === '0' || $user_want_read->status === '1' ? '' : 'display: none;'}}"
+                                            class="caWantToRead w-60 rounded-full border border-black bg-white px-5 py-3 text-center text-base leading-6 text-black transition-all duration-300 ease-out hover:bg-black/10">
+                                            Currently Read
+                                        </a>
                                 </div>
 
                                 <div class="mt-2 flex flex-col items-center">
@@ -254,19 +254,19 @@
 
                             <div class="hidden items-center gap-3 pb-4 xl:flex">
 
-                                    <a onclick="wantToRead(this, '{{ $buku->id }}', 'add')" style="{{!in_array($buku->id, $user_want_read) ? '' : 'display: none'}}"
+                                    <a onclick="wantToRead(this, '{{ $buku->id }}', 'add')" style="{{$user_want_read->status === '0' ||  $user_want_read->status === '2' ? '' : 'display: none'}};cursor: pointer;"
                                         class="wantToRead w-40 rounded-full bg-[#128C55] px-5 py-3 text-center text-base leading-6 text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
                                         Want to Read
                                     </a>
 
-                                    <a onclick="wantToRead(this, '{{ $buku->id }}', 'delete')" style="{{in_array($buku->id, $user_want_read) ? '' : 'display: none;'}}background-color: #f26b6b; transition: opacity 0.3s ease;"
+                                    <a onclick="wantToRead(this, '{{ $buku->id }}', 'delete')" style="{{$user_want_read->status === '1' || $user_want_read->status === '2' ? ''  : 'display: none;'}}background-color: #f26b6b; transition: opacity 0.3s ease; cursor: pointer;"
                                         class="noWantToRead w-40 rounded-full px-5 py-3 text-center text-base leading-6 text-white" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
                                         Remove
                                     </a>
 
 
-                                <a href="/"
-                                    class="rounded-full border-[1.5px] border-black bg-white stroke-black px-5 py-3 text-base leading-6 text-black transition-all duration-300 ease-out hover:bg-black/10">
+                                <a onclick="wantToRead(this, '{{ $buku->id }}', 'update')" style="{{$user_want_read->status === '0' || $user_want_read->status === '1'  ? '' : 'display: none;'}};cursor: pointer;"
+                                    class="caWantToRead rounded-full border-[1.5px] border-black bg-white stroke-black px-5 py-3 text-base leading-6 text-black transition-all duration-300 ease-out hover:bg-black/10">
                                     Currently Read
                                 </a>
                             </div>
@@ -354,9 +354,9 @@
                             @foreach (GeneralHelper::getRandomGetBook($kategori->slug) as $item)
                                 <a href="{{ route('detail-buku', [$kategori->slug, $item->slug]) }}">
                                     {{-- <a href=""> --}}
-                                    <img style="height: 176px;
-                                    width: 118px;"
-                                        src="{{ $item->image }}"
+                                    <img style="height: 176px; width: 118px;"
+                                    class="lazy-img"
+                                        data-src="{{ $item->image }}"
                                         alt="Book Photo 1">
                                 </a>
                             @endforeach
@@ -396,8 +396,8 @@
                             </h5>
 
                             <div class="flex w-full max-w-sm flex-col items-start gap-4">
-                                <a href="{{ route('auth.google') }}"
-                                    class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
+                                <a href=""  class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4" id="google-login">
+                                    {{-- <input type="hidden" name="star" value=0> --}}
                                     <img class="h-6 w-6"
                                         src="{{ asset('/assets') }}/media/icon-google.png"
                                         alt="Icon Google">
@@ -407,25 +407,6 @@
                                     </p>
                                 </a>
 
-                                <a href="{{ route('auth.facebook') }}"
-                                    class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
-                                    <img class="h-6 w-6"
-                                        src="{{ asset('/assets') }}/media/icon-facebook.png"
-                                        alt="Icon facebook">
-
-                                    <p class="text-base font-semibold leading-5">
-                                        Sign up with Facebook
-                                    </p>
-                                </a>
-
-                                <a href="{{ route('auth.twitter') }}"
-                                    class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
-                                    <img class="h-6 w-6"
-                                        src="{{ asset('/assets') }}/media/icon-x.png"
-                                        alt="Icon x">
-
-                                    <p class="text-base font-semibold leading-5">Sign up with X</p>
-                                </a>
 
                                 <a
                                 onclick="onCloseModal()"
@@ -439,75 +420,102 @@
             </div>
         </div>
     </div>
+@endsection
+@section('js')
+<script type="text/javascript">
 
-
-    <script type="text/javascript">
-
-        function wantToRead(element, id, type){
-            if({{GeneralHelper::authCheck()}}){
-                $.ajax({
-                    url: "{{ route('ajax.set-want-to-read') }}",
-                    type: "POST",
-                    data: {
-                        "_token": "{{ csrf_token() }}",
-                        buku_id: id,
-                        type: type
-                    },
-                    success: function(data) {
-                        if (type=='add') {
-                            $(".wantToRead").hide();
-                            $(".noWantToRead").show();
-                        }
-                        if (type=='delete') {
-                            $(".wantToRead").show();
-                            $(".noWantToRead").hide();
-                        }
-                    },
-                });
-            }else{
-                $("#modal-login-review").show();
-            }
-
-        }
-
-        function addReview(star){
-            if({{GeneralHelper::authCheck()}}){
-                $.ajax({
-                    url: "{{ route('ajax.review-book') }}",
-                    type: "POST",
-                    data: {
-                        "_token": "{{ csrf_token() }}",
-                        buku_id: {{$buku->id}},
-                        star: star
-                    },
-                    success: function(data) {
-                        location.reload()
-                    },
-                });
-            }else{
-                $("#modal-login-review").show();
-            }
-        }
-
-        function onCloseModal()
-        {
-            $("#modal-login-review").hide();
-
-        }
-
-        $(document).ready(function() {
+    function wantToRead(element, id, type){
+        if({{GeneralHelper::authCheck()}}){
             $.ajax({
-                url: "{{ route('ajax.set-session-global') }}",
+                url: "{{ route('ajax.set-want-to-read') }}",
                 type: "POST",
                 data: {
                     "_token": "{{ csrf_token() }}",
-                    redirect_profile: 0
+                    buku_id: id,
+                    type: type
                 },
                 success: function(data) {
-                    console.log('set_session_ok');
-                    console.log(data);
+                    if (type=='add') {
+                        $(".wantToRead").hide();
+                        $(".noWantToRead").show();
+                        $(".caWantToRead").show();
+                    }
+
+                    if (type=='delete') {
+                        $(".caWantToRead").show();
+                        $(".wantToRead").show();
+                        $(".noWantToRead").hide();
+                    }
+
+                    if(type == 'update') {
+                        $(".caWantToRead").hide();
+                        $(".noWantToRead").show();
+                        $(".wantToRead").show();
+                    }
+
+
                 },
             });
+        }else{
+            var typeParam = "?type=want_to_read";
+            var bukuParam = "&buku=" + id;
+
+            var googleLoginUrl = "{!! route('auth.google') !!}" + typeParam + bukuParam;
+
+            $("#google-login").attr('href', googleLoginUrl);
+            $("#modal-login-review").show();
+
+            $("#modal-login-review").show();
+        }
+
+    }
+
+    function addReview(star){
+        if({{GeneralHelper::authCheck()}}){
+            $.ajax({
+                url: "{{ route('ajax.review-book') }}",
+                type: "POST",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    buku_id: {{$buku->id}},
+                    star: star
+                },
+                success: function(data) {
+                    location.reload()
+                },
+            });
+        }else{
+
+            var typeParam = "?type=rating";
+            var starParam = "&star=" + star;
+            var bukuParam = "&buku=" + {!! $buku->id !!};
+
+            var googleLoginUrl = "{!! route('auth.google') !!}" + typeParam + starParam + bukuParam;
+
+            $("#google-login").attr('href', googleLoginUrl);
+            $("#modal-login-review").show();
+
+        }
+    }
+
+    function onCloseModal()
+    {
+        $("#modal-login-review").hide();
+
+    }
+
+    $(document).ready(function() {
+        $.ajax({
+            url: "{{ route('ajax.set-session-global') }}",
+            type: "POST",
+            data: {
+                "_token": "{{ csrf_token() }}",
+                redirect_profile: 0
+            },
+            success: function(data) {
+
+            },
         });
-    </script>
+    });
+</script>
 @endsection

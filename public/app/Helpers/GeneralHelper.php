@@ -117,7 +117,6 @@ class GeneralHelper
 
     public static function getRandomFirstBook()
     {
-
         $buku = Buku::whereHas('kategori', function ($q) {
             $q->whereIn('slug', ['fiction-literature-ebook', 'nonfiksi', 'history-ebook', 'psychology-ebook', 'romantis']);
         })->inRandomOrder()
@@ -201,7 +200,7 @@ class GeneralHelper
     }
 
     public static function userInfo()
-    {   
+    {
         if (isset(Auth::user()->id)) {
             return User::find(Auth::user()->id);
         } else {
@@ -310,5 +309,17 @@ class GeneralHelper
         ];
 
         return $arr[array_rand($arr)];
+    }
+
+    public static function popularItem()
+    {
+
+        $buku = Buku::whereHas('kategori', function ($q) {
+            $q->whereIn('slug', ['fiksi', 'sastra', 'nonfiksi-dewasa']);
+        })->inRandomOrder()
+            ->take(6)
+            ->get();
+        return $buku;
+
     }
 }

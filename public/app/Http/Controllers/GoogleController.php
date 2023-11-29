@@ -9,6 +9,8 @@ use App\Models\UserDetails;
 use App\Models\UserKategori;
 use App\Models\UserRecommendation;
 use App\Models\Buku;
+use App\Models\Review;
+use App\Models\UserWantRead;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Auth;
@@ -16,11 +18,19 @@ use Illuminate\Support\Facades\Session;
 
 class GoogleController extends Controller
 {
-    public function redirectToGoogle(){
+    public function redirectToGoogle(Request $request){
+        $inputData = $request->all();
+
         Session::put('redirect_back', url()->previous());
+
+        if($request->has('type')){
+            Session::put('param', json_encode($inputData));
+        }
+
         return Socialite::driver('google')->redirect();
     }
     public function callback(Request $request){
+
         $user = Socialite::driver('google')->user();
 
         $find_user = User::where('email',$user->getEmail())->first();
@@ -32,6 +42,35 @@ class GoogleController extends Controller
             if(!empty(session('redirect_profile'))) {
                 return redirect()->route('user.profile');
             } else {
+
+                $data = json_decode(session('param'), true);
+
+                $type = $data['type'];
+                $buku = $data['buku'];
+                if( $type === 'rating'){
+                    $star = $data['star'];
+
+                    Review::updateorcreate([
+                        'user_id' => Auth::user()->id,
+                        'buku_id' => $buku
+                    ],[
+                        'star' => $star
+                    ]);
+                } else if($type === "want_to_read"){
+                    $check = UserWantRead::where('buku_id', $buku)->where('user_id', Auth::user()->id)->first();
+                    if(!$check){
+                        UserWantRead::create([
+                            'user_id' => Auth::user()->id,
+                            'buku_id' => $buku,
+                            'status' => '1'
+                        ]);
+                    }
+
+                } else if($type === ""){
+
+                }
+
+
                 return redirect(session('redirect_back'));
             }
 
@@ -42,6 +81,7 @@ class GoogleController extends Controller
                 'avatar' => $user->getAvatar(),
             ]);
             Auth::login($new_user);
+
             if(!empty(json_decode(session('category_session')))){
                 foreach (json_decode(session('category_session')) as $key => $value) {
                     UserKategori::create([

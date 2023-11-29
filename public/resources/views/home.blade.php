@@ -29,65 +29,65 @@
                 <section class="-mb-12 flex w-full items-center gap-2 xl:-mb-24 xl:gap-6 astro-J7PV25F6">
                     <div class="flex w-1/5 flex-col items-start gap-2 xl:gap-6 astro-J7PV25F6">
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full w-full object-cover object-top astro-J7PV25F6"
-                                src="{{ GeneralHelper::getRandomFirstBook() }}"
+                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
+                            data-src="{{ GeneralHelper::getRandomFirstBook() }}"
                                 alt="Book Photo 1">
                         </div>
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full w-full object-cover object-top astro-J7PV25F6"
-                                src="{{ GeneralHelper::getRandomFirstBook() }}"
+                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
+                            data-src="{{ GeneralHelper::getRandomFirstBook() }}"
                                 alt="Book Photo 2">
                         </div>
                     </div>
 
                     <div class="mt-16 flex w-1/5 flex-col items-start gap-2 xl:mt-32 xl:gap-6 astro-J7PV25F6">
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full w-full object-cover object-top astro-J7PV25F6"
-                                src="{{ GeneralHelper::getRandomFirstBook() }}"
+                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
+                            data-src="{{ GeneralHelper::getRandomFirstBook() }}"
                                 alt="Book Photo 3">
                         </div>
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full w-full object-cover object-top astro-J7PV25F6"
-                                src="{{ GeneralHelper::getRandomFirstBook() }}"
+                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
+                            data-src="{{ GeneralHelper::getRandomFirstBook() }}"
                                 alt="Book Photo 4">
                         </div>
                     </div>
 
                     <div class="mt-28 flex w-1/5 flex-col items-start gap-2 xl:mt-56 xl:gap-6 astro-J7PV25F6">
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full w-full object-cover object-top astro-J7PV25F6"
-                                src="{{ GeneralHelper::getRandomFirstBook() }}"
+                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
+                            data-src="{{ GeneralHelper::getRandomFirstBook() }}"
                                 alt="Book Photo 5">
                         </div>
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full w-full object-cover object-top astro-J7PV25F6"
-                                src="{{ GeneralHelper::getRandomFirstBook() }}"
+                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
+                            data-src="{{ GeneralHelper::getRandomFirstBook() }}"
                                 alt="Book Photo 6">
                         </div>
                     </div>
 
                     <div class="mt-16 flex w-1/5 flex-col items-start gap-2 xl:mt-32 xl:gap-6 astro-J7PV25F6">
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full w-full object-cover object-top astro-J7PV25F6"
-                                src="{{ GeneralHelper::getRandomFirstBook() }}"
+                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
+                            data-src="{{ GeneralHelper::getRandomFirstBook() }}"
                                 alt="Book Photo 7">
                         </div>
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full w-full object-cover object-top astro-J7PV25F6"
-                                src="{{ GeneralHelper::getRandomFirstBook() }}"
+                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
+                            data-src="{{ GeneralHelper::getRandomFirstBook() }}"
                                 alt="Book Photo 8">
                         </div>
                     </div>
 
                     <div class="flex w-1/5 flex-col items-start gap-2 xl:gap-6 astro-J7PV25F6">
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full w-full object-cover object-top astro-J7PV25F6"
-                                src="{{ GeneralHelper::getRandomFirstBook() }}"
+                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
+                            data-src="{{ GeneralHelper::getRandomFirstBook() }}"
                                 alt="Book Photo 9">
                         </div>
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full w-full object-cover object-top astro-J7PV25F6"
-                                src="{{ GeneralHelper::getRandomFirstBook() }}"
+                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
+                            data-src="{{ GeneralHelper::getRandomFirstBook() }}"
                                 alt="Book Photo 10">
                         </div>
                     </div>
@@ -103,7 +103,7 @@
 
                     <section class="grid grid-cols-2 gap-4 xl:grid-cols-4 xl:gap-12 astro-J7PV25F6">
                         <figure class="space-y-2 xl:space-y-10 astro-J7PV25F6">
-                            <img src="{{ asset('/assets/media') }}/benefit-1.png"
+                            <img  src="{{ asset('/assets/media') }}/benefit-1.png"
                                 alt="Benefit 1"
                                 class="astro-J7PV25F6">
                             <figcaption class="text-sm leading-[22px] xl:text-base xl:leading-6 astro-J7PV25F6">
@@ -112,7 +112,7 @@
                         </figure>
 
                         <figure class="space-y-2 xl:space-y-10 astro-J7PV25F6">
-                            <img src="{{ asset('/assets/media') }}/benefit-2.png"
+                            <img  src="{{ asset('/assets/media') }}/benefit-2.png"
                                 alt="Benefit 2"
                                 class="astro-J7PV25F6">
                             <figcaption class="text-sm leading-[22px] xl:text-base xl:leading-6 astro-J7PV25F6">
@@ -122,7 +122,7 @@
                         </figure>
 
                         <figure class="space-y-2 xl:space-y-10 astro-J7PV25F6">
-                            <img src="{{ asset('/assets/media') }}/benefit-3.png"
+                            <img  src="{{ asset('/assets/media') }}/benefit-3.png"
                                 alt="Benefit 3"
                                 class="astro-J7PV25F6">
                             <figcaption class="text-sm leading-[22px] xl:text-base xl:leading-6 astro-J7PV25F6">
@@ -132,7 +132,7 @@
                         </figure>
 
                         <figure class="space-y-2 xl:space-y-10 astro-J7PV25F6">
-                            <img src="{{ asset('/assets/media') }}/benefit-4.png"
+                            <img  src="{{ asset('/assets/media') }}/benefit-4.png"
                                 alt="Benefit 4"
                                 class="astro-J7PV25F6">
                             <figcaption class="text-sm leading-[22px] xl:text-base xl:leading-6 astro-J7PV25F6">
@@ -183,25 +183,25 @@
                         </svg>
 
                         <figure class="relative h-64 w-full shadow-2xl xl:h-96 astro-J7PV25F6">
-                            <img class="h-full w-full object-cover astro-J7PV25F6"
+                            <img  class="h-full w-full object-cover astro-J7PV25F6"
                                 src=""
                                 alt="Book 1"
                                 id="book-homepage-1">
                         </figure>
                         <figure class="relative h-64 w-full shadow-2xl xl:h-96 astro-J7PV25F6">
-                            <img class="h-full w-full object-cover astro-J7PV25F6"
+                            <img  class="h-full w-full object-cover astro-J7PV25F6"
                                 src=""
                                 alt="Book 2"
                                 id="book-homepage-2">
                         </figure>
                         <figure class="relative h-64 w-full shadow-2xl xl:h-96 astro-J7PV25F6">
-                            <img class="h-full w-full object-cover astro-J7PV25F6"
+                            <img  class="h-full w-full object-cover astro-J7PV25F6"
                                 src=""
                                 alt="Book 3"
                                 id="book-homepage-3">
                         </figure>
                         <figure class="relative h-64 w-full shadow-2xl xl:h-96 astro-J7PV25F6">
-                            <img class="h-full w-full object-cover astro-J7PV25F6"
+                            <img  class="h-full w-full object-cover astro-J7PV25F6"
                                 src=""
                                 alt="Book 4"
                                 id="book-homepage-4">
@@ -245,7 +245,7 @@
                                     id="book-homepage-5-penulis"></p>
                             </div>
 
-                            <img class="h-64 w-auto shadow-2xl 2xl:h-96 astro-J7PV25F6"
+                            <img  class="h-64 w-auto shadow-2xl 2xl:h-96 astro-J7PV25F6"
                                 src=""
                                 alt="Book 8"
                                 id="book-homepage-5">
@@ -257,11 +257,28 @@
                             </div>
                         </figure>
 
-                        <button id="book-recommendation-new"
-                            type="button"
-                            class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 ">
-                            Coba Rekomendasi Buku
-                        </button>
+                        @guest
+                            <button id="book-recommendation-new"
+                                type="button"
+                                class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 ">
+                                Coba Rekomendasi Buku
+                            </button>
+                        @else
+                            @if (count(auth()->user()->user_recommendation) < 1)
+                                <button id="book-recommendation-new"
+                                    type="button"
+                                    class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 ">
+                                    Coba Rekomendasi Buku
+                                </button>
+                            @else
+                                <a
+                                    href="{{route('user.profile')}}"
+                                    class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 ">
+                                    Coba Rekomendasi Buku
+                                </a>
+                            @endif
+                        @endguest
+
                     </div>
                 </div>
             </section>
@@ -274,7 +291,7 @@
                     </h3>
 
                     <div class="flex flex-wrap items-start justify-between gap-8 xl:items-center astro-J7PV25F6">
-                        <img class="h-64 w-full xl:w-auto astro-J7PV25F6"
+                        <img  class="h-64 w-full xl:w-auto astro-J7PV25F6"
                             src="{{ asset('/assets/media') }}/category-ill-1.jpg"
                             alt="Category illustration">
                         @php
@@ -361,7 +378,7 @@
 
                                 </a>
 
-                                <img class="aspect-video h-auto w-full astro-J7PV25F6"
+                                <img  class="aspect-video h-auto w-full astro-J7PV25F6"
                                     src="{{ $item['featuredImage']['node']['mediaDetails']['sizes'][0]['sourceUrl'] }}"
                                     alt="Blog 1"
                                     style="object-fit: cover;">
@@ -434,7 +451,69 @@
               <!-- search found / initial list -->
               <section class="block h-[calc(100vh-288px)] overflow-y-auto p-4 lg:h-[270px] lg:p-5 astro-J7PV25F6">
                 <div class="grid w-full grid-cols-3 justify-center gap-4 lg:grid-cols-7 lg:gap-6 astro-J7PV25F6" id="book-list-recommendation">
-                    
+                    <div class="wrapper-skeleton">
+                        <li class="carousel-cell">
+                            <div class="box-item shimmerBG"></div>
+                            <div class="product-authors">
+                                <p class="skeleton-paragraph-4"></p>
+                                <p class="skeleton-paragraph-5"></p>
+                            </div>
+                        </li>
+                    </div>
+                    <div class="wrapper-skeleton">
+                        <li class="carousel-cell">
+                            <div class="box-item shimmerBG"></div>
+                            <div class="product-authors">
+                                <p class="skeleton-paragraph-4"></p>
+                                <p class="skeleton-paragraph-5"></p>
+                            </div>
+                        </li>
+                    </div>
+                    <div class="wrapper-skeleton">
+                        <li class="carousel-cell">
+                            <div class="box-item shimmerBG"></div>
+                            <div class="product-authors">
+                                <p class="skeleton-paragraph-4"></p>
+                                <p class="skeleton-paragraph-5"></p>
+                            </div>
+                        </li>
+                    </div>
+                    <div class="wrapper-skeleton">
+                        <li class="carousel-cell">
+                            <div class="box-item shimmerBG"></div>
+                            <div class="product-authors">
+                                <p class="skeleton-paragraph-4"></p>
+                                <p class="skeleton-paragraph-5"></p>
+                            </div>
+                        </li>
+                    </div>
+                    <div class="wrapper-skeleton">
+                        <li class="carousel-cell">
+                            <div class="box-item shimmerBG"></div>
+                            <div class="product-authors">
+                                <p class="skeleton-paragraph-4"></p>
+                                <p class="skeleton-paragraph-5"></p>
+                            </div>
+                        </li>
+                    </div>
+                     <div class="wrapper-skeleton">
+                        <li class="carousel-cell">
+                            <div class="box-item shimmerBG"></div>
+                            <div class="product-authors">
+                                <p class="skeleton-paragraph-4"></p>
+                                <p class="skeleton-paragraph-5"></p>
+                            </div>
+                        </li>
+                    </div>
+                    <div class="wrapper-skeleton">
+                        <li class="carousel-cell">
+                            <div class="box-item shimmerBG"></div>
+                            <div class="product-authors">
+                                <p class="skeleton-paragraph-4"></p>
+                                <p class="skeleton-paragraph-5"></p>
+                            </div>
+                        </li>
+                    </div>
                 </div>
               </section>
 
@@ -443,6 +522,7 @@
                   <h5 id="valueList" class="text-base font-bold leading-5 text-[#141414] astro-J7PV25F6">
                     <span id="countSelectedBook">0</span> Buku dipilih
                   </h5>
+                  <span id="required" style="color: #dc1414; display:none" class="hide"> Minimal Anda Harus Memilih 3 Buku </span>
                 </div>
 
                 <div class="flex w-full flex-row gap-2 lg:w-auto lg:gap-4 astro-J7PV25F6">
@@ -521,7 +601,7 @@
                 </h3>
 
                 <div class="relative z-10 h-[calc(100vh_-_113px)] bg-white/95 px-6 pt-11 lg:h-auto lg:rounded-b-2xl lg:pb-14 lg:pt-11">
-                  <img class="absolute left-1/2 top-1/2 h-auto w-full -translate-x-1/2 -translate-y-1/2" src="{{ asset('/assets/media') }}/books-blur.png" alt="Books Blur">
+                  <img  class="absolute left-1/2 top-1/2 h-auto w-full -translate-x-1/2 -translate-y-1/2" src="{{ asset('/assets/media') }}/books-blur.png" alt="Books Blur">
                   <div class="relative z-10 flex h-full flex-col items-center">
                     <h5 class="mb-6 text-center text-base font-bold">
                       Daftar sekarang untuk melihat rekomendasi.
@@ -529,307 +609,286 @@
 
                     <div class="flex w-full max-w-sm flex-col items-start gap-4">
                       <a href="{{ route('auth.google') }}" class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
-                        <img class="h-6 w-6" src="{{ asset('/assets/media') }}/icon-google.png" alt="Icon Google">
+                        <img  class="h-6 w-6" src="{{ asset('/assets/media') }}/icon-google.png" alt="Icon Google">
 
                         <p class="text-base font-semibold leading-5">Sign up with Google</p>
                       </a>
 
-                      <a href="{{ route('auth.facebook') }}" class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4" style="display:none;">
-                        <img class="h-6 w-6" src="{{ asset('/assets/media') }}/icon-facebook.png" alt="Icon facebook">
 
-                        <p class="text-base font-semibold leading-5">
-                          Sign up with Facebook
-                        </p>
-                      </a>
-
-                      <a href="{{ route('auth.twitter') }}" class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4" style="display:none;">
-                        <img class="h-6 w-6" src="{{ asset('/assets/media') }}/icon-x.png" alt="Icon x">
-
-                        <p class="text-base font-semibold leading-5">Sign up with X</p>
-                      </a>
                     </div>
                   </div>
                 </div>
             </div>
         </div>
     </main>
-    <script type="text/javascript">
-        $(document).ready(function() {
+@endsection
+
+@section('js')
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.ajax({
+            url: "{{ route('ajax.set-session-global') }}",
+            type: "POST",
+            data: {
+                "_token": "{{ csrf_token() }}",
+                redirect_profile: 1
+            },
+            success: function(data) {
+
+            },
+        });
+
+        if (localStorage.getItem("default-recommendation-book")) {
+            refreshDefaultRecommendationBook(JSON.parse(localStorage.getItem("default-recommendation-book")));
+        } else {
             $.ajax({
-                url: "{{ route('ajax.set-session-global') }}",
-                type: "POST",
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    redirect_profile: 1
-                },
+                url: "{{ route('ajax.book-homepage') }}",
+                type: "GET",
+                data: {},
                 success: function(data) {
-                    console.log('set_session_ok');
-                    console.log(data);
+                    localStorage.setItem("default-recommendation-book", JSON.stringify(data));
+                    refreshDefaultRecommendationBook(data);
                 },
             });
+        }
+    });
 
-            if (localStorage.getItem("default-recommendation-book")) {
-                refreshDefaultRecommendationBook(JSON.parse(localStorage.getItem("default-recommendation-book")));
-            } else {
-                $.ajax({
-                    url: "{{ route('ajax.book-homepage') }}",
-                    type: "GET",
-                    data: {},
-                    success: function(data) {
-                        localStorage.setItem("default-recommendation-book", JSON.stringify(data));
-                        refreshDefaultRecommendationBook(data);
-                    },
-                });
-            }
-        });
+    $('#modal-book-recommendation-new #overlay-index').click(function() {
+        $("#modal-book-recommendation-new").addClass("hidden");
+    });
 
-        $('#modal-book-recommendation-new #overlay-index').click(function() {
-            $("#modal-book-recommendation-new").addClass("hidden");
-        });
+    $('#close-modal-index-book').click(function() {
+        $("#modal-book-recommendation-new").addClass("hidden");
+    });
 
-        $('#close-modal-index-book').click(function() {
-            $("#modal-book-recommendation-new").addClass("hidden");
-        });
+    $('#close-modal-index').click(function() {
+        $("#modal-book-recommendation-new").addClass("hidden");
+    });
 
-        $('#close-modal-index').click(function() {
-            $("#modal-book-recommendation-new").addClass("hidden");
-        });
-
-        $('#close-icon').click(function() {
-            $("#modal-book-recommendation-new").addClass("hidden");
-        });
-
-        
-
-        $('#book-recommendation-new').click(function() {
-            if($("#modal-book-recommendation-new").hasClass("hidden")) {
-                $.each(JSON.parse(localStorage.getItem("selected-category-book")), function(index, value) {
-                    $('#' + value + '_kategori').prop("checked", true);
-                });
-                $("#modal-book-recommendation-new").removeClass("hidden");
-                $("#modal-book-recommendation-new").addClass("flex");
-            }
-            $("#countSelectedCategory").text($("input[name='kategori']:checked").length);
-        });
+    $('#close-icon').click(function() {
+        $("#modal-book-recommendation-new").addClass("hidden");
+    });
 
 
-        $('.kategori').click(function() {
-            var numberOfChecked = $("input[name='kategori']:checked").length;
-            if (numberOfChecked > 5) {
-                $(this).prop("checked", false);
-            }
-            $("#countSelectedCategory").text($("input[name='kategori']:checked").length);
-        });
-
-        $('.bookpicker').click(function() {
-            var numberOfChecked = $("input[name='book_selected']:checked").length;
-            if (numberOfChecked > 5) {
-                $(this).prop("checked", false);
-            }
-            $("#countSelectedBook").text($("input[name='book_selected']:checked").length);
-        });
-
-
-        $('#btn-category-finish').click(function() {
-            // console.log('waddddd');
-            var arr = [];
-            $.each($("input[name='kategori']:checked"), function() {
-                arr.push($(this).val());
+    $('#book-recommendation-new').click(function() {
+        if($("#modal-book-recommendation-new").hasClass("hidden")) {
+            $.each(JSON.parse(localStorage.getItem("selected-category-book")), function(index, value) {
+                $('#' + value + '_kategori').prop("checked", true);
             });
-            localStorage.setItem("selected-category-book", JSON.stringify(arr));
-            setSessionCategory();
-            listBookByCategory();
-            // var check_auth = {{ GeneralHelper::authCheck() }};
+            $("#modal-book-recommendation-new").removeClass("hidden");
+            $("#modal-book-recommendation-new").addClass("flex");
+        }
+        $("#countSelectedCategory").text($("input[name='kategori']:checked").length);
+    });
 
-            // var check_auth = {{ GeneralHelper::authCheck() }};
-            // if(check_auth){
-            //     window.location.href = "{{ route('user.profile') }}";
-            // } else {
-            // $("#modal-1-container").hide();
-            // $("#modal-2-container").show();
-            // }
 
-            if($("#recommend-book-section").hasClass("relative")) {
-                $("#recommend-book-section").addClass("hidden");
-                $("#choose-book-section").removeClass("hidden");
-            }
+    $('.kategori').click(function() {
+        var numberOfChecked = $("input[name='kategori']:checked").length;
+        if (numberOfChecked > 5) {
+            $(this).prop("checked", false);
+        }
+        $("#countSelectedCategory").text($("input[name='kategori']:checked").length);
+    });
 
+    $('.bookpicker').click(function() {
+        var numberOfChecked = $("input[name='book_selected']:checked").length;
+        if (numberOfChecked > 5) {
+            $(this).prop("checked", false);
+        }
+        $("#countSelectedBook").text($("input[name='book_selected']:checked").length);
+    });
+
+
+    $('#btn-category-finish').click(function() {
+        var arr = [];
+        $.each($("input[name='kategori']:checked"), function() {
+            arr.push($(this).val());
+        });
+        localStorage.setItem("selected-category-book", JSON.stringify(arr));
+        setSessionCategory();
+        listBookByCategory();
+
+        if($("#recommend-book-section").hasClass("relative")) {
+            $("#recommend-book-section").addClass("hidden");
+            $("#choose-book-section").removeClass("hidden");
+        }
+
+    });
+
+    $('#submitBook').click(function() {
+        var arr = [];
+        var numberOfChecked = $("input[name='book_selected']:checked").length;
+
+        $.each($("input[name='book_selected']:checked"), function() {
+            arr.push($(this).val());
         });
 
-        $('#submitBook').click(function() {
-            var arr = [];
-            $.each($("input[name='book_selected']:checked"), function() {
-                arr.push($(this).val());
-            });
+        if(numberOfChecked > 2 ){
             localStorage.setItem("selected-book", JSON.stringify(arr));
             setSessionSelectedBook();
             var check_auth = {{ GeneralHelper::authCheck() }};
             if (check_auth) {
                 window.location.href = "{{ route('user.profile') }}";
             } else {
-                // $("#modal-1-container").hide();
-                // $("#modal-2-container").hide();
-                // $("#modal-3-container").show();
+
+
                 if($("#signup-section").hasClass("relative")) {
-                    $("#recommend-book-section").addClass("hidden");
-                    $("#choose-book-section").addClass("hidden");
-                    $("#signup-section").removeClass("hidden");
-                }
+                        $("#recommend-book-section").addClass("hidden");
+                        $("#choose-book-section").addClass("hidden");
+                        $("#signup-section").removeClass("hidden");
+                     }
+
+            }
+        } else {
+            $("#required").show();
+        }
+    });
+
+    $('#btn-prev-choose-book').click(function() {
+        if($("#recommend-book-section").hasClass("relative")) {
+            $("#choose-book-section").addClass("hidden");
+            $("#recommend-book-section").removeClass("hidden");
+        }
+    });
+
+    function refreshDefaultRecommendationBook(data) {
+        order = 1;
+        $.each(data, function(key, item) {
+            $("#book-homepage-" + order).attr("src", item.image);
+            if (order == 5) {
+                $("#book-homepage-" + order + "-judul").text(item.judul);
+                $("#book-homepage-" + order + "-penulis").text(item.penulis);
+                const names = item.kategori.map(items => items.name);
+                const result = names.join(', ');
+                $("#book-homepage-" + order + "-kategori").text(result);
+            }
+            if (order > 5) {
+                return false;
+            }
+            order = order + 1;
+        });
+    }
+
+    function setSessionCategory() {
+        $("#category_book").val(localStorage.getItem("selected-category-book"));
+        $.ajax({
+            url: "{{ route('ajax.set-session-global') }}",
+            type: "POST",
+            data: {
+                "_token": "{{ csrf_token() }}",
+                category_session: localStorage.getItem("selected-category-book")
+            },
+            success: function(data) {
+                true
+            },
+        });
+    }
+
+    function setSessionSelectedBook() {
+        $.ajax({
+            url: "{{ route('ajax.set-session-global') }}",
+            type: "POST",
+            data: {
+                "_token": "{{ csrf_token() }}",
+                selected_book_session: localStorage.getItem("selected-book")
+            },
+            success: function(data) {
+
+            },
+        });
+    }
+
+    function listBookByCategory() {
+        $("#countSelectedBook").text($("input[name='book_selected']:checked").length);
+        $.ajax({
+            url: "{{ route('ajax.list-book-recommendation') }}",
+            type: "GET",
+            data: {},
+            success: function(data) {
+                var list_book = data;
+                var html = '';
+                $.each(list_book, function(index, value) {
+
+                    var shortText = jQuery.trim(value.judul).substring(0, 30).split(" ").slice(0, -1).join(" ") + "...";
+
+                    html = html + '<div class="astro-J7PV25F6">\
+                        <input type="checkbox" id="list_book_' + index + '" value="' + value.id + '" class="checkbox peer hidden astro-J7PV25F6 bookpicker" name="book_selected">\
+                        <label for="list_book_' + index + '" class="peer-checked:leading-2 w-full cursor-pointer text-sm font-normal peer-checked:bg-red-400 peer-checked:font-[sans-serif] peer-checked:font-semibold lg:peer-checked:text-[0.75rem] [&>img]:shadow-md peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\
+                        <figure class="relative space-y-3 astro-J7PV25F6">\
+                            <img  style="height:120px !important" class="h-auto lazy-img w-full astro-J7PV25F6" data-src="' + value.image + '" alt="' + value.judul + '">\
+                            <div class="pointer-events-none leading-5 astro-J7PV25F6">\
+                                ' + shortText + '\
+                            </div>\
+                        </figure>\
+                        </label>\
+                    </div>';
+                });
+
+                $("#book-list-recommendation").html(html);
+                $('.bookpicker').click(function() {
+                    var numberOfChecked = $("input[name='book_selected']:checked").length;
+                    if (numberOfChecked > 5) {
+                        $(this).prop("checked", false);
+                    }
+                    $("#countSelectedBook").text($("input[name='book_selected']:checked").length);
+                });
+
+                lazyload()
+            },
+        });
+    }
+    // console.log('sss');
+</script>
+<script>
+    //-----------------------------------------------------------------------------//
+    const modal_chooseBook = document.querySelector("#modal_choose-book");
+    const modal_chooseBook_overlay = document.querySelector(
+        "#modal_choose-book #overlay"
+    );
+
+    modal_chooseBook_overlay.addEventListener("click", () => {
+        if (modal_chooseBook.classList.contains("flex")) {
+            modal_chooseBook.classList.remove("flex");
+            modal_chooseBook.classList.add("hidden");
+        }
+    });
+    //-----------------------------------------------------------------------------//
+    const close_modal = document.querySelector("#close-modal");
+
+    close_modal.addEventListener("click", () => {
+        if (modal_chooseBook.classList.contains("flex")) {
+            modal_chooseBook.classList.remove("flex");
+            modal_chooseBook.classList.add("hidden");
+        }
+    });
+    //-----------------------------------------------------------------------------//
+    const valueList = document.querySelector("#valueList");
+    let valueListText = `<span> Buku dipilih</span>`;
+
+    let listArray = [];
+
+    const checkboxes = document.querySelectorAll(".checkbox");
+    const next_btn: HTMLElement = document.querySelector("#next-btn");
+
+    checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("click", () => {
+            if (checkbox.checked) {
+                listArray.push(checkbox.value);
+                valueList.innerHTML = listArray.length + valueListText;
+            } else {
+                listArray = listArray.filter((e) => e !== checkbox.value);
+                valueList.innerHTML = listArray.length + valueListText;
+            }
+
+            if (listArray.length > 3) {
+                next_btn.classList.remove("bg-[#72D1A6]");
+                next_btn.classList.add("bg-[#128C55]");
+            } else {
+                next_btn.classList.remove("bg-[#128C55]");
+                next_btn.classList.add("bg-[#72D1A6]");
             }
         });
-// signup-section
-        $('#btn-prev-choose-book').click(function() {
-            if($("#recommend-book-section").hasClass("relative")) {
-                $("#choose-book-section").addClass("hidden");
-                $("#recommend-book-section").removeClass("hidden");
-            }
-        });
-
-        function refreshDefaultRecommendationBook(data) {
-            order = 1;
-            $.each(data, function(key, item) {
-                $("#book-homepage-" + order).attr("src", item.image);
-                if (order == 5) {
-                    $("#book-homepage-" + order + "-judul").text(item.judul);
-                    $("#book-homepage-" + order + "-penulis").text(item.penulis);
-                    const names = item.kategori.map(items => items.name);
-                    const result = names.join(', ');
-                    $("#book-homepage-" + order + "-kategori").text(result);
-                }
-                if (order > 5) {
-                    return false;
-                }
-                order = order + 1;
-            });
-        }
-
-        function setSessionCategory() {
-            $("#category_book").val(localStorage.getItem("selected-category-book"));
-            $.ajax({
-                url: "{{ route('ajax.set-session-global') }}",
-                type: "POST",
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    category_session: localStorage.getItem("selected-category-book")
-                },
-                success: function(data) {
-                    console.log('set_session_ok');
-                    console.log(data);
-                },
-            });
-        }
-
-        function setSessionSelectedBook() {
-            $.ajax({
-                url: "{{ route('ajax.set-session-global') }}",
-                type: "POST",
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    selected_book_session: localStorage.getItem("selected-book")
-                },
-                success: function(data) {
-
-                },
-            });
-        }
-
-        function listBookByCategory() {
-            $("#book-list-recommendation").html('');
-            $("#countSelectedBook").text($("input[name='book_selected']:checked").length);
-            // console.log('run list_book');
-            // var list_book = {!! json_encode(GeneralHelper::getBookBySelectedCategory(), JSON_HEX_TAG) !!};
-            // console.log(list_book);
-            // var list_book = JSON.parse(list_book);
-            $.ajax({
-                url: "{{ route('ajax.list-book-recommendation') }}",
-                type: "GET",
-                data: {},
-                success: function(data) {
-                    var list_book = data;
-                    var html = '';
-                    $.each(list_book, function(index, value) {
-
-                        var shortText = jQuery.trim(value.judul).substring(0, 30).split(" ").slice(0, -1).join(" ") + "...";
-
-                        html = html + '<div class="astro-J7PV25F6">\
-                                          <input type="checkbox" id="list_book_' + index + '" value="' + value.id + '" class="checkbox peer hidden astro-J7PV25F6 bookpicker" name="book_selected">\
-                                          <label for="list_book_' + index + '" class="peer-checked:leading-2 w-full cursor-pointer text-sm font-normal peer-checked:bg-red-400 peer-checked:font-[sans-serif] peer-checked:font-semibold lg:peer-checked:text-[0.75rem] [&>img]:shadow-md peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\
-                                            <figure class="relative space-y-3 astro-J7PV25F6">\
-                                              <img style="height:120px !important" class="h-auto w-full astro-J7PV25F6" src="' + value.image + '" alt="' + value.judul + '">\
-                                              <div class="pointer-events-none leading-5 astro-J7PV25F6">\
-                                                 ' + shortText + '\
-                                              </div>\
-                                            </figure>\
-                                          </label>\
-                                        </div>';
-                    });
-
-                    $("#book-list-recommendation").html(html);
-                    $('.bookpicker').click(function() {
-                        var numberOfChecked = $("input[name='book_selected']:checked").length;
-                        if (numberOfChecked > 5) {
-                            $(this).prop("checked", false);
-                        }
-                        $("#countSelectedBook").text($("input[name='book_selected']:checked").length);
-                    });
-                },
-            });
-            
-
-
-        }
-        // console.log('sss');
-    </script>
-    <script>
-        //-----------------------------------------------------------------------------//
-        const modal_chooseBook = document.querySelector("#modal_choose-book");
-        const modal_chooseBook_overlay = document.querySelector(
-            "#modal_choose-book #overlay"
-        );
-
-        modal_chooseBook_overlay.addEventListener("click", () => {
-            if (modal_chooseBook.classList.contains("flex")) {
-                modal_chooseBook.classList.remove("flex");
-                modal_chooseBook.classList.add("hidden");
-            }
-        });
-        //-----------------------------------------------------------------------------//
-        const close_modal = document.querySelector("#close-modal");
-
-        close_modal.addEventListener("click", () => {
-            if (modal_chooseBook.classList.contains("flex")) {
-                modal_chooseBook.classList.remove("flex");
-                modal_chooseBook.classList.add("hidden");
-            }
-        });
-        //-----------------------------------------------------------------------------//
-        const valueList = document.querySelector("#valueList");
-        let valueListText = `<span> Buku dipilih</span>`;
-
-        let listArray = [];
-
-        const checkboxes = document.querySelectorAll(".checkbox");
-        const next_btn: HTMLElement = document.querySelector("#next-btn");
-
-        checkboxes.forEach((checkbox) => {
-            checkbox.addEventListener("click", () => {
-                if (checkbox.checked) {
-                    listArray.push(checkbox.value);
-                    valueList.innerHTML = listArray.length + valueListText;
-                } else {
-                    listArray = listArray.filter((e) => e !== checkbox.value);
-                    valueList.innerHTML = listArray.length + valueListText;
-                }
-
-                if (listArray.length > 3) {
-                    next_btn.classList.remove("bg-[#72D1A6]");
-                    next_btn.classList.add("bg-[#128C55]");
-                } else {
-                    next_btn.classList.remove("bg-[#128C55]");
-                    next_btn.classList.add("bg-[#72D1A6]");
-                }
-            });
-        });
-        //-----------------------------------------------------------------------------//
-    </script>
+    });
+    //-----------------------------------------------------------------------------//
+</script>
 @endsection

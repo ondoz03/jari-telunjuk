@@ -11,7 +11,8 @@ class UserWantRead extends Model
 
     protected $fillable = [
         'user_id',
-        'buku_id'
+        'buku_id',
+        'status'
     ];
 
     public function user()
