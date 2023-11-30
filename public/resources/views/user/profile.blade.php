@@ -234,23 +234,20 @@
                         Popular This Week
                     </h3>
 
-                    <div class="mb-4 space-y-4">
+{{--                    <div class="mb-4 space-y-4">--}}
+{{--                        @foreach (GeneralHelper::popularItem() as $item)--}}
+{{--                            <figure class="group relative space-y-2">--}}
+{{--                                <a class="absolute inset-0 z-10 h-full w-full" href="{{route('detail-buku', [$item->kategori[0]->slug , $item->slug]) }}"></a>--}}
 
-                        @foreach (GeneralHelper::popularItem() as $item)
-                            <figure class="group relative space-y-2">
-                                <a class="absolute inset-0 z-10 h-full w-full" href="{{route('detail-buku', [$item->kategori[0]->slug , $item->slug]) }}"></a>
-
-                                <h5 class="text-sm font-semibold group-hover:underline">
-                                    {{$item->judul}}
-                                </h5>
-
-                                <p class="text-sm text-[#515151]">
-                                    by {{$item->penulis}}
-                                </p>
-                            </figure>
-                        @endforeach
-
-                    </div>
+{{--                                <h5 class="text-sm font-semibold group-hover:underline">--}}
+{{--                                    {{$item->judul}}--}}
+{{--                                </h5>--}}
+{{--                                <p class="text-sm text-[#515151]">--}}
+{{--                                    by {{$item->penulis}}--}}
+{{--                                </p>--}}
+{{--                            </figure>--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
 
                     <a href="{{ route('buku', 'buku') }}" id="search-book" type="button" class="relative flex items-center justify-center rounded-full bg-[#128C55] px-8 py-2 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
                         Cari Buku
