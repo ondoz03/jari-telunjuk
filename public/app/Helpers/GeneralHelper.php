@@ -317,7 +317,7 @@ class GeneralHelper
             $q->whereIn('slug', ['fiksi', 'sastra', 'nonfiksi-dewasa']);
             })->with([
                 'kategori' => function ($k) {
-                    $k->whereIn('slug', ['fiksi', 'sastra', 'nonfiksi-dewasa']); // Select only the columns you need
+                    $k->whereIn('slug', ['fiksi', 'sastra', 'nonfiksi-dewasa']);
                 },
             ])
             ->inRandomOrder()
