@@ -608,7 +608,7 @@
                     </h5>
 
                     <div class="flex w-full max-w-sm flex-col items-start gap-4">
-                      <a href="{{ route('auth.google') }}" class="redirect relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
+                      <a href="{{ route('auth.google') }}" class="redirect-profile relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
                         <img  class="h-6 w-6" src="{{ asset('/assets/media') }}/icon-google.png" alt="Icon Google">
 
                         <p class="text-base font-semibold leading-5">Sign up with Google</p>
@@ -626,21 +626,8 @@
 @section('js')
 <script type="text/javascript">
 
-        {{--$(document).ready(function() {--}}
-        {{--    $.ajax({--}}
-        {{--        url: "{{ route('ajax.set-session-global') }}",--}}
-        {{--        type: "POST",--}}
-        {{--        data: {--}}
-        {{--            "_token": "{{ csrf_token() }}",--}}
-        {{--            redirect_profile: 1--}}
-        {{--        },--}}
-        {{--        success: function(data) {--}}
-
-        {{--    },--}}
-        {{--});--}}
-
-            $('.redirect').click(function(){
-                $.ajax({
+        $(document).ready(function() {
+            $.ajax({
                 url: "{{ route('ajax.set-session-global') }}",
                 type: "POST",
                 data: {
@@ -649,8 +636,23 @@
                 },
                 success: function(data) {
 
-                },
+            },
+        });
+
+            $(".redirect-profile").click(function() {
+                $.ajax({
+                    url: "{{ route('ajax.set-session-global') }}",
+                    type: "POST",
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        redirect_profile: 1
+                    },
+                    success: function (data) {
+
+                    },
+                });
             });
+
         if (localStorage.getItem("default-recommendation-book")) {
             refreshDefaultRecommendationBook(JSON.parse(localStorage.getItem("default-recommendation-book")));
         } else {
