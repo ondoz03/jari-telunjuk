@@ -29,25 +29,25 @@
                 <section class="-mb-12 flex w-full items-center gap-2 xl:-mb-24 xl:gap-6 astro-J7PV25F6">
                     <div class="flex w-1/5 flex-col items-start gap-2 xl:gap-6 astro-J7PV25F6">
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
-                            data-src="{{ GeneralHelper::getRandomFirstBook() }}"
+                            <img class="h-full  w-full object-cover object-top astro-J7PV25F6"
+                            src="{{ GeneralHelper::getRandomFirstBook() }}"
                                 alt="Book Photo 1">
                         </div>
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
-                            data-src="{{ GeneralHelper::getRandomFirstBook() }}"
+                            <img class="h-full  w-full object-cover object-top astro-J7PV25F6"
+                            src="{{ GeneralHelper::getRandomFirstBook() }}"
                                 alt="Book Photo 2">
                         </div>
                     </div>
 
                     <div class="mt-16 flex w-1/5 flex-col items-start gap-2 xl:mt-32 xl:gap-6 astro-J7PV25F6">
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
+                            <img class="h-full w-full object-cover object-top astro-J7PV25F6"
                             data-src="{{ GeneralHelper::getRandomFirstBook() }}"
                                 alt="Book Photo 3">
                         </div>
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
+                            <img class="h-full  w-full object-cover object-top astro-J7PV25F6"
                             data-src="{{ GeneralHelper::getRandomFirstBook() }}"
                                 alt="Book Photo 4">
                         </div>
@@ -81,13 +81,13 @@
 
                     <div class="flex w-1/5 flex-col items-start gap-2 xl:gap-6 astro-J7PV25F6">
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
-                            data-src="{{ GeneralHelper::getRandomFirstBook() }}"
+                            <img class="h-full w-full object-cover object-top astro-J7PV25F6"
+                            src="{{ GeneralHelper::getRandomFirstBook() }}"
                                 alt="Book Photo 9">
                         </div>
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
-                            data-src="{{ GeneralHelper::getRandomFirstBook() }}"
+                            <img class="h-full w-full object-cover object-top astro-J7PV25F6"
+                            src="{{ GeneralHelper::getRandomFirstBook() }}"
                                 alt="Book Photo 10">
                         </div>
                     </div>
