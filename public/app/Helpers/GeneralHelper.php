@@ -324,6 +324,7 @@ class GeneralHelper
             ->inRandomOrder()
             ->take(6)
             ->get();
+
         return $buku;
     }
 }
