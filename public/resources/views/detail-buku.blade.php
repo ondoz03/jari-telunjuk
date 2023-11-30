@@ -506,7 +506,6 @@
     function onCloseModal()
     {
         $("#modal-login-review").hide();
-
     }
 
     $(document).ready(function() {
