@@ -152,8 +152,6 @@
                         type="submit">
                 </form>
             </div>
-
-            @guest
             <div class="flex flex-col items-start gap-3">
                 <a class="text-base leading-5"
                     href="/">Home</a>
@@ -164,6 +162,9 @@
                 <a class="text-base leading-5"
                     href="/blog">Blog</a>
             </div>
+
+            @guest
+
 
 
             <button
