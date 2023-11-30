@@ -316,10 +316,14 @@ class GeneralHelper
 
         $buku = Buku::whereHas('kategori', function ($q) {
             $q->whereIn('slug', ['fiksi', 'sastra', 'nonfiksi-dewasa']);
-        })->inRandomOrder()
+            })->with([
+                'kategori' => function ($q) {
+                    $q->where('slug', 'fiksi')->orwhere('slug','sastra')->orwhere('slug','nonfiksi-dewasa'); // Select only the columns you need
+                },
+            ])
+            ->inRandomOrder()
             ->take(6)
             ->get();
         return $buku;
-
     }
 }

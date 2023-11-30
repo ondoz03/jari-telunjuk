@@ -202,7 +202,7 @@
                         <h3 class="font-arvo text-2xl leading-7 lg:text-3xl">Currently to Read</h3>
 
                         <p class="text-sm font-semibold">
-                            Tambahkan bacaan yang ingin anda baca dari rekomendasi buku.
+{{--                            Tambahkan bacaan yang ingin anda baca dari rekomendasi buku.--}}
                         </p>
                     </header>
                     <div class="my-4 hidden h-px w-full bg-[#dcdcdc] lg:block"></div>
@@ -238,7 +238,8 @@
 
                         @foreach (GeneralHelper::popularItem() as $item)
                             <figure class="group relative space-y-2">
-                                <a class="absolute inset-0 z-10 h-full w-full" href="/"></a>
+                                <a class="absolute inset-0 z-10 h-full w-full" href="{{route('detail-buku', [$item->kategori[0]->slug , $item->slug]) }}"></a>
+
                                 <h5 class="text-sm font-semibold group-hover:underline">
                                     {{$item->judul}}
                                 </h5>
@@ -251,9 +252,9 @@
 
                     </div>
 
-                    <button id="search-book" type="button" class="relative flex items-center justify-center rounded-full bg-[#128C55] px-8 py-2 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
+                    <a href="{{ route('buku', 'buku') }}" id="search-book" type="button" class="relative flex items-center justify-center rounded-full bg-[#128C55] px-8 py-2 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
                         Cari Buku
-                    </button>
+                    </a>
                 </section>
             </div>
         </div>
