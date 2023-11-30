@@ -44,7 +44,6 @@ class GoogleController extends Controller
             } else {
                 if(!empty(session('param'))){
                     $data = json_decode(session('param'), true);
-
                     $type = $data['type'];
                     $buku = $data['buku'];
                     if( $type === 'rating'){
@@ -72,7 +71,6 @@ class GoogleController extends Controller
                         ]);
                     }
                 }
-
                 return redirect(session('redirect_back'));
             }
 
@@ -100,6 +98,7 @@ class GoogleController extends Controller
                     ]);
                 }
             }
+
             if(!empty(session('redirect_profile'))) {
                 return redirect()->route('user.profile');
             } else {
