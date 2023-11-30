@@ -108,7 +108,7 @@ class GeneralHelper
     public static function getRandomGetBook($nameKategori)
     {
         $buku = Buku::whereHas('media')->whereHas('kategori', function ($q) use ($nameKategori) {
-            $q->where('name', $nameKategori);
+            $q->where('slug', $nameKategori);
         })->with('kategori')->inRandomOrder()
             ->limit(6)
             ->get();
@@ -313,12 +313,11 @@ class GeneralHelper
 
     public static function popularItem()
     {
-
         $buku = Buku::whereHas('kategori', function ($q) {
             $q->whereIn('slug', ['fiksi', 'sastra', 'nonfiksi-dewasa']);
             })->with([
-                'kategori' => function ($q) {
-                    $q->where('slug', 'fiksi')->orwhere('slug','sastra')->orwhere('slug','nonfiksi-dewasa'); // Select only the columns you need
+                'kategori' => function ($k) {
+                    $k->whereIn('slug', ['fiksi', 'sastra', 'nonfiksi-dewasa']); // Select only the columns you need
                 },
             ])
             ->inRandomOrder()
