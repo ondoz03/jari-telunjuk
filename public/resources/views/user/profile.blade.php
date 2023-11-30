@@ -237,11 +237,11 @@
                     <div class="mb-4 space-y-4">
                         @foreach (GeneralHelper::popularItem() as $item)
                             <figure class="group relative space-y-2">
-                                <a class="absolute inset-0 z-10 h-full w-full" href="{{route('detail-buku', [$item->kategori[0]->slug , $item->slug]) }}"></a>
-
+                                <a class="absolute inset-0 z-10 h-full w-full" href="{!! route('detail-buku', [$item->kategori[0]->slug , $item->slug]) !!}"></a>
                                 <h5 class="text-sm font-semibold group-hover:underline">
                                     {{$item->judul}}
                                 </h5>
+
                                 <p class="text-sm text-[#515151]">
                                     by {{$item->penulis}}
                                 </p>
