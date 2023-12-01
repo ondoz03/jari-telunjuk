@@ -411,8 +411,6 @@
     </main>
     <div id="modal-book-recommendation-new" class="fixed inset-0 z-[999999999] hidden h-full w-full items-center justify-center astro-J7PV25F6">
         <!-- overlay -->
-        <div id="overlay-index" class="fixed inset-0 z-10 h-full w-full bg-black/50 astro-J7PV25F6">
-        </div>
 
         <!-- content -->
         <div id="choose-book-section" class="fixed z-20 hidden h-screen w-full max-w-4xl overflow-hidden bg-white p-0 lg:h-full lg:max-h-[576px] lg:rounded-2xl lg:p-11 astro-J7PV25F6">
