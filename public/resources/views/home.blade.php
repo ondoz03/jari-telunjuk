@@ -415,7 +415,7 @@
         </div>
 
         <!-- content -->
-        <div id="choose-book-section" class="relative z-20 hidden h-screen w-full max-w-4xl overflow-hidden bg-white p-0 lg:h-full lg:max-h-[576px] lg:rounded-2xl lg:p-11 astro-J7PV25F6">
+        <div id="choose-book-section" class="fixed z-20 hidden h-screen w-full max-w-4xl overflow-hidden bg-white p-0 lg:h-full lg:max-h-[576px] lg:rounded-2xl lg:p-11 astro-J7PV25F6">
             <!-- if 404 use mb-6 otherwise mb-14 -->
             <header class="mb-2 flex flex-col items-center lg:mb-6 astro-J7PV25F6">
                 <nav class="mb-2 flex w-full items-center justify-between border-b border-[#EBEBEB] p-4 lg:justify-center lg:border-b-0 lg:p-0 astro-J7PV25F6">
@@ -536,7 +536,7 @@
                 </div>
             </div>
         </div>
-        <div id="recommend-book-section" class="relative z-20 h-screen w-full max-w-4xl overflow-hidden bg-white p-0 lg:h-full lg:max-h-[576px] lg:rounded-2xl lg:p-11 astro-J7PV25F6">
+        <div id="recommend-book-section" class="fixed z-20 h-screen w-full max-w-4xl overflow-hidden bg-white p-0 lg:h-full lg:max-h-[576px] lg:rounded-2xl lg:p-11 astro-J7PV25F6">
             <header class="mb-5 mt-5 flex items-center justify-between px-4 xl:justify-center astro-J7PV25F6">
                 <h2 class="text-center font-arvo text-xl leading-none xl:text-[34px] astro-J7PV25F6" id="modal-1-title">
                     Pilih rekomendasi
@@ -547,6 +547,27 @@
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M19.6649 18.0492C20.1117 18.496 20.1117 19.2183 19.6649 19.6651C19.442 19.888 19.1495 20 18.8569 20C18.5643 20 18.2718 19.888 18.0489 19.6651L12 13.6161L5.95107 19.6651C5.72822 19.888 5.43566 20 5.1431 20C4.85054 20 4.55798 19.888 4.33513 19.6651C3.88829 19.2183 3.88829 18.496 4.33513 18.0492L10.3841 12.0001L4.33513 5.95111C3.88829 5.50426 3.88829 4.78199 4.33513 4.33514C4.78197 3.88829 5.50423 3.88829 5.95107 4.33514L12 10.3842L18.0489 4.33514C18.4958 3.88829 19.218 3.88829 19.6649 4.33514C20.1117 4.78199 20.1117 5.50426 19.6649 5.95111L13.6159 12.0001L19.6649 18.0492Z" fill="#2E2E2E" class="astro-J7PV25F6"></path>
                     </svg>
                 </button>
+            </header>
+
+            <header
+                    class="Header fixed inset-0 z-[60] hidden h-screen w-full bg-white">
+                <div
+                    class="container mx-auto flex max-w-screen-xl items-center justify-between border-b border-stone-200 px-4 py-3.5">
+                    <a class="text-xl"
+                       href="/">
+                        jari<span class="font-bold">telunjuk--</span>
+                    </a>
+
+                    <svg class="close_icon h-6 w-6 cursor-pointer"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M19.6649 18.0492C20.1117 18.496 20.1117 19.2183 19.6649 19.6651C19.442 19.888 19.1495 20 18.8569 20C18.5643 20 18.2718 19.888 18.0489 19.6651L12 13.6161L5.95107 19.6651C5.72822 19.888 5.43566 20 5.1431 20C4.85054 20 4.55798 19.888 4.33513 19.6651C3.88829 19.2183 3.88829 18.496 4.33513 18.0492L10.3841 12.0001L4.33513 5.95111C3.88829 5.50426 3.88829 4.78199 4.33513 4.33514C4.78197 3.88829 5.50423 3.88829 5.95107 4.33514L12 10.3842L18.0489 4.33514C18.4958 3.88829 19.218 3.88829 19.6649 4.33514C20.1117 4.78199 20.1117 5.50426 19.6649 5.95111L13.6159 12.0001L19.6649 18.0492Z"
+                              fill="#2E2E2E"></path>
+                    </svg>
+                </div>
             </header>
             <section class="block h-[calc(100vh_-_200px)] overflow-y-auto p-4 lg:h-[340px] lg:p-0 astro-J7PV25F6">
                 <!-- <main class="=px-4 overflow-auto !font-source-sans xl:px-8"> -->
@@ -666,29 +687,7 @@
                     },
                 });
             }
-            // Get the header element
-            var header = document.getElementById("recommend-book-section");
 
-// Get the initial scroll position
-            var prevScrollPos = window.pageYOffset;
-
-// Add a scroll event listener
-            window.onscroll = function() {
-                // Get the current scroll position
-                var currentScrollPos = window.pageYOffset;
-
-                // Determine the scroll direction
-                if (prevScrollPos > currentScrollPos) {
-                    // Scrolling up
-                    header.style.top = "0";
-                } else {
-                    // Scrolling down
-                    header.style.top = "-100px"; // Adjust the value based on your header's height
-                }
-
-                // Update the previous scroll position
-                prevScrollPos = currentScrollPos;
-            };
         });
 
         $('#modal-book-recommendation-new #overlay-index').click(function () {
