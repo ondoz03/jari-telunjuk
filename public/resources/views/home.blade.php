@@ -536,7 +536,7 @@
                 </div>
               </div>
             </div>
-            <div id="recommend-book-section" class="relative z-20 h-screen w-full max-w-4xl overflow-hidden bg-white p-0 lg:h-full lg:max-h-[576px] lg:rounded-2xl lg:p-11 astro-J7PV25F6">
+            <div id="recommend-book-section" class="relative z-20 w-full max-w-4xl overflow-hidden bg-white p-0 lg:h-full lg:max-h-[576px] lg:rounded-2xl lg:p-11 astro-J7PV25F6" >
               <header class="mb-5 mt-5 flex items-center justify-between px-4 xl:justify-center astro-J7PV25F6">
                 <h2 class="text-center font-arvo text-xl leading-none xl:text-[34px] astro-J7PV25F6" id="modal-1-title">
                   Pilih rekomendasi
