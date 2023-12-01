@@ -147,7 +147,7 @@
             <header class="mb-6 mt-11 flex items-center justify-between px-4 xl:justify-center astro-J7PV25F6">
                 <h2 class="text-center font-arvo text-xl leading-none xl:text-[34px] astro-J7PV25F6"
                     id="modal-2-title">
-                    Rekomendasi Buku Untukmu
+                    Sign Up/Login
                 </h2>
             </header>
             <main class="modal__content px-4 !font-source-sans xl:px-8 astro-J7PV25F6"
@@ -163,7 +163,8 @@
                          alt="Books Blur">
                     <div class="relative z-10 flex h-full flex-col items-center">
                         <h5 class="mb-6 text-center text-base font-bold">
-                            Daftar sekarang untuk melihat rekomendasi.
+                            Bergabunglah dengan Jaritelunjuk sekarang dan jadilah bagian dari komunitas pembaca yang aktif dan temukan rekomendasi baru
+
                         </h5>
 
                         <div class="flex w-full max-w-sm flex-col items-start gap-4">
