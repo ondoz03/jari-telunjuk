@@ -135,7 +135,6 @@
             Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini, silakan hubungi kami di [halo@jaritelunjuk.com].
           </p>
         </article>
-        v
         <article class="mb-6">
           <h3 class="font-arvo text-lg font-bold leading-8">9. Ketentuan Tambahan</h3>
           <p>

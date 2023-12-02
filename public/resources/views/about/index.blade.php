@@ -70,7 +70,7 @@
         <article class="mb-6">
           <h3 class="font-arvo text-lg font-bold leading-8">Kontak</h3>
           <p>
-            Jika Anda memiliki pertanyaan atau saran, silakan hubungi kami melalui:\
+            Jika Anda memiliki pertanyaan atau saran, silakan hubungi kami melalui:
           </p>
           <p>
             <ul>
