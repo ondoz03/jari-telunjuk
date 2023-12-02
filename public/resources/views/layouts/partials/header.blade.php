@@ -74,7 +74,7 @@
 
       <nav id="nav-standard" class="hidden items-center gap-6 {{(!GeneralHelper::authCheck()) ? 'xl:flex' : 'xl:hidden'}}">
         <div class="flex items-center gap-8">
-          <a class="text-base leading-5" href="/">About</a>
+          <a class="text-base leading-5" href="{{route('about')}}">About</a>
           <a class="text-base leading-5" href="/blog">Blog</a>
           <a class="text-base leading-5" href="{{route('home')}}">Home</a>
         </div>
@@ -87,7 +87,7 @@
       <nav id="nav-logged-in" class="hidden items-center gap-6 {{(GeneralHelper::authCheck()) ? 'xl:flex' : 'xl:hidden'}}">
 
           <div class="flex items-center gap-8">
-            <a class="text-base leading-5" href="/">About</a>
+            <a class="text-base leading-5" href="{{route('about')}}">About</a>
             <a class="text-base leading-5" href="/blog">Blog</a>
             <a class="text-base leading-5" href="{{route('home')}}">Home</a>
           </div>

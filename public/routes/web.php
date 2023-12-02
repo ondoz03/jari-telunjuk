@@ -12,6 +12,8 @@ use App\Http\Controllers\TwitterController;
 use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\PrivacyPolicyController;
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 
@@ -69,6 +71,14 @@ Route::group(['prefix' => 'user'], function () {
 
 Route::group(['prefix' => 'author'], function () {
     Route::get('/profile/{slug}', [AuthorController::class, 'author'])->name('author');
+});
+
+Route::group(['prefix' => 'privacy-policy'], function () {
+    Route::get('/', [PrivacyPolicyController::class, 'index'])->name('privacy-policy');
+});
+
+Route::group(['prefix' => 'about'], function () {
+    Route::get('/', [AboutController::class, 'index'])->name('about');
 });
 
 Route::get('/', function () {
