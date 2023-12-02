@@ -144,7 +144,7 @@
          aria-modal="true"
          aria-labelledby="modal-login-title">
         <div id="modal-login-container">
-            <header class="mb-6 mt-11 flex items-center justify-between px-4 xl:justify-center astro-J7PV25F6">
+            <header class="mb-6 mt-11 flex items-center justify-center px-4 xl:justify-center astro-J7PV25F6">
                 <h2 class="text-center font-arvo text-xl leading-none xl:text-[34px] astro-J7PV25F6"
                     id="modal-2-title">
                     Sign Up/Login
@@ -153,7 +153,7 @@
             <main class="modal__content px-4 !font-source-sans xl:px-8 astro-J7PV25F6"
                   id="modal-2-content">
                 <h3 class="bg-white/95 py-4 text-center text-sm leading-5 lg:py-0">
-                    Kami telah memilih rekomendasi yang cocok buat kamu
+                  
                 </h3>
 
                 <div
