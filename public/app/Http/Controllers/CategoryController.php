@@ -18,7 +18,10 @@ class CategoryController extends Controller
         // $count = Kategori::withCount('buku')->orderBy('buku_count', 'desc')->limit(10)->get();
         // dd($count);
 
-        $count = BukuKategori::with('kategori')->groupBy('kategori_id')
+        $count = BukuKategori::with('kategori')->whereHas('kategori', function ($q) {
+                    $q->where('slug', '!=', 'buku');
+                })
+                ->groupBy('kategori_id')
                 ->selectRaw('count(id) as total, kategori_id')
                 ->limit(10)
                 ->orderBy('total', 'desc')
