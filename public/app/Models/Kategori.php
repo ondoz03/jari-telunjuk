@@ -14,6 +14,7 @@ use Laravel\Scout\Builder;
 class Kategori extends Model
 {
     use HasFactory, HasSlug, Searchable;
+    use \Staudenmeir\EloquentEagerLimit\HasEagerLimit;
 
     protected $fillable = [
         'uuid',
@@ -44,6 +45,11 @@ class Kategori extends Model
     public function buku()
     {
         return $this->belongsToMany(Buku::class, 'buku_kategori', 'kategori_id', 'buku_id');
+    }
+
+    public function buku_limit()
+    {
+        return $this->belongsToMany(Buku::class, 'buku_kategori', 'kategori_id', 'buku_id')->limit(4);
     }
 
     /**

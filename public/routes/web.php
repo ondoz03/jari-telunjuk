@@ -14,6 +14,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\PrivacyPolicyController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 
@@ -79,6 +80,10 @@ Route::group(['prefix' => 'privacy-policy'], function () {
 
 Route::group(['prefix' => 'about'], function () {
     Route::get('/', [AboutController::class, 'index'])->name('about');
+});
+
+Route::group(['prefix' => 'category'], function () {
+    Route::get('/', [CategoryController::class, 'index'])->name('category');
 });
 
 Route::get('/', function () {
