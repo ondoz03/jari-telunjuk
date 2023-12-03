@@ -61,10 +61,10 @@
             <div class="relative col-span-1 lg:sticky lg:top-32 lg:col-span-3 lg:mt-32">
                 <div class="my-8 block h-px w-full bg-[#dcdcdc] lg:hidden"></div>
 
-                @foreach($data as $key => $kategori)
+                @foreach($count as $key => $item)
                 <section class="relative mb-2">
-                <a href="{{ route('buku', $kategori->slug) }}" class="font-arvo text-lg leading-7 text-[#128C55]">
-                    {{ $kategori->name }}
+                <a href="{{ route('buku', $item->kategori->slug) }}" class="font-arvo text-lg leading-7 text-[#128C55]">
+                    {{ $item->kategori->name }}
                 </a>
                 @endforeach
             </section>
