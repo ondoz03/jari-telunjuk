@@ -139,36 +139,45 @@
      tabindex="-1"
      id="modal-login"
      data-micromodal-close style="display: none">
-    <div class="modal__container rounded-none xl:rounded-2xl astro-J7PV25F6"
-         role="dialog"
-         aria-modal="true"
-         aria-labelledby="modal-login-title">
-        <div id="modal-login-container">
-            <header class="mb-6 mt-11 flex items-center justify-center px-4 xl:justify-center astro-J7PV25F6">
 
-            </header>
-            <main class="modal__content px-4 !font-source-sans xl:px-8 astro-J7PV25F6"
-                  id="modal-2-content">
-                <h3 class="bg-white/95 py-4 text-center text-sm leading-5 lg:py-0">
+    <div class="relative z-10 ease-in " aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!--
+          Background backdrop, show/hide based on modal state.
 
-                </h3>
+          Entering: "ease-out duration-300"
+            From: "opacity-0"
+            To: "opacity-100"
+          Leaving: "ease-in duration-200"
+            From: "opacity-100"
+            To: "opacity-0"
+        -->
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity duration-200 ease-out duration-300s" ></div>
 
-                <h2 class="text-center font-arvo text-xl leading-none xl:text-[34px] astro-J7PV25F6"
-                    id="modal-2-title">
-                    Sign Up/Login
-                </h2>
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0 s">
+                <!--
+                  Modal panel, show/hide based on modal state.
 
-                <div
-                    class="relative z-10 h-[calc(100vh_-_113px)] bg-white/95 px-6 pt-11 lg:h-auto lg:rounded-b-2xl lg:pb-14 lg:pt-11">
-                    <img class="absolute left-1/2 top-1/2 h-auto w-full -translate-x-1/2 -translate-y-1/2"
-                         src="{{ asset('/assets') }}/media/books-blur.png"
-                         alt="Books Blur">
-                    <div class="relative z-10 flex h-full flex-col items-center">
-                        <h5 class="mb-6 text-center text-base font-bold">
-                            Bergabunglah dengan Jaritelunjuk sekarang dan jadilah bagian dari komunitas pembaca yang aktif dan temukan rekomendasi baru
+                  Entering: "ease-out duration-300"
+                    From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    To: "opacity-100 translate-y-0 sm:scale-100"
+                  Leaving: "ease-in duration-200"
+                    From: "opacity-100 translate-y-0 sm:scale-100"
+                    To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                -->
+                <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg ease-out duration-300 ease-in duration-200">
+                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                        <div class="sm:flex sm:items-start">
 
-                        </h5>
-
+                            <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                                <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title"> Sign Up/Login </h3>
+                                <div class="mt-2">
+                                    <p class="text-sm text-gray-500"> Bergabunglah dengan Jaritelunjuk sekarang dan jadilah bagian dari komunitas pembaca yang aktif dan temukan rekomendasi baru</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                         <div class="flex w-full max-w-sm flex-col items-start gap-4">
                             <a href="{{ route('auth.google') }}"
                                class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
@@ -187,12 +196,68 @@
                                 class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4" style="cursor: pointer">
                                 <p class="text-base font-semibold leading-5">Close</p>
                             </a>
+                            {{--                        <button type="button" class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">Deactivate</button>--}}
+                            {{--                        <button type="button" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto" onclick="onClose()">Cancel</button>--}}
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
+
+        {{--    <div class="modal__container rounded-none xl:rounded-2xl astro-J7PV25F6"--}}
+        {{--         role="dialog"--}}
+        {{--         aria-modal="true"--}}
+        {{--         aria-labelledby="modal-login-title">--}}
+        {{--        <div id="modal-login-container">--}}
+        {{--            <header class="mb-6 mt-11 flex items-center justify-center px-4 xl:justify-center astro-J7PV25F6">--}}
+
+        {{--            </header>--}}
+        {{--            <main class="modal__content px-4 !font-source-sans xl:px-8 astro-J7PV25F6"--}}
+        {{--                  id="modal-2-content">--}}
+        {{--                <h3 class="bg-white/95 py-4 text-center text-sm leading-5 lg:py-0">--}}
+
+        {{--                </h3>--}}
+
+        {{--                <h2 class="text-center font-arvo text-xl leading-none xl:text-[34px] astro-J7PV25F6"--}}
+        {{--                    id="modal-2-title">--}}
+        {{--                    Sign Up/Login--}}
+        {{--                </h2>--}}
+
+        {{--                <div--}}
+        {{--                    class="relative z-10 h-[calc(100vh_-_113px)] bg-white/95 px-6 pt-11 lg:h-auto lg:rounded-b-2xl lg:pb-14 lg:pt-11">--}}
+        {{--                    <img class="absolute left-1/2 top-1/2 h-auto w-full -translate-x-1/2 -translate-y-1/2"--}}
+        {{--                         src="{{ asset('/assets') }}/media/books-blur.png"--}}
+        {{--                         alt="Books Blur">--}}
+        {{--                    <div class="relative z-10 flex h-full flex-col items-center">--}}
+        {{--                        <h5 class="mb-6 text-center text-base font-bold">--}}
+        {{--                            Bergabunglah dengan Jaritelunjuk sekarang dan jadilah bagian dari komunitas pembaca yang aktif dan temukan rekomendasi baru--}}
+
+        {{--                        </h5>--}}
+
+        {{--                        <div class="flex w-full max-w-sm flex-col items-start gap-4">--}}
+        {{--                            <a href="{{ route('auth.google') }}"--}}
+        {{--                               class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">--}}
+        {{--                                <img class="h-6 w-6"--}}
+        {{--                                     src="{{ asset('/assets') }}/media/icon-google.png"--}}
+        {{--                                     alt="Icon Google">--}}
+
+        {{--                                <p class="text-base font-semibold leading-5">--}}
+        {{--                                    Sign up with Google--}}
+        {{--                                </p>--}}
+        {{--                            </a>--}}
+
+
+        {{--                            <a--}}
+        {{--                                onclick="onClose()"--}}
+        {{--                                class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4" style="cursor: pointer">--}}
+        {{--                                <p class="text-base font-semibold leading-5">Close</p>--}}
+        {{--                            </a>--}}
+        {{--                        </div>--}}
+        {{--                    </div>--}}
+        {{--                </div>--}}
+        {{--        </div>--}}
+        {{--    </div>--}}
     </div>
-</div>
 
 </div>
 
