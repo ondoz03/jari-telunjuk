@@ -1,0 +1,153 @@
+#overlay:where(.astro-LUHUBFT3) {
+    background: linear-gradient(180deg, rgba(249, 248, 246, 0) 0%, #f9f8f6 100%)
+}
+
+.modal:where(.astro-LUHUBFT3) {
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif
+}
+
+.modal__overlay:where(.astro-LUHUBFT3) {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999
+}
+
+.modal__container:where(.astro-LUHUBFT3) {
+    background-color: #fff;
+    max-width: 910px;
+    max-height: 100vh;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box
+}
+
+.modal__header:where(.astro-LUHUBFT3) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.modal__title:where(.astro-LUHUBFT3) {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.25;
+    color: #00449e;
+    box-sizing: border-box
+}
+
+.modal__close:where(.astro-LUHUBFT3) {
+    background: transparent;
+    border: 0
+}
+
+.modal__header:where(.astro-LUHUBFT3) .modal__close:where(.astro-LUHUBFT3):before {
+    content: "✕"
+}
+
+.modal__content:where(.astro-LUHUBFT3) {
+    line-height: 1.5;
+    color: #000c;
+    height: calc(100% - 152px);
+    flex: 1 1 0%;
+    overflow-y: auto
+}
+
+.modal__btn:where(.astro-LUHUBFT3) {
+    font-size: .875rem;
+    padding: .5rem 1rem;
+    background-color: #e6e6e6;
+    color: #000c;
+    border-radius: .25rem;
+    border-style: none;
+    border-width: 0;
+    cursor: pointer;
+    -webkit-appearance: button;
+    text-transform: none;
+    overflow: visible;
+    line-height: 1.15;
+    margin: 0;
+    will-change: transform;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform .25s ease-out
+}
+
+.modal__btn:where(.astro-LUHUBFT3):focus, .modal__btn:where(.astro-LUHUBFT3):hover {
+    transform: scale(1.05)
+}
+
+.modal__btn-primary:where(.astro-LUHUBFT3) {
+    background-color: #00449e;
+    color: #fff
+}
+
+@keyframes mmfadeIn {
+    0% {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes mmfadeOut {
+    0% {
+        opacity: 1
+    }
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes mmslideIn {
+    0% {
+        transform: translateY(15%)
+    }
+    to {
+        transform: translateY(0)
+    }
+}
+
+@keyframes mmslideOut {
+    0% {
+        transform: translateY(0)
+    }
+    to {
+        transform: translateY(-10%)
+    }
+}
+
+.micromodal-slide:where(.astro-LUHUBFT3) {
+    display: none
+}
+
+.micromodal-slide:where(.astro-LUHUBFT3).is-open {
+    display: block
+}
+
+.micromodal-slide:where(.astro-LUHUBFT3)[aria-hidden=false] .modal__overlay:where(.astro-LUHUBFT3) {
+    animation: mmfadeIn .3s cubic-bezier(0, 0, .2, 1)
+}
+
+.micromodal-slide:where(.astro-LUHUBFT3)[aria-hidden=false] .modal__container:where(.astro-LUHUBFT3) {
+    animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1)
+}
+
+.micromodal-slide:where(.astro-LUHUBFT3)[aria-hidden=true] .modal__overlay:where(.astro-LUHUBFT3) {
+    animation: mmfadeOut .3s cubic-bezier(0, 0, .2, 1)
+}
+
+.micromodal-slide:where(.astro-LUHUBFT3)[aria-hidden=true] .modal__container:where(.astro-LUHUBFT3) {
+    animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1)
+}
+
+.micromodal-slide:where(.astro-LUHUBFT3) .modal__container:where(.astro-LUHUBFT3), .micromodal-slide:where(.astro-LUHUBFT3) .modal__overlay:where(.astro-LUHUBFT3) {
+    will-change: transform
+}

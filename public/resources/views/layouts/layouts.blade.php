@@ -153,7 +153,7 @@
             <main class="modal__content px-4 !font-source-sans xl:px-8 astro-J7PV25F6"
                   id="modal-2-content">
                 <h3 class="bg-white/95 py-4 text-center text-sm leading-5 lg:py-0">
-                  
+
                 </h3>
 
                 <div
