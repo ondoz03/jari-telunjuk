@@ -106,7 +106,7 @@
                         <figure class="space-y-2 xl:space-y-10 astro-J7PV25F6">
                             <img src="https://cdn.jaritelunjuk.com/web-asset/benefit-1.jpg"
                                  alt="Benefit 1"
-                                 class="astro-J7PV25F6">
+                                 class="astro-J7PV25F6" style="border-radius: 10px">
                             <figcaption class="text-sm leading-[22px] xl:text-base xl:leading-6 astro-J7PV25F6">
                                 Rekomendasi buku berdasarkan selera/ kebutuhan
                             </figcaption>
@@ -115,7 +115,7 @@
                         <figure class="space-y-2 xl:space-y-10 astro-J7PV25F6">
                             <img src="https://cdn.jaritelunjuk.com/web-asset/benefit-2.jpg"
                                  alt="Benefit 2"
-                                 class="astro-J7PV25F6">
+                                 class="astro-J7PV25F6" style="border-radius: 10px">
                             <figcaption class="text-sm leading-[22px] xl:text-base xl:leading-6 astro-J7PV25F6">
                                 Tracking buku apa saja yang Anda baca, sudah dibaca ataupun akan
                                 dibaca.
@@ -125,7 +125,7 @@
                         <figure class="space-y-2 xl:space-y-10 astro-J7PV25F6">
                             <img src="https://cdn.jaritelunjuk.com/web-asset/benefit-3.jpg"
                                  alt="Benefit 3"
-                                 class="astro-J7PV25F6">
+                                 class="astro-J7PV25F6" style="border-radius: 10px">
                             <figcaption class="text-sm leading-[22px] xl:text-base xl:leading-6 astro-J7PV25F6">
                                 Berbagi daftar buku favorit atau buku yang akan Anda baca dengan
                                 teman ataupun komunitas
@@ -135,7 +135,7 @@
                         <figure class="space-y-2 xl:space-y-10 astro-J7PV25F6">
                             <img src="https://cdn.jaritelunjuk.com/web-asset/benefit-4.jpg"
                                  alt="Benefit 4"
-                                 class="astro-J7PV25F6">
+                                 class="astro-J7PV25F6" style="border-radius: 10px">
                             <figcaption class="text-sm leading-[22px] xl:text-base xl:leading-6 astro-J7PV25F6">
                                 Daftar buku ter-update
                             </figcaption>
