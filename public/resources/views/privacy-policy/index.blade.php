@@ -1,6 +1,6 @@
 @extends('layouts.layouts')
 @section('title')
-    <title>Discover books you’ll love! | Jari Telunjuk</title>
+    <title>Privacy Policy Jari Telunjuk</title>
 @endsection
 
 @section('header-js')
