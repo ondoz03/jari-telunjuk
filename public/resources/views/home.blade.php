@@ -104,7 +104,7 @@
 
                     <section class="grid grid-cols-2 gap-4 xl:grid-cols-4 xl:gap-12 astro-J7PV25F6">
                         <figure class="space-y-2 xl:space-y-10 astro-J7PV25F6">
-                            <img src="{{ asset('/assets/media') }}/benefit-1.png"
+                            <img src="https://cdn.jaritelunjuk.com/web-asset/benefit-1.jpg"
                                  alt="Benefit 1"
                                  class="astro-J7PV25F6">
                             <figcaption class="text-sm leading-[22px] xl:text-base xl:leading-6 astro-J7PV25F6">
@@ -113,7 +113,7 @@
                         </figure>
 
                         <figure class="space-y-2 xl:space-y-10 astro-J7PV25F6">
-                            <img src="{{ asset('/assets/media') }}/benefit-2.png"
+                            <img src="https://cdn.jaritelunjuk.com/web-asset/benefit-2.jpg"
                                  alt="Benefit 2"
                                  class="astro-J7PV25F6">
                             <figcaption class="text-sm leading-[22px] xl:text-base xl:leading-6 astro-J7PV25F6">
@@ -123,7 +123,7 @@
                         </figure>
 
                         <figure class="space-y-2 xl:space-y-10 astro-J7PV25F6">
-                            <img src="{{ asset('/assets/media') }}/benefit-3.png"
+                            <img src="https://cdn.jaritelunjuk.com/web-asset/benefit-3.jpg"
                                  alt="Benefit 3"
                                  class="astro-J7PV25F6">
                             <figcaption class="text-sm leading-[22px] xl:text-base xl:leading-6 astro-J7PV25F6">
@@ -133,7 +133,7 @@
                         </figure>
 
                         <figure class="space-y-2 xl:space-y-10 astro-J7PV25F6">
-                            <img src="{{ asset('/assets/media') }}/benefit-4.png"
+                            <img src="https://cdn.jaritelunjuk.com/web-asset/benefit-4.jpg"
                                  alt="Benefit 4"
                                  class="astro-J7PV25F6">
                             <figcaption class="text-sm leading-[22px] xl:text-base xl:leading-6 astro-J7PV25F6">
@@ -297,7 +297,7 @@
 
                     <div class="flex flex-wrap items-start justify-between gap-8 xl:items-center astro-J7PV25F6">
                         <img class="h-64 w-full xl:w-auto astro-J7PV25F6"
-                             src="{{ asset('/assets/media') }}/category-ill-1.jpg"
+                             src="https://cdn.jaritelunjuk.com/web-asset/category-ill-1.jpg"
                              alt="Category illustration">
                         @php
                             $itemsPerNav = 5;

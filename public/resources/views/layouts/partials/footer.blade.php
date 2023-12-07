@@ -19,7 +19,8 @@
 
         <!-- Center -->
         <div class="relative h-auto w-full bg-white xl:h-80 xl:w-80">
-          <img class="h-full w-full object-cover" src="{{asset('/assets/media')}}/footer-ill.jpg" alt="Footer Illustration">
+          <img class="h-full w-full object-cover" src="https://cdn.jaritelunjuk.com/web-asset/footer-ill-02-01.jpg" alt="Footer Illustration">
+
         </div>
 
         <!-- Right -->

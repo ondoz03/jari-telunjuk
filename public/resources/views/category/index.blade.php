@@ -45,7 +45,7 @@
                     </div>
                 @else
                     <div class="flex flex-col items-center gap-6">
-                        <img class="h-auto w-56" src="{{ asset('/assets/media') }}/rekomendasi-404.png" alt="Recommendation 404">
+                        <img class="h-auto w-56" src="https://cdn.jaritelunjuk.com/web-asset/footer-ill-02-01.jpg" alt="Recommendation 404">
 
                         <h5 class="text-base font-semibold">
                             Anda belum memiliki daftar buku yang ingin di baca.
