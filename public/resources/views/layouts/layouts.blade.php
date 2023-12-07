@@ -28,7 +28,7 @@
         src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js"
         defer
     ></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+{{--    <script src="https://cdn.tailwindcss.com"></script>--}}
     @yield('title')
     <!-- <link rel="stylesheet"
         href="{{ asset('/assets') }}/front/index.1e77ef8f.css" />

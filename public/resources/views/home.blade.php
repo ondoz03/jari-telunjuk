@@ -261,7 +261,7 @@
                         @guest
                             <button id="book-recommendation-new"
                                     type="button"
-                                    class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 max-md:hidden">
+                                    class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 max-sm:hidden">
                                 Coba Rekomendasi Buku
                             </button>
 
