@@ -1,6 +1,6 @@
 @extends('layouts.layouts')
 @section('title')
-    <title>Discover books you’ll love! | Jari Telunjuk</title>
+    <title>Daftar Kategori Buku Favorit</title>
 @endsection
 
 @section('header-js')
@@ -63,7 +63,7 @@
 
                 @foreach($count as $key => $item)
                 <section class="relative mb-2">
-                <a href="{{ route('buku', $item->kategori->slug) }}" class="font-arvo text-lg leading-7 text-[#128C55]">
+                <a href="{{ route('buku', $item->kategori->slug) }}" class="font-arvo leading-7 text-[#128C55]" style="    font-size: 16px !important;">
                     {{ $item->kategori->name }}
                 </a>
                 @endforeach
