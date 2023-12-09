@@ -66,9 +66,9 @@ class BukuController extends Controller
                 return view('buku', compact('buku', 'slug', 'kategori', 'resultJson'));
             }
         } else {
-            if($request->has('search')){
+            if ($request->has('search')) {
                 return self::search($request);
-            }else{
+            } else {
                 return abort(404);
             }
         }
@@ -98,7 +98,7 @@ class BukuController extends Controller
 
         if (!empty(Auth::user())) {
             $data = UserWantRead::where('user_id', Auth::user()->id)->where('buku_id', $buku->id)->first();
-            if($data) {
+            if ($data) {
                 $user_want_read = $data;
 
             } else {
@@ -108,7 +108,7 @@ class BukuController extends Controller
 
                 $user_want_read = (object)$array;
             }
-        } else{
+        } else {
             $array = [
                 'status' => '0'
             ];
@@ -134,10 +134,10 @@ class BukuController extends Controller
     public function getRandomBookHomepage(Request $request)
     {
         $buku = Buku::with(['detail_buku', 'kategori'])
-        // ->whereHas('kategori', function ($q) {
-        //     $q->whereIn('slug', ['fiction-literature', 'non-fiction', 'history', 'psychology', 'romance']);
-        // })
-        ->inRandomOrder()
+            // ->whereHas('kategori', function ($q) {
+            //     $q->whereIn('slug', ['fiction-literature', 'non-fiction', 'history', 'psychology', 'romance']);
+            // })
+            ->inRandomOrder()
             ->limit(8)
             ->get();
         return response()->json($buku);
@@ -158,6 +158,19 @@ class BukuController extends Controller
                 ->limit(14)
                 ->get();
         }
+
+        return response()->json($buku);
+    }
+
+    public function getBookBySelectedCategorySearch(Request $request)
+    {
+
+        $category_session = json_decode($request->selected_book_categori);
+
+        $buku = Buku::where('judul', 'like', "%" . $request->search . "%")->whereHas('kategori', function($q) use ($category_session){
+            $q->whereIn('kategori_id', $category_session);
+        })->take(14)->get();
+
 
         return response()->json($buku);
     }

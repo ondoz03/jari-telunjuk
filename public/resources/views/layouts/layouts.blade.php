@@ -21,9 +21,12 @@
           rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/source-sans-pro"
           rel="stylesheet">
-    {{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
+
     <meta name="generator"
           content="{Astro.generator}">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <script
         src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js"
         defer
@@ -69,7 +72,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <style>
         .lazy-img {
             filter: blur(10px);

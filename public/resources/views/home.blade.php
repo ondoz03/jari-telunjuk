@@ -431,13 +431,13 @@
                         </p>
 
                         <!-- search -->
-                        <div class="flex w-full items-center justify-center gap-4 px-4 lg:px-0 astro-J7PV25F6">
+                        <div class="flex w-full items-center justify-center gap-4 px-4 lg:px-4 astro-J7PV25F6" style="margin-bottom: 20px">
                             <div class="relative w-full lg:max-w-sm astro-J7PV25F6">
                                 <svg class="absolute left-4 top-1/2 z-10 h-6 w-6 -translate-y-1/2 lg:left-6 astro-J7PV25F6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M5 10C5 6.691 7.691 4 11 4C14.309 4 17 6.691 17 10C17 13.309 14.309 16 11 16C7.691 16 5 13.309 5 10ZM21.707 19.293L17.312 14.897C18.366 13.542 19 11.846 19 10C19 5.589 15.411 2 11 2C6.589 2 3 5.589 3 10C3 14.411 6.589 18 11 18C12.846 18 14.542 17.366 15.897 16.312L20.293 20.707C20.488 20.902 20.744 21 21 21C21.256 21 21.512 20.902 21.707 20.707C22.098 20.316 22.098 19.684 21.707 19.293Z" fill="#8D8D8D" class="astro-J7PV25F6"></path>
                                 </svg>
 
-                                <input type="text" class="w-full rounded-full border border-[#dedede] py-2 pl-12 lg:pl-16 astro-J7PV25F6" placeholder="Cari judul buku sesuai kategori...">
+                                <input type="text" class="w-full rounded-full border border-[#dedede] py-2 pl-12 lg:pl-16 astro-J7PV25F6 serachRecomendasi" placeholder="Cari judul buku sesuai kategori...">
                             </div>
 
                             <button class="block flex-shrink-0 text-sm lg:hidden astro-J7PV25F6">Cari</button>
@@ -569,11 +569,10 @@
                         </div>
                     </div>
 
-
                     <div id="signup-section" class="relative hidden z-20 -mt-0 min-h-screen w-full max-w-4xl px-0 lg:-mt-12 lg:min-h-max lg:px-8">
 
-                        <div class="relative z-10 h-[calc(100vh_-_113px)] bg-white/95 px-6 pt-11 lg:h-auto lg:rounded-b-2xl lg:pb-14 lg:pt-11">
-                            <img class="absolute left-1/2 top-1/2 h-auto w-full -translate-x-1/2 -translate-y-1/2" src="{{ asset('/assets/media') }}/books-blur.png" alt="Books Blur">
+                        <div class="relative z-10 h-[calc(100vh_-_113px)] lg:h-full lg:max-h-[576px] px-6 pt-11 lg:h-[270px] lg:rounded-b-2xl lg:pb-14 lg:pt-11">
+{{--                            <img class="absolute left-1/2 top-1/2 h-auto w-full -translate-x-1/2 -translate-y-1/2" src="{{ asset('/assets/media') }}/books-blur.png" alt="Books Blur">--}}
                             <div class="relative z-10 flex h-full flex-col items-center">
                                 <h5 class="mb-6 text-center text-base font-bold">
                                     Daftar sekarang untuk melihat rekomendasi.
@@ -597,7 +596,6 @@
 
 @section('js')
     <script type="text/javascript">
-
         $(document).ready(function () {
             $.ajax({
                 url: "{{ route('ajax.set-session-global') }}",
@@ -802,7 +800,6 @@
                     var list_book = data;
                     var html = '';
                     $.each(list_book, function (index, value) {
-
                         var shortText = jQuery.trim(value.judul).substring(0, 30).split(" ").slice(0, -1).join(" ") + "...";
 
                         html = html + '<div class="astro-J7PV25F6">\
@@ -831,6 +828,97 @@
                 },
             });
         }
+
+        $(".serachRecomendasi").on("input", function () {
+            var searchValue = $(this).val();
+            var csrfToken = $('meta[name="csrf-token"]').attr('content');
+            $.ajax({
+                url: "{{ route('ajax.list-book-recommendation-search') }}",
+                type: "POST",
+                data: {
+                    'search':searchValue,
+                    'selected_book_categori': localStorage.getItem("selected-category-book")
+                },
+                headers: {
+                    'X-CSRF-TOKEN': csrfToken
+                },
+                success: function (data) {
+                    var list_book = data;
+                    var html = '';
+                    $.each(list_book, function (index, value) {
+                        var shortText = jQuery.trim(value.judul).substring(0, 30).split(" ").slice(0, -1).join(" ") + "...";
+
+                        html = html + '<div class="astro-J7PV25F6">\
+                        <input type="checkbox" id="list_book_' + index + '" value="' + value.id + '" class="checkbox peer hidden astro-J7PV25F6 bookpicker" name="book_selected">\
+                        <label for="list_book_' + index + '" class="peer-checked:leading-2 w-full cursor-pointer text-sm font-normal peer-checked:bg-red-400 peer-checked:font-[sans-serif] peer-checked:font-semibold lg:peer-checked:text-[0.75rem] [&>img]:shadow-md peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\
+                        <figure class="relative space-y-3 astro-J7PV25F6">\
+                            <img  style="height:120px !important" class="h-auto lazy-img w-full astro-J7PV25F6" data-src="' + value.image + '" alt="' + value.judul + '">\
+                            <div class="pointer-events-none leading-5 astro-J7PV25F6">\
+                                ' + shortText + '\
+                            </div>\
+                        </figure>\
+                        </label>\
+                    </div>';
+                    });
+
+                    $("#book-list-recommendation").html(html);
+                    $('.bookpicker').click(function () {
+                        var numberOfChecked = $("input[name='book_selected']:checked").length;
+                        if (numberOfChecked > 5) {
+                            $(this).prop("checked", false);
+                        }
+                        $("#countSelectedBook").text($("input[name='book_selected']:checked").length);
+                    });
+
+                    lazyload()
+                },
+            });
+
+        })
+        {{--function listBookByCategorySearch() {--}}
+        {{--    $("#countSelectedBook").text($("input[name='book_selected']:checked").length);--}}
+        {{--    search = $('serachRecomendasi').val();--}}
+        {{--    console.log()--}}
+        {{--    $.ajax({--}}
+        {{--        url: "{{ route('ajax.list-book-recommendation-search') }}",--}}
+        {{--        type: "POST",--}}
+        {{--        data: {--}}
+        {{--            'search':search--}}
+        {{--        },--}}
+        {{--        success: function (data) {--}}
+        {{--            var list_book = data;--}}
+        {{--            var html = '';--}}
+        {{--            $.each(list_book, function (index, value) {--}}
+        {{--                var shortText = jQuery.trim(value.judul).substring(0, 30).split(" ").slice(0, -1).join(" ") + "...";--}}
+
+        {{--                html = html + '<div class="astro-J7PV25F6">\--}}
+        {{--                <input type="checkbox" id="list_book_' + index + '" value="' + value.id + '" class="checkbox peer hidden astro-J7PV25F6 bookpicker" name="book_selected">\--}}
+        {{--                <label for="list_book_' + index + '" class="peer-checked:leading-2 w-full cursor-pointer text-sm font-normal peer-checked:bg-red-400 peer-checked:font-[sans-serif] peer-checked:font-semibold lg:peer-checked:text-[0.75rem] [&>img]:shadow-md peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\--}}
+        {{--                <figure class="relative space-y-3 astro-J7PV25F6">\--}}
+        {{--                    <img  style="height:120px !important" class="h-auto lazy-img w-full astro-J7PV25F6" data-src="' + value.image + '" alt="' + value.judul + '">\--}}
+        {{--                    <div class="pointer-events-none leading-5 astro-J7PV25F6">\--}}
+        {{--                        ' + shortText + '\--}}
+        {{--                    </div>\--}}
+        {{--                </figure>\--}}
+        {{--                </label>\--}}
+        {{--            </div>';--}}
+        {{--            });--}}
+
+        {{--            $("#book-list-recommendation").html(html);--}}
+        {{--            $('.bookpicker').click(function () {--}}
+        {{--                var numberOfChecked = $("input[name='book_selected']:checked").length;--}}
+        {{--                if (numberOfChecked > 5) {--}}
+        {{--                    $(this).prop("checked", false);--}}
+        {{--                }--}}
+        {{--                $("#countSelectedBook").text($("input[name='book_selected']:checked").length);--}}
+        {{--            });--}}
+
+        {{--            lazyload()--}}
+        {{--        },--}}
+        {{--    });--}}
+        {{--}--}}
+
+
 
         // console.log('sss');
     </script>
