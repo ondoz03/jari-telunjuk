@@ -1943,6 +1943,9 @@ img, video {
     .max-sm\:hidden {
         display: none
     }
+    .max-sm\:h-full {
+        height: 100%
+    }
 }
 
 @media (min-width: 1024px) {
