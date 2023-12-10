@@ -1,6 +1,6 @@
 @extends('layouts.layouts')
 @section('title')
-    <title>Discover books you’ll love! | Jari Telunjuk</title>
+    <title>Cara Baru Menemukan Rekomendasi Buku Favoritmu - Jari Telunjuk</title>
 @endsection
 
 @section('header-js')
@@ -425,7 +425,7 @@
                     </header>
 
                     <!-- content -->
-                    <div id="choose-book-section" class="relative z-20 hidden h-screen w-full max-w-4xl overflow-hidden bg-white p-0 lg:h-full lg:max-h-[576px] lg:rounded-2xl lg:p-11 astro-J7PV25F6">
+                    <div id="choose-book-section" class="relative z-20 hidden h-screen w-full max-w-4xl overflow-hidden bg-white p-0 lg:h-full lg:max-h-[576px] lg:rounded-2xl lg:px-8  lg:pb-14 astro-J7PV25F6">
                         <p class="mb-5 text-base text-center font-normal leading-6 text-[#636363] astro-J7PV25F6">
                             Kami menampilkan sesuai kategori yang kamu pilih.
                         </p>
@@ -509,9 +509,11 @@
                                     </li>
                                 </div>
                             </div>
+                            <div class="flex w-full items-center justify-center gap-4 px-4 lg:px-4 astro-J7PV25F6" id="search-empty" style="margin-bottom: 20px">
+                            </div>
                         </section>
 
-                        <div class="fixed bottom-0 left-0 z-10 flex h-32 w-full flex-col items-start gap-2 border-t bg-[#FCFAF7] p-4 shadow-xl lg:absolute lg:bottom-0 lg:h-28 lg:w-full lg:flex-row lg:items-center lg:justify-between lg:border-0 lg:px-14 lg:py-8 lg:shadow-none">
+                        <footer class="fixed bottom-0 left-0 z-10 flex h-32 w-full flex-col items-start gap-2 border-t bg-[#FCFAF7] p-4 shadow-xl lg:absolute lg:bottom-0 lg:h-28 lg:w-full lg:flex-row lg:items-center lg:justify-between lg:border-0 lg:px-14 lg:py-8 lg:shadow-none">
                             <div class="print-values astro-J7PV25F6">
                                 <h5 id="valueList" class="text-base font-bold leading-5 text-[#141414] astro-J7PV25F6">
                                     <span id="countSelectedBook">0</span> Buku dipilih
@@ -528,7 +530,11 @@
                                     Next
                                 </button>
                             </div>
-                        </div>
+                        </footer>
+
+                        <footer class="flex h-20 w-full items-center justify-between bg-[#F9F8F6] p-4 xl:px-8 xl:pb-12 astro-LUHUBFT3">
+
+                        </footer>
                     </div>
                     <div id="recommend-book-section" class="relative z-20 w-full max-w-4xl overflow-hidden bg-white p-0 lg:h-full lg:max-h-[576px] lg:rounded-2xl lg:p-11 astro-J7PV25F6">
                         <section class="block h-[calc(100vh_-_200px)] overflow-y-auto p-4 lg:h-[540px] lg:p-0 astro-J7PV25F6">
@@ -572,18 +578,32 @@
                     <div id="signup-section" class="relative hidden z-20 -mt-0 min-h-screen w-full max-w-4xl px-0 lg:-mt-12 lg:min-h-max lg:px-8">
 
                         <div class="relative z-10 h-[calc(100vh_-_113px)] lg:h-full lg:max-h-[576px] px-6 pt-11 lg:h-[270px] lg:rounded-b-2xl lg:pb-14 lg:pt-11">
-{{--                            <img class="absolute left-1/2 top-1/2 h-auto w-full -translate-x-1/2 -translate-y-1/2" src="{{ asset('/assets/media') }}/books-blur.png" alt="Books Blur">--}}
-                            <div class="relative z-10 flex h-full flex-col items-center">
-                                <h5 class="mb-6 text-center text-base font-bold">
-                                    Daftar sekarang untuk melihat rekomendasi.
-                                </h5>
+                            {{--                            <img class="absolute left-1/2 top-1/2 h-auto w-full -translate-x-1/2 -translate-y-1/2" src="{{ asset('/assets/media') }}/books-blur.png" alt="Books Blur">--}}
+                            <div class="relative z-10 h-[calc(100vh_-_113px)] bg-white/95 px-6 pt-11 lg:h-auto lg:rounded-b-2xl lg:pb-14 lg:pt-11">
+                                <img class="absolute left-1/2 top-1/2 h-auto w-full -translate-x-1/2 -translate-y-1/2" src="{{ asset('/assets/media') }}/books-blur.png" alt="Books Blur">
+                                <div class="relative z-10 flex h-full flex-col items-center">
+                                    <h5 class="mb-6 text-center text-base font-bold">
+                                        Daftar sekarang untuk melihat rekomendasi.
+                                    </h5>
 
-                                <div class="flex w-full max-w-sm flex-col items-start gap-4">
-                                    <a href="{{ route('auth.google') }}" class="redirect-profile relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
-                                        <img class="h-6 w-6" src="{{ asset('/assets/media') }}/icon-google.png" alt="Icon Google">
+                                    <div class="flex w-full max-w-sm flex-col items-start gap-4">
+                                        <a href="{{ route('auth.google') }}" class="redirect-profile relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
+                                            <img class="h-6 w-6" src="{{ asset('/assets/media') }}/icon-google.png" alt="Icon Google">
 
-                                        <p class="text-base font-semibold leading-5">Sign up with Google</p>
-                                    </a>
+                                            <p class="text-base font-semibold leading-5">Sign up with Google</p>
+                                        </a>
+
+                                        <button id="btn-prev-choose-book-category" class="redirect-profile relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
+                                            Previous
+                                        </button>
+
+                                        <p class="text-center text-neutral-600">
+                                            By clicking continue, you agree to our <a class="underline" href="/">
+                                                <u>Terms of Service</u>
+                                            </a> and
+                                            <a class="underline" href="/privacy-policy"> <u> Privacy Policy. </u></a>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -684,6 +704,14 @@
         });
 
 
+        $('#btn-prev-choose-book-category').click(function () {
+            // if ($("#signup-section").hasClass("relative")) {
+                $("#signup-section").addClass("hidden");
+                $("#choose-book-section").removeClass("hidden");
+            // }
+        })
+
+
         $('#btn-category-finish').click(function () {
             var arr = [];
             var numberOfChecked = $("input[name='kategori']:checked").length;
@@ -701,7 +729,9 @@
                     $("#recommend-book-section").addClass("hidden");
                     $("#choose-book-section").removeClass("hidden");
                 }
-            }else{
+
+                $('#modal-1-title').text('Pilih Buku')
+            } else {
                 $("#required-kategori").show();
             }
         });
@@ -721,12 +751,9 @@
                 if (check_auth) {
                     window.location.href = "{{ route('user.profile') }}";
                 } else {
-
-
                     if ($("#signup-section").hasClass("relative")) {
                         $("#recommend-book-section").addClass("hidden");
                         $("#choose-book-section").addClass("hidden");
-                        $("#signup-section").removeClass("relative");
                         $("#signup-section").removeClass("hidden");
                     }
 
@@ -737,6 +764,8 @@
         });
 
         $('#btn-prev-choose-book').click(function () {
+            $('#modal-1-title').text('Pilih rekomendasi')
+
             if ($("#recommend-book-section").hasClass("relative")) {
                 $("#choose-book-section").addClass("hidden");
                 $("#recommend-book-section").removeClass("hidden");
@@ -836,7 +865,7 @@
                 url: "{{ route('ajax.list-book-recommendation-search') }}",
                 type: "POST",
                 data: {
-                    'search':searchValue,
+                    'search': searchValue,
                     'selected_book_categori': localStorage.getItem("selected-category-book")
                 },
                 headers: {
@@ -845,10 +874,12 @@
                 success: function (data) {
                     var list_book = data;
                     var html = '';
-                    $.each(list_book, function (index, value) {
-                        var shortText = jQuery.trim(value.judul).substring(0, 30).split(" ").slice(0, -1).join(" ") + "...";
 
-                        html = html + '<div class="astro-J7PV25F6">\
+                    if (data.length > 0) {
+                        $.each(list_book, function (index, value) {
+                            var shortText = jQuery.trim(value.judul).substring(0, 30).split(" ").slice(0, -1).join(" ") + "...";
+
+                            html = html + '<div class="astro-J7PV25F6">\
                         <input type="checkbox" id="list_book_' + index + '" value="' + value.id + '" class="checkbox peer hidden astro-J7PV25F6 bookpicker" name="book_selected">\
                         <label for="list_book_' + index + '" class="peer-checked:leading-2 w-full cursor-pointer text-sm font-normal peer-checked:bg-red-400 peer-checked:font-[sans-serif] peer-checked:font-semibold lg:peer-checked:text-[0.75rem] [&>img]:shadow-md peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\
                         <figure class="relative space-y-3 astro-J7PV25F6">\
@@ -859,9 +890,22 @@
                         </figure>\
                         </label>\
                     </div>';
-                    });
+                        });
+                        $("#book-list-recommendation").html(html);
+                        $('#search-empty').html('');
+                    } else {
+                        html = `<section class="flex flex-col items-center justify-center gap-6 p-4 lg:p-0">
+                        <img class="h-auto w-80 object-cover" src="https://cdn.jaritelunjuk.com/web-asset/footer-ill-02-01.jpg" alt="Footer Illustration">
 
-                    $("#book-list-recommendation").html(html);
+                        <h5 class="text-center font-bold">
+                            Oopss! Sementara yang kamu cari tidak ada, <br>di kategori ini. Coba cari dengan judul lain.
+                        </h5>
+                      </section>`
+                        $("#book-list-recommendation").html('');
+                        $('#search-empty').html(html);
+                    }
+
+
                     $('.bookpicker').click(function () {
                         var numberOfChecked = $("input[name='book_selected']:checked").length;
                         if (numberOfChecked > 5) {
