@@ -31,21 +31,6 @@
             </div>
         </nav>
 
-        {{--        <div class="block w-full xl:hidden">--}}
-        {{--            <form action="{{ route('search-result') }}"--}}
-        {{--                method="get">--}}
-        {{--                <input name="search"--}}
-        {{--                    class="w-full rounded-full border border-stone-300 px-4 py-1 text-sm text-[#2e2e2e] outline-none ring-2 ring-transparent placeholder:text-stone-500 focus:border-stone-300 focus:ring-[#DEDEDE]/25"--}}
-        {{--                    type="text"--}}
-        {{--                    placeholder="Cari buku...">--}}
-        {{--                <input type="hidden"--}}
-        {{--                    name="type"--}}
-        {{--                    value="buku">--}}
-        {{--                <input type="hidden"--}}
-        {{--                    type="submit">--}}
-        {{--            </form>--}}
-        {{--        </div>--}}
-
         <nav class="flex flex-shrink-0 items-center gap-4 xl:hidden">
             <svg class="bar-3_icon h-6 w-6 cursor-pointer"
                  viewBox="0 0 24 24"
@@ -74,7 +59,7 @@
 
         <nav id="nav-standard" class="hidden items-center gap-6 {{(!GeneralHelper::authCheck()) ? 'xl:flex' : 'xl:hidden'}}">
             <div class="flex items-center gap-8">
-                <a class="text-base leading-5" href="/">About</a>
+                <a class="text-base leading-5" href="/about">About</a>
                 <a class="text-base leading-5" href="/blog">Blog</a>
                 <a class="text-base leading-5" href="{{route('home')}}">Home</a>
             </div>
@@ -87,7 +72,7 @@
         <nav id="nav-logged-in" class="hidden items-center gap-6 {{(GeneralHelper::authCheck()) ? 'xl:flex' : 'xl:hidden'}}">
 
             <div class="flex items-center gap-8">
-                <a class="text-base leading-5" href="/">About</a>
+                <a class="text-base leading-5" href="/about">About</a>
                 <a class="text-base leading-5" href="/blog">Blog</a>
                 <a class="text-base leading-5" href="{{route('home')}}">Home</a>
             </div>
@@ -102,8 +87,8 @@
                 <div x-show="open" @click.away="open = false" class="absolute right-0 mt-14 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600" style="padding: 15px">
                     <div class="flex flex-col gap-3 text-right">
                         <a class="text-base leading-5" href="{{route('user.profile')}}">Profile</a>
-                        <a class="text-base leading-5" href="#">Reading Challenge</a>
-                        <a class="text-base leading-5" href="#">Book</a>
+                        <a class="text-base leading-5" href="https://baca.jaritelunjuk.com/reading-challenge">Reading Challenge</a>
+                        <a class="text-base leading-5" href="/book">Book</a>
                         <a class="text-base leading-5" href="#">Help</a>
                         <!-- <a class="text-base leading-5" href="../../blog">Manage Account</a> -->
                         <a class="text-base leading-5 text-red-500" href="{{route('user.logout')}}">Logout</a>
@@ -158,7 +143,7 @@
                 <a class="text-base leading-5"
                    href="/blog">Kategori</a>
                 <a class="text-base leading-5"
-                   href="/">About</a>
+                   href="/about">About</a>
                 <a class="text-base leading-5"
                    href="/blog">Blog</a>
             </div>
@@ -188,8 +173,8 @@
                     </figure>
 
                     <a class="text-base leading-5" href="{{route('user.profile')}}">Profile</a>
-                    <a class="text-base leading-5" href="#">Reading Challenge</a>
-                    <a class="text-base leading-5" href="#">Book</a>
+                    <a class="text-base leading-5" href="https://baca.jaritelunjuk.com/reading-challenge">Reading Challenge</a>
+                    <a class="text-base leading-5" href="/book">Book</a>
                     <a class="text-base leading-5" href="#">Help</a>
                     <!-- <a class="text-base leading-5" href="/blog">Manage Account</a> -->
                     <a class="text-base leading-5 text-red-500" href="{{route('user.logout')}}">Logout</a>
