@@ -29,7 +29,7 @@ class ProfileController extends Controller
         }
 
 
-        if (count(Auth::user()->user_recommendation) < 1) {
+        if (count(Auth::user()->user_recommendation) == 0) {
 
             if (!empty(json_decode(session('category_session')))) {
                 foreach (json_decode(session('category_session')) as $key => $value) {

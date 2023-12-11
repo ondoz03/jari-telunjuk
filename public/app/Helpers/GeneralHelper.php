@@ -330,7 +330,9 @@ class GeneralHelper
 
     public static function recomendationItem()
     {
-        $user_category = UserKategori::where('user_id', Auth::user()->id)->pluck('id')->toArray();
+        $user_category = UserKategori::where('user_id', Auth::user()->id)->pluck('kategori_id')->toArray();
+
+//        return $user_category;
         if (count($user_category) > 0) {
             $buku = Buku::whereHas('kategori', function ($q) use ($user_category) {
                 $q->whereIn('kategori_id', $user_category);
@@ -338,6 +340,9 @@ class GeneralHelper
                 ->inRandomOrder()
                 ->take(8)->get();
             return $buku;
+        }else{
+            return [];
         }
+
     }
 }

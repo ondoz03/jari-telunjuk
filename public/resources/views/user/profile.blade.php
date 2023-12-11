@@ -59,9 +59,9 @@
 
                 <h1 class="mb-4 font-arvo text-2xl leading-7 lg:text-3xl">Rekomendasi untuk {{$user->name}}</h1>
 
-         
+                @if(count($user->user_recommendation) > 0)
                     <div class="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
-                        @forelse (\App\Helpers\GeneralHelper::recomendationItem() as $item)
+                        @foreach (\App\Helpers\GeneralHelper::recomendationItem() as $item)
                             <figure class="space-y-2.5 lg:space-y-5">
                                 <img src="{{$item->image}}" alt="Rekomendasi 1" style="height: 251px;">
 
@@ -77,21 +77,22 @@
                                     </a>
                                 </figcaption>
                             </figure>
-                        @empty
-                            <div class="flex flex-col items-center gap-6">
-                                <img class="h-auto w-56" src="https://cdn.jaritelunjuk.com/web-asset/footer-ill-02-01.jpg" alt="Recommendation 404">
 
-                                <h5 class="text-base font-semibold">
-                                    Anda belum mendapatkan rekomendasi buku.
-                                </h5>
-
-                                <button id="book-recommendation" type="button" class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 astro-LUHUBFT3 ">
-                                    Coba Rekomendasi Buku
-                                </button>
-                            </div>
-                        @endforelse
+                        @endforeach
                     </div>
+                @else
+                    <div class="flex flex-col items-center gap-6">
+                        <img class="h-auto w-56" src="https://cdn.jaritelunjuk.com/web-asset/footer-ill-02-01.jpg" alt="Recommendation 404">
 
+                        <h5 class="text-base font-semibold">
+                            Anda belum mendapatkan rekomendasi buku.
+                        </h5>
+
+                        <button id="book-recommendation" type="button" class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 astro-LUHUBFT3 ">
+                            Coba Rekomendasi Buku
+                        </button>
+                    </div>
+                @endif
 
                 <div class="my-8 hidden h-px w-full bg-[#dcdcdc] lg:block"></div>
 
@@ -601,6 +602,7 @@
                 if (check_auth) {
                     setSessionSelectedBook();
                     setSessionCategory();
+
                     window.location.href = "{{ route('user.profile') }}";
                 } else {
                     if ($("#signup-section").hasClass("relative")) {
