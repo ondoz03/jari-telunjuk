@@ -17,9 +17,9 @@
                 <nav class="mb-4 flex items-center justify-between lg:mb-6">
                     <h1 class="mb-4 font-arvo text-2xl leading-7 lg:text-3xl">Want to Read</h1>
                     <div class="hidden lg:block">
-                        <button id="book-recommendation" type="button" class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 astro-LUHUBFT3 ">
-                            Coba Rekomendasi Buku
-                        </button>
+                        <a href="{{ route('buku', 'buku') }}" id="search-book" type="button" class="relative flex items-center justify-center rounded-full bg-[#128C55] px-8 py-2 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
+                            Cari Buku
+                        </a>
                     </div>
                 </nav>
 
@@ -87,7 +87,7 @@
                             Anda belum mendapatkan rekomendasi buku.
                         </h5>
 
-                        <button id="book-recommendation" type="button" class="flex items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 lg:w-60">
+                        <button id="book-recommendation" type="button" class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 astro-LUHUBFT3 ">
                             Coba Rekomendasi Buku
                         </button>
                     </div>
@@ -448,9 +448,7 @@
                                     </button>
 
                                     <p class="text-center text-neutral-600">
-                                        By clicking continue, you agree to our <a class="underline" href="/">
-                                            <u>Terms of Service</u>
-                                        </a> and
+                                        By clicking continue, you agree to our
                                         <a class="underline" href="/privacy-policy"> <u> Privacy Policy. </u></a>
                                     </p>
                                 </div>

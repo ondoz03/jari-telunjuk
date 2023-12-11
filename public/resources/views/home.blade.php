@@ -590,9 +590,7 @@
                                         </button>
 
                                         <p class="text-center text-neutral-600">
-                                            By clicking continue, you agree to our <a class="underline" href="/">
-                                                <u>Terms of Service</u>
-                                            </a> and
+                                            By clicking continue, you agree to our
                                             <a class="underline" href="/privacy-policy"> <u> Privacy Policy. </u></a>
                                         </p>
                                     </div>
