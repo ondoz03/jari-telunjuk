@@ -11,6 +11,7 @@ use App\Models\Setting;
 use App\Models\User;
 use App\Models\UserKategori;
 use Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
 use BendeckDavid\GraphqlClient\Facades\GraphQL;
@@ -314,16 +315,19 @@ class GeneralHelper
 
     public static function popularItem()
     {
-        $buku = Buku::whereHas('kategori', function ($q) {
-            $q->whereIn('slug', ['fiksi', 'sastra', 'nonfiksi-dewasa']);
-        })->with([
-            'kategori' => function ($k) {
-                $k->whereIn('slug', ['fiksi', 'sastra', 'nonfiksi-dewasa']);
-            },
-        ])
-            ->inRandomOrder()
-            ->take(6)
-            ->get();
+// Set the cache key based on the query
+        $cacheKey = 'buku_query_' . implode('_', ['fiksi', 'sastra', 'nonfiksi-dewasa']);
+
+// Use the cache if available, or execute the query and store the result in the cache for 2 weeks
+        $buku = Cache::remember($cacheKey, now()->addWeeks(2), function () {
+            return Buku::whereHas('kategori', function ($q) {
+                $q->whereIn('slug', ['fiksi', 'sastra', 'nonfiksi-dewasa']);
+            })->with([
+                'kategori' => function ($k) {
+                    $k->whereIn('slug', ['fiksi', 'sastra', 'nonfiksi-dewasa']);
+                },
+            ])->inRandomOrder()->take(6)->get();
+        });
 
         return $buku;
     }
@@ -332,15 +336,20 @@ class GeneralHelper
     {
         $user_category = UserKategori::where('user_id', Auth::user()->id)->pluck('kategori_id')->toArray();
 
-//        return $user_category;
+        // Set the cache key based on the query and user-specific information
+        $cacheKey = 'buku_query_' . implode('_', $user_category);
         if (count($user_category) > 0) {
-            $buku = Buku::whereHas('kategori', function ($q) use ($user_category) {
-                $q->whereIn('kategori_id', $user_category);
-            })
-                ->inRandomOrder()
-                ->take(8)->get();
+            $buku = Cache::remember($cacheKey, now()->addMinutes(60), function () use ($user_category) {
+                return Buku::whereHas('kategori', function ($q) use ($user_category) {
+                    $q->whereIn('kategori_id', $user_category);
+                })
+                    ->inRandomOrder()
+                    ->take(8)
+                    ->get();
+            });
+
             return $buku;
-        }else{
+        } else {
             return [];
         }
 
