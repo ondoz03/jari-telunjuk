@@ -66,8 +66,6 @@ class GoogleController extends Controller
                     ]);
                 }
             }
-            
-            $this->actionDetailBook();
 
             if(!empty(session('redirect_profile'))) {
                 return redirect()->route('user.profile');

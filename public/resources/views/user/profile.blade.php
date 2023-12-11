@@ -601,7 +601,6 @@
                 if (check_auth) {
                     setSessionSelectedBook();
                     setSessionCategory();
-
                     window.location.href = "{{ route('user.profile') }}";
                 } else {
                     if ($("#signup-section").hasClass("relative")) {
