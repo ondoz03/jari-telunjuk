@@ -52,12 +52,8 @@ class BukuController extends Controller
                     $view = view('data-buku', compact('buku', 'kategori'))->render();
                     return response()->json(['html' => $view]);
                 }
-
                 //Faq Json
-
                 return view('buku', compact('buku', 'slug', 'kategori', 'resultJson'));
-
-
             } else {
                 $buku = Buku::whereHas('kategori', function ($q) use ($slug) {
                     $q->where('name', $slug);

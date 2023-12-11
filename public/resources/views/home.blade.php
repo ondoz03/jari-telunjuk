@@ -264,19 +264,11 @@
                                 Coba Rekomendasi Buku
                             </button>
                         @else
-                            @if (count(auth()->user()->user_recommendation) < 1)
-                                <button id="book-recommendation-new"
-                                        type="button"
-                                        class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 ">
-                                    Coba Rekomendasi Buku
-                                </button>
-                            @else
-                                <a
-                                    href="{{route('user.profile')}}"
-                                    class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 ">
-                                    Coba Rekomendasi Buku
-                                </a>
-                            @endif
+                            <a
+                                href="{{route('user.profile')}}"
+                                class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 ">
+                                Coba Rekomendasi Buku
+                            </a>
                         @endguest
 
                     </div>
@@ -919,52 +911,6 @@
             });
 
         })
-        {{--function listBookByCategorySearch() {--}}
-        {{--    $("#countSelectedBook").text($("input[name='book_selected']:checked").length);--}}
-        {{--    search = $('serachRecomendasi').val();--}}
-        {{--    console.log()--}}
-        {{--    $.ajax({--}}
-        {{--        url: "{{ route('ajax.list-book-recommendation-search') }}",--}}
-        {{--        type: "POST",--}}
-        {{--        data: {--}}
-        {{--            'search':search--}}
-        {{--        },--}}
-        {{--        success: function (data) {--}}
-        {{--            var list_book = data;--}}
-        {{--            var html = '';--}}
-        {{--            $.each(list_book, function (index, value) {--}}
-        {{--                var shortText = jQuery.trim(value.judul).substring(0, 30).split(" ").slice(0, -1).join(" ") + "...";--}}
-
-        {{--                html = html + '<div class="astro-J7PV25F6">\--}}
-        {{--                <input type="checkbox" id="list_book_' + index + '" value="' + value.id + '" class="checkbox peer hidden astro-J7PV25F6 bookpicker" name="book_selected">\--}}
-        {{--                <label for="list_book_' + index + '" class="peer-checked:leading-2 w-full cursor-pointer text-sm font-normal peer-checked:bg-red-400 peer-checked:font-[sans-serif] peer-checked:font-semibold lg:peer-checked:text-[0.75rem] [&>img]:shadow-md peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\--}}
-        {{--                <figure class="relative space-y-3 astro-J7PV25F6">\--}}
-        {{--                    <img  style="height:120px !important" class="h-auto lazy-img w-full astro-J7PV25F6" data-src="' + value.image + '" alt="' + value.judul + '">\--}}
-        {{--                    <div class="pointer-events-none leading-5 astro-J7PV25F6">\--}}
-        {{--                        ' + shortText + '\--}}
-        {{--                    </div>\--}}
-        {{--                </figure>\--}}
-        {{--                </label>\--}}
-        {{--            </div>';--}}
-        {{--            });--}}
-
-        {{--            $("#book-list-recommendation").html(html);--}}
-        {{--            $('.bookpicker').click(function () {--}}
-        {{--                var numberOfChecked = $("input[name='book_selected']:checked").length;--}}
-        {{--                if (numberOfChecked > 5) {--}}
-        {{--                    $(this).prop("checked", false);--}}
-        {{--                }--}}
-        {{--                $("#countSelectedBook").text($("input[name='book_selected']:checked").length);--}}
-        {{--            });--}}
-
-        {{--            lazyload()--}}
-        {{--        },--}}
-        {{--    });--}}
-        {{--}--}}
-
-
-
-        // console.log('sss');
     </script>
     <script>
         //-----------------------------------------------------------------------------//

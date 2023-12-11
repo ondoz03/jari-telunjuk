@@ -4,9 +4,7 @@
         <nav class="flex items-center gap-8">
             <a class="hidden text-xl xl:block"
                href="/">
-                {{--                jari<span class="font-bold">telunjuk--</span>--}}
                 <img style="height: 40px;" src="https://www.jaritelunjuk.com/blog/wp-content/uploads/2021/10/Logo.png" alt="Jaritelunjuk Blog">
-
             </a>
 
             <a class="block flex-shrink-0 text-xl xl:hidden"
@@ -17,7 +15,6 @@
             <div class="relative hidden w-72 xl:block">
                 <form action="{{ route('search-result') }}"
                       method="get">
-                    {{-- @csrf --}}
                     <input name="search"
                            class="w-full rounded-full border border-stone-300 px-6 py-2 text-sm text-[#2e2e2e] outline-none ring-2 ring-transparent placeholder:text-stone-500 focus:border-stone-300 focus:ring-[#DEDEDE]/25"
                            type="text"
@@ -60,7 +57,8 @@
         <nav id="nav-standard" class="hidden items-center gap-6 {{(!GeneralHelper::authCheck()) ? 'xl:flex' : 'xl:hidden'}}">
             <div class="flex items-center gap-8">
                 <a class="text-base leading-5" href="/about">About</a>
-                <a class="text-base leading-5" href="/blog">Blog</a>
+                <a class="text-base leading-5" href="/category">Kategori</a>
+                <a class="text-base leading-5" href="https://www.jaritelunjuk.com/blog/">Blog</a>
                 <a class="text-base leading-5" href="{{route('home')}}">Home</a>
             </div>
 
@@ -73,7 +71,8 @@
 
             <div class="flex items-center gap-8">
                 <a class="text-base leading-5" href="/about">About</a>
-                <a class="text-base leading-5" href="/blog">Blog</a>
+                <a class="text-base leading-5" href="/category">Kategori</a>
+                <a class="text-base leading-5" href="https://www.jaritelunjuk.com/blog/">Blog</a>
                 <a class="text-base leading-5" href="{{route('home')}}">Home</a>
             </div>
             <div x-data="{ open: false }" class="flex justify-end">
@@ -141,16 +140,14 @@
                 <a class="text-base leading-5"
                    href="/">Home</a>
                 <a class="text-base leading-5"
-                   href="/blog">Kategori</a>
+                   href="/category">Kategori</a>
                 <a class="text-base leading-5"
                    href="/about">About</a>
                 <a class="text-base leading-5"
-                   href="/blog">Blog</a>
+                   href="https://www.jaritelunjuk.com/blog/">Blog</a>
             </div>
 
             @guest
-
-
 
                 <button
                     class="{{(!GeneralHelper::authCheck()) ? 'relative' : 'hidden'}} w-full rounded-full bg-[#128C55] px-5 py-2 text-center font-bold leading-5 text-white hover:bg-[#128C55]/90 btn-modal-signup" id="btn-modal-signup">
@@ -158,14 +155,10 @@
                 </button>
 
             @else
-
-                <!-- If alrady Logged in -->
                 <div class="{{(GeneralHelper::authCheck()) ? 'relative' : 'hidden'}} my-0 h-px w-full bg-[#EBEBEB]">
                 </div>
 
                 <div class="{{(GeneralHelper::authCheck()) ? 'flex' : 'hidden'}} flex-col items-start gap-3">
-
-
                     <figure class="h-10 w-10 rounded-full">
                         <img class="h-full w-full object-cover"
                              src="{{(isset(GeneralHelper::userInfo()->avatar)) ? GeneralHelper::userInfo()->avatar : '#'}}"
@@ -176,16 +169,12 @@
                     <a class="text-base leading-5" href="https://baca.jaritelunjuk.com/reading-challenge">Reading Challenge</a>
                     <a class="text-base leading-5" href="/book">Book</a>
                     <a class="text-base leading-5" href="#">Help</a>
-                    <!-- <a class="text-base leading-5" href="/blog">Manage Account</a> -->
                     <a class="text-base leading-5 text-red-500" href="{{route('user.logout')}}">Logout</a>
                 </div>
             @endguest
-
-
         </nav>
     </div>
 </header>
-
 
 
 s

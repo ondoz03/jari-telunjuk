@@ -8,7 +8,7 @@
           </a>
 
           <a class="mb-6 text-lg font-bold leading-[22px] xl:mb-8 xl:text-[28px] xl:leading-[34px]" href="mailto:info@jaritelunjuk.com">
-            info@jaritelunjuk.com
+              halo@jaritelunjuk.com
           </a>
 
           <nav class="flex flex-col items-start gap-3 xl:gap-5">
@@ -91,7 +91,7 @@
 
       <!-- Copyright -->
       <div class="w-full border-t border-[#DCDCDC] py-4 text-left text-xs xl:py-8 xl:text-base">
-        Copyright 2021 jaritelunjuk.com. All Rights Reserved.
+          <div> © jaritelunjuk-- Copyright </div>
       </div>
     </div>
   </footer>

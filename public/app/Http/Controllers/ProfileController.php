@@ -22,33 +22,37 @@ class ProfileController extends Controller
         }
     }
 
-    public function index(){
+    public function index()
+    {
         if (empty(Auth::user())) {   // Check is user logged in
             return redirect()->route('home');
         }
 
-        $user = User::with('user_recommendation','user_want_read')->find(Auth::user()->id);
 
-        if(count($user->user_recommendation) < 1){
+        if (count(Auth::user()->user_recommendation) > 1) {
+            UserRecommendation::where('user_id', auth()->user()->id)->delete();
+        }
 
-            if(!empty(json_decode(session('category_session')))){
-                foreach (json_decode(session('category_session')) as $key => $value) {
-                    UserKategori::create([
-                        'user_id' => Auth::user()->id,
-                        'kategori_id' => $value
-                    ]);
-                }
-            }
-
-            if(!empty(json_decode(session('selected_book_session')))) {
-                foreach (json_decode(session('selected_book_session')) as $key => $value) {
-                    UserRecommendation::create([
-                        'user_id' => Auth::user()->id,
-                        'buku_id' => $value
-                    ]);
-                }
+        if (!empty(json_decode(session('category_session')))) {
+            foreach (json_decode(session('category_session')) as $key => $value) {
+                UserKategori::create([
+                    'user_id' => Auth::user()->id,
+                    'kategori_id' => $value
+                ]);
             }
         }
+
+        if (!empty(json_decode(session('selected_book_session')))) {
+            foreach (json_decode(session('selected_book_session')) as $key => $value) {
+                UserRecommendation::create([
+                    'user_id' => Auth::user()->id,
+                    'buku_id' => $value
+                ]);
+            }
+        }
+
+        $user = User::with('user_recommendation', 'user_want_read')->find(Auth::user()->id);
+
 
 
         return view('user.profile', compact('user'));
@@ -63,13 +67,14 @@ class ProfileController extends Controller
         return back();
     }
 
-    public function setWantToRead(Request $request){
-        if(!empty($request->buku_id) && !empty(Auth::user())) {
+    public function setWantToRead(Request $request)
+    {
+        if (!empty($request->buku_id) && !empty(Auth::user())) {
             if ($request->type == 'add') {
                 UserWantRead::updateorcreate([
                     'user_id' => Auth::user()->id,
                     'buku_id' => $request->buku_id,
-                ],[
+                ], [
                     'status' => '1'
                 ]);
                 return true;
@@ -79,11 +84,11 @@ class ProfileController extends Controller
                         'status' => '0'
                     ]);
                 return true;
-            } else if($request->type == 'update'){
+            } else if ($request->type == 'update') {
                 UserWantRead::updateorcreate([
                     'user_id' => Auth::user()->id,
                     'buku_id' => $request->buku_id,
-                ],[
+                ], [
                     'status' => '2'
                 ]);
                 return true;
@@ -97,7 +102,7 @@ class ProfileController extends Controller
         Review::updateOrCreate([
             'user_id' => Auth::user()->id,
             'buku_id' => $request->buku_id
-        ],[
+        ], [
             'star' => $request->star
         ]);
 
