@@ -7,7 +7,7 @@
     <list default="true" id="fbf1cf8d-3753-4a9e-afd3-d564de777c4e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/app/Helpers/GeneralHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/Helpers/GeneralHelper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/Http/Controllers/GoogleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/Http/Controllers/GoogleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/resources/views/user/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/views/user/profile.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

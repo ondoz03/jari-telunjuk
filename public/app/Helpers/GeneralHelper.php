@@ -336,7 +336,7 @@ class GeneralHelper
                 $q->whereIn('kategori_id', $user_category);
             })
                 ->inRandomOrder()
-                ->take(8)->get();s
+                ->take(8)->get();
             return $buku;
         }
     }
