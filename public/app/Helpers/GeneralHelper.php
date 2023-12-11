@@ -69,12 +69,12 @@ class GeneralHelper
 
         $command = $client->getCommand('GetObject', [
             'Bucket' => Config::get('filesystems.disks.digitalocean.bucket'),
-            'Key'    => $file_path
+            'Key' => $file_path
         ]);
 
         $request = $client->createPresignedRequest($command, $expiry);
 
-        return (string) $request->getUri();
+        return (string)$request->getUri();
     }
 
     public static function getKategory()
@@ -260,14 +260,14 @@ class GeneralHelper
 
     public static function rating($buku_id)
     {
-        if(self::authCheck()){
+        if (self::authCheck()) {
             $star = Review::where('buku_id', $buku_id)->where('user_id', Auth::user()->id)->first();
-            if($star){
+            if ($star) {
                 return $star->rating;
-            }else{
+            } else {
                 return self::reviewSubmite();
             }
-        }else{
+        } else {
             return self::reviewSubmite();
         }
     }
@@ -277,7 +277,7 @@ class GeneralHelper
         $min_stars = 1;
         $max_stars = 5;
         for ($i = $min_stars; $i <= $max_stars; $i++) {
-                echo '<button id="star-btn" class="group text-stone-400" onclick="addReview('. $i.')">
+            echo '<button id="star-btn" class="group text-stone-400" onclick="addReview(' . $i . ')">
                 <svg xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -316,11 +316,11 @@ class GeneralHelper
     {
         $buku = Buku::whereHas('kategori', function ($q) {
             $q->whereIn('slug', ['fiksi', 'sastra', 'nonfiksi-dewasa']);
-            })->with([
-                'kategori' => function ($k) {
-                    $k->whereIn('slug', ['fiksi', 'sastra', 'nonfiksi-dewasa']);
-                },
-            ])
+        })->with([
+            'kategori' => function ($k) {
+                $k->whereIn('slug', ['fiksi', 'sastra', 'nonfiksi-dewasa']);
+            },
+        ])
             ->inRandomOrder()
             ->take(6)
             ->get();
@@ -328,21 +328,17 @@ class GeneralHelper
         return $buku;
     }
 
-    public  static function recomendationItem()
+    public static function recomendationItem()
     {
+        $user_category = UserKategori::where('user_id', Auth::user()->id)->pluck('id')->toArray();
+        if (count($user_category) > 0) {
+            $buku = Buku::whereHas('kategori', function ($q) use ($user_category) {
+                $q->whereIn('kategori_id', $user_category);
+            })
+                ->inRandomOrder()
+                ->take(8)->get();
 
-
-            $user_category = UserKategori::where('user_id', Auth::user()->id)->pluck('id')->toArray();
-            if(count($user_category) > 0){
-                $buku = Buku::whereHas('kategori', function($q) use ($user_category){
-                    $q->whereIn('kategori_id', $user_category);
-                })
-                    ->inRandomOrder()
-                    ->take(8)->get();
-
-                return $buku;
-            }
-
-
+            return $buku;
+        }
     }
 }
