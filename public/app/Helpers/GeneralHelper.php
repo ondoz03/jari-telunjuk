@@ -319,7 +319,7 @@ class GeneralHelper
         $cacheKey = 'buku_query_' . implode('_', ['fiksi', 'sastra', 'nonfiksi-dewasa']);
 
 // Use the cache if available, or execute the query and store the result in the cache for 2 weeks
-        $buku = Cache::remember($cacheKey, now()->addWeeks(2), function () {
+        $buku = Cache::remember($cacheKey, now()->addWeeks(1), function () {
             return Buku::whereHas('kategori', function ($q) {
                 $q->whereIn('slug', ['fiksi', 'sastra', 'nonfiksi-dewasa']);
             })->with([
