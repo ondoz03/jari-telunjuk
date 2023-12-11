@@ -331,15 +331,18 @@ class GeneralHelper
     public  static function recomendationItem()
     {
 
-        if(count(Auth::user()->user_recommendation) > 1){
-            $user_category = UserKategori::where('user_id', Auth::user()->id)->pluck('id')->toArray();
-            $buku = Buku::whereHas('kategori', function($q) use ($user_category){
-                $q->whereIn('kategori_id', $user_category);
-            })
-                ->inRandomOrder()
-                ->take(8)->get();
 
-            return $buku;
-        }
+            $user_category = UserKategori::where('user_id', Auth::user()->id)->pluck('id')->toArray();
+            if(count($user_category) > 0){
+                $buku = Buku::whereHas('kategori', function($q) use ($user_category){
+                    $q->whereIn('kategori_id', $user_category);
+                })
+                    ->inRandomOrder()
+                    ->take(8)->get();
+
+                return $buku;
+            }
+
+
     }
 }
