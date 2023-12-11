@@ -9,6 +9,7 @@ use App\Models\Kategori;
 use App\Models\Review;
 use App\Models\Setting;
 use App\Models\User;
+use App\Models\UserKategori;
 use Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
@@ -325,5 +326,20 @@ class GeneralHelper
             ->get();
 
         return $buku;
+    }
+
+    public  static function recomendationItem()
+    {
+
+        if(count(Auth::user()->user_recommendation) > 1){
+            $user_category = UserKategori::where('user_id', Auth::user()->id)->pluck('id')->toArray();
+            $buku = Buku::whereHas('kategori', function($q) use ($user_category){
+                $q->whereIn('kategori_id', $user_category);
+            })
+                ->inRandomOrder()
+                ->take(8)->get();
+
+            return $buku;
+        }
     }
 }

@@ -16,7 +16,7 @@
             <section class="col-span-1 mt-20 min-h-screen lg:col-span-9 lg:mt-28">
                 <nav class="mb-4 flex items-center justify-between lg:mb-6">
                     <h1 class="mb-4 font-arvo text-2xl leading-7 lg:text-3xl">Want to Read</h1>
-                    <div class="hidden lg:block">
+                    <div class="lg:block">
                         <a href="{{ route('buku', 'buku') }}" id="search-book" type="button" class="relative flex items-center justify-center rounded-full bg-[#128C55] px-8 py-2 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
                             Cari Buku
                         </a>
@@ -61,19 +61,19 @@
 
                 @if(count($user->user_recommendation) > 0)
                     <div class="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
-                        @foreach ($user->user_recommendation as $item)
+                        @foreach (\App\Helpers\GeneralHelper::recomendationItem() as $item)
                             <figure class="space-y-2.5 lg:space-y-5">
-                                <img src="{{$item->buku->image}}" alt="Rekomendasi 1">
+                                <img src="{{$item->image}}" alt="Rekomendasi 1" style="height: 251px;">
 
                                 <figcaption class="space-y-2">
-                                    <a href="{{ route('detail-buku', [$item->buku->kategori->first()->slug, $item->buku->slug]) }}" class="hover:underline">
+                                    <a href="{{ route('detail-buku', [$item->kategori->first()->slug, $item->slug]) }}" class="hover:underline">
                                         <h5 class="line-clamp-2 text-base font-semibold leading-[1.25] lg:text-lg lg:leading-[1.125]">
-                                            {{$item->buku->judul}}
+                                            {{$item->judul}}
                                         </h5>
                                     </a>
 
-                                    <a href="{{ route('author', $item->buku->penulis) }}" class="text-sm text-[#515151] hover:underline">
-                                        by {{$item->buku->penulis}}
+                                    <a href="{{ route('author', $item->penulis) }}" class="text-sm text-[#515151] hover:underline">
+                                        by {{$item->penulis}}
                                     </a>
                                 </figcaption>
                             </figure>
@@ -600,13 +600,8 @@
                 var check_auth = {{ GeneralHelper::authCheck() }};
                 if (check_auth) {
                     setSessionSelectedBook();
-                    {{--$.ajax({--}}
-                    {{--    url:"{{ route('user.profile') }}",--}}
-                    {{--    type: "GET",--}}
-                    {{--    success: function (data) {--}}
-                    {{--        window.location.href = "{{ route('user.profile') }}"--}}
-                    {{--    }--}}
-                    {{--});--}}
+                    setSessionCategory();
+
                     window.location.href = "{{ route('user.profile') }}";
                 } else {
                     if ($("#signup-section").hasClass("relative")) {

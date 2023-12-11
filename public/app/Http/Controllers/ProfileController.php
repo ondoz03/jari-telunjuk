@@ -29,30 +29,28 @@ class ProfileController extends Controller
         }
 
 
-        if (count(Auth::user()->user_recommendation) > 1) {
-            UserRecommendation::where('user_id', auth()->user()->id)->delete();
-        }
+        if (count(Auth::user()->user_recommendation) < 1) {
 
-        if (!empty(json_decode(session('category_session')))) {
-            foreach (json_decode(session('category_session')) as $key => $value) {
-                UserKategori::create([
-                    'user_id' => Auth::user()->id,
-                    'kategori_id' => $value
-                ]);
+            if (!empty(json_decode(session('category_session')))) {
+                foreach (json_decode(session('category_session')) as $key => $value) {
+                    UserKategori::create([
+                        'user_id' => Auth::user()->id,
+                        'kategori_id' => $value
+                    ]);
+                }
             }
-        }
 
-        if (!empty(json_decode(session('selected_book_session')))) {
-            foreach (json_decode(session('selected_book_session')) as $key => $value) {
-                UserRecommendation::create([
-                    'user_id' => Auth::user()->id,
-                    'buku_id' => $value
-                ]);
+            if (!empty(json_decode(session('selected_book_session')))) {
+                foreach (json_decode(session('selected_book_session')) as $key => $value) {
+                    UserRecommendation::create([
+                        'user_id' => Auth::user()->id,
+                        'buku_id' => $value
+                    ]);
+                }
             }
         }
 
         $user = User::with('user_recommendation', 'user_want_read')->find(Auth::user()->id);
-
 
 
         return view('user.profile', compact('user'));

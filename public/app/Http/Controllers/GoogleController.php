@@ -39,40 +39,7 @@ class GoogleController extends Controller
             $find_user->save();
             Auth::login($find_user);
 
-            if(!empty(session('redirect_profile'))) {
-                return redirect()->route('user.profile');
-            } else {
-                if(!empty(session('param'))){
-                    $data = json_decode(session('param'), true);
-                    $type = $data['type'];
-                    $buku = $data['buku'];
-                    if( $type === 'rating'){
-                        $star = $data['star'];
-
-                        Review::updateorcreate([
-                            'user_id' => Auth::user()->id,
-                            'buku_id' => $buku
-                        ],[
-                            'star' => $star
-                        ]);
-                    } else if($type === "want_to_read"){
-                        UserWantRead::updateorcreate([
-                            'user_id' => Auth::user()->id,
-                            'buku_id' => $buku,
-                        ],[
-                            'status' => '1'
-                        ]);
-                    } else if ($type === "currently_to_read") {
-                        UserWantRead::updateorcreate([
-                            'user_id' => Auth::user()->id,
-                            'buku_id' => $buku,
-                        ],[
-                            'status' => '2'
-                        ]);
-                    }
-                }
-                return redirect(session('redirect_back'));
-            }
+            return $this->actionDetailBook();
 
         } else {
             $new_user = User::create([
@@ -80,6 +47,7 @@ class GoogleController extends Controller
                 'email' => $user->getEmail(),
                 'avatar' => $user->getAvatar(),
             ]);
+
             Auth::login($new_user);
 
             if(!empty(json_decode(session('category_session')))){
@@ -98,6 +66,8 @@ class GoogleController extends Controller
                     ]);
                 }
             }
+            
+            $this->actionDetailBook();
 
             if(!empty(session('redirect_profile'))) {
                 return redirect()->route('user.profile');
@@ -105,8 +75,48 @@ class GoogleController extends Controller
                 return redirect(session('redirect_back'));
             }
         }
-
-
     }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function actionDetailBook()
+    {
+        if (!empty(session('redirect_profile'))) {
+            return redirect()->route('user.profile');
+        } else {
+            if (!empty(session('param'))) {
+                $data = json_decode(session('param'), true);
+                $type = $data['type'];
+                $buku = $data['buku'];
+                if ($type === 'rating') {
+                    $star = $data['star'];
+
+                    Review::updateorcreate([
+                        'user_id' => Auth::user()->id,
+                        'buku_id' => $buku
+                    ], [
+                        'star' => $star
+                    ]);
+                } else if ($type === "want_to_read") {
+                    UserWantRead::updateorcreate([
+                        'user_id' => Auth::user()->id,
+                        'buku_id' => $buku,
+                    ], [
+                        'status' => '1'
+                    ]);
+                } else if ($type === "currently_to_read") {
+                    UserWantRead::updateorcreate([
+                        'user_id' => Auth::user()->id,
+                        'buku_id' => $buku,
+                    ], [
+                        'status' => '2'
+                    ]);
+                }
+            }
+            return redirect(session('redirect_back'));
+        }
+    }
+
 
 }
