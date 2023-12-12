@@ -81,27 +81,28 @@ class GeneralHelper
     public static function getKategory()
     {
         $ketegori = Kategori::whereIn('name', [
-            'Administrasi',
-            'Akuntansi',
-            'Anak-Anak',
-            'Konstitusi',
-            'Antologi',
-            'Bisnis & Ekonomi',
-            'Anak Muda',
-            'Ekonomi',
-            'Fantasi',
+            'Nonfiksi Dewasa',
             'Fiksi',
-            'Filsafat',
-            'Hubungan Masyarakat',
-            'Hukum',
-            'Humor',
-            'Antropologi',
-            'Motivasi',
-            'Nonfiksi',
-            'Parenting',
+            'Sastra',
+            'Fiksi Anak & Remaja',
+            'Pendidikan',
+            'Kehidupan Kota',
+            'Bisnis & Ekonomi',
+            'Komik & Novel Grafis',
+            'Novel',
+            'Agama',
+            'Ilmu Sosial',
             'Psikologi',
+            'Hukum',
+            'Komputer',
+            'Keluarga & Hubungan',
             'Sejarah',
-        ])->get();
+            'Romantis',
+            'Thriller',
+            'Fiksi Ilmiah',
+            'Manga',
+            'Parenting'
+        ])->orderBy('name')->get();
 
         return $ketegori;
     }

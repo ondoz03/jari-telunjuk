@@ -3,7 +3,7 @@
     <title> Buku {{ $buku->judul }} - Karya {{ $buku->penulis }}</title>
     <script type="application/ld+json">
         {
-         "@context": "https://schema.org",
+         "@context": "https://schema.org",d
          "@type": "BreadcrumbList",
          "itemListElement": [{
            "@type": "ListItem",
