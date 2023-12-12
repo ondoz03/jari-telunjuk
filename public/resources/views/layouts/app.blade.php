@@ -25,6 +25,10 @@
         rel="stylesheet">
 
     <!-- Styles -->
+
+
+    <link rel="canonical"
+          href="/web/tweet-button">
 </head>
 
 <body>

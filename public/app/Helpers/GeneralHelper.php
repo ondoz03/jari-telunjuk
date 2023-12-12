@@ -100,7 +100,6 @@ class GeneralHelper
             'Romantis',
             'Thriller',
             'Fiksi Ilmiah',
-            'Manga',
             'Parenting'
         ])->orderBy('name')->get();
 
@@ -118,13 +117,19 @@ class GeneralHelper
         return $buku;
     }
 
-    public static function getRandomFirstBook()
+    public static function getRandomFirstBook($key)
     {
-        $buku = Buku::whereHas('kategori', function ($q) {
-            $q->whereIn('slug', ['fiction-literature-ebook', 'nonfiksi', 'history-ebook', 'psychology-ebook', 'romantis']);
-        })->inRandomOrder()
-            ->limit(1)
-            ->get();
+
+        // Set the cache key based on the query
+        $cacheKey = 'buku_query_' . $key . implode('_', ['fiction-literature-ebook', 'nonfiksi', 'history-ebook', 'psychology-ebook', 'romantis']);
+
+        // Use the cache if available, or execute the query and store the result in the cache for 3 days
+        $buku = Cache::remember($cacheKey, now()->addDays(3), function () {
+            return Buku::whereHas('kategori', function ($q) {
+                $q->whereIn('slug', ['fiction-literature-ebook', 'nonfiksi', 'history-ebook', 'psychology-ebook', 'romantis']);
+            })->inRandomOrder()->limit(1)->get();
+        });
+
         return $buku[0]->image;
     }
 

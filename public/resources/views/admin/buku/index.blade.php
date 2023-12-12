@@ -162,12 +162,12 @@
                 success: function (result) {
                     $("#judul").val(result.judul);
                     $("#penulis").val(result.penulis);
-                    $("#kategori").val(result.detail_buku.kategori_id).change();
+                    $("#kategori").val(result.kategori[0].id).change();
                     $("#tgl_rilis").val(result.detail_buku.tgl_rilis);
                     $("#bahasa").val(result.detail_buku.bahasa);
                     $("#negara").val(result.detail_buku.negara);
                     $("#jumlah_halaman").val(result.detail_buku.jumlah_halaman);
-                    $("#jumlah_buku").val(result.detail_buku.jumlah_buku);
+                    $("#isbn").val(result.isbn);
                     $("#penerbit").val(result.detail_buku.penerbit);
                     $("#description").val(result.detail_buku.description);
                     $(".image").attr("style", 'background-image: url(' + result.image + ')');

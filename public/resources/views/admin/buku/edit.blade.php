@@ -91,9 +91,9 @@
                             </div>
                             <div class="col">
                                 <div class="fv-row mb-7">
-                                    <label class="required fs-6 fw-bold mb-2">Jumlah Buku</label>
+                                    <label class="required fs-6 fw-bold mb-2">ISBN</label>
                                     <input required type="number" class="form-control form-control-solid"
-                                        id="jumlah_buku" name="jumlah_buku" placeholder="Jumlah Buku" />
+                                        id="isbn" name="isbn" placeholder="Jumlah Buku" />
                                 </div>
                             </div>
                         </div>

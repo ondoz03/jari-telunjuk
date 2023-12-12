@@ -31,12 +31,12 @@
                     <div class="flex w-1/5 flex-col items-start gap-2 xl:gap-6 astro-J7PV25F6">
                         <div class="relative h-auto w-full astro-J7PV25F6">
                             <img class="h-full  w-full object-cover object-top astro-J7PV25F6"
-                                 src="{{ GeneralHelper::getRandomFirstBook() }}"
+                                 src="{{ GeneralHelper::getRandomFirstBook(1) }}"
                                  alt="Book Photo 1">
                         </div>
                         <div class="relative h-auto w-full astro-J7PV25F6">
                             <img class="h-full  w-full object-cover object-top astro-J7PV25F6"
-                                 src="{{ GeneralHelper::getRandomFirstBook() }}"
+                                 src="{{ GeneralHelper::getRandomFirstBook(2) }}"
                                  alt="Book Photo 2">
                         </div>
                     </div>
@@ -44,12 +44,12 @@
                     <div class="mt-16 flex w-1/5 flex-col items-start gap-2 xl:mt-32 xl:gap-6 astro-J7PV25F6">
                         <div class="relative h-auto w-full astro-J7PV25F6">
                             <img class="h-full w-full object-cover object-top astro-J7PV25F6"
-                                 data-src="{{ GeneralHelper::getRandomFirstBook() }}"
+                                 data-src="{{ GeneralHelper::getRandomFirstBook(3) }}"
                                  alt="Book Photo 3">
                         </div>
                         <div class="relative h-auto w-full astro-J7PV25F6">
                             <img class="h-full  w-full object-cover object-top astro-J7PV25F6"
-                                 data-src="{{ GeneralHelper::getRandomFirstBook() }}"
+                                 data-src="{{ GeneralHelper::getRandomFirstBook(4) }}"
                                  alt="Book Photo 4">
                         </div>
                     </div>
@@ -57,12 +57,12 @@
                     <div class="mt-28 flex w-1/5 flex-col items-start gap-2 xl:mt-56 xl:gap-6 astro-J7PV25F6">
                         <div class="relative h-auto w-full astro-J7PV25F6">
                             <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
-                                 data-src="{{ GeneralHelper::getRandomFirstBook() }}"
+                                 data-src="{{ GeneralHelper::getRandomFirstBook(5) }}"
                                  alt="Book Photo 5">
                         </div>
                         <div class="relative h-auto w-full astro-J7PV25F6">
                             <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
-                                 data-src="{{ GeneralHelper::getRandomFirstBook() }}"
+                                 data-src="{{ GeneralHelper::getRandomFirstBook(6) }}"
                                  alt="Book Photo 6">
                         </div>
                     </div>
@@ -70,12 +70,12 @@
                     <div class="mt-16 flex w-1/5 flex-col items-start gap-2 xl:mt-32 xl:gap-6 astro-J7PV25F6">
                         <div class="relative h-auto w-full astro-J7PV25F6">
                             <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
-                                 data-src="{{ GeneralHelper::getRandomFirstBook() }}"
+                                 data-src="{{ GeneralHelper::getRandomFirstBook(7) }}"
                                  alt="Book Photo 7">
                         </div>
                         <div class="relative h-auto w-full astro-J7PV25F6">
                             <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
-                                 data-src="{{ GeneralHelper::getRandomFirstBook() }}"
+                                 data-src="{{ GeneralHelper::getRandomFirstBook(8) }}"
                                  alt="Book Photo 8">
                         </div>
                     </div>
@@ -83,12 +83,12 @@
                     <div class="flex w-1/5 flex-col items-start gap-2 xl:gap-6 astro-J7PV25F6">
                         <div class="relative h-auto w-full astro-J7PV25F6">
                             <img class="h-full w-full object-cover object-top astro-J7PV25F6"
-                                 src="{{ GeneralHelper::getRandomFirstBook() }}"
+                                 src="{{ GeneralHelper::getRandomFirstBook(9) }}"
                                  alt="Book Photo 9">
                         </div>
                         <div class="relative h-auto w-full astro-J7PV25F6">
                             <img class="h-full w-full object-cover object-top astro-J7PV25F6"
-                                 src="{{ GeneralHelper::getRandomFirstBook() }}"
+                                 src="{{ GeneralHelper::getRandomFirstBook(10) }}"
                                  alt="Book Photo 10">
                         </div>
                     </div>
@@ -333,10 +333,14 @@
                             ~{{ GeneralHelper::settingPerpustakan('by_quotes') }}~
                         </p>
 
-                        <a href="/"
+                        <a href="https://twitter.com/intent/tweet?text=Quotes hari ini 🤓: “{{ GeneralHelper::settingPerpustakan('qoutes_header') }}” ~{{ GeneralHelper::settingPerpustakan('by_quotes') }}~ via @jaritelunjukcom" target="_blank"
                            class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-3 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 xl:py-4 astro-J7PV25F6">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0,0,256,256">
+                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M5.91992,6l14.66211,21.375l-14.35156,16.625h3.17969l12.57617,-14.57812l10,14.57813h12.01367l-15.31836,-22.33008l13.51758,-15.66992h-3.16992l-11.75391,13.61719l-9.3418,-13.61719zM9.7168,8h7.16406l23.32227,34h-7.16406z"></path></g></g>
+                            </svg>
                             Share
                         </a>
+
                     </div>
 
                     <div class="flex w-full flex-1 justify-end astro-J7PV25F6">
@@ -823,7 +827,7 @@
 
                         html = html + '<div class="astro-J7PV25F6">\
                         <input type="checkbox" id="list_book_' + index + '" value="' + value.id + '" class="checkbox peer hidden astro-J7PV25F6 bookpicker" name="book_selected">\
-                        <label for="list_book_' + index + '" class="peer-checked:leading-2 w-full cursor-pointer text-sm font-normal peer-checked:bg-red-400 peer-checked:font-[sans-serif] peer-checked:font-semibold lg:peer-checked:text-[0.75rem] [&>img]:shadow-md peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\
+                        <label for="list_book_' + index + '" class="peer-checked:leading-2 w-full cursor-pointer text-sm font-normal peer-checked:bg-red-400 peer-checked:font-[sans-serif] peer-checked:font-semibold [&>img]:shadow-md peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\
                         <figure class="relative space-y-3 astro-J7PV25F6">\
                             <img  style="height:120px !important" class="h-auto lazy-img w-full astro-J7PV25F6" data-src="' + value.image + '" alt="' + value.judul + '">\
                             <div class="pointer-events-none leading-5 astro-J7PV25F6">\

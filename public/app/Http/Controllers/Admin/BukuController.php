@@ -46,11 +46,11 @@ class BukuController extends Controller
 
         $penulis = explode(" ,", $request->penulis);
 
-        return $penulis;
 
         $buku = Buku::create([
             'judul' => $request->judul,
-            'penulis' => $penulis,
+            'penulis' => json_encode($penulis),
+            'isbn' => $request->isbn
         ]);
 
         if ($buku) {
@@ -60,21 +60,24 @@ class BukuController extends Controller
                 'penerbit' => $request->penerbit,
                 'negara' => $request->negara,
                 'jumlah_halaman' => $request->jumlah_halaman,
-                'jumlah_buku' => $request->jumlah_buku,
+                'jumlah_buku' => 0,
                 'description' => $request->description,
+            ]);
+
+            $buku->kategori()->create([
                 'kategori_id' => $request->kategori
             ]);
             if ($request->hasFile('image') && $request->file('image')->isValid()) {
                 $buku->addMediaFromRequest('image')->toMediaCollection('default');
             }
             return back();
-            return false;
         }
     }
 
     public function edit($uuid)
     {
         $buku = Buku::where('uuid', $uuid)->with(['detail_buku', 'kategori', 'media'])->first();
+        return $buku;
         return response()->json($buku);
     }
 
@@ -86,6 +89,7 @@ class BukuController extends Controller
         $buku->update([
             'judul' => $request->judul,
             'penulis' => $penulis,
+            'isbn' => $request->isbn
         ]);
 
         $buku->detail_buku()->update([
@@ -94,8 +98,12 @@ class BukuController extends Controller
             'penerbit' => $request->penerbit,
             'negara' => $request->negara,
             'jumlah_halaman' => $request->jumlah_halaman,
-            'jumlah_buku' => $request->jumlah_buku,
+            'jumlah_buku' => 0,
             'description' => $request->description,
+        ]);
+
+        $buku->kategori()->update([
+            'kategori_id' => $request->kategori
         ]);
 
         if ($request->hasFile('image')) {
