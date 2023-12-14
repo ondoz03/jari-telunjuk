@@ -166,7 +166,7 @@
                     To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                 -->
                 <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg ease-out duration-300 ease-in duration-200">
-                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                    <div class="bg-white px-4 py-4 sm:p-6 sm:pb-4">
                         <div class="sm:flex sm:items-start">
 
                             <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
@@ -193,8 +193,8 @@
 
                             <a
                                 onclick="onClose()"
-                                class="relative flex w-full items-center justify-center gap-3" style="cursor: pointer">
-                                <p class="text-base font-semibold leading-5"><u>Close</u></p>
+                                class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4" style="cursor: pointer">
+                                <p class="text-base font-semibold leading-5"> <u>Close</u></p>
                             </a>
 
                         </div>
