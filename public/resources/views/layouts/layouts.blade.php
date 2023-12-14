@@ -246,7 +246,7 @@
                     <a
                         onclick="onCloseM()"
                         class="relative flex w-full items-center justify-center gap-3" style="cursor: pointer;">
-                        <p class="text-base font-semibold leading-5">Close</p>
+                        <p class="text-base font-semibold leading-5"> <u>Close</u></p>
                     </a>
                 </div>
             </div>
