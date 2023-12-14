@@ -411,7 +411,7 @@
 
                                 <a
                                 onclick="onCloseModal()"
-                                class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4" style="cursor: pointer;">
+                                class="relative flex w-full items-center justify-center gap-3" style="cursor: pointer;">
                                     <p class="text-base font-semibold leading-5">Close</p>
                                 </a>
                             </div>

@@ -8,12 +8,13 @@ use Illuminate\Support\Str;
 
 class AuthorController extends Controller
 {
-    public function author(Request $request, $slug){
+    public function author(Request $request, $slug)
+    {
 
         $author =  Str::replace('-', ' ', $slug);
-        $buku = Buku::with(['detail_buku', 'kategori'])
-                ->where('penulis', 'like', '%'.$author.'%')
-                ->get();
+        $buku = Buku::with(['detail_buku', 'kategori', 'reviews'])
+            ->where('penulis', 'like', '%' . $author . '%')
+            ->get();
         // if (empty($author)) {
         //     abort(404);
         // }

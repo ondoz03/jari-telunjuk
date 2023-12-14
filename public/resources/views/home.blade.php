@@ -593,7 +593,7 @@
                                             By clicking continue, you agree to our
                                             <a class="underline" href="/privacy-policy"> <u> Privacy Policy. </u></a>
                                         </p>
-                                        <u id="btn-prev-choose-book-category" style="cursor: pointer">Previous</u>
+                                            <u id="btn-prev-choose-book-category flex items-center justify-center" style="cursor: pointer; ">Previous</u>
                                     </div>
                                 </div>
                             </div>
