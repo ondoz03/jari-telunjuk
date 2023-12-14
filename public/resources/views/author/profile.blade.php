@@ -23,7 +23,7 @@
             class="h-full w-full object-cover"
             src="{{ asset('/assets/media')}}/author-photo-1.png"
             alt="{{ $author_name}}"
-          /> 
+          />
         </div>
 
         <!-- Share -->
@@ -139,7 +139,8 @@
           <h3 class="font-arvo text-lg font-bold leading-8">Tentang Penulis</h3>
 
           <p>
-            Penulis yang memiliki banyak karya-karya yang menarik kurang lebih {{ count($buku) }} dalam berbagai kategori.
+{{--            Penulis yang memiliki banyak karya-karya yang menarik kurang lebih {{ count($buku) }} dalam berbagai kategori.--}}
+              -
           </p>
         </article>
 

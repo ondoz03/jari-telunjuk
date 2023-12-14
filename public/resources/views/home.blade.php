@@ -586,13 +586,8 @@
                                     <div class="flex w-full max-w-sm flex-col items-start gap-4">
                                         <a href="{{ route('auth.google') }}" class="redirect-profile relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
                                             <img class="h-6 w-6" src="{{ asset('/assets/media') }}/icon-google.png" alt="Icon Google">
-
                                             <p class="text-base font-semibold leading-5">Sign up with Google</p>
                                         </a>
-
-                                        <button class="redirect-profile relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
-                                            Previous
-                                        </button>
 
                                         <p class="text-center text-neutral-600">
                                             By clicking continue, you agree to our
