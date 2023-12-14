@@ -23,7 +23,7 @@
             class="h-full w-full object-cover"
             src="{{ asset('/assets/media')}}/author-photo-1.png"
             alt="{{ $author_name}}"
-          />
+          /> 
         </div>
 
         <!-- Share -->
