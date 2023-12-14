@@ -68,7 +68,7 @@ class BukuController extends Controller
                 'kategori_id' => $request->kategori
             ]);
             if ($request->hasFile('image') && $request->file('image')->isValid()) {
-                $buku->addMediaFromRequest('buku')->toMediaCollection('buku', 'digitalocean');
+                $buku->addMediaFromRequest('image')->toMediaCollection('buku', 'digitalocean');
             }
             return back();
         }
