@@ -68,7 +68,7 @@ class BukuController extends Controller
                 'kategori_id' => $request->kategori
             ]);
             if ($request->hasFile('image') && $request->file('image')->isValid()) {
-                $buku->addMediaFromRequest('image')->toMediaCollection('default');
+                $buku->addMediaFromRequest('buku')->toMediaCollection('buku', 'digitalocean');
             }
             return back();
         }
@@ -107,8 +107,8 @@ class BukuController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $buku->clearMediaCollection('default');
-            $buku->addMediaFromRequest('image')->toMediaCollection('default');
+            $buku->clearMediaCollection('buku');
+            $buku->addMediaFromRequest('image')->toMediaCollection('buku', 'digitalocean');
         }
 
         return back();
@@ -117,6 +117,7 @@ class BukuController extends Controller
     public function destroy($uuid)
     {
         $buku = Buku::where('uuid', $uuid)->FirstorFail();
+        $buku->clearMediaCollection('buku');
         $buku->delete();
     }
 }
