@@ -265,7 +265,7 @@
             <div class="modal__container max-sm:h-full flex flex-col items-start rounded-none astro-LUHUBFT3 lg:rounded-2xl" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
                 <header class="flex h-[72px] w-full items-center justify-between bg-white px-4 py-6 xl:justify-center lg:rounded-2xl astro-LUHUBFT3">
                     <h2 class="text-center font-arvo text-xl leading-none xl:text-[34px] astro-LUHUBFT3 " id="modal-1-title">
-                        Pilih rekomendasi
+                        Pilih Kategori
                     </h2>
 
                     <button id="close-modal" type="button" class="block xl:hidden astro-LUHUBFT3">
@@ -618,7 +618,7 @@
         });
 
         $('#btn-prev-choose-book').click(function () {
-            $('#modal-1-title').text('Pilih rekomendasi')
+            $('#modal-1-title').text('Pilih Kategori')
 
             if ($("#recommend-book-section").hasClass("relative")) {
                 $("#choose-book-section").addClass("hidden");
