@@ -595,7 +595,7 @@
                                         </p>
 
                                         <div class=" flex w-full items-center justify-center ">
-                                            <a id="btn-prev-choose-book-category" style="cursor: pointer; ">Previous</a>
+                                            <a id="btn-prev-choose-book-category" style="cursor: pointer; "><u>Previous</u></a>
                                         </div>
 
                                     </div>
