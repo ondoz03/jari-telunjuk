@@ -59,6 +59,9 @@
             </section>
 
             <div class="relative col-span-1 lg:sticky lg:top-32 lg:col-span-3 lg:mt-32">
+
+                <h4 class="font-arvo text-[28px] leading-none mb-2" style="font-size: 30px;">Related Category</h4>
+
                 <div class="my-8 block h-px w-full bg-[#dcdcdc] lg:hidden"></div>
 
                 @foreach($count as $key => $item)
