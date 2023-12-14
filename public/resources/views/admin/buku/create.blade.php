@@ -33,7 +33,7 @@
                                         <span class="required">Kategori</span>
                                         <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Kategori"></i>
                                     </label>
-                                    <select aria-label="Select a Kategori" data-control="select2" data-placeholder="Pilih Kategori" data-dropdown-parent="#kt_modal_add_customer" class="form-select form-select-solid" name="kategori">
+                                    <select aria-label="Select a Kategori" multiple data-control="select2" data-placeholder="Pilih Kategori" data-dropdown-parent="#kt_modal_add_customer" class="form-select form-select-solid" name="kategori[]">
                                         <option value=""></option>
                                         @foreach ($kategori as $item)
                                             <option value="{{$item->id}}">{{$item->name}}</option>
@@ -73,7 +73,7 @@
                             <div class="col">
                                 <div class="fv-row mb-7">
                                     <label class="required fs-6 fw-bold mb-2">ISBN</label>
-                                    <input required type="number" class="form-control form-control-solid" name="isbn" placeholder="Jumlah Buku" />
+                                    <input required type="text" class="form-control form-control-solid" name="isbn" placeholder="Jumlah Buku" />
                                 </div>
                             </div>
                         </div>

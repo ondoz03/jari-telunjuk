@@ -46,7 +46,6 @@ class BukuController extends Controller
 
         $penulis = explode(" ,", $request->penulis);
 
-
         $buku = Buku::create([
             'judul' => $request->judul,
             'penulis' => json_encode($penulis),
@@ -64,9 +63,8 @@ class BukuController extends Controller
                 'description' => $request->description,
             ]);
 
-            $buku->kategori()->create([
-                'kategori_id' => $request->kategori
-            ]);
+            $buku->kategori()->attach($request->kategori);
+
             if ($request->hasFile('image') && $request->file('image')->isValid()) {
                 $buku->addMediaFromRequest('image')->toMediaCollection('buku', 'digitalocean');
             }
@@ -102,9 +100,7 @@ class BukuController extends Controller
             'description' => $request->description,
         ]);
 
-        $buku->kategori()->update([
-            'kategori_id' => $request->kategori
-        ]);
+        $buku->kategori()->sync($request->kategori);
 
         if ($request->hasFile('image')) {
             $buku->clearMediaCollection('buku');

@@ -160,9 +160,13 @@
                 dataType: "JSON",
                 type: "GET",
                 success: function (result) {
+
+                    var ids = result.kategori.map(function(item) {
+                        return item.id;
+                    });
+
                     $("#judul").val(result.judul);
                     $("#penulis").val(result.penulis);
-                    $("#kategori").val(result.kategori[0].id).change();
                     $("#tgl_rilis").val(result.detail_buku.tgl_rilis);
                     $("#bahasa").val(result.detail_buku.bahasa);
                     $("#negara").val(result.detail_buku.negara);
@@ -172,6 +176,8 @@
                     $("#description").val(result.detail_buku.description);
                     $(".image").attr("style", 'background-image: url(' + result.image + ')');
                     $('#uuid').val(result.uuid);
+                    $('#kategori').val(ids);
+                    $('#kategori').trigger('change');
                 },
             });
         });

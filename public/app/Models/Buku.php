@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 use Ramsey\Uuid\Uuid;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
-// use Spatie\Sluggable\HasSlug;
-// use Spatie\Sluggable\SlugOptions;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 use BinaryCats\Sku\HasSku;
 use BinaryCats\Sku\Concerns\SkuOptions;
 use Carbon\Carbon;
@@ -21,8 +21,9 @@ use Laravel\Scout\Builder;
 
 class Buku extends Model implements HasMedia
 {
-    use HasFactory, InteractsWithMedia,  Searchable;
-    // HasSlug
+    use HasFactory, InteractsWithMedia, Searchable, HasSlug;
+
+    //
 
     protected $fillable = [
         'uuid',
@@ -39,12 +40,13 @@ class Buku extends Model implements HasMedia
     /**
      * Get the options for generating the slug.
      */
-    // public function getSlugOptions(): SlugOptions
-    // {
-    //     return SlugOptions::create()
-    //         ->generateSlugsFrom('judul')
-    //         ->saveSlugsTo('slug');
-    // }
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('judul')
+            ->saveSlugsTo('slug');
+//            ->preventOverwrite();
+    }
     /**
      * Get the options for generating the Sku.
      *
@@ -76,7 +78,7 @@ class Buku extends Model implements HasMedia
 
         $penulis = [];
         foreach ($data as $key => $value) {
-            $penulis[] =  $value;
+            $penulis[] = $value;
         }
 
         $penulisString = implode(', ', $penulis);
@@ -119,7 +121,6 @@ class Buku extends Model implements HasMedia
      * @return array
      */
     #[SearchUsingPrefix(['judul'])]
-
     public function toSearchableArray()
     {
         return [
@@ -144,7 +145,7 @@ class Buku extends Model implements HasMedia
 
     public function kategori()
     {
-        return $this->belongsToMany(Kategori::class, 'buku_kategori',  'buku_id', 'kategori_id');
+        return $this->belongsToMany(Kategori::class, 'buku_kategori', 'buku_id', 'kategori_id');
     }
 
     public function reviews()
