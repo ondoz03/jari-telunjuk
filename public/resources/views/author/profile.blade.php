@@ -1,6 +1,6 @@
 @extends('layouts.layouts')
 @section('title')
-    <title>Discover books you’ll love! | Jari Telunjuk</title>
+    <title>Daftar Buku Karya - {{ Str::title(Str::replace('-', ' ',$author_name))}}</title>
 @endsection
 
 @section('header-js')
