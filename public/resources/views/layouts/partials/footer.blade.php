@@ -120,8 +120,10 @@
         </section>
 
         <!-- Copyright -->
-        <div class="w-full border-t border-[#DCDCDC] py-4 text-left text-xs xl:py-8 xl:text-base">
-            <div> © jaritelunjuk-- Copyright</div>
+        <div class="w-full border-t border-[#DCDCDC] footer text-muted d-md-flex justify-between align-items-center pt-4 pb-4 border-top py-4 text-left text-xs xl:py-8 xl:text-base" style="display: flex">
+            <div> ©{!! date('Y')!!} jaritelunjuk-- Copyright</div>
+
+            <div class="text-md-end"> Made with ♡  </div>
         </div>
     </div>
 </footer>
