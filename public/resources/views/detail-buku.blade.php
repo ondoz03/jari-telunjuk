@@ -1,6 +1,7 @@
 @extends('layouts.layouts')
 @section('title')
     <title> Buku {{ $buku->judul }} - Karya {{ $buku->penulis }}</title>
+    <meta name="description"  content="{{ Str::limit($buku->detail_buku->description, 160) }}">
     <script type="application/ld+json">
         {
          "@context": "https://schema.org",d
@@ -167,7 +168,7 @@
 
                             <p class="text-sm font-semibold xl:text-lg">
                                 by <a class="hover:underline"
-                                    href="{{ route('author', $buku->penulis) }}">{{ $buku->penulis }}</a>
+                                    href="{{ route('author',Str::slug($buku->penulis, '-')) }}">{{ $buku->penulis }}</a>
                             </p>
 
                             <div class="hidden items-center gap-1.5">

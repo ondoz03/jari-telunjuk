@@ -9,7 +9,7 @@
 @section('content')
 
 <main class="author relative mt-14 min-h-screen pb-10 pt-7 lg:mt-20 lg:pb-20">
-      
+
     <div
       class="author container relative mx-auto grid max-w-screen-xl grid-cols-1 gap-8 px-5 lg:grid-cols-12 lg:px-12"
     >
@@ -132,7 +132,7 @@
       <!-- Author - Detail -->
       <section class="detail col-span-1 lg:col-span-9">
         <!-- Heading -->
-        <h1 class="mb-6 font-arvo text-[34px] leading-none">{{ $author_name}}</h1>
+        <h1 class="mb-6 font-arvo text-[34px] leading-none">{{ Str::title(Str::replace('-', ' ',$author_name))}}</h1>
 
         <!-- Description -->
         <article class="mb-6">
@@ -182,7 +182,7 @@
                     </p>
                   </div>
                 </figure>
-          
+
                 @endforeach
 
           </div>

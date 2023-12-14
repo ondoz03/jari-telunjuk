@@ -1,6 +1,7 @@
 @extends('layouts.layouts')
 @section('title')
     <title>Cara Baru Menemukan Rekomendasi Buku Favoritmu - Jari Telunjuk</title>
+    <meta name="description"  content="{{ GeneralHelper::settingPerpustakan('body_header') }}">
 @endsection
 
 @section('header-js')
@@ -589,7 +590,7 @@
                                             <p class="text-base font-semibold leading-5">Sign up with Google</p>
                                         </a>
 
-                                        <button id="btn-prev-choose-book-category" class="redirect-profile relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
+                                        <button class="redirect-profile relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
                                             Previous
                                         </button>
 
@@ -597,6 +598,7 @@
                                             By clicking continue, you agree to our
                                             <a class="underline" href="/privacy-policy"> <u> Privacy Policy. </u></a>
                                         </p>
+                                        <u id="btn-prev-choose-book-category" style="cursor: pointer">Previous</u>
                                     </div>
                                 </div>
                             </div>
