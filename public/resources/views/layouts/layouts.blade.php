@@ -70,6 +70,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="https://www.jaritelunjuk.com/blog/wp-content/uploads/2023/09/cropped-favicon-192x192.png" sizes="192x192">
     <style>
         .lazy-img {
             filter: blur(10px);
