@@ -4,9 +4,11 @@
 <head>
 
     <meta charset=UTF-8>
-
+    @if(Request::url() === 'staging.jaritelunjuk.com')
     <meta name="robots" content="noindex,nofollow">
     <meta name="googlebot" content="noindex">
+@endif
+
 
     <meta name="viewport"
           content="width=device-width">
