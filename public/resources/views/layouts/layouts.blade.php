@@ -4,10 +4,10 @@
 <head>
 
     <meta charset=UTF-8>
-    @if(Request::url() === 'staging.jaritelunjuk.com')
-    <meta name="robots" content="noindex,nofollow">
-    <meta name="googlebot" content="noindex">
-@endif
+    @if(Request::url() !== 'https://jaritelunjuk.com' || Request::url() !== 'https://www.jaritelunjuk.com' )
+        <meta name="robots" content="noindex,nofollow">
+        <meta name="googlebot" content="noindex">
+    @endif
 
 
     <meta name="viewport"
