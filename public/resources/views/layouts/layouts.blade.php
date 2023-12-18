@@ -5,6 +5,9 @@
 
     <meta charset=UTF-8>
 
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="googlebot" content="noindex">
+
     <meta name="viewport"
           content="width=device-width">
     <link rel="icon"
