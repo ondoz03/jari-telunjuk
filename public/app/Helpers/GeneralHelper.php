@@ -369,4 +369,13 @@ class GeneralHelper
             ';
         }
     }
+
+    public static function canonical()
+    {
+        if (App::environment('production')) {
+            return '
+            <link rel="canonical" href="https://example.com/dresses/green-dresses" />
+            ';
+        }
+    }
 }

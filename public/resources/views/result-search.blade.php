@@ -1,6 +1,8 @@
 @extends('layouts.layouts')
 @section('title')
     <title>{{ Str::ucfirst($request->search) }} - Jari Telunjuk</title>
+    {!! GeneralHelper::canonical()!!}
+
 @endsection
 @section('content')
     <main class="relative w-full">

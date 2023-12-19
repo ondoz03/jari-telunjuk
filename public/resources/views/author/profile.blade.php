@@ -1,6 +1,8 @@
 @extends('layouts.layouts')
 @section('title')
     <title>Daftar Buku Karya {{ Str::title(Str::replace('-', ' ',$author_name))}}</title>
+    {!! GeneralHelper::canonical()!!}
+
 @endsection
 
 @section('header-js')

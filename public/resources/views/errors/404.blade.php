@@ -2,6 +2,8 @@
 @extends('layouts.layouts')
 @section('title')
     <title> Sorry, Sepertinya Anda typo atau asal nulis</title>
+    {!! GeneralHelper::canonical()!!}
+
 @endsection
 
 @section('content')
