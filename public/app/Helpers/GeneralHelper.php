@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
 use BendeckDavid\GraphqlClient\Facades\GraphQL;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\App;
 
 class GeneralHelper
 {
@@ -360,13 +362,11 @@ class GeneralHelper
 
     public static function urlBot()
     {
-
-        return Request::url();
-        // if (env('APP_URL') === 'http://jaritelunjuk.test') {
-        //     return `
-        //     <meta name="robots" content="noindex,nofollow">
-        //     <meta name="googlebot" content="noindex">
-        //     `;
-        // }
+        if (!App::environment('production')) {
+            return '
+            <meta name="robots" content="noindex,nofollow">
+            <meta name="googlebot" content="noindex">
+            ';
+        }
     }
 }
