@@ -15,11 +15,10 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
 use BendeckDavid\GraphqlClient\Facades\GraphQL;
-
+use Illuminate\Support\Facades\Request;
 
 class GeneralHelper
 {
-
 
     public static function menuActive($url)
     {
@@ -297,7 +296,6 @@ class GeneralHelper
                     </path>
                 </svg>
             </button>';
-
         }
     }
 
@@ -321,10 +319,10 @@ class GeneralHelper
 
     public static function popularItem()
     {
-// Set the cache key based on the query
+        // Set the cache key based on the query
         $cacheKey = 'buku_query_' . implode('_', ['fiksi', 'sastra', 'nonfiksi-dewasa']);
 
-// Use the cache if available, or execute the query and store the result in the cache for 2 weeks
+        // Use the cache if available, or execute the query and store the result in the cache for 2 weeks
         $buku = Cache::remember($cacheKey, now()->addWeeks(1), function () {
             return Buku::whereHas('kategori', function ($q) {
                 $q->whereIn('slug', ['fiksi', 'sastra', 'nonfiksi-dewasa']);
@@ -358,6 +356,17 @@ class GeneralHelper
         } else {
             return [];
         }
+    }
 
+    public static function urlBot()
+    {
+
+        return Request::url();
+        // if (env('APP_URL') === 'http://jaritelunjuk.test') {
+        //     return `
+        //     <meta name="robots" content="noindex,nofollow">
+        //     <meta name="googlebot" content="noindex">
+        //     `;
+        // }
     }
 }
