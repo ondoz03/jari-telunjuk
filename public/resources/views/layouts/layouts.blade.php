@@ -2,13 +2,9 @@
 <html lang="en-US">
 
 <head>
-
     <meta charset=UTF-8>
-    @if(Request::url() !== 'https://jaritelunjuk.com' || Request::url() !== 'https://www.jaritelunjuk.com' )
-        <meta name="robots" content="noindex,nofollow">
-        <meta name="googlebot" content="noindex">
-    @endif
 
+    {!!GeneralHelper::urlBot()!!}
 
     <meta name="viewport"
           content="width=device-width">
