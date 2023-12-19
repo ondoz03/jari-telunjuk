@@ -1,6 +1,8 @@
 @extends('layouts.layouts')
 @section('title')
     <title>Tentang Jari Telunjuk</title>
+    {!! GeneralHelper::canonical()!!}
+
 @endsection
 
 @section('header-js')
@@ -18,7 +20,7 @@
     }
 </style>
 <main class="relative w-full">
-      
+
     <div class="container relative mx-auto grid h-full min-h-screen max-w-screen-xl grid-cols-1 px-4 lg:grid-cols-12 lg:gap-10 xl:px-12">
       <!-- Author - Detail -->
       <section class="col-span-1 mt-20 min-h-screen lg:col-span-9 lg:mt-28">

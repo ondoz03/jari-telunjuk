@@ -1,6 +1,8 @@
 @extends('layouts.layouts')
 @section('title')
     <title>Daftar Kategori Buku Favorit</title>
+    {!! GeneralHelper::canonical()!!}
+
 @endsection
 
 @section('header-js')

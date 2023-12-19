@@ -1,6 +1,7 @@
 @extends('layouts.layouts')
 @section('title')
     <title>Discover books you’ll love! | Jari Telunjuk</title>
+    {!! GeneralHelper::canonical()!!}
 @endsection
 
 @section('header-js')

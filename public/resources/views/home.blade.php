@@ -1,6 +1,8 @@
 @extends('layouts.layouts')
 @section('title')
     <title>Cara Baru Menemukan Rekomendasi Buku Favoritmu - Jari Telunjuk</title>
+    {!! GeneralHelper::canonical()!!}
+
     <meta name="description"  content="{{ GeneralHelper::settingPerpustakan('body_header') }}">
 @endsection
 

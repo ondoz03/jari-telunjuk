@@ -1,6 +1,7 @@
 @extends('layouts.layouts')
 @section('title')
     <title>Daftar Buku {{ Str::ucfirst($kategori->name) }} - Jari Telunjuk</title>
+    {!! GeneralHelper::canonical()!!}
     <meta name="description"  content="{{$kategori->description}}">
 
     <script type="application/ld+json">
