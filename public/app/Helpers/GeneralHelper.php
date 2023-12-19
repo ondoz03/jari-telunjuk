@@ -374,7 +374,7 @@ class GeneralHelper
     {
         if (App::environment('production')) {
             return '
-            <link rel="canonical" href="https://example.com/dresses/green-dresses" />
+            <link rel="canonical" href="' . url()->full() . '" />
             ';
         }
     }
