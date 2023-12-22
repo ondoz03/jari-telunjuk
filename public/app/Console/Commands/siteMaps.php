@@ -53,8 +53,8 @@ class siteMaps extends Command
         // buku
         $siteMapBuku = Sitemap::create();
         Buku::all()->each(function (Buku $buku) use ($siteMapBuku) {
-            $siteMapBuku->add(Url::create('buku/' . $buku->slug)->setPriority(0.6)
-                ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
+            $siteMapBuku->add(Url::create('buku/' . $buku->slug)->setPriority(0.8)
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY));
         });
         $siteMapBuku->writeTofile(public_path('sitemap_buku.xml'));
     }
