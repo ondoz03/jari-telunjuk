@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: *?
+
+Sitemap: https://www.jaritelunjuk.com/sitemap_index.xml
