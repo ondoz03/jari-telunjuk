@@ -52,7 +52,7 @@
                             @forelse ($kategori as $item)
                                 <tr>
                                     <td>
-                                        {{ $loop->iteration }}
+                                        {{ $kategori->firstItem() + $loop->index }}
                                     </td>
 
                                     <td>

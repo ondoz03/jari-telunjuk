@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Buku;
+use App\Models\Kategori;
 use Illuminate\Console\Command;
 
 class destroyBukuDuplicate extends Command
@@ -38,11 +39,15 @@ class destroyBukuDuplicate extends Command
      */
     public function handle()
     {
-        $buku = Buku::doesntHave('kategori')->doesntHave('media')->get();
+        // $buku = Buku::doesntHave('kategori')->doesntHave('media')->get();
 
-        foreach ($buku as $key => $value) {
-            $this->info($value->judul);
-            $value->delete();
+        $kategori = Kategori::withCount('buku')->orderByDesc('buku_count')->orderBy('name', 'asc')->get();
+
+        foreach ($kategori as $key => $value) {
+            if ($value->buku_count < 8) {
+                $this->info($value->name);
+                $value->delete();
+            }
         }
     }
 }

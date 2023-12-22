@@ -85,6 +85,7 @@ class PeminjamanTest extends Command
 
         foreach ($buku as $key => $value) {
             $value->kategori()->sync(44);
+
             $this->info($value->Title . '- ' . $key);
         }
 

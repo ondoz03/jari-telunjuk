@@ -62,6 +62,7 @@ class UpdateDataDetail extends Command
 
             $value
                 ->addMediaFromUrl($data->Thumbnail)
+
                 ->toMediaCollection('buku', 'digitalocean');
 
             $this->info($value->judul);

@@ -45,7 +45,7 @@ class Buku extends Model implements HasMedia
         return SlugOptions::create()
             ->generateSlugsFrom('judul')
             ->saveSlugsTo('slug');
-//            ->preventOverwrite();
+        //            ->preventOverwrite();
     }
     /**
      * Get the options for generating the Sku.
@@ -101,7 +101,7 @@ class Buku extends Model implements HasMedia
             $url = 'https://cdn.jaritelunjuk.com/' . 'buku/' . $name;
             return $url;
         } else {
-            return 'https://ui-avatars.com/api/?name=' . urlencode($this->attributes['judul']);
+            return 'https://cdn.jaritelunjuk.com/web-asset/default-book.jpg';
         }
     }
 

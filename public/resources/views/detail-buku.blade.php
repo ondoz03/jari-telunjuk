@@ -1,7 +1,8 @@
 @extends('layouts.layouts')
 @section('title')
     <title> Buku {{ $buku->judul }} - Karya {{ $buku->penulis }}</title>
-    {!! GeneralHelper::canonical()!!}
+
+    <link rel="canonical" href="{{url('/buku/'.$buku->slug)}}" />
     <meta name="description"  content="{{ Str::limit($buku->detail_buku->description, 160) }}">
     <script type="application/ld+json">
         {
