@@ -15,9 +15,13 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\PrivacyPolicyController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
+use App\Models\Kategori;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\URL;
-
+// use Illuminate\Support\Facades\URL;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
+use Spatie\Sitemap\SitemapIndex;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,7 +72,7 @@ Route::group(['prefix' => 'auth'], function () {
 Route::group(['prefix' => 'user'], function () {
     Route::get('/', [ProfileController::class, 'index'])->name('user.index');
     Route::get('/profile', [ProfileController::class, 'index'])->name('user.profile');
-    Route::get('/logout' , [ProfileController::class, 'logout'])->name('user.logout');
+    Route::get('/logout', [ProfileController::class, 'logout'])->name('user.logout');
 });
 
 Route::group(['prefix' => 'author'], function () {
@@ -90,6 +94,15 @@ Route::group(['prefix' => 'category'], function () {
 Route::get('/', function () {
     return view('home');
 })->name('home');
+
+
+Route::group(['prefix' => 'sitemaps'], function () {
+    SitemapIndex::create()
+        ->add('sitemap_category.xml')
+        ->add('sitemap_buku.xml')
+        ->writeToFile(public_path('sitemap_index.xml'));
+});
+
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');

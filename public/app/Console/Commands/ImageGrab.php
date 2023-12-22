@@ -49,6 +49,8 @@ class ImageGrab extends Command
         //     $buku = Buku::where('slug', $value->Slug)->first();
         //     $buku
         //         ->addMediaFromUrl($value->Images[0])
+
+
         //         ->toMediaCollection('buku', 'digitalocean');
         //     $this->info($value->Images[0]);
         // }
