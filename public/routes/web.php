@@ -105,8 +105,9 @@ Route::group(['prefix' => 'sitemaps'], function () {
 });
 
 
-
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::middleware('optimizeImages')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+});
 
 Route::get('/{slug}', [BukuController::class, 'index'])->name('buku');
 Route::get('/buku-page/{slug}', [BukuController::class, 'buku'])->name('buku-page');

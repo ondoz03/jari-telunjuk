@@ -59,12 +59,12 @@
 
                     <div class="mt-28 flex w-1/5 flex-col items-start gap-2 xl:mt-56 xl:gap-6 astro-J7PV25F6">
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
+                            <img class="h-full w-full object-cover object-top astro-J7PV25F6"
                                  data-src="{{ GeneralHelper::getRandomFirstBook(5) }}"
                                  alt="Book Photo 5">
                         </div>
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
+                            <img class="h-full w-full object-cover object-top astro-J7PV25F6"
                                  data-src="{{ GeneralHelper::getRandomFirstBook(6) }}"
                                  alt="Book Photo 6">
                         </div>
@@ -72,12 +72,12 @@
 
                     <div class="mt-16 flex w-1/5 flex-col items-start gap-2 xl:mt-32 xl:gap-6 astro-J7PV25F6">
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
+                            <img class="h-full w-full object-cover object-top astro-J7PV25F6"
                                  data-src="{{ GeneralHelper::getRandomFirstBook(7) }}"
                                  alt="Book Photo 7">
                         </div>
                         <div class="relative h-auto w-full astro-J7PV25F6">
-                            <img class="h-full lazy-img w-full object-cover object-top astro-J7PV25F6"
+                            <img class="h-full w-full object-cover object-top astro-J7PV25F6"
                                  data-src="{{ GeneralHelper::getRandomFirstBook(8) }}"
                                  alt="Book Photo 8">
                         </div>
