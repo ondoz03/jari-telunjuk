@@ -9,9 +9,9 @@
     <meta name="viewport"
           content="width=device-width">
 
-    <link rel="icon" type="image/x-icon" sizes="16x16" href="{{asset('favicon.ico')}}">
-    <link rel="icon" type="image/x-icon" sizes="32x32" href="{{asset('favicon.ico')}}">
-    <link rel="icon" type="image/x-icon" sizes="48x48" href="{{asset('favicon.ico')}}">
+    {{-- <link rel="icon" type="image/x-icon" sizes="16x16" href="{{asset('favicon16.ico')}}">
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="{{asset('favicon32.ico')}}"> --}}
+    <link rel="icon" type="image/x-icon" sizes="48x48" href="{{asset('favicon48.ico')}}">
 
     <link rel="icon"
           type="image/x-icon"
