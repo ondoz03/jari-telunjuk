@@ -8,10 +8,14 @@
 
     <meta name="viewport"
           content="width=device-width">
-    <link rel="icon" href="https://www.jaritelunjuk.com/blog/wp-content/uploads/2023/09/cropped-favicon-192x192.png" sizes="192x192">
-    {{-- <link rel="icon"
-          type="image/svg+xml"
-          href="{{asset('favicon.svg')}}"> --}}
+
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="{{asset('/favicon16.ico')}}">
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="{{asset('/favicon32.ico')}}">
+    <link rel="icon" type="image/x-icon" sizes="48x48" href="{{asset('/favicon48.ico')}}">
+
+    <link rel="icon"
+          type="image/x-icon"
+          href="{{asset('favicon.ico')}}">
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
     <link rel="preconnect"
