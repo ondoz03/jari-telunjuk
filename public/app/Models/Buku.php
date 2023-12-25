@@ -17,7 +17,7 @@ use Faker\Factory;
 use Laravel\Scout\Searchable;
 use Laravel\Scout\Attributes\SearchUsingPrefix;
 use Laravel\Scout\Builder;
-
+use Str;
 
 class Buku extends Model implements HasMedia
 {
