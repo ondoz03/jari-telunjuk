@@ -14,7 +14,11 @@
 /public/demo5
 /public/demo6
 /public/demo7
-/blog
+/public/sitemap_author.xml
+/public/sitemap_buku.xml
+/public/sitemap_category.xml
+/public/sitemap_index.xml
+
 
 /blog
 **/.DS_Store
