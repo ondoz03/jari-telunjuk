@@ -10,7 +10,7 @@
           content="width=device-width">
     <link rel="icon"
           type="image/svg+xml"
-          href="/favicon.svg">
+          href="{{asset('favicon.svg')}}">
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
     <link rel="preconnect"
@@ -21,8 +21,15 @@
     <link href="https://fonts.cdnfonts.com/css/source-sans-pro"
           rel="stylesheet">
 
-    <meta name="generator"
-          content="{Astro.generator}">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GJWH6LMM7"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6GJWH6LMM7');
+    </script>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
