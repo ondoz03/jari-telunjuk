@@ -77,7 +77,7 @@ class Buku extends Model implements HasMedia
         $data = json_decode($this->attributes['penulis']);
 
         $penulis = [];
-        foreach ($datas as $key => $value) {;
+        foreach ($data as $key => $value) {;
             $penulis[] = Str::replace('.', ' ',  $value);
         }
 
