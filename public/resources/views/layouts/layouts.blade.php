@@ -8,9 +8,10 @@
 
     <meta name="viewport"
           content="width=device-width">
-    <link rel="icon"
+    <link rel="icon" href="https://www.jaritelunjuk.com/blog/wp-content/uploads/2023/09/cropped-favicon-192x192.png" sizes="192x192">
+    {{-- <link rel="icon"
           type="image/svg+xml"
-          href="{{asset('favicon.ico')}}">
+          href="{{asset('favicon.svg')}}"> --}}
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
     <link rel="preconnect"
