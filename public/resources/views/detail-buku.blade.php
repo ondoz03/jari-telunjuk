@@ -169,8 +169,16 @@
                             </div>
 
                             <p class="text-sm font-semibold xl:text-lg">
-                                by <a class="hover:underline"
-                                    href="{{ route('author',Str::slug($buku->penulis, '-')) }}">{{ $buku->penulis }}</a>
+                                by 
+                                @foreach ($buku->penulis_array as $key => $item)
+                                    @if($key!==0)
+                                        , &nbsp
+                                    @endif
+                                    <a class="hover:underline"
+                                    href="{{ route('author',Str::slug($item, '-')) }}">
+                                            {{ $item }}
+                                    </a>
+                                @endforeach
                             </p>
 
                             <div class="hidden items-center gap-1.5">
@@ -325,7 +333,15 @@
 
                                         <div class="space-y-0.5">
                                             <h5 class="text-sm font-bold text-stone-500">Penulis</h5>
-                                            <a class="text-base" href="{{ route('author', $buku->penulis) }}">{{ $buku->penulis }}</a>
+                                            @foreach ($buku->penulis_array as $key => $item)
+                                                @if($key!==0)
+                                                    , &nbsp
+                                                @endif
+                                                <a class="text-base"
+                                                href="{{ route('author', $item) }}">
+                                                        {{ $item }}
+                                                </a>
+                                            @endforeach
                                         </div>
                                     </li>
 
