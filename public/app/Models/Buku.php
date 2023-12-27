@@ -86,6 +86,12 @@ class Buku extends Model implements HasMedia
         return $penulisString;
     }
 
+     public function getPenulisArrayAttribute()
+    {
+        $data = json_decode($this->attributes['penulis']);
+        return $data;
+    }
+
     public function detail_buku()
     {
         return $this->hasOne(DetailBuku::class);
