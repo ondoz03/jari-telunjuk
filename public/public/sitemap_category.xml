@@ -1,2637 +1,1782 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
     <url>
-        <loc>http://127.0.0.1:8000/buku</loc>
+        <loc>http://localhost/localhost/buku</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/manga</loc>
+        <loc>http://localhost/localhost/manga</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/komik-novel-grafis</loc>
+        <loc>http://localhost/localhost/komik-novel-grafis</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/fiksi-anak-remaja</loc>
+        <loc>http://localhost/localhost/fiksi-anak-remaja</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/novel</loc>
+        <loc>http://localhost/localhost/novel</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/fiksi</loc>
+        <loc>http://localhost/localhost/fiksi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/sastra</loc>
+        <loc>http://localhost/localhost/sastra</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/klasik</loc>
+        <loc>http://localhost/localhost/klasik</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/romantis</loc>
+        <loc>http://localhost/localhost/romantis</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/dongeng-cerita-rakyat-legenda-mitologi</loc>
+        <loc>http://localhost/localhost/dongeng-cerita-rakyat-legenda-mitologi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/aksi-petualangan</loc>
+        <loc>http://localhost/localhost/aksi-petualangan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kejahatan-misteri</loc>
+        <loc>http://localhost/localhost/kejahatan-misteri</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/biografi-memoar</loc>
+        <loc>http://localhost/localhost/biografi-memoar</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/nonfiksi-anak-remaja</loc>
+        <loc>http://localhost/localhost/nonfiksi-anak-remaja</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/buku-aktivitas</loc>
+        <loc>http://localhost/localhost/buku-aktivitas</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pendidikan</loc>
+        <loc>http://localhost/localhost/pendidikan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pelajar-kemahasiswaan</loc>
+        <loc>http://localhost/localhost/pelajar-kemahasiswaan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/nonfiksi-dewasa</loc>
+        <loc>http://localhost/localhost/nonfiksi-dewasa</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/sd</loc>
+        <loc>http://localhost/localhost/buku-pelajaran</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/buku-pelajaran</loc>
+        <loc>http://localhost/localhost/game-aktivitas</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/game-aktivitas</loc>
+        <loc>http://localhost/localhost/buku-mewarnai</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/buku-mewarnai</loc>
+        <loc>http://localhost/localhost/anak-anak</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pendidikan-1</loc>
+        <loc>http://localhost/localhost/pengembangan-diri</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/anak-anak</loc>
+        <loc>http://localhost/localhost/motivasi-inspiratif</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pengembangan-diri</loc>
+        <loc>http://localhost/localhost/bisnis-ekonomi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/motivasi-inspiratif</loc>
+        <loc>http://localhost/localhost/pengawas-kepala-sekolah</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/bisnis-ekonomi</loc>
+        <loc>http://localhost/localhost/guru-pendampingan-siswa</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/bayi-balita</loc>
+        <loc>http://localhost/localhost/ilmu-sosial</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/sma</loc>
+        <loc>http://localhost/localhost/agama</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pengawas-kepala-sekolah</loc>
+        <loc>http://localhost/localhost/konstitusi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/guru-pendampingan-siswa</loc>
+        <loc>http://localhost/localhost/hukum</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/ilmu-sosial</loc>
+        <loc>http://localhost/localhost/filsafat</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/smp</loc>
+        <loc>http://localhost/localhost/tubuh-pikiran-jiwa</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/agama</loc>
+        <loc>http://localhost/localhost/mindfulness-meditasi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/konstitusi</loc>
+        <loc>http://localhost/localhost/medis</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/hukum</loc>
+        <loc>http://localhost/localhost/penyakit</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/filsafat</loc>
+        <loc>http://localhost/localhost/keluarga-hubungan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/tubuh-pikiran-jiwa</loc>
+        <loc>http://localhost/localhost/parenting</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/mindfulness-meditasi</loc>
+        <loc>http://localhost/localhost/horor</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/medis</loc>
+        <loc>http://localhost/localhost/alquran-tulisan-suci</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/penyakit</loc>
+        <loc>http://localhost/localhost/humor</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/keluarga-hubungan</loc>
+        <loc>http://localhost/localhost/fantasi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/parenting</loc>
+        <loc>http://localhost/localhost/kewirausahaan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/horor</loc>
+        <loc>http://localhost/localhost/olahraga</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/alquran-tulisan-suci</loc>
+        <loc>http://localhost/localhost/studi-bahasa-asing</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/humor</loc>
+        <loc>http://localhost/localhost/biografi-autobiografi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/fantasi</loc>
+        <loc>http://localhost/localhost/komputer</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kewirausahaan</loc>
+        <loc>http://localhost/localhost/database-administrasi-manajemen</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/olahraga</loc>
+        <loc>http://localhost/localhost/sejarah</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/bahasa-inggris-sebagai-bahasa-kedua</loc>
+        <loc>http://localhost/localhost/kehidupan-kota</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/studi-bahasa-asing</loc>
+        <loc>http://localhost/localhost/hak-sipil</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/biografi-autobiografi</loc>
+        <loc>http://localhost/localhost/kesehatan-kebugaran</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/komputer</loc>
+        <loc>http://localhost/localhost/kerajinan-hobi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/database-administrasi-manajemen</loc>
+        <loc>http://localhost/localhost/emosi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/sejarah</loc>
+        <loc>http://localhost/localhost/kristen</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kehidupan-kota</loc>
+        <loc>http://localhost/localhost/keuangan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/hak-sipil</loc>
+        <loc>http://localhost/localhost/arab</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kesehatan-kebugaran</loc>
+        <loc>http://localhost/localhost/sukses</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kerajinan-hobi</loc>
+        <loc>http://localhost/localhost/tes-studi-lainnya</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/emosi</loc>
+        <loc>http://localhost/localhost/persiapan-ujian</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kristen</loc>
+        <loc>http://localhost/localhost/pra-remaja</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/politik-pemerintah</loc>
+        <loc>http://localhost/localhost/kepemimpinan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/keuangan</loc>
+        <loc>http://localhost/localhost/teknologi-teknik</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/arab</loc>
+        <loc>http://localhost/localhost/psikologi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/sukses</loc>
+        <loc>http://localhost/localhost/seni</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/buku-pelajaran-4</loc>
+        <loc>http://localhost/localhost/peta</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/tes-studi-lainnya</loc>
+        <loc>http://localhost/localhost/investasi-saham</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/persiapan-ujian</loc>
+        <loc>http://localhost/localhost/saham</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pra-remaja</loc>
+        <loc>http://localhost/localhost/fiksi-ilmiah</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kepemimpinan</loc>
+        <loc>http://localhost/localhost/diet-nutrisi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/teknologi-teknik</loc>
+        <loc>http://localhost/localhost/keterampilan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/psikologi</loc>
+        <loc>http://localhost/localhost/komunikasi-bisnis</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/seni</loc>
+        <loc>http://localhost/localhost/komunikasi-keterampilan-sosial</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/peta</loc>
+        <loc>http://localhost/localhost/kristen-katolik</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/investasi-saham</loc>
+        <loc>http://localhost/localhost/industri</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/saham</loc>
+        <loc>http://localhost/localhost/musik</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/fiksi-ilmiah</loc>
+        <loc>http://localhost/localhost/pemasaran</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/diet-nutrisi</loc>
+        <loc>http://localhost/localhost/hukum-pidana</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kesehatan-1</loc>
+        <loc>http://localhost/localhost/anak-berkebutuhan-khusus</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/keterampilan</loc>
+        <loc>http://localhost/localhost/arsitektur</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/komunikasi-bisnis</loc>
+        <loc>http://localhost/localhost/kriminologi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/komunikasi-keterampilan-sosial</loc>
+        <loc>http://localhost/localhost/aliran-gaya-bahasa</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/bahasa</loc>
+        <loc>http://localhost/localhost/referensi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kristen-katolik</loc>
+        <loc>http://localhost/localhost/buku-parenting</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/industri</loc>
+        <loc>http://localhost/localhost/pengasuhan-penitipan-perawatan-anak</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/musik</loc>
+        <loc>http://localhost/localhost/adat</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pemasaran</loc>
+        <loc>http://localhost/localhost/hukum-perdata</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/hukum-pidana</loc>
+        <loc>http://localhost/localhost/sains</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/anak-berkebutuhan-khusus</loc>
+        <loc>http://localhost/localhost/remaja</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/seni-desain</loc>
+        <loc>http://localhost/localhost/ritual-praktek</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/arsitektur</loc>
+        <loc>http://localhost/localhost/ilmu-agama</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kriminologi</loc>
+        <loc>http://localhost/localhost/hiburan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/aliran-gaya-bahasa</loc>
+        <loc>http://localhost/localhost/buku-bergambar</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/referensi-7</loc>
+        <loc>http://localhost/localhost/sumber-daya-manusia-manajemen-personalia</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/referensi</loc>
+        <loc>http://localhost/localhost/anak</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/buku-sekolah</loc>
+        <loc>http://localhost/localhost/resep-masakan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/buku-parenting</loc>
+        <loc>http://localhost/localhost/keperawatan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pengasuhan-penitipan-perawatan-anak</loc>
+        <loc>http://localhost/localhost/ekonomi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/adat</loc>
+        <loc>http://localhost/localhost/manajemen</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/hukum-perdata</loc>
+        <loc>http://localhost/localhost/internasional</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/sains</loc>
+        <loc>http://localhost/localhost/pertanian</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/remaja</loc>
+        <loc>http://localhost/localhost/media-sosial</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/ritual-praktek</loc>
+        <loc>http://localhost/localhost/sistem-aplikasi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/ilmu-agama</loc>
+        <loc>http://localhost/localhost/usia-sekolah</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/hiburan</loc>
+        <loc>http://localhost/localhost/perbaikan-diri</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/buku-bergambar</loc>
+        <loc>http://localhost/localhost/akuntansi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/sumber-daya-manusia-manajemen-personalia</loc>
+        <loc>http://localhost/localhost/pendidikan-anak-usia-dini</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/anak</loc>
+        <loc>http://localhost/localhost/perilaku</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/resep-masakan</loc>
+        <loc>http://localhost/localhost/muslim</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/biografi-4</loc>
+        <loc>http://localhost/localhost/rumah</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kedokteran</loc>
+        <loc>http://localhost/localhost/geografi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/keperawatan</loc>
+        <loc>http://localhost/localhost/pertanian-berkelanjutan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/ekonomi</loc>
+        <loc>http://localhost/localhost/ilmu-komputer</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/manajemen</loc>
+        <loc>http://localhost/localhost/sipil</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/internasional</loc>
+        <loc>http://localhost/localhost/budaya-sosial</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pertanian</loc>
+        <loc>http://localhost/localhost/ekologi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/media-sosial</loc>
+        <loc>http://localhost/localhost/anak-muda</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/sistem-aplikasi</loc>
+        <loc>http://localhost/localhost/lain-lain</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/usia-sekolah</loc>
+        <loc>http://localhost/localhost/desain</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/perbaikan-diri</loc>
+        <loc>http://localhost/localhost/fotografi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/akuntansi</loc>
+        <loc>http://localhost/localhost/komputer-teknologi-informasi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pendidikan-anak-usia-dini</loc>
+        <loc>http://localhost/localhost/farmasi-bioteknologi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/perilaku</loc>
+        <loc>http://localhost/localhost/buddha</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/muslim</loc>
+        <loc>http://localhost/localhost/kamus</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/rumah</loc>
+        <loc>http://localhost/localhost/matematika</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/geografi</loc>
+        <loc>http://localhost/localhost/terapan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pertanian-berkelanjutan</loc>
+        <loc>http://localhost/localhost/statistik</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/ilmu-komputer</loc>
+        <loc>http://localhost/localhost/gangguan-kesehatan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/sipil</loc>
+        <loc>http://localhost/localhost/bisnis-keuangan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/budaya-sosial</loc>
+        <loc>http://localhost/localhost/memoar-pribadi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/ekologi</loc>
+        <loc>http://localhost/localhost/akupuntur</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/anak-muda</loc>
+        <loc>http://localhost/localhost/real-estate</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/lain-lain</loc>
+        <loc>http://localhost/localhost/kecantikan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/artis</loc>
+        <loc>http://localhost/localhost/katolik</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/desain</loc>
+        <loc>http://localhost/localhost/aplikasi-perkantoran</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/fotografi</loc>
+        <loc>http://localhost/localhost/antropologi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/komputer-teknologi-informasi</loc>
+        <loc>http://localhost/localhost/hindu</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/farmasi-bioteknologi</loc>
+        <loc>http://localhost/localhost/sosiologi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/buddha</loc>
+        <loc>http://localhost/localhost/aplikasi-matematika-statistik</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kamus</loc>
+        <loc>http://localhost/localhost/perguruan-tinggi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/ebook</loc>
+        <loc>http://localhost/localhost/probabilitas-statistik</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/islam-ebook</loc>
+        <loc>http://localhost/localhost/pemrograman</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/religion-spirituality-ebook</loc>
+        <loc>http://localhost/localhost/industri-rumah-tangga</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/matematika</loc>
+        <loc>http://localhost/localhost/perilaku-konsumen</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/terapan</loc>
+        <loc>http://localhost/localhost/film</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/statistik</loc>
+        <loc>http://localhost/localhost/fiksi-dewasa</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/sekolah</loc>
+        <loc>http://localhost/localhost/kumpulan-cerpen</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/lokal</loc>
+        <loc>http://localhost/localhost/penyandang-disabilitas</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/gangguan-kesehatan</loc>
+        <loc>http://localhost/localhost/properti</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/teknologi</loc>
+        <loc>http://localhost/localhost/pengajaran</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/bisnis-keuangan</loc>
+        <loc>http://localhost/localhost/kesehatan-penyembuhan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/memoar-pribadi</loc>
+        <loc>http://localhost/localhost/pelatihan-pengembangan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/akupuntur</loc>
+        <loc>http://localhost/localhost/pemerintah</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pengobatan-alternatif</loc>
+        <loc>http://localhost/localhost/sastra-dunia-asia-umum</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/real-estate</loc>
+        <loc>http://localhost/localhost/perumahan-real-estate</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kecantikan</loc>
+        <loc>http://localhost/localhost/kumpulan-puisi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/parenting-family-ebook</loc>
+        <loc>http://localhost/localhost/fashion</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/katolik</loc>
+        <loc>http://localhost/localhost/ensiklopedia</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/aplikasi-perkantoran</loc>
+        <loc>http://localhost/localhost/komersial</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/aplikasi-bisnis-produktivitas</loc>
+        <loc>http://localhost/localhost/fisika</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/antropologi</loc>
+        <loc>http://localhost/localhost/kesehatan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/hindu</loc>
+        <loc>http://localhost/localhost/green-business</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/sosiologi</loc>
+        <loc>http://localhost/localhost/biologi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/aplikasi-matematika-statistik</loc>
+        <loc>http://localhost/localhost/sains-alam</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/perguruan-tinggi</loc>
+        <loc>http://localhost/localhost/sekolah-pendidikan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/probabilitas-statistik</loc>
+        <loc>http://localhost/localhost/topik-sosial</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pemrograman</loc>
+        <loc>http://localhost/localhost/memasak</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kerajinan-keterampilan</loc>
+        <loc>http://localhost/localhost/ekonomi-makro</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/mainan-game</loc>
+        <loc>http://localhost/localhost/metode</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/industri-rumah-tangga</loc>
+        <loc>http://localhost/localhost/freelance-wirausaha</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/mainan-hobi</loc>
+        <loc>http://localhost/localhost/latihan-ujian</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/perilaku-konsumen</loc>
+        <loc>http://localhost/localhost/karier</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pertamanan</loc>
+        <loc>http://localhost/localhost/thriller</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/peralatan-kantor</loc>
+        <loc>http://localhost/localhost/puisi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/stationery-sekolah-kantor</loc>
+        <loc>http://localhost/localhost/young-adult</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/film</loc>
+        <loc>http://localhost/localhost/aturan-hukum-agama</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/novel-grafis</loc>
+        <loc>http://localhost/localhost/inspirasi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/fiksi-dewasa</loc>
+        <loc>http://localhost/localhost/soal-ulangan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kumpulan-cerpen</loc>
+        <loc>http://localhost/localhost/parapsikologi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/penyandang-disabilitas</loc>
+        <loc>http://localhost/localhost/obat-herbal</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/properti</loc>
+        <loc>http://localhost/localhost/chiropractic</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pengajaran</loc>
+        <loc>http://localhost/localhost/kesehatan-mental</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kesehatan-penyembuhan</loc>
+        <loc>http://localhost/localhost/pengembangan-rekayasa-perangkat-lunak</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pelatihan-pengembangan</loc>
+        <loc>http://localhost/localhost/drama</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/novel-8</loc>
+        <loc>http://localhost/localhost/akuntansi-keuangan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/hide-mitra</loc>
+        <loc>http://localhost/localhost/jaringan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pemerintah</loc>
+        <loc>http://localhost/localhost/psikologi-klinis</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/sastra-dunia-asia-umum</loc>
+        <loc>http://localhost/localhost/kimia</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/perumahan-real-estate</loc>
+        <loc>http://localhost/localhost/resolusi-konflik-mediasi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kumpulan-puisi</loc>
+        <loc>http://localhost/localhost/energi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/fashion</loc>
+        <loc>http://localhost/localhost/spiritualitas</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/ensiklopedia</loc>
+        <loc>http://localhost/localhost/konghucu</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/komersial</loc>
+        <loc>http://localhost/localhost/astronomi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/fisika</loc>
+        <loc>http://localhost/localhost/konfusianisme</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kesehatan</loc>
+        <loc>http://localhost/localhost/motivasi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kesehatan-kecantikan</loc>
+        <loc>http://localhost/localhost/negosiasi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/green-business</loc>
+        <loc>http://localhost/localhost/makanan-bayi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/biologi</loc>
+        <loc>http://localhost/localhost/teori-pendidikan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/karya-sastra-dunia</loc>
+        <loc>http://localhost/localhost/bank-perbankan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/novel-terjemahan-1</loc>
+        <loc>http://localhost/localhost/media-komunikasi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/sains-alam</loc>
+        <loc>http://localhost/localhost/public-relations</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/sekolah-pendidikan</loc>
+        <loc>http://localhost/localhost/almanak</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/topik-sosial</loc>
+        <loc>http://localhost/localhost/ekonomi-mikro</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/memasak</loc>
+        <loc>http://localhost/localhost/perbankan-islam-keuangan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/ekonomi-makro</loc>
+        <loc>http://localhost/localhost/administrasi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/metode</loc>
+        <loc>http://localhost/localhost/keuangan-perusahaan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/freelance-wirausaha</loc>
+        <loc>http://localhost/localhost/manufaktur</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/latihan-ujian</loc>
+        <loc>http://localhost/localhost/agribisnis</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/referensi-sekolah</loc>
+        <loc>http://localhost/localhost/perpajakan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/karier</loc>
+        <loc>http://localhost/localhost/pajak-perusahaan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/dekorasi-rumah</loc>
+        <loc>http://localhost/localhost/seni-grafis</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/rumah-tangga</loc>
+        <loc>http://localhost/localhost/minuman</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/fantasi-3</loc>
+        <loc>http://localhost/localhost/psikologi-sosial</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/international-books-1</loc>
+        <loc>http://localhost/localhost/alat-musik</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/thriller</loc>
+        <loc>http://localhost/localhost/nonfiksi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/puisi</loc>
+        <loc>http://localhost/localhost/geografi-sejarah</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/young-adult</loc>
+        <loc>http://localhost/localhost/buku-travel</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/novel-9</loc>
+        <loc>http://localhost/localhost/kemahiran-bahasa-inggris</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/aturan-hukum-agama</loc>
+        <loc>http://localhost/localhost/sejarah-kritik</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/inspirasi</loc>
+        <loc>http://localhost/localhost/desain-interior</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/soal-ulangan</loc>
+        <loc>http://localhost/localhost/tata-kota</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pengetahuan-umum</loc>
+        <loc>http://localhost/localhost/furnitur</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/parapsikologi</loc>
+        <loc>http://localhost/localhost/mekanik</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/obat-herbal</loc>
+        <loc>http://localhost/localhost/industri-makanan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/chiropractic</loc>
+        <loc>http://localhost/localhost/ilmu-pangan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/perlengkapan-seni</loc>
+        <loc>http://localhost/localhost/jepang</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/perlengkapan-menggambar</loc>
+        <loc>http://localhost/localhost/perangkat-keras</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/sketchbook-kertas-gambar</loc>
+        <loc>http://localhost/localhost/administrasi-akademik</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kesehatan-mental</loc>
+        <loc>http://localhost/localhost/asia</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pengembangan-rekayasa-perangkat-lunak</loc>
+        <loc>http://localhost/localhost/otomotif</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/komputer-laptop</loc>
+        <loc>http://localhost/localhost/transportasi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/ujian-nasional</loc>
+        <loc>http://localhost/localhost/sejarah-ekonomi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/drama</loc>
+        <loc>http://localhost/localhost/puzzles</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/software</loc>
+        <loc>http://localhost/localhost/industri-tekstil</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/akuntansi-keuangan</loc>
+        <loc>http://localhost/localhost/seni-budaya</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/jaringan</loc>
+        <loc>http://localhost/localhost/fiksi-sejarah</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/psikologi-klinis</loc>
+        <loc>http://localhost/localhost/kuis</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kimia</loc>
+        <loc>http://localhost/localhost/konstruksi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/resolusi-konflik-mediasi</loc>
+        <loc>http://localhost/localhost/manajemen-proyek</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/energi</loc>
+        <loc>http://localhost/localhost/pertunjukan-seni</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/hukum-agama</loc>
+        <loc>http://localhost/localhost/budaya</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/spiritualitas</loc>
+        <loc>http://localhost/localhost/biografi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/konghucu</loc>
+        <loc>http://localhost/localhost/layanan-kesehatan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/astronomi</loc>
+        <loc>http://localhost/localhost/olahraga-rekreasi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/buku-gambar-tulis</loc>
+        <loc>http://localhost/localhost/perencanaan-keuangan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/buku-gambar</loc>
+        <loc>http://localhost/localhost/kajian-penelitian</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/produk-kertas</loc>
+        <loc>http://localhost/localhost/financial-growth</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/konfusianisme</loc>
+        <loc>http://localhost/localhost/cerita-rakyat</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/motivasi</loc>
+        <loc>http://localhost/localhost/musik-klasik</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/negosiasi</loc>
+        <loc>http://localhost/localhost/panduan-ulasan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/anak-berkebutuhan-khusus-6</loc>
+        <loc>http://localhost/localhost/gerakan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/makanan-bayi</loc>
+        <loc>http://localhost/localhost/kimia-biokimia</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/teori-pendidikan</loc>
+        <loc>http://localhost/localhost/spiritualisme</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/bank-perbankan</loc>
+        <loc>http://localhost/localhost/perikanan-akuakultur</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/media-komunikasi</loc>
+        <loc>http://localhost/localhost/komik-eropa</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/public-relations</loc>
+        <loc>http://localhost/localhost/pernikahan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/almanak</loc>
+        <loc>http://localhost/localhost/hukum-keluarga</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/ekonomi-mikro</loc>
+        <loc>http://localhost/localhost/korea</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/perbankan-islam-keuangan</loc>
+        <loc>http://localhost/localhost/kursus-hidangan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/administrasi</loc>
+        <loc>http://localhost/localhost/kue</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/keuangan-perusahaan</loc>
+        <loc>http://localhost/localhost/bisnis-kuliner</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/manufaktur</loc>
+        <loc>http://localhost/localhost/bahasa-daerah-indonesia</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/agribisnis</loc>
+        <loc>http://localhost/localhost/mandarin</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/perpajakan</loc>
+        <loc>http://localhost/localhost/perhotelan-perjalanan-pariwisata</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pajak-perusahaan</loc>
+        <loc>http://localhost/localhost/perkembangan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/seni-grafis</loc>
+        <loc>http://localhost/localhost/prancis</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/minuman</loc>
+        <loc>http://localhost/localhost/legenda-mitos-dongeng</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/psikologi-sosial</loc>
+        <loc>http://localhost/localhost/antologi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/cd-musik-digital</loc>
+        <loc>http://localhost/localhost/perang-militer</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/alat-musik</loc>
+        <loc>http://localhost/localhost/yoga</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/film-musik</loc>
+        <loc>http://localhost/localhost/aljabar</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/nonfiksi</loc>
+        <loc>http://localhost/localhost/matematika-murni</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/geografi-sejarah</loc>
+        <loc>http://localhost/localhost/busana-muslim</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/buku-travel</loc>
+        <loc>http://localhost/localhost/etnis-regional-asia</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/politics-current-affairs-ebook</loc>
+        <loc>http://localhost/localhost/masakan-asia</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kemahiran-bahasa-inggris</loc>
+        <loc>http://localhost/localhost/zoologi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/sejarah-kritik</loc>
+        <loc>http://localhost/localhost/hewan-peliharaan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/desain-interior</loc>
+        <loc>http://localhost/localhost/makanan-penutup</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/tata-kota</loc>
+        <loc>http://localhost/localhost/buku-permainan-aktivitas</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/furnitur</loc>
+        <loc>http://localhost/localhost/serial</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/mekanik</loc>
+        <loc>http://localhost/localhost/online-trading</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/industri-makanan</loc>
+        <loc>http://localhost/localhost/dongeng</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/ilmu-pangan</loc>
+        <loc>http://localhost/localhost/manajemen-risiko-keuangan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/jepang</loc>
+        <loc>http://localhost/localhost/organisasi-struktur</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/perangkat-keras</loc>
+        <loc>http://localhost/localhost/hak-hukum-buruh</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/hardware</loc>
+        <loc>http://localhost/localhost/journaling</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/administrasi-akademik</loc>
+        <loc>http://localhost/localhost/kepribadian</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/lain-lain-4</loc>
+        <loc>http://localhost/localhost/berdasarkan-kisah-nyata</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/ilmu-bumi</loc>
+        <loc>http://localhost/localhost/pendidikan-pelatihan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/bahasa-asing</loc>
+        <loc>http://localhost/localhost/konseling</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/asia</loc>
+        <loc>http://localhost/localhost/lowongan-kerja</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/otomotif</loc>
+        <loc>http://localhost/localhost/interview</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/transportasi</loc>
+        <loc>http://localhost/localhost/referensi-pedoman</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/sejarah-ekonomi</loc>
+        <loc>http://localhost/localhost/manajemen-industri</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/biografi-6</loc>
+        <loc>http://localhost/localhost/pemerintah-bisnis</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/autobiografi</loc>
+        <loc>http://localhost/localhost/layanan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/puzzles</loc>
+        <loc>http://localhost/localhost/instruksi-studi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/industri-tekstil</loc>
+        <loc>http://localhost/localhost/jasa-keuangan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/fashion-aksesoris</loc>
+        <loc>http://localhost/localhost/australia</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/seni-budaya</loc>
+        <loc>http://localhost/localhost/australia-oceania</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/fiksi-sejarah</loc>
+        <loc>http://localhost/localhost/berkebun</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kuis</loc>
+        <loc>http://localhost/localhost/etika-bisnis</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/konstruksi</loc>
+        <loc>http://localhost/localhost/pelatihan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/manajemen-proyek</loc>
+        <loc>http://localhost/localhost/hubungan-masyarakat</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pertunjukan-seni</loc>
+        <loc>http://localhost/localhost/hewan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/lain-lain-20</loc>
+        <loc>http://localhost/localhost/unggas</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/makanan-minuman</loc>
+        <loc>http://localhost/localhost/internet</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/budaya</loc>
+        <loc>http://localhost/localhost/desain-grafik-media</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/biografi</loc>
+        <loc>http://localhost/localhost/agronomi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/layanan-kesehatan</loc>
+        <loc>http://localhost/localhost/hacking</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/olahraga-rekreasi</loc>
+        <loc>http://localhost/localhost/pemodelan-komputasi-molekuler</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/perencanaan-keuangan</loc>
+        <loc>http://localhost/localhost/digital-marketing</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kajian-penelitian</loc>
+        <loc>http://localhost/localhost/filsafat-hukum</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/financial-growth</loc>
+        <loc>http://localhost/localhost/geologi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/cerita-rakyat</loc>
+        <loc>http://localhost/localhost/kekayaan-intelektual</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/musik-klasik</loc>
+        <loc>http://localhost/localhost/ilmu-militer</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/panduan-ulasan</loc>
+        <loc>http://localhost/localhost/lingkungan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/gerakan</loc>
+        <loc>http://localhost/localhost/panduan-praktis</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kimia-biokimia</loc>
+        <loc>http://localhost/localhost/layanan-hukum</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kesehatan-parobaya-lansia</loc>
+        <loc>http://localhost/localhost/sejarah-hukum</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/peralatan-kesehatan</loc>
+        <loc>http://localhost/localhost/jerman</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/spiritualisme</loc>
+        <loc>http://localhost/localhost/kehamilan-persalinan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kajian-penelitian-1</loc>
+        <loc>http://localhost/localhost/terapi-fisik</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/makanan-kesehatan</loc>
+        <loc>http://localhost/localhost/lansia</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/perikanan-akuakultur</loc>
+        <loc>http://localhost/localhost/ortopedi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/mainan-aksi</loc>
+        <loc>http://localhost/localhost/ginekologi-kebidanan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/dewasa</loc>
+        <loc>http://localhost/localhost/farmakologi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/slice-of-life</loc>
+        <loc>http://localhost/localhost/dermatologi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/komik-eropa</loc>
+        <loc>http://localhost/localhost/bedah</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/barat</loc>
+        <loc>http://localhost/localhost/pediatri</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/cina</loc>
+        <loc>http://localhost/localhost/kardiologi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/mega-best-seller</loc>
+        <loc>http://localhost/localhost/neurologi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pernikahan</loc>
+        <loc>http://localhost/localhost/pengobatan-hewan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/hubungan</loc>
+        <loc>http://localhost/localhost/listrik</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/hukum-keluarga</loc>
+        <loc>http://localhost/localhost/telekomunikasi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/korea</loc>
+        <loc>http://localhost/localhost/kelautan-angkatan-laut</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kursus-hidangan</loc>
+        <loc>http://localhost/localhost/robotika</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/kue</loc>
+        <loc>http://localhost/localhost/religius</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/bisnis-kuliner</loc>
+        <loc>http://localhost/localhost/minat-khusus</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/pajangan-dekorasi</loc>
+        <loc>http://localhost/localhost/indonesia</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/bahasa-daerah-indonesia</loc>
+        <loc>http://localhost/localhost/wisata-rohani</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/mandarin</loc>
+        <loc>http://localhost/localhost/india-asia-selatan</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/perhotelan-perjalanan-pariwisata</loc>
+        <loc>http://localhost/localhost/india</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/psikotes</loc>
+        <loc>http://localhost/localhost/life-sciences</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/perkembangan</loc>
+        <loc>http://localhost/localhost/hortikultura</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/prancis</loc>
+        <loc>http://localhost/localhost/teknik</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/non-buku</loc>
+        <loc>http://localhost/localhost/subjek-tema</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/novel-lokal-1</loc>
+        <loc>http://localhost/localhost/belanda</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/legenda-mitos-dongeng</loc>
+        <loc>http://localhost/localhost/meteorologi-klimatologi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/antologi</loc>
+        <loc>http://localhost/localhost/barang-antik-koleksi</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/umur-2-5-tahun</loc>
+        <loc>http://localhost/localhost/-1</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/umur-5-12-tahun</loc>
+        <loc>http://localhost/localhost/-2</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/perang-militer</loc>
+        <loc>http://localhost/localhost/-3</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/esai</loc>
+        <loc>http://localhost/localhost/-4</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/drama-sastra</loc>
+        <loc>http://localhost/localhost/-5</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/sepeda</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/yoga</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/aljabar</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/matematika-murni</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/buku-khusus</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/busana-muslim</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/arkeologi</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/aksesoris-fashion</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/etnis-regional-asia</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/masakan-asia</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/zoologi</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/hewan-peliharaan</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/makanan-penutup</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/makanan-1</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/makanan</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/tata-ruang-dan-pertamanan</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/buku-permainan-aktivitas</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/umum</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/serial</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/cpns-tps-tni-polri</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/kurikulum-internasional</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/sejarah-10</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/kepercayaan</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/online-trading</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/dongeng</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/manajemen-risiko-keuangan</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/tes-cfa</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/organisasi-struktur</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/hak-hukum-buruh</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/journaling</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/kepribadian</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/motivation-self-help-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/berdasarkan-kisah-nyata</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/adult-novels-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/k-pop</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/pendidikan-pelatihan</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/konseling</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/lowongan-kerja</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/interview</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/referensi-pedoman</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/furniture-sekolah</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/furniture</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/manajemen-industri</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/cat</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/cat-air</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/alat-lukis</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/laptop</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/pemerintah-bisnis</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/layanan</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/instruksi-studi</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/jasa-keuangan</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/industri-otomotif</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/aksesoris-olahraga</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/toeic</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/australia</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/australia-oceania</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/berkebun</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/etika-bisnis</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/pelatihan</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/hubungan-masyarakat</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/hewan</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/unggas</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/fiction-literature-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/internet</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/desain-grafik-media</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/agronomi</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/aksesoris-komputer-elektronik</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/kabel-jaringan</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/hacking</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/pemodelan-komputasi-molekuler</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/digital-marketing</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/lain-lain-5</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/esai-kritik</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/notebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/notebook-organizer</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/filsafat-hukum</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/paham-paham-filsafat</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/geologi</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/kekayaan-intelektual</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/ilmu-militer</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/lingkungan</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/panduan-praktis</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/layanan-hukum</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/sejarah-hukum</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/jerman</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/kehamilan-persalinan</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/terapi-fisik</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/lansia</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/aksesoris-musik</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/stik-drum</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/senar</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/alat-musik-tiup</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/harmonika</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/piano-keyboard</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/kesehatan-populer</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/obat-obatan</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/ortopedi</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/ginekologi-kebidanan</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/farmakologi</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/dermatologi</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/bedah</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/pediatri</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/kardiologi</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/neurologi</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/pengobatan-hewan</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/listrik</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/telekomunikasi</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/kelautan-angkatan-laut</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/kalkulator-1</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/kedirgantaraan</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/school-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/robotika</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/bahari</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/studi-filsafat</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/religius</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/minat-khusus</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/indonesia</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/panduan-wisata</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/panduan-wisata-11</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/wisata-rohani</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/india-asia-selatan</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/india</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/filsafat-asia</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/filsafat-eropa-amerika-serikat</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/life-sciences</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/hortikultura</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/biografi-5</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/teknik</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/subjek-tema</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/belanda</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/sains-untuk-anak-anak</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/meteorologi-klimatologi</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/kids-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/reference-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/item-koleksi</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/barang-antik-koleksi</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/comics-graphic-novels-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/romance-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/art-entertainment-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/science-nature-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/childrens-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/poem-short-story-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/humour-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/biography-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/parenting-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/travel-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/arts-design-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/computing-internet-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/children-age-4-7-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/chrime-thrillers-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/food-drink-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/professional-technical-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/home-design-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/food-cooking-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/business-personal-finance-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/fashion-style-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/manga-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/science-fiction-fantasy-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/entertainment-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/law-tax-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/psychology-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/christian-books-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/tali-sepatu</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/sports-outdoors-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/history-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/teen-young-adult-fiction-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/historical-fiction-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/health-beauty-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/non-fiction-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/health-well-being-ebook</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/ielts</loc>
-            <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-            </url>
-    <url>
-        <loc>http://127.0.0.1:8000/soal-ulangan-3</loc>
+        <loc>http://localhost/localhost/-6</loc>
             <changefreq>monthly</changefreq>
         <priority>0.6</priority>
             </url>

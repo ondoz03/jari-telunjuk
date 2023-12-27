@@ -9,8 +9,8 @@
     <meta name="viewport"
           content="width=device-width">
     <link rel="icon"
-          type="image/svg+xml"
-          href="/favicon.svg">
+          type="image/x-icon"
+          href="{{asset('favicon.ico')}}">
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
     <link rel="preconnect"
@@ -21,8 +21,15 @@
     <link href="https://fonts.cdnfonts.com/css/source-sans-pro"
           rel="stylesheet">
 
-    <meta name="generator"
-          content="{Astro.generator}">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GJWH6LMM7"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6GJWH6LMM7');
+    </script>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -71,7 +78,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="https://www.jaritelunjuk.com/blog/wp-content/uploads/2023/09/cropped-favicon-192x192.png" sizes="192x192">
+
     <style>
         .lazy-img {
             filter: blur(10px);

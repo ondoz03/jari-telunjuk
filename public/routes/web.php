@@ -100,6 +100,7 @@ Route::group(['prefix' => 'sitemaps'], function () {
     SitemapIndex::create()
         ->add('sitemap_category.xml')
         ->add('sitemap_buku.xml')
+        ->add('sitemap_author.xml')
         ->add('/blog/sitemap_index.xml')
         ->writeToFile(public_path('sitemap_index.xml'));
 });

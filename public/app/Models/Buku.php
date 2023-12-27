@@ -17,7 +17,7 @@ use Faker\Factory;
 use Laravel\Scout\Searchable;
 use Laravel\Scout\Attributes\SearchUsingPrefix;
 use Laravel\Scout\Builder;
-
+use Str;
 
 class Buku extends Model implements HasMedia
 {
@@ -77,12 +77,19 @@ class Buku extends Model implements HasMedia
         $data = json_decode($this->attributes['penulis']);
 
         $penulis = [];
-        foreach ($data as $key => $value) {
-            $penulis[] = $value;
+        foreach ($data as $key => $value) {;
+            $penulis[] = Str::replace('.', ' ',  $value);
         }
+
 
         $penulisString = implode(', ', $penulis);
         return $penulisString;
+    }
+
+     public function getPenulisArrayAttribute()
+    {
+        $data = json_decode($this->attributes['penulis']);
+        return $data;
     }
 
     public function detail_buku()
