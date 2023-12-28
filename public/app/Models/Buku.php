@@ -77,7 +77,7 @@ class Buku extends Model implements HasMedia
         $data = json_decode($this->attributes['penulis']);
 
         $penulis = [];
-        foreach ($data as $key => $value) {;
+        foreach ($data as $key => $value) {
             $penulis[] = Str::replace('.', ' ',  $value);
         }
 
@@ -89,7 +89,21 @@ class Buku extends Model implements HasMedia
      public function getPenulisArrayAttribute()
     {
         $data = json_decode($this->attributes['penulis']);
-        return $data;
+
+        $penulis = [];
+        $index = 0;
+        foreach ($data as $key => $value) {
+            if(in_array($value, config('cons.list_gelar_short'))) {
+                $penulis[($index-1)]['text'] .= ' '.$value;
+                $penulis[($index-1)]['key'] .= ' 0 '.$value;
+            } else {
+                $penulis[$index]['text'] = $value;
+                $penulis[$index]['key'] = $value;
+                $index++;
+            }
+        }
+
+        return $penulis;
     }
 
     public function detail_buku()
