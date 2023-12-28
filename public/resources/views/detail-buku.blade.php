@@ -175,8 +175,8 @@
                                         , &nbsp
                                     @endif
                                     <a class="hover:underline"
-                                    href="{{ route('author',Str::slug($item, '-')) }}">
-                                            {{ $item }}
+                                    href="{{ route('author',strtolower(str_replace(' ','-',$item['key']))) }}">
+                                            {{ $item['text'] }}
                                     </a>
                                 @endforeach
                             </p>
@@ -338,8 +338,8 @@
                                                     , &nbsp
                                                 @endif
                                                 <a class="text-base"
-                                                href="{{ route('author', $item) }}">
-                                                        {{ $item }}
+                                                href="{{ route('author', strtolower(str_replace(' ','-',$item['key']))) }}">
+                                                        {{ $item['text'] }}
                                                 </a>
                                             @endforeach
                                         </div>
