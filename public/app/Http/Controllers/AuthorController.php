@@ -11,6 +11,7 @@ class AuthorController extends Controller
     public function author(Request $request, $slug)
     {
 
+
         $author =  Str::replace('-', ' ', $slug);
         $author = explode(" 0 ", $author);
         // dd($author);

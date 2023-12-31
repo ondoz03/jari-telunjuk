@@ -19,7 +19,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        // $buku = Buku::find();
+        // $buku = Buku::first();
 
         // return $buku;
 
@@ -36,16 +36,17 @@ class HomeController extends Controller
         // return $search;
     }
 
-    public function setSession(Request $request){
-        if(!empty($request->category_session)) {
+    public function setSession(Request $request)
+    {
+        if (!empty($request->category_session)) {
             Session::put('category_session', $request->category_session);
         }
 
-        if(!empty($request->selected_book_session)) {
+        if (!empty($request->selected_book_session)) {
             Session::put('selected_book_session', $request->selected_book_session);
         }
 
-        if(isset($request->redirect_profile)) {
+        if (isset($request->redirect_profile)) {
             Session::put('redirect_profile', $request->redirect_profile);
         }
 

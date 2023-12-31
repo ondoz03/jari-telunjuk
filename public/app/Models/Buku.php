@@ -17,7 +17,9 @@ use Faker\Factory;
 use Laravel\Scout\Searchable;
 use Laravel\Scout\Attributes\SearchUsingPrefix;
 use Laravel\Scout\Builder;
+use Spatie\ImageOptimizer\OptimizerChainFactory;
 use Str;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Buku extends Model implements HasMedia
 {
@@ -113,17 +115,36 @@ class Buku extends Model implements HasMedia
 
     public function getImageAttribute()
     {
+
         $media = $this->getMedia('buku');
+
+
         if ($media->count() > 0) {
             $firstMedia = $media->first();
             $name = $firstMedia->id . '/' . $firstMedia->file_name;
             // $url = GeneralHelper::getFileUrl('buku/' . $name);
             // $url = 'https://ik.imagekit.io/jo9x79wnz/' . $name;
             $url = 'https://cdn.jaritelunjuk.com/' . 'buku/' . $name;
+            // return $optimizerChain->optimize($url);
             return $url;
         } else {
             return 'https://cdn.jaritelunjuk.com/web-asset/default-book.jpg';
         }
+    }
+
+    public $registerMediaConversionsUsingModelInstance = true;
+
+    public function registerMediaConversions(Media $media = null): void
+    {
+        // $this->addMediaConversion('thumb')
+        //     ->width(368)
+        //     ->height(232)
+        //     ->sharpen(10);
+
+        $this->addMediaConversion('thumb')
+            ->performOnCollections('buku', 'downloads')
+            ->width($this->width)
+            ->height($this->height);
     }
 
     public function getNewBookAttribute()
