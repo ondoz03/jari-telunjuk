@@ -4,6 +4,12 @@ namespace App\Console\Commands;
 
 use App\Models\Buku;
 use Illuminate\Console\Command;
+use Image;
+use Spatie\ImageOptimizer\OptimizerChainFactory;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
+
+use Spatie\MediaLibrary\Support\ImageFactory;
+
 
 class ImageGrab extends Command
 {
@@ -38,28 +44,41 @@ class ImageGrab extends Command
      */
     public function handle()
     {
+        // $buku = Buku::doesntHave('detail_buku')->get();
 
-        #created
-
-        // $userfile = file_get_contents("./books-raw.json");
-
-        // $jsonArray = json_decode($userfile);
-
-        // foreach ($jsonArray as $key => $value) {
-        //     $buku = Buku::where('slug', $value->Slug)->first();
-        //     $buku
-        //         ->addMediaFromUrl($value->Images[0])
+        // $buku = Buku::whereHas('media', function ($q) {
+        //     $q->whereBetween('size', [0, 1000]);
+        // })->get();
 
 
-        //         ->toMediaCollection('buku', 'digitalocean');
-        //     $this->info($value->Images[0]);
-        // }
+        $buku = Buku::where('slug', 'paris-for-one-and-other-stories-paris-untuk-satu-orang-dan-cerita-cerita-lain')->get();
 
 
-        #update
+        // $media = $buku
+        //     ->addMediaFromUrl($buku->image)
+        //     ->toMediaCollection('buku', 'digitalocean');
+        // $this->info($media->getUrl());
 
-        $buku = Buku::whereHas('media', function ($q) {
-            $q->whereBetween('size', [0, 1000]);
-        })->get();
+        foreach ($buku as $key => $value) {
+            $data = self::serach_buku($value->judul);
+            $value->media()->delete();
+            $value
+                ->addMediaFromUrl($data->Thumbnail)
+                ->toMediaCollection('buku', 'digitalocean');
+            $this->info($value->judul);
+        }
+    }
+
+    public function serach_buku($title)
+    {
+        $userfile = file_get_contents("./books-raw.json");
+        $data = json_decode($userfile);
+
+        $key = 'Title';
+        $value = $title;
+        $index = array_search($value, array_column($data, $key));
+        $datas = array_slice($data, $index, 1);
+
+        return $datas[0];
     }
 }

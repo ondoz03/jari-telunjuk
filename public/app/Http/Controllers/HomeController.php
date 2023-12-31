@@ -19,11 +19,11 @@ class HomeController extends Controller
 
     public function index()
     {
-        // $buku = Buku::find();
+        $firstBook = Buku::where('slug', 'paris-for-one-and-other-stories-paris-untuk-satu-orang-dan-cerita-cerita-lain')->first();
 
-        // return $buku;
+        $firstBook = $firstBook->media[0]->getUrl('thumb');
 
-        return view('home');
+        return view('home', compact('firstBook'));
     }
 
     public function search(Request $request)
@@ -36,16 +36,17 @@ class HomeController extends Controller
         // return $search;
     }
 
-    public function setSession(Request $request){
-        if(!empty($request->category_session)) {
+    public function setSession(Request $request)
+    {
+        if (!empty($request->category_session)) {
             Session::put('category_session', $request->category_session);
         }
 
-        if(!empty($request->selected_book_session)) {
+        if (!empty($request->selected_book_session)) {
             Session::put('selected_book_session', $request->selected_book_session);
         }
 
-        if(isset($request->redirect_profile)) {
+        if (isset($request->redirect_profile)) {
             Session::put('redirect_profile', $request->redirect_profile);
         }
 
