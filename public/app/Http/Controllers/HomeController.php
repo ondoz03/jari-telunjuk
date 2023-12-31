@@ -19,11 +19,11 @@ class HomeController extends Controller
 
     public function index()
     {
-        // $buku = Buku::first();
+        $firstBook = Buku::where('slug', 'paris-for-one-and-other-stories-paris-untuk-satu-orang-dan-cerita-cerita-lain')->first();
 
-        // return $buku;
+        $firstBook = $firstBook->media[0]->getUrl('thumb');
 
-        return view('home');
+        return view('home', compact('firstBook'));
     }
 
     public function search(Request $request)

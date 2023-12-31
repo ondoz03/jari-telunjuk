@@ -44,89 +44,41 @@ class ImageGrab extends Command
      */
     public function handle()
     {
-
-        #created
-
-        // $userfile = file_get_contents("./books-raw.json");
-
-        // $jsonArray = json_decode($userfile);
-
-        // foreach ($jsonArray as $key => $value) {
-        $buku = Buku::where('slug', 'paris-for-one-and-other-stories-paris-untuk-satu-orang-dan-cerita-cerita-lain')->first();
-        // return $buku
-
-        // $optimizerChain = OptimizerChainFactory::create();
-        // $optimizerChain->optimize($buku->image);
-
-        $media = $buku
-            ->addMediaFromUrl($buku->image)
-
-            ->toMediaCollection('buku', 'digitalocean');
-        $this->info($media->getUrl());
-        // }
-
-
-        #update
+        // $buku = Buku::doesntHave('detail_buku')->get();
 
         // $buku = Buku::whereHas('media', function ($q) {
         //     $q->whereBetween('size', [0, 1000]);
         // })->get();
 
-        // $buku = Buku::where('slug', 'paris-for-one-and-other-stories-paris-untuk-satu-orang-dan-cerita-cerita-lain')->first();
 
-        // // Get the URL of the first image associated with the book
-        // $imageUrl = $buku->image;
+        $buku = Buku::where('slug', 'paris-for-one-and-other-stories-paris-untuk-satu-orang-dan-cerita-cerita-lain')->get();
 
-        // // Download the image
-        // $imageContents = Http::get($imageUrl)->body();
 
-        // // Temporarily save the image
-        // $tempImagePath = tempnam(sys_get_temp_dir(), 'optimized_image');
-        // file_put_contents($tempImagePath, $imageContents);
-
-        // // Optimize the image using spatie/image-optimizer
-        // $optimizerChain = OptimizerChainFactory::create();
-        // $optimizerChain->optimize($tempImagePath);
-
-        // // Add the optimized image to the media collection
         // $media = $buku
-        //     ->addMedia($tempImagePath)
+        //     ->addMediaFromUrl($buku->image)
         //     ->toMediaCollection('buku', 'digitalocean');
-
-        // // Get the URL of the optimized image
         // $this->info($media->getUrl());
 
-        // // Clean up: Delete the temporary image file
-        // unlink($tempImagePath);
+        foreach ($buku as $key => $value) {
+            $data = self::serach_buku($value->judul);
+            $value->media()->delete();
+            $value
+                ->addMediaFromUrl($data->Thumbnail)
+                ->toMediaCollection('buku', 'digitalocean');
+            $this->info($value->judul);
+        }
+    }
 
-        // $buku = Buku::where('slug', 'paris-for-one-and-other-stories-paris-untuk-satu-orang-dan-cerita-cerita-lain')->first();
+    public function serach_buku($title)
+    {
+        $userfile = file_get_contents("./books-raw.json");
+        $data = json_decode($userfile);
 
-        // $imageUrl = $buku->images;
+        $key = 'Title';
+        $value = $title;
+        $index = array_search($value, array_column($data, $key));
+        $datas = array_slice($data, $index, 1);
 
-        // // Download the image from the URL
-        // $imageContent = file_get_contents($imageUrl);
-
-        // // Create a media item from the URL and optimize it
-        // $media = $buku
-        //     ->addMediaFromUrl($imageUrl)
-        //     ->toMediaCollection('buku', 'digitalocean', function (Media $media) use ($imageContent) {
-        //         // Get the image instance
-        //         $image = ImageFactory::load($imageContent);
-
-        //         // Optimize the image using spatie/image-optimizer
-        //         $optimizerChain = OptimizerChainFactory::create();
-        //         $optimizerChain->optimize($image);
-
-        //         // Specify additional options if needed (e.g., resizing)
-        //         $image->fit(400, 300);
-
-        //         // Set the optimized image content
-        //         $media->setCustomProperty('responsive_images', [
-        //             'image' => base64_encode($image->encode()),
-        //         ]);
-        //     });
-
-        // // Get the URL of the optimized image
-        // $this->info($media->getUrl());
+        return $datas[0];
     }
 }

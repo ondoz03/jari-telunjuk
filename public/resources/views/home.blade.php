@@ -34,7 +34,7 @@
                     <div class="flex w-1/5 flex-col items-start gap-2 xl:gap-6 astro-J7PV25F6">
                         <div class="relative h-auto w-full astro-J7PV25F6">
                             <img class="h-full w-full object-cover object-top astro-J7PV25F6"
-                                 src="{{ GeneralHelper::getRandomFirstBook(1) }}"
+                                 src="{{ $firstBook }}"
                                  alt="Book Photo 1">
                         </div>
                         <div class="relative h-auto w-full astro-J7PV25F6">

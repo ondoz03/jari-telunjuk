@@ -88,16 +88,16 @@ class Buku extends Model implements HasMedia
         return $penulisString;
     }
 
-     public function getPenulisArrayAttribute()
+    public function getPenulisArrayAttribute()
     {
         $data = json_decode($this->attributes['penulis']);
 
         $penulis = [];
         $index = 0;
         foreach ($data as $key => $value) {
-            if(in_array($value, config('cons.list_gelar_short'))) {
-                $penulis[($index-1)]['text'] .= ' '.$value;
-                $penulis[($index-1)]['key'] .= ' 0 '.$value;
+            if (in_array($value, config('cons.list_gelar_short'))) {
+                $penulis[($index - 1)]['text'] .= ' ' . $value;
+                $penulis[($index - 1)]['key'] .= ' 0 ' . $value;
             } else {
                 $penulis[$index]['text'] = $value;
                 $penulis[$index]['key'] = $value;
@@ -136,15 +136,10 @@ class Buku extends Model implements HasMedia
 
     public function registerMediaConversions(Media $media = null): void
     {
-        // $this->addMediaConversion('thumb')
-        //     ->width(368)
-        //     ->height(232)
-        //     ->sharpen(10);
-
         $this->addMediaConversion('thumb')
-            ->performOnCollections('buku', 'downloads')
-            ->width($this->width)
-            ->height($this->height);
+            ->performOnCollections('buku')
+            ->width(361)
+            ->height(535);
     }
 
     public function getNewBookAttribute()
