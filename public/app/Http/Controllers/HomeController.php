@@ -19,9 +19,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $firstBook = Buku::where('slug', 'paris-for-one-and-other-stories-paris-untuk-satu-orang-dan-cerita-cerita-lain')->first();
 
-        $firstBook = $firstBook->media[0]->getUrl('thumb');
 
         return view('home', compact('firstBook'));
     }
