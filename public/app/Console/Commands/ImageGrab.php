@@ -44,41 +44,13 @@ class ImageGrab extends Command
      */
     public function handle()
     {
-        // $buku = Buku::doesntHave('detail_buku')->get();
-
-        // $buku = Buku::whereHas('media', function ($q) {
-        //     $q->whereBetween('size', [0, 1000]);
-        // })->get();
-
-
-        $buku = Buku::where('slug', 'paris-for-one-and-other-stories-paris-untuk-satu-orang-dan-cerita-cerita-lain')->get();
-
-
-        // $media = $buku
-        //     ->addMediaFromUrl($buku->image)
-        //     ->toMediaCollection('buku', 'digitalocean');
-        // $this->info($media->getUrl());
-
+        $buku = Buku::get();
         foreach ($buku as $key => $value) {
-            $data = self::serach_buku($value->judul);
             $value->media()->delete();
             $value
-                ->addMediaFromUrl($data->Thumbnail)
-                ->toMediaCollection('buku', 'digitalocean');
-            $this->info($value->judul);
+                ->addMediaFromUrl($value->links)
+                ->toMediaCollection('bukus', 'digitalocean');
+            $this->info('[' . $key + 1 . ']' . $value->judul);
         }
-    }
-
-    public function serach_buku($title)
-    {
-        $userfile = file_get_contents("./books-raw.json");
-        $data = json_decode($userfile);
-
-        $key = 'Title';
-        $value = $title;
-        $index = array_search($value, array_column($data, $key));
-        $datas = array_slice($data, $index, 1);
-
-        return $datas[0];
     }
 }

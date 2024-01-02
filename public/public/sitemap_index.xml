@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <sitemap>
-        <loc>http://localhost/localhost/sitemap_category.xml</loc>
-            <lastmod>2023-12-25T13:50:44+07:00</lastmod>
+        <loc>http://127.0.0.1:8000/sitemap_category.xml</loc>
+            <lastmod>2024-01-02T05:26:15+07:00</lastmod>
     </sitemap>
     <sitemap>
-        <loc>http://localhost/localhost/sitemap_buku.xml</loc>
-            <lastmod>2023-12-25T13:50:44+07:00</lastmod>
+        <loc>http://127.0.0.1:8000/sitemap_buku.xml</loc>
+            <lastmod>2024-01-02T05:26:15+07:00</lastmod>
     </sitemap>
     <sitemap>
-        <loc>http://localhost/localhost/sitemap_author.xml</loc>
-            <lastmod>2023-12-25T13:50:44+07:00</lastmod>
+        <loc>http://127.0.0.1:8000/sitemap_author.xml</loc>
+            <lastmod>2024-01-02T05:26:15+07:00</lastmod>
     </sitemap>
     <sitemap>
-        <loc>http://localhost/localhost/blog/sitemap_index.xml</loc>
-            <lastmod>2023-12-25T13:50:44+07:00</lastmod>
+        <loc>http://127.0.0.1:8000/blog/sitemap_index.xml</loc>
+            <lastmod>2024-01-02T05:26:15+07:00</lastmod>
     </sitemap>
 </sitemapindex>

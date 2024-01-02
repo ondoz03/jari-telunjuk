@@ -32,7 +32,8 @@ class Buku extends Model implements HasMedia
         'judul',
         'slug',
         'penulis',
-        'isbn'
+        'isbn',
+        'links'
     ];
 
     protected $appends = [
@@ -137,7 +138,7 @@ class Buku extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')
-            ->performOnCollections('buku')
+            ->performOnCollections('bukus')
             ->width(361)
             ->height(535);
     }

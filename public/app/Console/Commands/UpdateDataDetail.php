@@ -40,30 +40,40 @@ class UpdateDataDetail extends Command
     {
         // $buku = Buku::doesntHave('detail_buku')->get();
 
-        $buku = Buku::whereHas('media', function ($q) {
-            $q->whereBetween('size', [0, 1000]);
-        })->get();
+        // $buku = Buku::whereHas('media', function ($q) {
+        //     $q->whereBetween('size', [0, 1000]);
+        // })->get();
+
+        // foreach ($buku as $key => $value) {
+        //     $data = self::serach_buku($value->judul);
+        //     $value->detail_buku()->updateorcreate([
+        //         'buku_id' => $value->id
+        //     ], [
+        //         'tgl_rilis' => date("Y-m-d", strtotime($data->PublishDate)),
+        //         'bahasa' => $data->Language,
+        //         'penerbit' => $data->Publisher,
+        //         'negara' => $data->Language,
+        //         'jumlah_halaman' => $data->Pages,
+        //         'jumlah_buku' => 0,
+        //         'description' => $data->Description,
+        //     ]);
+
+        //     $value->media()->delete();
+
+        //     $value
+        //         ->addMediaFromUrl($data->Thumbnail)
+
+        //         ->toMediaCollection('buku', 'digitalocean');
+
+        //     $this->info($value->judul);
+        // }
+
+        $buku = Buku::get();
 
         foreach ($buku as $key => $value) {
-            $data = self::serach_buku($value->judul);
-            $value->detail_buku()->updateorcreate([
-                'buku_id' => $value->id
-            ], [
-                'tgl_rilis' => date("Y-m-d", strtotime($data->PublishDate)),
-                'bahasa' => $data->Language,
-                'penerbit' => $data->Publisher,
-                'negara' => $data->Language,
-                'jumlah_halaman' => $data->Pages,
-                'jumlah_buku' => 0,
-                'description' => $data->Description,
+            $value->update([
+                'links' => $value->image
             ]);
-
-            $value->media()->delete();
-
-            $value
-                ->addMediaFromUrl($data->Thumbnail)
-
-                ->toMediaCollection('buku', 'digitalocean');
 
             $this->info($value->judul);
         }
