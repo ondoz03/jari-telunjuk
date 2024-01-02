@@ -46,7 +46,6 @@ class ImageGrab extends Command
     {
         $buku = Buku::get();
         foreach ($buku as $key => $value) {
-            $value->media()->delete();
             $value
                 ->addMediaFromUrl($value->links)
                 ->toMediaCollection('bukus', 'digitalocean');
