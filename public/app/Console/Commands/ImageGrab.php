@@ -9,7 +9,7 @@ use Spatie\ImageOptimizer\OptimizerChainFactory;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 use Spatie\MediaLibrary\Support\ImageFactory;
-
+use Illuminate\Support\Facades\Log;
 
 class ImageGrab extends Command
 {
@@ -51,6 +51,12 @@ class ImageGrab extends Command
                 ->addMediaFromUrl($value->links)
                 ->toMediaCollection('bukus', 'digitalocean');
             $this->info('[' . $key + 1 . ']' . $value->judul);
+
+            Log::build([
+                'driver' => 'daily',
+                'path' => storage_path('logs/custom.log'),
+
+            ])->info('Showing Status Created Successfully data dengan number ' . '[' . $key + 1 . ']' . $value->judul);
         }
     }
 }
