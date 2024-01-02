@@ -19,9 +19,7 @@ class HomeController extends Controller
 
     public function index()
     {
-
-
-        return view('home', compact('firstBook'));
+        return view('home');
     }
 
     public function search(Request $request)
