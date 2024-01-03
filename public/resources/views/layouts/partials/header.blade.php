@@ -86,7 +86,7 @@
                 <div x-show="open" @click.away="open = false" class="absolute right-0 mt-14 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600" style="padding: 15px">
                     <div class="flex flex-col gap-3 text-right">
                         <a class="text-base leading-5" href="{{route('user.profile')}}">Profile</a>
-                        <a class="text-base leading-5" href="https://baca.jaritelunjuk.com/reading-challenge">Reading Challenge</a>
+                        <a class="text-base leading-5" href="https://www.jaritelunjuk.com/blog/go/reading-tracker">Reading Challenge</a>
                         <a class="text-base leading-5" href="/book">Book</a>
                         <a class="text-base leading-5" href="#">Help</a>
                         <!-- <a class="text-base leading-5" href="../../blog">Manage Account</a> -->
@@ -166,7 +166,7 @@
                     </figure>
 
                     <a class="text-base leading-5" href="{{route('user.profile')}}">Profile</a>
-                    <a class="text-base leading-5" href="https://baca.jaritelunjuk.com/reading-challenge">Reading Challenge</a>
+                    <a class="text-base leading-5" href="https://www.jaritelunjuk.com/blog/go/reading-tracker">Reading Challenge</a>
                     <a class="text-base leading-5" href="/book">Book</a>
                     <a class="text-base leading-5" href="#">Help</a>
                     <a class="text-base leading-5 text-red-500" href="{{route('user.logout')}}">Logout</a>

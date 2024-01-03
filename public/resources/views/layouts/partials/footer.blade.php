@@ -14,7 +14,7 @@
                 <nav class="flex flex-col items-start gap-3 xl:gap-5">
                     <a href="/about">About</a>
                     <a href="/blog">Blog</a>
-                    <a href="https://baca.jaritelunjuk.com/reading-challenge">Reading Challenge</a>
+                    <a href="https://www.jaritelunjuk.com/blog/go/reading-tracker">Reading Challenge</a>
 
                 </nav>
             </div>
