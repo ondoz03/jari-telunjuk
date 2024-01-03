@@ -6,7 +6,7 @@
     <meta name="description"  content="{{ Str::limit($buku->detail_buku->description, 160) }}">
     <script type="application/ld+json">
         {
-         "@context": "https://schema.org",d
+         "@context": "https://schema.org",
          "@type": "BreadcrumbList",
          "itemListElement": [{
            "@type": "ListItem",
@@ -169,7 +169,7 @@
                             </div>
 
                             <p class="text-sm font-semibold xl:text-lg">
-                                by 
+                                by
                                 @foreach ($buku->penulis_array as $key => $item)
                                     @if($key!==0)
                                         , &nbsp
