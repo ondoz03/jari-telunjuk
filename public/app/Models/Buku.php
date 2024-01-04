@@ -133,12 +133,12 @@ class Buku extends Model implements HasMedia
         }
     }
 
-    public $registerMediaConversionsUsingModelInstance = true;
+    // public $registerMediaConversionsUsingModelInstance = true;
 
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')
-            ->performOnCollections('bukus')
+            ->performOnCollections('book')
             ->width(361)
             ->height(535);
     }

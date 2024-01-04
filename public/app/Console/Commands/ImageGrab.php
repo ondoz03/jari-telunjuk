@@ -46,16 +46,33 @@ class ImageGrab extends Command
     {
         $buku = Buku::get();
         foreach ($buku as $key => $value) {
-            $value
-                ->addMediaFromUrl($value->links)
-                ->toMediaCollection('bukus', 'digitalocean');
-            $this->info('[' . $key + 1 . ']' . $value->judul);
+            if ($key > 26404) {
+                $imageUrl = $value->links;
+                // Fetch only the headers of the remote file
+                $headers = get_headers($imageUrl, 1);
+                // Check if the 'Content-Type' header is present
+                if (isset($headers['Content-Type']) && is_string($headers['Content-Type'])) {
+                    $contentType = strtolower($headers['Content-Type']);
+                    // Check if the content type indicates it is a JPEG image
+                    if (strpos($contentType, 'image/jpeg') !== false) {
+                        $media = $value->addMediaFromUrl($value->links)->toMediaCollection('book', 'digitalocean');
+                        if ($media) {
+                            $this->info('[' . ($key + 1) . ']' . $value->judul);
+                            Log::channel('daily')->info('Showing Status: Created Successfully for data with number [' . ($key + 1) . '] ' . $value->judul);
+                        } else {
+                            $this->error('Failed to add media for [' . ($key + 1) . ']' . $value->judul);
+                            Log::channel('daily')->error('Failed to add media for data with number [' . ($key + 1) . '] ' . $value->judul);
+                        }
+                    } else {
+                        echo "Not a JPEG image. Detected Content-Type: $contentType";
+                    }
+                } else {
+                    echo 'Unable to determine Content-Type.';
+                }
+            }
+            // if ($key > 3829) {
 
-            Log::build([
-                'driver' => 'daily',
-                'path' => storage_path('logs/custom.log'),
-
-            ])->info('Showing Status Created Successfully data dengan number ' . '[' . $key + 1 . ']' . $value->judul);
+            // }
         }
     }
 }

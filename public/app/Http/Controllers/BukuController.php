@@ -96,7 +96,6 @@ class BukuController extends Controller
             $data = UserWantRead::where('user_id', Auth::user()->id)->where('buku_id', $buku->id)->first();
             if ($data) {
                 $user_want_read = $data;
-
             } else {
                 $array = [
                     'status' => '0'
@@ -129,7 +128,9 @@ class BukuController extends Controller
 
     public function getRandomBookHomepage(Request $request)
     {
-        $buku = Buku::with(['detail_buku', 'kategori'])
+        $buku = Buku::with(['detail_buku', 'kategori'])->whereHas('kategori', function ($q) {
+            $q->whereIn('slug', ['fiction-literature-ebook', 'nonfiksi', 'history-ebook', 'psychology-ebook', 'romantis', 'fiksi', 'fiksi-ilmiah', 'fiksi-dewsa', 'fiksi-sejarah', 'nonfiksi']);
+        })
             // ->whereHas('kategori', function ($q) {
             //     $q->whereIn('slug', ['fiction-literature', 'non-fiction', 'history', 'psychology', 'romance']);
             // })
@@ -163,7 +164,7 @@ class BukuController extends Controller
 
         $category_session = json_decode($request->selected_book_categori);
 
-        $buku = Buku::where('judul', 'like', "%" . $request->search . "%")->whereHas('kategori', function($q) use ($category_session){
+        $buku = Buku::where('judul', 'like', "%" . $request->search . "%")->whereHas('kategori', function ($q) use ($category_session) {
             $q->whereIn('kategori_id', $category_session);
         })->take(14)->get();
 
