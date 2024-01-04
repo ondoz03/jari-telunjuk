@@ -60,6 +60,7 @@ return [
             'region' => env('DIGITALOCEAN_SPACES_REGION'),
             'bucket' => env('DIGITALOCEAN_SPACES_BUCKET'),
             'use_path_style_endpoint' => false,
+            'url' => env('DIGITALOCEAN_SPACES_URL'),
             'visibility' => 'public',
             'permissions' => [
                 'file' => [

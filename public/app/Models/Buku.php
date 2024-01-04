@@ -17,6 +17,7 @@ use Faker\Factory;
 use Laravel\Scout\Searchable;
 use Laravel\Scout\Attributes\SearchUsingPrefix;
 use Laravel\Scout\Builder;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Str;
 
 class Buku extends Model implements HasMedia
@@ -86,16 +87,16 @@ class Buku extends Model implements HasMedia
         return $penulisString;
     }
 
-     public function getPenulisArrayAttribute()
+    public function getPenulisArrayAttribute()
     {
         $data = json_decode($this->attributes['penulis']);
 
         $penulis = [];
         $index = 0;
         foreach ($data as $key => $value) {
-            if(in_array($value, config('cons.list_gelar_short'))) {
-                $penulis[($index-1)]['text'] .= ' '.$value;
-                $penulis[($index-1)]['key'] .= ' 0 '.$value;
+            if (in_array($value, config('cons.list_gelar_short'))) {
+                $penulis[($index - 1)]['text'] .= ' ' . $value;
+                $penulis[($index - 1)]['key'] .= ' 0 ' . $value;
             } else {
                 $penulis[$index]['text'] = $value;
                 $penulis[$index]['key'] = $value;
@@ -113,17 +114,25 @@ class Buku extends Model implements HasMedia
 
     public function getImageAttribute()
     {
-        $media = $this->getMedia('buku');
+        $media = $this->getMedia('book');
         if ($media->count() > 0) {
-            $firstMedia = $media->first();
-            $name = $firstMedia->id . '/' . $firstMedia->file_name;
-            // $url = GeneralHelper::getFileUrl('buku/' . $name);
-            // $url = 'https://ik.imagekit.io/jo9x79wnz/' . $name;
-            $url = 'https://cdn.jaritelunjuk.com/' . 'buku/' . $name;
-            return $url;
+            $firstMedia = $media->first()->getFullUrl('thumb');
+            // $name = $firstMedia->id . '/' . $firstMedia->file_name;
+            // // $url = GeneralHelper::getFileUrl('buku/' . $name);
+            // // $url = 'https://ik.imagekit.io/jo9x79wnz/' . $name;
+            // $url = 'https://cdn.jaritelunjuk.com/' . 'book/conversions/' . $name;
+            return $firstMedia;
         } else {
             return 'https://cdn.jaritelunjuk.com/web-asset/default-book.jpg';
         }
+    }
+
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this->addMediaConversion('thumb')
+            ->performOnCollections('book')
+            ->width(361)
+            ->height(535);
     }
 
     public function getNewBookAttribute()
