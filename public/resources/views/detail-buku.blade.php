@@ -5,31 +5,59 @@
     <link rel="canonical" href="{{url('/buku/'.$buku->slug)}}" />
     <meta name="description"  content="{{ Str::limit($buku->detail_buku->description, 160) }}">
     <script type="application/ld+json">
+
+        @if (count($buku->kategori) > 1)
         {
-         "@context": "https://schema.org",
-         "@type": "BreadcrumbList",
-         "itemListElement": [{
-           "@type": "ListItem",
-           "position": 1,
-           "name": "Category",
-           "item": "{{url('/category')}}"
-         },{
-           "@type": "ListItem",
-           "position": 2,
-           "name": "{{ Str::ucfirst($kategori->name) }}",
-           "item": "{{ route('buku', $kategori->slug) }}"
-         },{
-           "@type": "ListItem",
-           "position": 3,
-           "name": "{{ Str::ucfirst($buku->kategori[1]->name) }}",
-           "item": "{{ route('buku', $buku->kategori[1]->slug) }}"
-         },{
-            "@type": "ListItem",
-            "position": 4,
-            "name": "{{ Str::ucfirst($buku->judul) }}",
-            "item": "{{ route('detail-buku', [$kategori->slug, $buku->slug]) }}s"
-          }]
-       }
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Category",
+              "item": "{{url('/category')}}"
+            },{
+              "@type": "ListItem",
+              "position": 2,
+              "name": "{{ Str::ucfirst($kategori->name) }}",
+              "item": "{{ route('buku', $kategori->slug) }}"
+            },{
+              "@type": "ListItem",
+              "position": 3,
+              "name": "{{ Str::ucfirst($buku->kategori[1]->name) }}",
+              "item": "{{ route('buku', $buku->kategori[1]->slug) }}"
+            },{
+               "@type": "ListItem",
+               "position": 4,
+               "name": "{{ Str::ucfirst($buku->judul) }}",
+               "item": "{{ route('detail-buku', [$kategori->slug, $buku->slug]) }}s"
+             }]
+          }
+        @else
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Category",
+              "item": "{{url('/category')}}"
+            },{
+              "@type": "ListItem",
+              "position": 2,
+              "name": "{{ Str::ucfirst($kategori->name) }}",
+              "item": "{{ route('buku', $kategori->slug) }}"
+            },{
+               "@type": "ListItem",
+               "position": 3,
+               "name": "{{ Str::ucfirst($buku->judul) }}",
+               "item": "{{ route('detail-buku', [$kategori->slug, $buku->slug]) }}s"
+             }]
+          }
+
+        @endif
+
+
+
     </script>
     <script type="application/ld+json">
     {
