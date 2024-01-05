@@ -32,7 +32,7 @@
                                 <img src="{{$item->image}}" alt="Rekomendasi 1">
 
                                 <figcaption class="space-y-2">
-                                    <a href="{{ route('detail-buku', [$kategori->slug, $item->slug]) }}" class="hover:underline">
+                                    <a href="{{ route('detail-buku', ['buku', $item->slug]) }}" class="hover:underline">
                                         <h5 class="line-clamp-2 text-base font-semibold leading-[1.25] lg:text-lg lg:leading-[1.125]">
                                             {{$item->judul}}
                                         </h5>
