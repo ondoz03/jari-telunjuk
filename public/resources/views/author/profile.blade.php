@@ -3,6 +3,18 @@
     <title>Daftar Buku Karya {{ Str::title(Str::replace('-', ' ',$author_name))}}</title>
     {!! GeneralHelper::canonical()!!}
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "mainEntity": {
+          "@id": "#main-author",
+          "@type": "Person",
+          "name": "{{$author_name}}"
+        },
+        {!! $resultJson !!}
+      }
+    </script>
 @endsection
 
 @section('header-js')

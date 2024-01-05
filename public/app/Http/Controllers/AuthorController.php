@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Buku;
 use Illuminate\Support\Str;
 use DB;
+
 class AuthorController extends Controller
 {
     public function author(Request $request, $slug)
@@ -19,13 +20,35 @@ class AuthorController extends Controller
             // code...
             $buku = $buku->where(DB::raw('lower(penulis)'), 'like', '%' . strtolower($value) . '%');
         }
-            // ->where('penulis', 'like', '%' . $author . '%')
+        // ->where('penulis', 'like', '%' . $author . '%')
         $buku = $buku->get();
         if (empty($buku->toArray())) {
             abort(404);
         }
         $author_name = implode(" ", $author);
 
-        return view('author.profile', compact('buku', 'author_name'));
+        $map = $buku->map(function ($q) {
+            return [
+                "@type" => "Article",
+                "headline" => $q->judul,
+                "url" =>  route('detail-buku', ['buku', $q->slug]),
+                "datePublished" => $q->detail_buku->tgl_rilis,
+                "author" => [
+                    "@id" => "#main-author"
+                ]
+            ];
+        });
+
+        $result = [
+            "hasPart" => $map->toArray()
+        ];
+
+
+        $decodedJson = json_encode($result, JSON_PRETTY_PRINT);
+        $resultJson = html_entity_decode($decodedJson);
+
+        // return $resultJson;
+
+        return view('author.profile', compact('buku', 'author_name', 'resultJson'));
     }
 }
