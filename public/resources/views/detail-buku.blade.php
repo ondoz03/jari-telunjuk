@@ -35,7 +35,7 @@
     {
         "@context": "https://schema.org/",
         "@type": "Game",
-        "name": "Firefly",
+        "name": "{{ $buku->judul }}",
         "review": {
             "@type": "Review",
             "reviewRating": {
@@ -44,7 +44,7 @@
             },
             "author": {
                 "@type": "Person",
-                "name": "{{ $buku->judul }}"
+                "name": "{{ $buku->penulis }}"
             }
         }
     }
