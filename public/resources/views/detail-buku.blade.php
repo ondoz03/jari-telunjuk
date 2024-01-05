@@ -47,10 +47,14 @@
                             href="/">Category</a>
 
                         <span>&gt;</span>
+                        @foreach ($buku->kategori as $item)
                         <a class="hover:underline"
-                            href="{{ route('buku', $kategori->slug) }}">{{ Str::ucfirst($kategori->name) }}
+                         href="{{ route('buku', $item->slug) }}">{{ Str::ucfirst($item->name) }}
                         </a>
                         <span>&gt;</span>
+
+                        @endforeach
+
                         <a class="hover:underline"
                             href="{{ route('detail-buku', [$kategori->slug, $buku->slug]) }}">{{ Str::ucfirst($buku->judul) }}
                         </a>

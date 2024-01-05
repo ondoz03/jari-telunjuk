@@ -515,7 +515,7 @@
                         <footer class="fixed bottom-0 left-0 z-10 flex h-32 w-full flex-col items-start gap-2 border-t bg-[#FCFAF7] p-4 shadow-xl lg:absolute lg:bottom-0 lg:h-28 lg:w-full lg:flex-row lg:items-center lg:justify-between lg:border-0 lg:px-14 lg:py-8 lg:shadow-none">
                             <div class="print-values astro-J7PV25F6">
                                 <h5 id="valueList" class="text-base font-bold leading-5 text-[#141414] astro-J7PV25F6">
-                                    <span id="countSelectedBook">0</span> Buku dipilih
+                                    <span class="countSelectedBook" id="countSelectedBook">0</span> Buku dipilih
                                 </h5>
                                 <span id="required" style="color: #dc1414; display:none" class="hide"> Minimal Anda Harus Memilih 3 Buku </span>
                             </div>
@@ -697,7 +697,7 @@
             if (numberOfChecked > 5) {
                 $(this).prop("checked", false);
             }
-            $("#countSelectedBook").text($("input[name='book_selected']:checked").length);
+            $(".countSelectedBook").text($("input[name='book_selected']:checked").length);
         });
 
 
@@ -817,7 +817,7 @@
         }
 
         function listBookByCategory() {
-            $("#countSelectedBook").text($("input[name='book_selected']:checked").length);
+            $(".countSelectedBook").text($("input[name='book_selected']:checked").length);
             $.ajax({
                 url: "{{ route('ajax.list-book-recommendation') }}",
                 type: "GET",
@@ -829,8 +829,8 @@
                         var shortText = jQuery.trim(value.judul).substring(0, 30).split(" ").slice(0, -1).join(" ") + "...";
 
                         html = html + '<div class="astro-J7PV25F6">\
-                        <input type="checkbox" id="list_book_' + index + '" value="' + value.id + '" class="checkbox peer hidden astro-J7PV25F6 bookpicker" name="book_selected">\
-                        <label for="list_book_' + index + '" class="peer-checked:leading-2 w-full cursor-pointer text-sm font-normal peer-checked:bg-red-400 peer-checked:font-[sans-serif] peer-checked:font-semibold [&>img]:shadow-md peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\
+                        <input type="checkbox" id="list_book_' +  value.id + '" value="' + value.id + '" class="checkbox peer hidden astro-J7PV25F6 bookpicker" name="book_selected">\
+                        <label for="list_book_' +  value.id + '" class="peer-checked:leading-2 w-full cursor-pointer text-sm font-normal peer-checked:bg-red-400 peer-checked:font-[sans-serif] peer-checked:font-semibold [&>img]:shadow-md peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\
                         <figure class="relative space-y-3 astro-J7PV25F6">\
                             <img  style="height:120px !important" class="h-auto lazy-img w-full astro-J7PV25F6" data-src="' + value.image + '" alt="' + value.judul + '">\
                             <div class="pointer-events-none leading-5 astro-J7PV25F6">\
@@ -847,7 +847,7 @@
                         if (numberOfChecked > 5) {
                             $(this).prop("checked", false);
                         }
-                        $("#countSelectedBook").text($("input[name='book_selected']:checked").length);
+                        $(".countSelectedBook").text($("input[name='book_selected']:checked").length);
                     });
 
                     lazyload()
@@ -858,6 +858,9 @@
         $(".serachRecomendasi").on("input", function () {
             var searchValue = $(this).val();
             var csrfToken = $('meta[name="csrf-token"]').attr('content');
+            var selectedBooks = $("input[name='book_selected']:checked");
+
+
             $.ajax({
                 url: "{{ route('ajax.list-book-recommendation-search') }}",
                 type: "POST",
@@ -869,26 +872,40 @@
                     'X-CSRF-TOKEN': csrfToken
                 },
                 success: function (data) {
+                    // $("#book-list-recommendation").show();
                     var list_book = data;
                     var html = '';
 
+                    selectedBooks.each(function() {
+                        var parentElement = $(this).parent();
+                        var parentInnerHTML = parentElement.html();
+
+                        html = html + '<div class="astro-J7PV25F6">' + parentInnerHTML + '</div>';
+                        $("#book-list-recommendation").html(html);
+                        $("#book-list-recommendation .astro-J7PV25F6 input[name='book_selected']").prop('checked', true);
+                    });
+
+
+
                     if (data.length > 0) {
+                        $("#book-list-recommendation").show();
+
                         $.each(list_book, function (index, value) {
                             var shortText = jQuery.trim(value.judul).substring(0, 30).split(" ").slice(0, -1).join(" ") + "...";
+                            htmlnew = '<div class="astro-J7PV25F6">\
+                                <input type="checkbox" id="list_book_' +  value.id + '" value="' + value.id + '" class="checkbox peer hidden astro-J7PV25F6 bookpicker" name="book_selected">\
+                                <label for="list_book_' +  value.id + '" class="peer-checked:leading-2 w-full cursor-pointer text-sm font-normal peer-checked:bg-red-400 peer-checked:font-[sans-serif] peer-checked:font-semibold lg:peer-checked:text-[0.75rem] [&>img]:shadow-md peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\
+                                <figure class="relative space-y-3 astro-J7PV25F6">\
+                                    <img  style="height:120px !important" class="h-auto lazy-img w-full astro-J7PV25F6" data-src="' + value.image + '" alt="' + value.judul + '">\
+                                    <div class="pointer-events-none leading-5 astro-J7PV25F6">\
+                                        ' + shortText + '\
+                                    </div>\
+                                </figure>\
+                                </label>\
+                            </div>';
+                        $("#book-list-recommendation").append(htmlnew);
 
-                            html = html + '<div class="astro-J7PV25F6">\
-                        <input type="checkbox" id="list_book_' + index + '" value="' + value.id + '" class="checkbox peer hidden astro-J7PV25F6 bookpicker" name="book_selected">\
-                        <label for="list_book_' + index + '" class="peer-checked:leading-2 w-full cursor-pointer text-sm font-normal peer-checked:bg-red-400 peer-checked:font-[sans-serif] peer-checked:font-semibold lg:peer-checked:text-[0.75rem] [&>img]:shadow-md peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\
-                        <figure class="relative space-y-3 astro-J7PV25F6">\
-                            <img  style="height:120px !important" class="h-auto lazy-img w-full astro-J7PV25F6" data-src="' + value.image + '" alt="' + value.judul + '">\
-                            <div class="pointer-events-none leading-5 astro-J7PV25F6">\
-                                ' + shortText + '\
-                            </div>\
-                        </figure>\
-                        </label>\
-                    </div>';
                         });
-                        $("#book-list-recommendation").html(html);
                         $('#search-empty').html('');
                     } else {
                         html = `<section class="flex flex-col items-center justify-center gap-6 p-4 lg:p-0">
@@ -898,7 +915,7 @@
                             Oopss! Sementara yang kamu cari tidak ada, <br>di kategori ini. Coba cari dengan judul lain.
                         </h5>
                       </section>`
-                        $("#book-list-recommendation").html('');
+                        $("#book-list-recommendation").hide();
                         $('#search-empty').html(html);
                     }
 
@@ -908,7 +925,7 @@
                         if (numberOfChecked > 5) {
                             $(this).prop("checked", false);
                         }
-                        $("#countSelectedBook").text($("input[name='book_selected']:checked").length);
+                        $(".countSelectedBook").text($("input[name='book_selected']:checked").length);
                     });
 
                     lazyload()
