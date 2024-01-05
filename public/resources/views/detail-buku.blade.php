@@ -30,23 +30,24 @@
             "item": "{{ route('detail-buku', [$kategori->slug, $buku->slug]) }}s"
           }]
        }
-
-       {
+    </script>
+    <script type="application/ld+json">
+    {
         "@context": "https://schema.org/",
         "@type": "Game",
         "name": "Firefly",
         "review": {
-          "@type": "Review",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "{{$buku->count_rating}}"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "{{ $buku->judul }}"
-          }
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "{{$buku->count_rating}}"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "{{ $buku->judul }}"
+            }
         }
-      }
+    }
     </script>
     <style>
         .checked {

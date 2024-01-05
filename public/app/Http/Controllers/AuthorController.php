@@ -39,15 +39,11 @@ class AuthorController extends Controller
             ];
         });
 
-        $result = [
-            "hasPart" => $map->toArray()
-        ];
+        $result = $map->toArray();
 
 
         $decodedJson = json_encode($result, JSON_PRETTY_PRINT);
         $resultJson = html_entity_decode($decodedJson);
-
-        // return $resultJson;
 
         return view('author.profile', compact('buku', 'author_name', 'resultJson'));
     }
