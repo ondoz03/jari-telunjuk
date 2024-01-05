@@ -640,19 +640,16 @@
                 });
             });
 
-            if (localStorage.getItem("default-recommendation-book")) {
-                refreshDefaultRecommendationBook(JSON.parse(localStorage.getItem("default-recommendation-book")));
-            } else {
-                $.ajax({
-                    url: "{{ route('ajax.book-homepage') }}",
-                    type: "GET",
-                    data: {},
-                    success: function (data) {
-                        localStorage.setItem("default-recommendation-book", JSON.stringify(data));
-                        refreshDefaultRecommendationBook(data);
-                    },
-                });
-            }
+
+            $.ajax({
+                url: "{{ route('ajax.book-homepage') }}",
+                type: "GET",
+                data: {},
+                success: function (data) {
+                    refreshDefaultRecommendationBook(data);
+                },
+            });
+
         });
 
         $('.modal-book-recommendation-new #overlay-index').click(function () {

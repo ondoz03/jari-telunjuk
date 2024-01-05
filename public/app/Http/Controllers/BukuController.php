@@ -7,6 +7,7 @@ use App\Models\Kategori;
 use App\Models\UserWantRead;
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Support\Facades\Cache;
 use mysql_xdevapi\Result;
 
 class BukuController extends Controller
@@ -128,16 +129,16 @@ class BukuController extends Controller
 
     public function getRandomBookHomepage(Request $request)
     {
-        $buku = Buku::with(['detail_buku', 'kategori'])->whereHas('kategori', function ($q) {
-            $q->whereIn('slug', ['fiction-literature-ebook', 'nonfiksi', 'history-ebook', 'psychology-ebook', 'romantis']);
-        })
-            // ->whereHas('kategori', function ($q) {
-            //     $q->whereIn('slug', ['fiction-literature', 'non-fiction', 'history', 'psychology', 'romance']);
-            // })
-            ->inRandomOrder()
-            ->limit(8)
-            ->get();
-        return response()->json($buku);
+        $recomendasi = Cache::remember('recomendasi-image', now()->addDays(1), function () {
+            return Buku::with(['detail_buku', 'kategori'])->whereHas('kategori', function ($q) {
+                $q->whereIn('slug', ['fiction-literature-ebook', 'nonfiksi', 'history-ebook', 'psychology-ebook', 'romantis']);
+            })
+                ->inRandomOrder()
+                ->limit(8)
+                ->get();
+        });
+
+        return $recomendasi;
     }
 
     public static function getBookBySelectedCategory()
