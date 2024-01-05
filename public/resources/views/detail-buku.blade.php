@@ -40,7 +40,7 @@
             "@type": "Review",
             "reviewRating": {
                 "@type": "Rating",
-                "ratingValue": "{{$buku->count_rating}}"
+                "ratingValue": "{{$buku->count_rating == 0 ? 3 : $buku->count_rating}}"
             },
             "author": {
                 "@type": "Person",

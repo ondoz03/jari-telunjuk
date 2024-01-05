@@ -31,8 +31,9 @@ class AuthorController extends Controller
             return [
                 "@type" => "Article",
                 "headline" => $q->judul,
-                "url" =>  route('detail-buku', ['buku', $q->slug]),
+                "url" => str_replace('\/', '/', route('detail-buku', ['buku', $q->slug])),
                 "datePublished" => $q->detail_buku->tgl_rilis,
+                "image" => str_replace('\/', '/', $q->image),
                 "author" => [
                     "@id" => "#main-author"
                 ]
@@ -41,9 +42,9 @@ class AuthorController extends Controller
 
         $result = $map->toArray();
 
-
-        $decodedJson = json_encode($result, JSON_PRETTY_PRINT);
-        $resultJson = html_entity_decode($decodedJson);
+        $encodedJson = json_encode($result, JSON_PRETTY_PRINT);
+        $decodedJson = json_decode($encodedJson);
+        $resultJson = str_replace('\/\/', '//', json_encode($decodedJson, JSON_PRETTY_PRINT));
 
         return view('author.profile', compact('buku', 'author_name', 'resultJson'));
     }
