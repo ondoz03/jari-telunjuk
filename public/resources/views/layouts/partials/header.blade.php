@@ -87,7 +87,7 @@
                     <div class="flex flex-col gap-3 text-right">
                         <a class="text-base leading-5" href="{{route('user.profile')}}">Profile</a>
                         <a class="text-base leading-5" href="https://www.jaritelunjuk.com/blog/go/reading-tracker">Reading Challenge</a>
-                        <a class="text-base leading-5" href="/book">Book</a>
+                        <a class="text-base leading-5" href="/buku">Book</a>
                         <a class="text-base leading-5" href="#">Help</a>
                         <!-- <a class="text-base leading-5" href="../../blog">Manage Account</a> -->
                         <a class="text-base leading-5 text-red-500" href="{{route('user.logout')}}">Logout</a>
@@ -167,7 +167,7 @@
 
                     <a class="text-base leading-5" href="{{route('user.profile')}}">Profile</a>
                     <a class="text-base leading-5" href="https://www.jaritelunjuk.com/blog/go/reading-tracker">Reading Challenge</a>
-                    <a class="text-base leading-5" href="/book">Book</a>
+                    <a class="text-base leading-5" href="/buku">Book</a>
                     <a class="text-base leading-5" href="#">Help</a>
                     <a class="text-base leading-5 text-red-500" href="{{route('user.logout')}}">Logout</a>
                 </div>

@@ -32,7 +32,7 @@
                                     <img src="{{$item->buku->image}}" alt="Rekomendasi 1">
 
                                     <figcaption class="space-y-2">
-                                        <a href="{{ route('detail-buku', [$item->buku->kategori->first()->slug, $item->buku->slug]) }}" class="hover:underline">
+                                        <a href="{{ route('detail-buku', ['buku', $item->buku->slug]) }}" class="hover:underline">
                                             <h5 class="line-clamp-2 text-base font-semibold leading-[1.25] lg:text-lg lg:leading-[1.125]">
                                                 {{$item->buku->judul}}
                                             </h5>
@@ -67,7 +67,7 @@
                                 <img src="{{$item->image}}" alt="Rekomendasi 1" style="height: 251px;">
 
                                 <figcaption class="space-y-2">
-                                    <a href="{{ route('detail-buku', [$item->kategori->first()->slug, $item->slug]) }}" class="hover:underline">
+                                    <a href="{{ route('detail-buku', ['buku', $item->slug]) }}" class="hover:underline">
                                         <h5 class="line-clamp-2 text-base font-semibold leading-[1.25] lg:text-lg lg:leading-[1.125]">
                                             {{$item->judul}}
                                         </h5>
@@ -213,7 +213,7 @@
                         <div class=" gap-4 lg:grid-cols-4 lg:gap-6">
                             @foreach ($user->user_want_read->take(5) as $item)
                                 @if ($item->status === '2')
-                                    <a href="{{ route('detail-buku', [$item->buku->kategori->first()->slug, $item->buku->slug]) }}" class="hover:underline">
+                                    <a href="{{ route('detail-buku', ['buku', $item->buku->slug]) }}" class="hover:underline">
                                         <h5 class="line-clamp-2 text-base font-semibold leading-[1.25] lg:text-lg lg:leading-[1.125]">
                                             {{$item->buku->judul}}
                                         </h5>
@@ -240,7 +240,7 @@
                     <div class="mb-4 space-y-4">
                         @foreach (GeneralHelper::popularItem() as $item)
                             <figure class="group relative space-y-2">
-                                <a class="absolute inset-0 z-10 h-full w-full" href="{!! route('detail-buku', [$item->kategori[0]->slug , $item->slug]) !!}"></a>
+                                <a class="absolute inset-0 z-10 h-full w-full" href="{!! route('detail-buku', ['buku', $item->slug]) !!}"></a>
                                 <h5 class="text-sm font-semibold group-hover:underline">
                                     {{$item->judul}}
                                 </h5>

@@ -12,7 +12,7 @@
            "@type": "ListItem",
            "position": 1,
            "name": "Category",
-           "item": "{{url('/')}}"
+           "item": "{{url('/category')}}"
          },{
            "@type": "ListItem",
            "position": 2,
@@ -21,9 +21,14 @@
          },{
            "@type": "ListItem",
            "position": 3,
-           "name": "{{ Str::ucfirst($buku->judul) }}",
-           "item": "{{ route('detail-buku', [$kategori->slug, $buku->slug]) }}s"
-         }]
+           "name": "{{ Str::ucfirst($buku->kategori[1]->name) }}",
+           "item": "{{ route('buku', $buku->kategori[1]->slug) }}"
+         },{
+            "@type": "ListItem",
+            "position": 4,
+            "name": "{{ Str::ucfirst($buku->judul) }}",
+            "item": "{{ route('detail-buku', [$kategori->slug, $buku->slug]) }}s"
+          }]
        }
     </script>
     <style>
@@ -375,7 +380,7 @@
                         <div class="grid grid-cols-3 gap-2">
 
                             @foreach (GeneralHelper::getRandomGetBook($kategori->slug) as $item)
-                                <a href="{{ route('detail-buku', [$kategori->slug, $item->slug]) }}">
+                                <a href="{{ route('detail-buku', ['buku', $item->slug]) }}">
                                     {{-- <a href=""> --}}
                                     <img style="height: 176px; width: 118px;"
                                     class="lazy-img"

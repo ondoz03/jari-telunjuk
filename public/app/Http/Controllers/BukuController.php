@@ -129,7 +129,7 @@ class BukuController extends Controller
     public function getRandomBookHomepage(Request $request)
     {
         $buku = Buku::with(['detail_buku', 'kategori'])->whereHas('kategori', function ($q) {
-            $q->whereIn('slug', ['fiction-literature-ebook', 'nonfiksi', 'history-ebook', 'psychology-ebook', 'romantis', 'fiksi', 'fiksi-ilmiah', 'fiksi-dewsa', 'fiksi-sejarah', 'nonfiksi']);
+            $q->whereIn('slug', ['fiction-literature-ebook', 'nonfiksi', 'history-ebook', 'psychology-ebook', 'romantis']);
         })
             // ->whereHas('kategori', function ($q) {
             //     $q->whereIn('slug', ['fiction-literature', 'non-fiction', 'history', 'psychology', 'romance']);
