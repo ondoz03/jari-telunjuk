@@ -60,23 +60,16 @@ class siteMaps extends Command
         $siteMapBuku->writeTofile(public_path('sitemap_buku.xml'));
 
         //autor
-        $buku = Buku::where('penulis', '!=', '')->get();
-
-        $filteredBuku = $buku->filter(function ($book) {
-            return $book->penulis !== '';
-        })->unique('penulis')->values()->map(function ($book) {
-            // You can modify the structure of the book or just return it as is
-            return [
-                'author' => Str::slug($book->penulis),
-            ];
-        });
-
+        $bukus = Buku::where('penulis', '!=', '')->where('penulis', '!=', '[]')->get();
         $siteMapPenulis = Sitemap::create();
-        foreach ($filteredBuku as $key => $value) {
-            $siteMapPenulis->add(Url::create('author/profile/' . $value['author'])->setPriority(0.6)
-                ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
+        foreach ($bukus as $key => $buku) {
+            if ($buku->penulis !== null) {
+                foreach ($buku->penulis_array as $k => $value) {
+                    $siteMapPenulis->add(Url::create('author/profile/' . strtolower(str_replace(' ', '-', $value['key'])))->setPriority(0.6)
+                        ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
+                }
+            }
         }
-
         $siteMapPenulis->writeTofile(public_path('sitemap_author.xml'));
     }
 }
