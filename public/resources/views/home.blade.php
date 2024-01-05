@@ -876,36 +876,41 @@
                     var list_book = data;
                     var html = '';
 
-                    selectedBooks.each(function() {
-                        var parentElement = $(this).parent();
-                        var parentInnerHTML = parentElement.html();
+                    if(selectedBooks.length > 0){
+                        selectedBooks.each(function() {
+                            var parentElement = $(this).parent();
+                            var parentInnerHTML = parentElement.html();
 
-                        html = html + '<div class="astro-J7PV25F6">' + parentInnerHTML + '</div>';
+                            html = html + '<div class="astro-J7PV25F6">' + parentInnerHTML + '</div>';
+                            $("#book-list-recommendation").html(html);
+                            $("#book-list-recommendation .astro-J7PV25F6 input[name='book_selected']").prop('checked', true);
+                        });
+                    } else{
                         $("#book-list-recommendation").html(html);
-                        $("#book-list-recommendation .astro-J7PV25F6 input[name='book_selected']").prop('checked', true);
-                    });
-
+                    }
 
 
                     if (data.length > 0) {
                         $("#book-list-recommendation").show();
 
                         $.each(list_book, function (index, value) {
-                            var shortText = jQuery.trim(value.judul).substring(0, 30).split(" ").slice(0, -1).join(" ") + "...";
-                            htmlnew = '<div class="astro-J7PV25F6">\
-                                <input type="checkbox" id="list_book_' +  value.id + '" value="' + value.id + '" class="checkbox peer hidden astro-J7PV25F6 bookpicker" name="book_selected">\
-                                <label for="list_book_' +  value.id + '" class="peer-checked:leading-2 w-full cursor-pointer text-sm font-normal peer-checked:bg-red-400 peer-checked:font-[sans-serif] peer-checked:font-semibold lg:peer-checked:text-[0.75rem] [&>img]:shadow-md peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\
-                                <figure class="relative space-y-3 astro-J7PV25F6">\
-                                    <img  style="height:120px !important" class="h-auto lazy-img w-full astro-J7PV25F6" data-src="' + value.image + '" alt="' + value.judul + '">\
-                                    <div class="pointer-events-none leading-5 astro-J7PV25F6">\
-                                        ' + shortText + '\
-                                    </div>\
-                                </figure>\
-                                </label>\
-                            </div>';
-                        $("#book-list-recommendation").append(htmlnew);
-
+                            if ($("#list_book_" + value.id).length < 1) {
+                                var shortText = jQuery.trim(value.judul).substring(0, 30).split(" ").slice(0, -1).join(" ") + "...";
+                                htmlnew = '<div class="astro-J7PV25F6">\
+                                    <input type="checkbox" id="list_book_' +  value.id + '" value="' + value.id + '" class="checkbox peer hidden astro-J7PV25F6 bookpicker" name="book_selected">\
+                                    <label for="list_book_' +  value.id + '" class="peer-checked:leading-2 w-full cursor-pointer text-sm font-normal peer-checked:bg-red-400 peer-checked:font-[sans-serif] peer-checked:font-semibold lg:peer-checked:text-[0.75rem] [&>img]:shadow-md peer-checked:[&>img]:shadow-2xl astro-J7PV25F6">\
+                                    <figure class="relative space-y-3 astro-J7PV25F6">\
+                                        <img  style="height:120px !important" class="h-auto lazy-img w-full astro-J7PV25F6" data-src="' + value.image + '" alt="' + value.judul + '">\
+                                        <div class="pointer-events-none leading-5 astro-J7PV25F6">\
+                                            ' + shortText + '\
+                                        </div>\
+                                    </figure>\
+                                    </label>\
+                                </div>';
+                            $("#book-list-recommendation").append(htmlnew);
+                            }
                         });
+
                         $('#search-empty').html('');
                     } else {
                         html = `<section class="flex flex-col items-center justify-center gap-6 p-4 lg:p-0">
