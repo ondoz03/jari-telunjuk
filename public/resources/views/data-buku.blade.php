@@ -1,6 +1,6 @@
 @foreach ($buku as $item)
     <figure class="group relative item-buku'">
-        <a href="{{ route('detail-buku', [$kategori->slug, $item->slug]) }}"
+        <a href="{{ route('detail-buku', ['buku', $item->slug]) }}"
             class="absolute z-10 h-full w-full object-cover"></a>
 
         <img class="mb-6 w-full lazy-img"
