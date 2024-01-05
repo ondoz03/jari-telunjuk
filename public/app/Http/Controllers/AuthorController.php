@@ -21,7 +21,7 @@ class AuthorController extends Controller
             $buku = $buku->where(DB::raw('lower(penulis)'), 'like', '%' . strtolower($value) . '%');
         }
         // ->where('penulis', 'like', '%' . $author . '%')
-        $buku = $buku->get();
+        $buku = $buku->paginate(4);
         if (empty($buku->toArray())) {
             abort(404);
         }
@@ -45,6 +45,12 @@ class AuthorController extends Controller
         $encodedJson = json_encode($result, JSON_PRETTY_PRINT);
         $decodedJson = json_decode($encodedJson);
         $resultJson = str_replace('\/\/', '//', json_encode($decodedJson, JSON_PRETTY_PRINT));
+
+        if ($request->ajax()) {
+            $view = view('author.data-buku', compact('buku'))->render();
+
+            return response()->json(['html' => $view]);
+        }
 
         return view('author.profile', compact('buku', 'author_name', 'resultJson'));
     }
