@@ -12,7 +12,7 @@
           "@type": "Person",
           "name": "{{$author_name}}"
         },
-        "hasPart" => {!! $resultJson !!}
+        "hasPart" : {!! $resultJson !!}
       }
     </script>
 @endsection
