@@ -29,7 +29,7 @@ class AuthorController extends Controller
 
         $map = $buku->map(function ($q) {
             return [
-                "@type" => "Article",
+                "@type" => "book",
                 "headline" => $q->judul,
                 "url" => str_replace('\/', '/', route('detail-buku', ['buku', $q->slug])),
                 "datePublished" => $q->detail_buku->tgl_rilis,
