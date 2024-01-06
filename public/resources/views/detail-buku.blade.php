@@ -62,7 +62,7 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org/",
-        "@type": "Game",
+        "@type": "Book",
         "name": "{{ $buku->judul }}",
         "review": {
             "@type": "Review",
