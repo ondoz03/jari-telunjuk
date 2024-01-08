@@ -211,7 +211,7 @@
                     <div class="my-4 hidden h-px w-full bg-[#dcdcdc] lg:block"></div>
                     @if(count($user->user_want_read->where('status', '2')) > 0)
                         <div class=" gap-4 lg:grid-cols-4 lg:gap-6">
-                            @foreach ($user->user_want_read->where('status', '2')->sortByDesc('id')->take(5) as $item)
+                            @foreach ($user->user_want_read->where('status', '2')->sortByDesc('updated_at')->take(5) as $item)
                                 <a href="{{ route('detail-buku', ['buku', $item->buku->slug]) }}" class="hover:underline">
                                     <h5 class="line-clamp-2 text-base font-semibold leading-[1.25] lg:text-lg lg:leading-[1.125]">
                                         {{$item->buku->judul}}
