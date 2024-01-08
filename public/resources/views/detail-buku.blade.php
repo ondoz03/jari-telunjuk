@@ -55,9 +55,6 @@
           }
 
         @endif
-
-
-
     </script>
     <script type="application/ld+json">
     {
@@ -66,9 +63,8 @@
         "itemReviewed": {
             "@type": "Book",
             "image": "{{ $buku->image }}",
-            "name": "{{ $buku->judul }}",
-            "servesCuisine": "Book",
-        }
+            "name": "{{ $buku->judul }}"
+        },
         "ratingValue": "{{$buku->count_rating == 0 ? 3 : $buku->count_rating}}",
         "bestRating": "5",
         "ratingCount": "{{$buku->reviews()->count()}}"
