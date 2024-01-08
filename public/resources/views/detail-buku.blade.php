@@ -62,21 +62,20 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org/",
-        "@type": "Book",
-        "name": "{{ $buku->judul }}",
-        "review": {
-            "@type": "Review",
-            "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "{{$buku->count_rating == 0 ? 3 : $buku->count_rating}}"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "{{ $buku->penulis }}"
-            }
-        }
+        "@type": "AggregateRating",
+        "itemReviewed": {
+            "@type": "Book",
+            "image": "{{ $buku->image }}",
+            "name": "{{ $buku->judul }}",
+            "servesCuisine": "Book",
+        },
+        "ratingValue": "{{$buku->count_rating == 0 ? 3 : $buku->count_rating}}",
+        "bestRating": "5",
+        "ratingCount": "{{$buku->reviews()->count()}}"
     }
+
     </script>
+
     <style>
         .checked {
             color: orange;
