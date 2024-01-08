@@ -68,7 +68,7 @@
             "image": "{{ $buku->image }}",
             "name": "{{ $buku->judul }}",
             "servesCuisine": "Book",
-        },
+        }
         "ratingValue": "{{$buku->count_rating == 0 ? 3 : $buku->count_rating}}",
         "bestRating": "5",
         "ratingCount": "{{$buku->reviews()->count()}}"
