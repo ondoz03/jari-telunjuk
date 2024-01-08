@@ -203,7 +203,7 @@
 
                 <section class="relative mb-8">
                     <header class="mb-2 space-y-4">
-                        <h3 class="font-arvo text-2xl leading-7 lg:text-3xl">Currently to Read</h3>
+                        <h3 class="font-arvo text-2xl leading-7 lg:text-3xl">Currently Read</h3>
 
                         <p class="text-sm font-semibold">
                         </p>
@@ -211,7 +211,7 @@
                     <div class="my-4 hidden h-px w-full bg-[#dcdcdc] lg:block"></div>
                     @if(count($user->user_want_read->where('status', '2')) > 0)
                         <div class=" gap-4 lg:grid-cols-4 lg:gap-6">
-                            @foreach ($user->user_want_read->take(5) as $item)
+                            @foreach ($user->user_want_read->where('status', '2')->orderBy('id', 'desc')->take(5) as $item)
                                 @if ($item->status === '2')
                                     <a href="{{ route('detail-buku', ['buku', $item->buku->slug]) }}" class="hover:underline">
                                         <h5 class="line-clamp-2 text-base font-semibold leading-[1.25] lg:text-lg lg:leading-[1.125]">
