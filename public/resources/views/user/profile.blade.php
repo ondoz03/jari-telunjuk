@@ -211,19 +211,17 @@
                     <div class="my-4 hidden h-px w-full bg-[#dcdcdc] lg:block"></div>
                     @if(count($user->user_want_read->where('status', '2')) > 0)
                         <div class=" gap-4 lg:grid-cols-4 lg:gap-6">
-                            @foreach ($user->user_want_read->where('status', '2')->orderBy('id', 'desc')->take(5) as $item)
-                                @if ($item->status === '2')
-                                    <a href="{{ route('detail-buku', ['buku', $item->buku->slug]) }}" class="hover:underline">
-                                        <h5 class="line-clamp-2 text-base font-semibold leading-[1.25] lg:text-lg lg:leading-[1.125]">
-                                            {{$item->buku->judul}}
-                                        </h5>
-                                    </a>
+                            @foreach ($user->user_want_read->where('status', '2')->sortByDesc('id')->take(5) as $item)
+                                <a href="{{ route('detail-buku', ['buku', $item->buku->slug]) }}" class="hover:underline">
+                                    <h5 class="line-clamp-2 text-base font-semibold leading-[1.25] lg:text-lg lg:leading-[1.125]">
+                                        {{$item->buku->judul}}
+                                    </h5>
+                                </a>
 
-                                    <a href="{{ route('author', $item->buku->penulis) }}" class="text-sm text-[#515151] hover:underline">
-                                        by {{$item->buku->penulis}}
-                                    </a>
-                                    <div class="my-4 hidden h-px w-full bg-[#dcdcdc] lg:block"></div>
-                                @endif
+                                <a href="{{ route('author', $item->buku->penulis) }}" class="text-sm text-[#515151] hover:underline">
+                                    by {{$item->buku->penulis}}
+                                </a>
+                                <div class="my-4 hidden h-px w-full bg-[#dcdcdc] lg:block"></div>
                             @endforeach
                         </div>
                     @endif
