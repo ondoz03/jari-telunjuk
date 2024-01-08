@@ -81,7 +81,8 @@ class ProfileController extends Controller
                     ->where('buku_id', $request->buku_id)->update([
                         'status' => '0'
                     ]);
-                return true;
+                $countWantRead =  count(auth()->user()->user_want_read->where('status', '2'));
+                return $countWantRead;
             } else if ($request->type == 'update') {
                 UserWantRead::updateorcreate([
                     'user_id' => Auth::user()->id,
@@ -89,7 +90,9 @@ class ProfileController extends Controller
                 ], [
                     'status' => '2'
                 ]);
-                return true;
+
+                $countWantRead =  count(auth()->user()->user_want_read->where('status', '2'));
+                return $countWantRead;
             }
         }
         return false;
