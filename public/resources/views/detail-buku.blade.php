@@ -290,19 +290,27 @@
                                             class="noWantToRead w-60 rounded-full px-5 py-3 text-center text-base leading-6 text-white" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
                                             Remove
                                         </a>
-                                        @if(count(auth()->user()->user_want_read->where('status', '2')) < 5)
+                                        @guest
                                             <a onclick="wantToRead(this, '{{ $buku->id }}', 'update')" style="{{$user_want_read->status === '0' || $user_want_read->status === '1' ? '' : 'display: none;'}}"
                                                 class="caWantToRead w-60 rounded-full border border-black bg-white px-5 py-3 text-center text-base leading-6 text-black transition-all duration-300 ease-out hover:bg-black/10">
                                                 Currently Read
                                             </a>
+                                        @else
+                                            @if(count(auth()->user()->user_want_read->where('status', '2')) < 5)
+                                                <a onclick="wantToRead(this, '{{ $buku->id }}', 'update')" style="{{$user_want_read->status === '0' || $user_want_read->status === '1' ? '' : 'display: none;'}}"
+                                                class="caWantToRead w-60 rounded-full border border-black bg-white px-5 py-3 text-center text-base leading-6 text-black transition-all duration-300 ease-out hover:bg-black/10">
+                                                Currently Read
+                                                </a>
+                                            @endif
+
+                                            @if (auth()->user()->user_want_read->where('status', '2')->where('buku_id', $buku->id)->first())
+                                                <a onclick="wantToRead(this, '{{ $buku->id }}', 'update')" style="{{$user_want_read->status === '0' || $user_want_read->status === '1' ? '' : 'display: none;'}}"
+                                                    class="caWantToRead w-60 rounded-full border border-black bg-white px-5 py-3 text-center text-base leading-6 text-black transition-all duration-300 ease-out hover:bg-black/10">
+                                                    Currently Read
+                                                </a>
+                                            @endif
                                         @endif
 
-                                        @if (auth()->user()->user_want_read->where('status', '2')->where('buku_id', $buku->id)->first())
-                                            <a onclick="wantToRead(this, '{{ $buku->id }}', 'update')" style="{{$user_want_read->status === '0' || $user_want_read->status === '1' ? '' : 'display: none;'}}"
-                                                class="caWantToRead w-60 rounded-full border border-black bg-white px-5 py-3 text-center text-base leading-6 text-black transition-all duration-300 ease-out hover:bg-black/10">
-                                                Currently Read
-                                            </a>
-                                        @endif
                                 </div>
 
                                 <div class="mt-2 flex flex-col items-center">
@@ -332,19 +340,26 @@
                                         class="noWantToRead w-40 rounded-full px-5 py-3 text-center text-base leading-6 text-white" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
                                         Remove
                                     </a>
-
-                                    @if(count(auth()->user()->user_want_read->where('status', '2')) < 5)
-                                        <a onclick="wantToRead(this, '{{ $buku->id }}', 'update')" style="{{$user_want_read->status === '0' || $user_want_read->status === '1'  ? '' : 'display: none;'}};cursor: pointer;"
-                                            class="caWantToRead rounded-full border-[1.5px] border-black bg-white stroke-black px-5 py-3 text-base leading-6 text-black transition-all duration-300 ease-out hover:bg-black/10">
-                                            Currently Read
-                                        </a>
-                                    @endif
-
-                                    @if (auth()->user()->user_want_read->where('status', '2')->where('buku_id', $buku->id)->first())
+                                    @guest
                                         <a onclick="wantToRead(this, '{{ $buku->id }}', 'update')" style="{{$user_want_read->status === '0' || $user_want_read->status === '1' ? '' : 'display: none;'}}"
                                             class="caWantToRead w-60 rounded-full border border-black bg-white px-5 py-3 text-center text-base leading-6 text-black transition-all duration-300 ease-out hover:bg-black/10">
                                             Currently Read
                                         </a>
+                                     @else
+                                        @if(count(auth()->user()->user_want_read->where('status', '2')) < 5)
+                                            <a onclick="wantToRead(this, '{{ $buku->id }}', 'update')" style="{{$user_want_read->status === '0' || $user_want_read->status === '1'  ? '' : 'display: none;'}};cursor: pointer;"
+                                                class="caWantToRead rounded-full border-[1.5px] border-black bg-white stroke-black px-5 py-3 text-base leading-6 text-black transition-all duration-300 ease-out hover:bg-black/10">
+                                                Currently Read
+                                            </a>
+                                        @endif
+
+                                        @if (auth()->user()->user_want_read->where('status', '2')->where('buku_id', $buku->id)->first())
+                                            <a onclick="wantToRead(this, '{{ $buku->id }}', 'update')" style="{{$user_want_read->status === '0' || $user_want_read->status === '1' ? '' : 'display: none;'}}"
+                                                class="caWantToRead w-60 rounded-full border border-black bg-white px-5 py-3 text-center text-base leading-6 text-black transition-all duration-300 ease-out hover:bg-black/10">
+                                                Currently Read
+                                            </a>
+                                        @endif
+
                                     @endif
                             </div>
 
