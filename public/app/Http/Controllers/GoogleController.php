@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Auth\Events\Registered;
 
 class GoogleController extends Controller
 {
@@ -37,6 +38,9 @@ class GoogleController extends Controller
         if ($find_user) {
             $find_user->avatar = $user->getAvatar();
             $find_user->save();
+
+            event(new Registered($user));
+
             Auth::login($find_user);
 
             return $this->actionDetailBook();
@@ -47,6 +51,8 @@ class GoogleController extends Controller
                 'email' => $user->getEmail(),
                 'avatar' => $user->getAvatar(),
             ]);
+
+            event(new Registered($new_user));
 
             Auth::login($new_user);
 
