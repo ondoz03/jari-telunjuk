@@ -15,7 +15,7 @@ use Laravel\Scout\Searchable;
 use Laravel\Scout\Attributes\SearchUsingPrefix;
 use Laravel\Scout\Builder;
 
-class User extends Authenticatable implements HasMedia
+class User extends Authenticatable implements HasMedia,MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles,  InteractsWithMedia, Searchable;
 

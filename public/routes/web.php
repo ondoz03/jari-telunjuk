@@ -15,6 +15,7 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\PrivacyPolicyController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\VerificationController;
 use App\Models\Kategori;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,12 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 Route::get('/testing', [TestController::class, 'index'])->name('ajax.testing');
+
+Route::group(['prefix' => 'verify'], function () {
+    Route::get('/email/verify', [VerificationController::class, 'show'])->name('verification.notice');
+    Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify')->middleware(['signed']);
+    Route::post('/email/resend', [VerificationController::class, 'resend'])->name('verification.resend');
+});
 
 Route::group(['prefix' => 'ajax'], function () {
 
@@ -69,7 +76,7 @@ Route::group(['prefix' => 'auth'], function () {
     Route::get('/facebook/callback', [FacebookController::class, 'callback'])->name('auth.facebook.callback');
 });
 
-Route::group(['prefix' => 'user'], function () {
+Route::group(['prefix' => 'user', 'middleware' => ['verified']], function () {
     Route::get('/', [ProfileController::class, 'index'])->name('user.index');
     Route::get('/profile', [ProfileController::class, 'index'])->name('user.profile');
     Route::get('/logout', [ProfileController::class, 'logout'])->name('user.logout');
