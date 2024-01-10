@@ -82,6 +82,10 @@ Route::group(['prefix' => 'user', 'middleware' => ['verified']], function () {
     Route::get('/logout', [ProfileController::class, 'logout'])->name('user.logout');
 });
 
+Route::group(['prefix' => 'user'], function () {
+    Route::get('/logout', [ProfileController::class, 'logout'])->name('user.logout');
+});
+
 Route::group(['prefix' => 'author'], function () {
     Route::get('/profile/{slug}', [AuthorController::class, 'author'])->name('author');
 });
