@@ -367,10 +367,10 @@
                             </div>
 
                             @guest
+                            @else
                                 @if (count(auth()->user()->user_want_read->where('status', '2')) >= 5)
                                     *Kamu mencapai batas maksimum Currently Read (5)
                                 @endif
-                            @else
                             @endif
 
                             <div class="Description text-base xl:border-t xl:border-stone-300 xl:pt-4">
