@@ -44,7 +44,7 @@ class SignUpController extends Controller
                 'password' => bcrypt($request->password),
             ]);
             Auth::login($new_user);
-            if(isset(session('category_session')) && !empty(json_decode(session('category_session')))){
+            if(session('category_session') && !empty(json_decode(session('category_session')))){
                 foreach (json_decode(session('category_session')) as $key => $value) {
                     UserKategori::create([
                         'user_id' => Auth::user()->id,
