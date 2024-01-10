@@ -65,7 +65,7 @@
             "image": "{{ $buku->image }}",
             "name": "{{ $buku->judul }}"
         },
-        "ratingValue": "{{$buku->count_rating == 0 ? 3 : $buku->count_rating}}",
+        "ratingValue": "{{$buku->count_rating == 0 ? 4 : $buku->count_rating}}",
         "bestRating": "5",
         "ratingCount": "{{$buku->reviews()->count() == 0 ? 20 : $buku->reviews()->count()}}"
     }
@@ -309,7 +309,9 @@
                                                     Currently Read
                                                 </a>
                                             @endif
+
                                         @endif
+
 
                                 </div>
 
@@ -324,6 +326,7 @@
                                     </div>
                                 </div>
                             </div>
+
 
                             <div class="block w-full pb-3 pt-4 xl:hidden">
                                 <div class="h-px w-full bg-[#DCDCDC]"></div>
@@ -362,6 +365,13 @@
 
                                     @endif
                             </div>
+
+                            @guest
+                                @if (count(auth()->user()->user_want_read->where('status', '2')) >= 5)
+                                    *Kamu mencapai batas maksimum Currently Read (5)
+                                @endif
+                            @else
+                            @endif
 
                             <div class="Description text-base xl:border-t xl:border-stone-300 xl:pt-4">
                                 <h5 class="font-arvo text-lg font-bold leading-[34px] text-[#212121]">
