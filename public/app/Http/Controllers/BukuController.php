@@ -183,7 +183,7 @@ class BukuController extends Controller
         $category_session = json_decode($request->selected_book_categori);
 
         $buku = Buku::where('judul', 'like', "%" . $request->search . "%");
-        if(in_array('nonfiksi-dewasa', $category_session)){
+        if(in_array('nonfiksi-dewasa', $category_session) || in_array('61', $category_session)){
             $buku = $buku->whereHas('kategori', function ($q) use ($category_session) {
                 $q->whereIn('kategori_id', $category_session);
                 $q->whereNotIn('slug', ['pendidikan', 'nonfiksi', 'soal-ulangan', 'industri-rumah-tangga', 'kehamilan-persalinan', 'usia-sekolah', 'desain', 'persiapan-ujian']);
