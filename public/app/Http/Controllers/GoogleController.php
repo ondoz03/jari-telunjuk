@@ -56,8 +56,6 @@ class GoogleController extends Controller
 
             Auth::login($new_user);
 
-            $this->actionDetailBook();
-
             if(!empty(json_decode(session('category_session')))){
                 foreach (json_decode(session('category_session')) as $key => $value) {
                     UserKategori::create([
@@ -74,6 +72,9 @@ class GoogleController extends Controller
                     ]);
                 }
             }
+            
+            $this->actionDetailBook();
+
 
 
             if(!empty(session('redirect_profile'))) {
