@@ -182,9 +182,26 @@ class BukuController extends Controller
 
         $category_session = json_decode($request->selected_book_categori);
 
-        $buku = Buku::where('judul', 'like', "%" . $request->search . "%")->whereHas('kategori', function ($q) use ($category_session) {
-            $q->whereIn('kategori_id', $category_session);
-        })->take(14)->get();
+        $buku = Buku::where('judul', 'like', "%" . $request->search . "%");
+        if(in_array('nonfiksi-dewasa', $category_session)){
+            $buku = $buku->whereHas('kategori', function ($q) use ($category_session) {
+                $q->whereIn('kategori_id', $category_session);
+                $q->whereNotIn('slug', ['pendidikan', 'nonfiksi', 'soal-ulangan', 'industri-rumah-tangga', 'kehamilan-persalinan', 'usia-sekolah', 'desain', 'persiapan-ujian']);
+            });
+            $buku = $buku->where('judul', 'ILIKE', '%Ensiklopedia%');
+            $buku = $buku->where('judul', 'ILIKE', '%Kamus%');
+            $buku = $buku->where('judul', 'ILIKE', '%Jago Kuasai%');
+            $buku = $buku->where('judul', 'ILIKE', '%Seri Cerita%');
+            $buku = $buku->where('judul', 'ILIKE', '%CPNS%');
+            $buku = $buku->where('judul', 'ILIKE', '%Ujian Sekolah%');
+            $buku = $buku->where('judul', 'ILIKE', '%SBMPTN%');
+            $buku = $buku->where('judul', 'ILIKE', '%Seri Rumah%');
+        } else {
+            $buku = $buku->whereHas('kategori', function ($q) use ($category_session) {
+                $q->whereIn('kategori_id', $category_session);
+            });
+        }
+        $buku = $buku->take(14)->get();
 
 
         return response()->json($buku);
