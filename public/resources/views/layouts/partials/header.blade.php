@@ -76,25 +76,33 @@
                 <a class="text-base leading-5" href="{{route('home')}}">Home</a>
             </div>
             <div x-data="{ open: false }" class="flex justify-end">
-                <button @click="open = !open" class="flex items-center gap-2">
+                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
                     <img class="h-10 w-10 rounded-full border border-stone-300" src="{{(isset(GeneralHelper::userInfo()->avatar)) ? GeneralHelper::userInfo()->avatar : '#'}}" alt="Author 1">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M5 7L10 14L15 7H5Z" fill="#2E2E2E"></path>
                     </svg>
                 </button>
                 <!-- Dropdown menu -->
-                <div x-show="open" @click.away="open = false" class="absolute right-0 mt-14 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600" style="padding: 15px">
-                    <div class="flex flex-col gap-3 text-right">
-                        <a class="text-base leading-5" href="{{route('user.profile')}}">Profile</a>
-                        <a class="text-base leading-5" href="https://www.jaritelunjuk.com/blog/go/reading-tracker">Reading Challenge</a>
-                        <a class="text-base leading-5" href="/buku">Book</a>
-                        <a class="text-base leading-5" href="#">Help</a>
-                        <!-- <a class="text-base leading-5" href="../../blog">Manage Account</a> -->
-                        <a class="text-base leading-5 text-red-500" href="{{route('user.logout')}}">Logout</a>
+                <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                    <ul class="py-2 text-base text-gray-700 dark:text-gray-400 text-right" aria-labelledby="dropdownLargeButton">
+                      <li>
+                        <a href="{{route('user.profile')}}" class="block px-4 py-2 leading-5 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
+                      </li>
+                      <li>
+                        <a href="https://www.jaritelunjuk.com/blog/go/reading-tracker" class="block px-4 py-2 leading-5 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Reading Challenge</a>
+                      </li>
+                      <li>
+                        <a href="/buku" class="block px-4 py-2 leading-5 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Book</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 leading-5 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Help</a>
+                      </li>
+                    </ul>
+                    <div class="py-1">
+                      <a href="{{route('user.logout')}}" class="block px-4 py-2 text-right text-base text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
                     </div>
                 </div>
             </div>
-
         </nav>
     </div>
 </header>

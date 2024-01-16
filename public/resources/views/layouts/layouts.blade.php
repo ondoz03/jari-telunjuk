@@ -4,6 +4,9 @@
 <head>
     <meta charset=UTF-8>
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
     {!!GeneralHelper::urlBot()!!}
 
     <meta name="viewport"
@@ -80,6 +83,7 @@
           href="{{ asset('/assets') }}/front/404-recommendation.b4f51728.css"/>
     <link rel="stylesheet"
           href="{{ asset('/assets') }}/front/index.1e77ef8f.css"/>
+
 
     @yield('header-js')
 

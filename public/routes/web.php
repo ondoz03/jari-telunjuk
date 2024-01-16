@@ -15,6 +15,7 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\PrivacyPolicyController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ChallengeController;
 use App\Http\Controllers\VerificationController;
 use App\Models\Kategori;
 use Carbon\Carbon;
@@ -100,6 +101,10 @@ Route::group(['prefix' => 'about'], function () {
 
 Route::group(['prefix' => 'category'], function () {
     Route::get('/', [CategoryController::class, 'index'])->name('category');
+});
+
+Route::group(['prefix' => 'challenge'], function () {
+    Route::get('/', [ChallengeController::class, 'index'])->name('challenge');
 });
 
 Route::get('/', function () {
