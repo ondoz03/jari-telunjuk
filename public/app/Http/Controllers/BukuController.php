@@ -167,8 +167,17 @@ class BukuController extends Controller
 
         $buku = Buku::where('judul', 'like', "%" . $request->search . "%")->whereHas('kategori', function ($q) use ($category_session) {
             $q->whereIn('kategori_id', $category_session);
-        })->take(14)->get();
-
+        })->where('judul', 'not like', '%' . 'cpns' . '%')
+            ->where('judul', 'not like', '%' . 'sd' . '%')
+            ->where('judul', 'not like', '%' . 'ipa' . '%')
+            ->where('judul', 'not like', '%' . 'Ensiklopedia' . '%')
+            ->where('judul', 'not like', '%' . 'Kamus' . '%')
+            ->where('judul', 'not like', '%' . 'Jago Kuasai' . '%')
+            ->where('judul', 'not like', '%' . 'Seri Cerita' . '%')
+            ->where('judul', 'not like', '%' . 'Ujian Sekolah' . '%')
+            ->where('judul', 'not like', '%' . 'SBMPTN' . '%')
+            ->where('judul', 'not like', '%' . 'Seri Rumah' . '%')
+            ->take(14)->get();
 
         return response()->json($buku);
     }
