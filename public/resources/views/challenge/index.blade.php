@@ -255,7 +255,7 @@
                         if(!empty($item->challenge)){
                             $is_status = $item->challenge->is_status;
                         }else{
-                            if($item->status === 2){
+                            if($item->status === '2'){
                                 $is_status = 'reading';
                             }else{
                                 $is_status = 'to_read';
