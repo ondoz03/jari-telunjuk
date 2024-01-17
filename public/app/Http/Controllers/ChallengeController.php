@@ -26,7 +26,7 @@ class ChallengeController extends Controller
     public function list_book_reading()
     {
         $user_id = auth()->user()->id;
-        $data = UserWantRead::where('user_id', $user_id)->with(['buku', 'challenge'])->get();
+        $data = UserWantRead::where('status', '!=', '0')->where('user_id', $user_id)->with(['buku', 'challenge'])->get();
 
         return $data;
     }
