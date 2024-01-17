@@ -177,6 +177,18 @@ class BukuController extends Controller
             ->where('judul', 'not like', '%' . 'Ujian Sekolah' . '%')
             ->where('judul', 'not like', '%' . 'SBMPTN' . '%')
             ->where('judul', 'not like', '%' . 'Seri Rumah' . '%')
+            ->where('judul', 'not like', '%' . 'Pendidikan' . '%')
+            ->where('judul', 'not like', '%' . 'PR Interaktif' . '%')
+            ->where('judul', 'not like', '%' . 'SMA/MA' . '%')
+            ->where('judul', 'not like', '%' . 'Decoration' . '%')
+            ->where('judul', 'not like', '%' . 'Politik' . '%')
+            ->where('judul', 'not like', '%' . 'Desain' . '%')
+            ->where('judul', 'not like', '%' . 'Belajar Komputer' . '%')
+            ->where('judul', 'not like', '%' . 'Buku Siswa' . '%')
+            ->where('judul', 'not like', '%' . 'Peraturan' . '%')
+            ->where('judul', 'not like', '%' . 'Pemerintahan' . '%')
+            ->where('judul', 'not like', '%' . 'Administrasi' . '%')
+            ->where('judul', 'not like', '%' . 'Penjas' . '%')
             ->take(14)->get();
 
         return response()->json($buku);
