@@ -105,6 +105,7 @@ Route::group(['prefix' => 'category'], function () {
 
 Route::group(['prefix' => 'challenge'], function () {
     Route::get('/', [ChallengeController::class, 'index'])->name('challenge');
+    Route::post('/store', [ChallengeController::class, 'store'])->name('challenge.store');
 });
 
 Route::get('/', function () {

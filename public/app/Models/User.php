@@ -15,7 +15,7 @@ use Laravel\Scout\Searchable;
 use Laravel\Scout\Attributes\SearchUsingPrefix;
 use Laravel\Scout\Builder;
 
-class User extends Authenticatable implements HasMedia,MustVerifyEmail
+class User extends Authenticatable implements HasMedia, MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles,  InteractsWithMedia, Searchable;
 
@@ -92,6 +92,10 @@ class User extends Authenticatable implements HasMedia,MustVerifyEmail
         return $this->hasMany(Review::class)->with('buku');
     }
 
+    public function goal_chellange()
+    {
+        return $this->hasMany(ChallengeGoal::class);
+    }
 
     /**
      * Get the indexable data array for the model.
