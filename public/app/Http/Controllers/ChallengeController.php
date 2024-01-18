@@ -33,9 +33,12 @@ class ChallengeController extends Controller
             ->withSum('challenge', 'page_start')
             ->get()->sum('challenge_sum_page_start');
 
-        $persen_book = ($total_book_read / $buku_dashboard[0]['target_challenge']) * 100;
+        $book = !empty($buku_dashboard[0]['target_challenge']) ? $buku_dashboard[0]['target_challenge'] : 0;
+        $page = !empty($buku_dashboard[1]['target_challenge']) ? $buku_dashboard[1]['target_challenge'] : 0;
 
-        $persen_page = ($total_page_read / $buku_dashboard[1]['target_challenge']) * 100;
+        $persen_book = ($total_book_read /  $book) * 100;
+
+        $persen_page = ($total_page_read / $page) * 100;
 
         if ($persen_page >= 100) {
             $persen_page = 100;
