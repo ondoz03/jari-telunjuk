@@ -35,8 +35,7 @@ use Spatie\Sitemap\SitemapIndex;
 |
 */
 
-Route::group(['prefix' => 'admin'], function () {
-
+Route::group(['prefix' => 'esteh'], function () {
     Auth::routes([
         'register' => false, // Registration Routes...
         'reset' => false, // Password Reset Routes...
@@ -45,7 +44,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 
-Route::get('/testing', [TestController::class, 'index'])->name('ajax.testing');
+// Route::get('/testing', [TestController::class, 'index'])->name('ajax.testing');
 
 Route::group(['prefix' => 'verify'], function () {
     Route::get('/email/verify', [VerificationController::class, 'show'])->name('verification.notice');

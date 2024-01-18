@@ -22,9 +22,6 @@ Route::resource('kategori', KategoriController::class)->except([
 Route::get('kategori/search', [KategoriController::class, 'search'])->name('kategori.search');
 Route::post('kategori/faq/{uuid}', [KategoriController::class, 'updateFaq'])->name('kategori.faq');
 
-
-
-
 Route::resource('buku', App\Http\Controllers\Admin\BukuController::class)->except([
     'create', 'show'
 ]);
