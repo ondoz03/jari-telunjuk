@@ -4,7 +4,6 @@
 <head>
     <meta charset=UTF-8>
 
-
     {!!GeneralHelper::urlBot()!!}
 
     <meta name="viewport"
@@ -19,8 +18,8 @@
           crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap"
           rel="stylesheet">
-    {{-- <link href="https://fonts.cdnfonts.com/css/source-sans-pro"
-          rel="stylesheet"> --}}
+    <link href="https://fonts.cdnfonts.com/css/source-sans-pro"
+          rel="stylesheet">
 
           <script>
             !function (w, d, t) {
@@ -72,6 +71,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @yield('title')
+
     <link rel="stylesheet"
           href="{{ asset('assets') }}/front/404-recommendation.b4f51728.css"/>
     <link rel="stylesheet"
@@ -112,7 +112,6 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 
     {{-- <script type="module" src="{{ asset('assets') }}/front1/datepicker.js"></script> --}}
 

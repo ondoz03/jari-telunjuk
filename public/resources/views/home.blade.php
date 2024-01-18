@@ -19,7 +19,7 @@
                 <h1 class="mb-4 font-arvo text-2xl leading-7 xl:mb-6 xl:text-[42px] xl:leading-[34px] astro-J7PV25F6">
                     {{ GeneralHelper::settingPerpustakan('title_header') }}
                 </h1>
-                <p class=" text-base leading-6 astro-J7PV25F6">
+                <p class="max-w-[636px] text-base leading-6 astro-J7PV25F6">
                     {{ GeneralHelper::settingPerpustakan('body_header') }}
                 </p>
             </div>
