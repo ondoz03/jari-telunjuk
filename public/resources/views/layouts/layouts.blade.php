@@ -81,36 +81,36 @@
 
     @yield('title')
     <link rel="stylesheet"
-          href="{{ asset('/assets') }}/front/404-recommendation.b4f51728.css"/>
+          href="{{ asset('assets') }}/front/404-recommendation.b4f51728.css"/>
     <link rel="stylesheet"
-          href="{{ asset('/assets') }}/front/index.1e77ef8f.css"/>
+          href="{{ asset('assets') }}/front/index.1e77ef8f.css"/>
 
 
     @yield('header-js')
 
     <script type="module"
-            src="{{ asset('/assets') }}/front/hoisted.2e413d6c.js"></script>
+            src="{{ asset('assets') }}/front/hoisted.2e413d6c.js"></script>
     <script type="module"
-            src="{{ asset('/assets') }}/front/hoisted.25b3dcdb.js"></script>
+            src="{{ asset('assets') }}/front/hoisted.25b3dcdb.js"></script>
     <script type="module"
-            src="{{ asset('/assets') }}/front/hoisted.52eed5be.js"></script>
+            src="{{ asset('assets') }}/front/hoisted.52eed5be.js"></script>
     <script type="module"
-            src="{{ asset('/assets') }}/front/hoisted.56fd44db.js"></script>
+            src="{{ asset('assets') }}/front/hoisted.56fd44db.js"></script>
     <script type="module"
-            src="{{ asset('/assets') }}/front/hoisted.64f44cfb.js"></script>
+            src="{{ asset('assets') }}/front/hoisted.64f44cfb.js"></script>
 
     <script type="module"
-            src="{{ asset('/assets') }}/front/hoisted.7225d69c.js"></script>
+            src="{{ asset('assets') }}/front/hoisted.7225d69c.js"></script>
     <script type="module"
-            src="{{ asset('/assets') }}/front/hoisted.166569e6.js"></script>
+            src="{{ asset('assets') }}/front/hoisted.166569e6.js"></script>
     <script type="module"
-            src="{{ asset('/assets') }}/front/hoisted.440790ec.js"></script>
+            src="{{ asset('assets') }}/front/hoisted.440790ec.js"></script>
     <script type="module"
-            src="{{ asset('/assets') }}/front/hoisted.cfa70760.js"></script>
+            src="{{ asset('assets') }}/front/hoisted.cfa70760.js"></script>
     <script type="module"
-            src="{{ asset('/assets') }}/front/hoisted.aaf112db.js"></script>
+            src="{{ asset('assets') }}/front/hoisted.aaf112db.js"></script>
     <script type="module"
-            src="{{ asset('/assets') }}/front/hoisted.f5ae75b8.js"></script>
+            src="{{ asset('assets') }}/front/hoisted.f5ae75b8.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -234,7 +234,7 @@
                             <a href="{{ route('auth.google') }}"
                                class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
                                 <img class="h-6 w-6"
-                                     src="{{ asset('/assets') }}/media/icon-google.png"
+                                     src="{{ asset('assets') }}/media/icon-google.png"
                                      alt="Icon Google">
 
                                 <p class="text-base font-semibold leading-5">
@@ -283,7 +283,7 @@
         </h3>
 
         <div class="relative z-10 h-[calc(100vh_-_113px)] bg-white/95 px-6 pt-11 lg:h-auto lg:rounded-b-2xl lg:pb-14 lg:pt-11">
-            <img class="absolute left-1/2 top-1/2 h-auto w-full -translate-x-1/2 -translate-y-1/2" src="{{ asset('/assets/media') }}/books-blur.png" alt="Books Blur">
+            <img class="absolute left-1/2 top-1/2 h-auto w-full -translate-x-1/2 -translate-y-1/2" src="{{ asset('assets/media') }}/books-blur.png" alt="Books Blur">
             <div class="relative z-10 flex h-full flex-col items-center">
                 <h5 class="mb-6 text-center text-base font-bold">
 
@@ -291,7 +291,7 @@
 
                 <div class="flex w-full max-w-sm flex-col items-start gap-4">
                     <a href="{{ route('auth.google') }}" class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4">
-                        <img class="h-6 w-6" src="{{ asset('/assets/media') }}/icon-google.png" alt="Icon Google">
+                        <img class="h-6 w-6" src="{{ asset('assets/media') }}/icon-google.png" alt="Icon Google">
 
                         <p class="text-base font-semibold leading-5">Sign up with Google</p>
                     </a>
