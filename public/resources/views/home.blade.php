@@ -20,8 +20,7 @@
                     {{ GeneralHelper::settingPerpustakan('title_header') }}
                 </h1>
                 <p class=" text-base leading-6 astro-J7PV25F6">
-                    {{-- {{ GeneralHelper::settingPerpustakan('body_header') }} --}}
-
+                    {{ GeneralHelper::settingPerpustakan('body_header') }}
                 </p>
             </div>
 
