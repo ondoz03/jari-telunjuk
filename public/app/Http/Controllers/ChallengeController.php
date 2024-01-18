@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Challenge;
+use App\Models\ChallengeGoal;
 use App\Models\UserWantRead;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -19,8 +20,38 @@ class ChallengeController extends Controller
         }
 
         $buku = self::list_book_reading();
+        $user_id = auth()->user()->id;
 
-        return view('challenge.index', compact('buku'));
+        $buku_dashboard = ChallengeGoal::where('user_id', $user_id)->get();
+
+        $total_book_read = UserWantRead::where('status', '!=', '0')->where('user_id', $user_id)->whereHas('challenge', function ($q) {
+            $q->where('is_status', 'read');
+        })->count();
+
+        $total_page_read =  UserWantRead::where('status', '!=', '0')->where('user_id', $user_id)
+            ->whereHas('challenge')
+            ->withSum('challenge', 'page_start')
+            ->get()->sum('challenge_sum_page_start');
+
+        $persen_book = ($total_book_read / $buku_dashboard[0]['target_challenge']) * 100;
+
+        $persen_page = ($total_page_read / $buku_dashboard[1]['target_challenge']) * 100;
+
+        if ($persen_page >= 100) {
+            $persen_page = 100;
+        }
+
+        if ($persen_book >= 100) {
+            $persen_book = 100;
+        }
+
+
+
+        if (count($buku_dashboard) > 1) {
+            return view('challenge.index', compact('buku', 'buku_dashboard', 'total_book_read', 'total_page_read', 'persen_book', 'persen_page'));
+        } else {
+            return view('challenge.first-input');
+        }
     }
 
     public function list_book_reading()
@@ -39,16 +70,51 @@ class ChallengeController extends Controller
         $dateStringN = $request->date_ended;
         $carbonDateN = Carbon::createFromFormat('d/m/Y', $dateStringN);
 
+        if ($request->page_started >= $request->page_ended) {
+            $status = 'read';
+            $page_start = $request->page_ended;
+        } else {
+            $status = $request->status;
+            $page_start = $request->page_started;
+        }
+
         Challenge::updateorcreate([
             'user_want_read_id' => $request->id_want_read,
         ], [
             'start_date' => $carbonDateS->format('Y-m-d'),
             'end_date' => $carbonDateN->format('Y-m-d'),
-            'page_start' => $request->page_started,
+            'page_start' => $page_start,
             'page_end' => $request->page_ended,
-            'is_status' => $request->status,
+            'is_status' => $status,
         ]);
 
-        return redirect()->back();
+        return true;
+    }
+
+    public function store_dashboard(Request $request)
+    {
+
+        $arr = [
+            [
+                'name' => 'read_book',
+            ], [
+                'name' => 'page_book',
+            ],
+        ];
+
+        foreach ($arr as $key => $value) {
+
+            ChallengeGoal::updateorcreate(
+                [
+                    'name' => $value['name'],
+                    'user_id' => auth()->user()->id,
+                ],
+                [
+                    'target_challenge' => $request->target_challange[$key]
+                ]
+            );
+        }
+
+        return true;
     }
 }

@@ -76,14 +76,14 @@
                 <a class="text-base leading-5" href="{{route('home')}}">Home</a>
             </div>
             <div x-data="{ open: false }" class="flex justify-end">
-                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                <button  id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto">
                     <img class="h-10 w-10 rounded-full border border-stone-300" src="{{(isset(GeneralHelper::userInfo()->avatar)) ? GeneralHelper::userInfo()->avatar : '#'}}" alt="Author 1">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M5 7L10 14L15 7H5Z" fill="#2E2E2E"></path>
                     </svg>
                 </button>
                 <!-- Dropdown menu -->
-                <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                <div id="dropdownNavbar" class="z-10 right-0 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600 translate-x-full" style="transform: translate3d(1250px, 77.5px, 0px) !important;">
                     <ul class="py-2 text-base text-gray-700 dark:text-gray-400 text-right" aria-labelledby="dropdownLargeButton">
                       <li>
                         <a href="{{route('user.profile')}}" class="block px-4 py-2 leading-5 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
@@ -166,7 +166,7 @@
                 <div class="{{(GeneralHelper::authCheck()) ? 'relative' : 'hidden'}} my-0 h-px w-full bg-[#EBEBEB]">
                 </div>
 
-                <div class="{{(GeneralHelper::authCheck()) ? 'flex' : 'hidden'}} flex-col items-start gap-3">
+                <div  class="{{(GeneralHelper::authCheck()) ? 'flex' : 'hidden'}} flex-col items-start gap-3">
                     <figure class="h-10 w-10 rounded-full">
                         <img class="h-full w-full object-cover"
                              src="{{(isset(GeneralHelper::userInfo()->avatar)) ? GeneralHelper::userInfo()->avatar : '#'}}"

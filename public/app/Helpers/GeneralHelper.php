@@ -348,7 +348,28 @@ class GeneralHelper
             $buku = Cache::remember($cacheKey, now()->addMinutes(60), function () use ($user_category) {
                 return Buku::whereHas('kategori', function ($q) use ($user_category) {
                     $q->whereIn('kategori_id', $user_category);
-                })
+                })->where('judul', 'not like', '%' . 'cpns' . '%')
+                    ->where('judul', 'not like', '%' . 'sd' . '%')
+                    ->where('judul', 'not like', '%' . 'ipa' . '%')
+                    ->where('judul', 'not like', '%' . 'Ensiklopedia' . '%')
+                    ->where('judul', 'not like', '%' . 'Kamus' . '%')
+                    ->where('judul', 'not like', '%' . 'Jago Kuasai' . '%')
+                    ->where('judul', 'not like', '%' . 'Seri Cerita' . '%')
+                    ->where('judul', 'not like', '%' . 'Ujian Sekolah' . '%')
+                    ->where('judul', 'not like', '%' . 'SBMPTN' . '%')
+                    ->where('judul', 'not like', '%' . 'Seri Rumah' . '%')
+                    ->where('judul', 'not like', '%' . 'Pendidikan' . '%')
+                    ->where('judul', 'not like', '%' . 'PR Interaktif' . '%')
+                    ->where('judul', 'not like', '%' . 'SMA/MA' . '%')
+                    ->where('judul', 'not like', '%' . 'Decoration' . '%')
+                    ->where('judul', 'not like', '%' . 'Politik' . '%')
+                    ->where('judul', 'not like', '%' . 'Desain' . '%')
+                    ->where('judul', 'not like', '%' . 'Belajar Komputer' . '%')
+                    ->where('judul', 'not like', '%' . 'Buku Siswa' . '%')
+                    ->where('judul', 'not like', '%' . 'Peraturan' . '%')
+                    ->where('judul', 'not like', '%' . 'Pemerintahan' . '%')
+                    ->where('judul', 'not like', '%' . 'Administrasi' . '%')
+                    ->where('judul', 'not like', '%' . 'Penjas' . '%')
                     ->inRandomOrder()
                     ->take(8)
                     ->get();
@@ -386,7 +407,7 @@ class GeneralHelper
                 return '<span class="bg-orange-100 text-orange-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-orange-900 dark:text-orange-300">Reading</span>';
                 break;
             case 'reviewing':
-                return  '<span class="bg-orange-100 text-orange-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-orange-900 dark:text-orange-300">Reviewing</span>';
+                return  '<span class="bg-orange-100 text-orange-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-orange-900 dark:text-orange-300">eviewing</span>';
                 break;
             case 'read':
                 return  '<span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Read</span>';
