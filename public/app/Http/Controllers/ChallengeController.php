@@ -97,7 +97,7 @@ class ChallengeController extends Controller
         return true;
     }
 
-    public function store_dashboard(Request $request)
+    public function store_dashboard(Request $request, $type = 1)
     {
 
         $arr = [
@@ -121,6 +121,10 @@ class ChallengeController extends Controller
             );
         }
 
-        return true;
+        if ($type == 1) {
+            return true;
+        } else {
+            return back();
+        }
     }
 }

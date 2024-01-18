@@ -30,7 +30,7 @@
                             </h4>
                         </div>
 
-                        <form id="formChangesDashboard" action="{{route('challenge.store_dashboard')}}" method="post">
+                        <form id="formChangesDashboard" action="{{route('challenge.store_dashboard', ['type' => 0])}}" method="post">
                             @csrf
                             <div class="space-y-4">
                                 <div class="relative overflow-x-auto sm:rounded-lg">
