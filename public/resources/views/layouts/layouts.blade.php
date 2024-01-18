@@ -74,11 +74,6 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js"
-        defer
-    ></script>
-
     @yield('title')
     <link rel="stylesheet"
           href="{{ asset('assets') }}/front/404-recommendation.b4f51728.css"/>
