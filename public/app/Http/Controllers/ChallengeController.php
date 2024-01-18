@@ -36,9 +36,13 @@ class ChallengeController extends Controller
         $book = !empty($buku_dashboard[0]['target_challenge']) ? $buku_dashboard[0]['target_challenge'] : 0;
         $page = !empty($buku_dashboard[1]['target_challenge']) ? $buku_dashboard[1]['target_challenge'] : 0;
 
-        $persen_book = ($total_book_read /  $book) * 100;
-
-        $persen_page = ($total_page_read / $page) * 100;
+        if ($book > 0 && $page > 0) {
+            $persen_book = ($total_book_read /  $book) * 100;
+            $persen_page = ($total_page_read / $page) * 100;
+        } else {
+            $persen_book = 0;
+            $persen_page = 0;
+        }
 
         if ($persen_page >= 100) {
             $persen_page = 100;
@@ -47,7 +51,6 @@ class ChallengeController extends Controller
         if ($persen_book >= 100) {
             $persen_book = 100;
         }
-
 
 
         if (count($buku_dashboard) > 1) {
