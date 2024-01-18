@@ -4,10 +4,6 @@
 <head>
     <meta charset=UTF-8>
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
-    <script src="https://unpkg.com/flowbite-datepicker@1.2.2/dist/js/datepicker-full.js"></script>
-
 
     {!!GeneralHelper::urlBot()!!}
 
@@ -115,6 +111,9 @@
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
     {{-- <script type="module" src="{{ asset('assets') }}/front1/datepicker.js"></script> --}}
 
 
@@ -314,7 +313,7 @@
 
 
 
-function ready(callback){
+    function ready(callback){
         // in case the document is already rendered
         if (document.readyState!='loading') callback();
         // modern browsers
