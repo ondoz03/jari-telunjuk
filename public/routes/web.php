@@ -36,9 +36,13 @@ use Spatie\Sitemap\SitemapIndex;
 */
 
 Route::group(['prefix' => 'admin'], function () {
-    Auth::routes();
-});
 
+    Auth::routes([
+        'register' => false, // Registration Routes...
+        'reset' => false, // Password Reset Routes...
+        'verify' => false, // Email Verification Routes...
+    ]);
+});
 
 
 Route::get('/testing', [TestController::class, 'index'])->name('ajax.testing');
