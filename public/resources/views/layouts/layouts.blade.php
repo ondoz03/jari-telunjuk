@@ -80,21 +80,21 @@
 
     @yield('header-js')
 
-    {{-- <script type="module"
-            src="{{ asset('assets') }}/front/hoisted.2e413d6c.js"></script> --}}
-    {{-- <script type="module"
-            src="{{ asset('assets') }}/front/hoisted.25b3dcdb.js"></script> --}}
-    {{-- <script type="module"
-            src="{{ asset('assets') }}/front/hoisted.52eed5be.js"></script> --}}
-    {{-- <script type="module"
-            src="{{ asset('assets') }}/front/hoisted.56fd44db.js"></script> --}}
-    {{-- <script type="module"
-            src="{{ asset('assets') }}/front/hoisted.64f44cfb.js"></script> --}}
+    <script type="module"
+            src="{{ asset('assets') }}/front/hoisted.2e413d6c.js"></script>
+    <script type="module"
+            src="{{ asset('assets') }}/front/hoisted.25b3dcdb.js"></script>
+    <script type="module"
+            src="{{ asset('assets') }}/front/hoisted.52eed5be.js"></script>
+    <script type="module"
+            src="{{ asset('assets') }}/front/hoisted.56fd44db.js"></script>
+    <script type="module"
+            src="{{ asset('assets') }}/front/hoisted.64f44cfb.js"></script>
 
-            {{-- <script type="module"
+            <script type="module"
             src="{{ asset('assets') }}/front/hoisted.166569e6.js"></script>
             <script type="module"
-            src="{{ asset('assets') }}/front/hoisted.aaf112db.js"></script> --}}
+            src="{{ asset('assets') }}/front/hoisted.aaf112db.js"></script>
     <script type="module"
             src="{{ asset('assets') }}/front/hoisted.cfa70760.js"></script>
 

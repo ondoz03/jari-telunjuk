@@ -262,13 +262,13 @@
 
                         @guest
 
-                            <button id="book-recommendation" type="button" class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 astro-LUHUBFT3 ">
+                            <button id="book-recommendation" type="button" class="flex w-100 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 astro-LUHUBFT3 ">
                                 Coba Rekomendasi Buku
                             </button>
                         @else
                             <a
                                 href="{{route('user.profile')}}"
-                                class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 ">
+                                class="flex w-100 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 ">
                                 Coba Rekomendasi Buku
                             </a>
                         @endguest
@@ -815,9 +815,10 @@
         function listBookByCategory() {
             $(".countSelectedBook").text($("input[name='book_selected']:checked").length);
             $.ajax({
-                url: "{{ route('ajax.list-book-recommendation') }}",
+                url: "{{ route('ajax.list-book-recommendation') }}?data="+localStorage.getItem("selected-category-book"),
                 type: "GET",
-                data: {},
+                data: {
+                },
                 success: function (data) {
                     var list_book = data;
                     var html = '';

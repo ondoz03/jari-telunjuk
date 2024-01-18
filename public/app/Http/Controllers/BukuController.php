@@ -141,17 +141,63 @@ class BukuController extends Controller
         return $recomendasi;
     }
 
-    public static function getBookBySelectedCategory()
+    public static function getBookBySelectedCategory(Request $request)
     {
         $category_session = json_decode(session('category_session'));
+
         if (empty($category_session)) {
-            $buku = Buku::inRandomOrder()
+            $buku = Buku::whereHas('kategori', function ($q) use ($request) {
+                $q->whereIn('kategori_id', json_encode($request->data));
+            })->where('judul', 'not like', '%' . 'cpns' . '%')
+                ->where('judul', 'not like', '%' . 'sd' . '%')
+                ->where('judul', 'not like', '%' . 'ipa' . '%')
+                ->where('judul', 'not like', '%' . 'Ensiklopedia' . '%')
+                ->where('judul', 'not like', '%' . 'Kamus' . '%')
+                ->where('judul', 'not like', '%' . 'Jago Kuasai' . '%')
+                ->where('judul', 'not like', '%' . 'Seri Cerita' . '%')
+                ->where('judul', 'not like', '%' . 'Ujian Sekolah' . '%')
+                ->where('judul', 'not like', '%' . 'SBMPTN' . '%')
+                ->where('judul', 'not like', '%' . 'Seri Rumah' . '%')
+                ->where('judul', 'not like', '%' . 'Pendidikan' . '%')
+                ->where('judul', 'not like', '%' . 'PR Interaktif' . '%')
+                ->where('judul', 'not like', '%' . 'SMA/MA' . '%')
+                ->where('judul', 'not like', '%' . 'Decoration' . '%')
+                ->where('judul', 'not like', '%' . 'Politik' . '%')
+                ->where('judul', 'not like', '%' . 'Desain' . '%')
+                ->where('judul', 'not like', '%' . 'Belajar Komputer' . '%')
+                ->where('judul', 'not like', '%' . 'Buku Siswa' . '%')
+                ->where('judul', 'not like', '%' . 'Peraturan' . '%')
+                ->where('judul', 'not like', '%' . 'Pemerintahan' . '%')
+                ->where('judul', 'not like', '%' . 'Administrasi' . '%')
+                ->where('judul', 'not like', '%' . 'Penjas' . '%')
+                ->inRandomOrder()
                 ->limit(14)
                 ->get();
         } else {
             $buku = Buku::whereHas('kategori', function ($q) use ($category_session) {
                 $q->whereIn('kategori_id', $category_session);
-            })
+            })->where('judul', 'not like', '%' . 'cpns' . '%')
+                ->where('judul', 'not like', '%' . 'sd' . '%')
+                ->where('judul', 'not like', '%' . 'ipa' . '%')
+                ->where('judul', 'not like', '%' . 'Ensiklopedia' . '%')
+                ->where('judul', 'not like', '%' . 'Kamus' . '%')
+                ->where('judul', 'not like', '%' . 'Jago Kuasai' . '%')
+                ->where('judul', 'not like', '%' . 'Seri Cerita' . '%')
+                ->where('judul', 'not like', '%' . 'Ujian Sekolah' . '%')
+                ->where('judul', 'not like', '%' . 'SBMPTN' . '%')
+                ->where('judul', 'not like', '%' . 'Seri Rumah' . '%')
+                ->where('judul', 'not like', '%' . 'Pendidikan' . '%')
+                ->where('judul', 'not like', '%' . 'PR Interaktif' . '%')
+                ->where('judul', 'not like', '%' . 'SMA/MA' . '%')
+                ->where('judul', 'not like', '%' . 'Decoration' . '%')
+                ->where('judul', 'not like', '%' . 'Politik' . '%')
+                ->where('judul', 'not like', '%' . 'Desain' . '%')
+                ->where('judul', 'not like', '%' . 'Belajar Komputer' . '%')
+                ->where('judul', 'not like', '%' . 'Buku Siswa' . '%')
+                ->where('judul', 'not like', '%' . 'Peraturan' . '%')
+                ->where('judul', 'not like', '%' . 'Pemerintahan' . '%')
+                ->where('judul', 'not like', '%' . 'Administrasi' . '%')
+                ->where('judul', 'not like', '%' . 'Penjas' . '%')
                 ->inRandomOrder()
                 ->limit(14)
                 ->get();
