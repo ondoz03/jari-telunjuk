@@ -6,7 +6,8 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/datepicker.min.js"></script>
+    <script src="https://unpkg.com/flowbite-datepicker@1.2.2/dist/js/datepicker-full.js"></script>
+
 
     {!!GeneralHelper::urlBot()!!}
 
@@ -83,32 +84,39 @@
 
     @yield('header-js')
 
+    {{-- <script type="module"
+            src="{{ asset('assets') }}/front/hoisted.2e413d6c.js"></script> --}}
+    {{-- <script type="module"
+            src="{{ asset('assets') }}/front/hoisted.25b3dcdb.js"></script> --}}
+    {{-- <script type="module"
+            src="{{ asset('assets') }}/front/hoisted.52eed5be.js"></script> --}}
+    {{-- <script type="module"
+            src="{{ asset('assets') }}/front/hoisted.56fd44db.js"></script> --}}
+    {{-- <script type="module"
+            src="{{ asset('assets') }}/front/hoisted.64f44cfb.js"></script> --}}
+
+            {{-- <script type="module"
+            src="{{ asset('assets') }}/front/hoisted.166569e6.js"></script>
+            <script type="module"
+            src="{{ asset('assets') }}/front/hoisted.aaf112db.js"></script> --}}
     <script type="module"
-            src="{{ asset('assets') }}/front/hoisted.2e413d6c.js"></script>
-    <script type="module"
-            src="{{ asset('assets') }}/front/hoisted.25b3dcdb.js"></script>
-    <script type="module"
-            src="{{ asset('assets') }}/front/hoisted.52eed5be.js"></script>
-    <script type="module"
-            src="{{ asset('assets') }}/front/hoisted.56fd44db.js"></script>
-    <script type="module"
-            src="{{ asset('assets') }}/front/hoisted.64f44cfb.js"></script>
+            src="{{ asset('assets') }}/front/hoisted.cfa70760.js"></script>
 
     <script type="module"
             src="{{ asset('assets') }}/front/hoisted.7225d69c.js"></script>
-    <script type="module"
-            src="{{ asset('assets') }}/front/hoisted.166569e6.js"></script>
+
     <script type="module"
             src="{{ asset('assets') }}/front/hoisted.440790ec.js"></script>
-    <script type="module"
-            src="{{ asset('assets') }}/front/hoisted.cfa70760.js"></script>
-    <script type="module"
-            src="{{ asset('assets') }}/front/hoisted.aaf112db.js"></script>
+
+
     <script type="module"
             src="{{ asset('assets') }}/front/hoisted.f5ae75b8.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{-- <script type="module" src="{{ asset('assets') }}/front1/datepicker.js"></script> --}}
+
 
     <style>
         .lazy-img {
@@ -303,6 +311,34 @@
 
 
 <script type="text/javascript">
+
+
+
+function ready(callback){
+        // in case the document is already rendered
+        if (document.readyState!='loading') callback();
+        // modern browsers
+        else if (document.addEventListener) document.addEventListener('DOMContentLoaded', callback);
+        // IE <= 8
+        else document.attachEvent('onreadystatechange', function(){
+            if (document.readyState=='complete') callback();
+        });
+    }
+
+    ready(function(){
+        document.querySelectorAll('[datepicker]').forEach(function (datepickerEl) {
+          new window.Datepicker(datepickerEl);
+        });
+
+        document.querySelector('button').addEventListener('click', function () {
+          var input = document.createElement('input');
+          input.setAttribute('datepicker', '');
+          input.setAttribute('type', 'text');
+          document.body.appendChild(input);
+
+          new window.Datepicker(input);
+        });
+    });
 
     $('#btn-modal-login').click(function () {
         $("#modal-login").show();
