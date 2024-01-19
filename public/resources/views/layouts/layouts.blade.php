@@ -6,6 +6,9 @@
 
     {!!GeneralHelper::urlBot()!!}
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
     <meta name="viewport"
           content="width=device-width">
     <link rel="icon"
@@ -103,6 +106,8 @@
 
     <script type="module"
             src="{{ asset('assets') }}/front/hoisted.440790ec.js"></script>
+
+
 
 
     <script type="module"

@@ -2,8 +2,7 @@
 @extends('layouts.layouts')
 @section('title')
     <title> Sorry, Sepertinya Anda typo atau asal nulis</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
     <script src="https://unpkg.com/flowbite-datepicker@1.2.2/dist/js/datepicker-full.js"></script>
     <style>
         .checked {
