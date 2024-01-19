@@ -317,31 +317,7 @@
 
 
 
-    function ready(callback){
-        // in case the document is already rendered
-        if (document.readyState!='loading') callback();
-        // modern browsers
-        else if (document.addEventListener) document.addEventListener('DOMContentLoaded', callback);
-        // IE <= 8
-        else document.attachEvent('onreadystatechange', function(){
-            if (document.readyState=='complete') callback();
-        });
-    }
 
-    ready(function(){
-        document.querySelectorAll('[datepicker]').forEach(function (datepickerEl) {
-          new window.Datepicker(datepickerEl);
-        });
-
-        document.querySelector('button').addEventListener('click', function () {
-          var input = document.createElement('input');
-          input.setAttribute('datepicker', '');
-          input.setAttribute('type', 'text');
-          document.body.appendChild(input);
-
-          new window.Datepicker(input);
-        });
-    });
 
     $('#btn-modal-login').click(function () {
         $("#modal-login").show();

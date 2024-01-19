@@ -2,8 +2,8 @@
 @extends('layouts.layouts')
 @section('title')
     <title> Sorry, Sepertinya Anda typo atau asal nulis</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/datepicker.min.js"></script>
 
-    <script src="https://unpkg.com/flowbite-datepicker@1.2.2/dist/js/datepicker-full.js"></script>
     <style>
         .checked {
             color: orange;
@@ -149,7 +149,7 @@
 @section('js')
 <script>
 
-        function openEditModal(ids, status,start_date, end_date, jumlah_halaman_start, jumlah_halaman_end, title) {
+        function openEditModal(ids, status,start_date, end_date, jumlah_halaman_start, jumlah_halaman_end, title, rating, review) {
             // console.log(status)
             document.getElementById('title-modal').innerHTML = title;
             document.getElementById('id_want_read').value = ids;
@@ -158,6 +158,9 @@
             document.getElementById('date_ended').value = changeDateFormat(end_date);
             document.getElementById('page_started').value = jumlah_halaman_start;
             document.getElementById('page_ended').value = jumlah_halaman_end;
+            document.getElementById('rating').value = rating;
+            document.getElementById('review').value = review;
+
             updateFieldsBasedOnStatus();
         }
 

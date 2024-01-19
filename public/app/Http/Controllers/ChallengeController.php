@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Challenge;
 use App\Models\ChallengeGoal;
+use App\Models\Review;
 use App\Models\UserWantRead;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -70,6 +71,7 @@ class ChallengeController extends Controller
 
     public function store(Request $request)
     {
+
         $dateStringS = $request->date_started;
         $carbonDateS = Carbon::createFromFormat('d/m/Y', $dateStringS);
 
@@ -93,6 +95,19 @@ class ChallengeController extends Controller
             'page_end' => $request->page_ended,
             'is_status' => $status,
         ]);
+
+        if ($request->review != null && $request->rating != null) {
+            $getBuku = UserWantRead::where('id', $request->id_want_read)->first();
+
+            Review::updateorcreate([
+                'user_id' => auth()->user()->id,
+                'buku_id' => $getBuku->buku_id
+            ], [
+                'star' => $request->rating,
+                'review' => $request->review
+            ]);
+        }
+
 
         return true;
     }

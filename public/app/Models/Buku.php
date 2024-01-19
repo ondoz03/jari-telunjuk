@@ -206,4 +206,9 @@ class Buku extends Model implements HasMedia
             }
         }
     }
+
+    public function getReviewUserAttribute()
+    {
+        return $this->reviews()->where('user_id', auth()->user()->id)->first();
+    }
 }

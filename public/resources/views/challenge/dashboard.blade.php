@@ -18,7 +18,7 @@
                         <p class="mt-1 truncate text-xs leading-5 text-gray-500">{{ (int)$persen_book}}%</p>
 
                         <div class="w-full bg-gray-200 h-1.5  rounded dark:bg-gray-700 w-full">
-                          <div class="bg-blue-600 text-xs h-1.5  font-medium text-blue-100 text-center p-0.5 leading-none rounded" style="width: {{(int)$persen_book}}%"> </div>
+                          <div class="bg-green-600 text-xs h-1.5  font-medium text-green-100 text-center p-0.5 leading-none rounded" style="width: {{(int)$persen_book}}%"> </div>
                         </div>
                     </th>
                 </tr>
@@ -28,7 +28,7 @@
                         <p class="text-sm font-semibold leading-6 text-gray-900">📖  {{$total_page_read}}/{{ !empty($buku_dashboard[1]) ? $buku_dashboard[1]->target_challenge : '0'}} Pages Read</p>
                         <p class="mt-1 truncate text-xs leading-5 text-gray-500">{{(int)$persen_page}} %</p>
                         <div class="w-full bg-gray-200 h-1.5  rounded dark:bg-gray-700 w-full">
-                          <div class="bg-blue-600 text-xs h-1.5  font-medium text-blue-100 text-center p-0.5 leading-none rounded" style="width: {{(int)$persen_page}}%"> </div>
+                          <div class="bg-green-600 text-xs h-1.5  font-medium text-green-100 text-center p-0.5 leading-none rounded" style="width: {{(int)$persen_page}}%"> </div>
                         </div>
                     </th>
                 </tr>

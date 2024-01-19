@@ -14,7 +14,8 @@ class Review extends Model
         'id',
         'buku_id',
         'user_id',
-        'star'
+        'star',
+        'review'
     ];
 
 
@@ -35,7 +36,7 @@ class Review extends Model
         $temp_stars = $this->star;
         for ($i = $min_stars; $i <= $max_stars; $i++) {
             if ($temp_stars >= 1) {
-                echo '<button id="star-btn" class="group [&>svg]:fill-yellow-500 text-yellow-500" onclick="addReview(' .$i. ')">
+                echo '<button id="star-btn" class="group [&>svg]:fill-yellow-500 text-yellow-500" onclick="addReview(' . $i . ')">
                 <svg xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -50,7 +51,7 @@ class Review extends Model
             </button>';
                 $temp_stars--;
             } else {
-                echo '<button id="star-btn" class="group text-stone-400" onclick="addReview('. $i.')">
+                echo '<button id="star-btn" class="group text-stone-400" onclick="addReview(' . $i . ')">
                 <svg xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"

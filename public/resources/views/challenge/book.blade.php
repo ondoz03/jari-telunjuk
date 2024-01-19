@@ -6,9 +6,11 @@
             <table class="table-fixed text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 shadow-lg" style="table-layout: fixed;width: 1180px;">
                 <caption class="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
                     <div class="flex flex-column sm:flex-row flex-wrap items-center justify-between">
-                        <p class="text-2xl">🏆 Challenges</p>
+                        <p class="text-2xl">🏆 List Book</p>
                         <div class="relative">
-                           Create New Challenge
+                            <a href="{{ route('buku', 'buku') }}" id="search-book" type="button" class="relative flex items-center justify-center rounded-full bg-[#128C55] px-12 py-1 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
+                                Cari Buku
+                            </a>
                         </div>
                     </div>
                     {{-- <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Browse a list of Flowbite products designed to help you work and play, stay organized, get answers, keep in touch, grow your business, and more.</p> --}}
@@ -73,8 +75,8 @@
                         }else{
                             $is_status = 'to_read';
                         }
-
                     }
+
 
                     @endphp
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" onclick="openEditModal({{$item->id}},
@@ -83,18 +85,20 @@
                         '{{$item->challenge->end_date ?? date('Y-m-d')}}',
                         {{$item->challenge->page_start ?? 0}},
                         {!!$page_end!!},
-                        '{{$item->buku->judul}}'
+                        '{{$item->buku->judul}}',
+                        '{{ $item->buku->review_user->star ?? ''}}',
+                        '{{ $item->buku->review_user->review ?? ''}}'
                         )" data-modal-target="editModal" data-modal-toggle="editModal">
                             <td class="px-6 py-4">
                                 {!! GeneralHelper::statusChalenge($is_status) !!}
                             </td>
                             <td class="px-6 py-4">
                                 <div class="relative w-full">
-                                    <img style="height: 100px; width: 70px;" data-src="{{$item->buku->image}}" alt="Book 5" src="{{$item->buku->image}}">
+                                    <img style="height: 80px; width: 50px;" data-src="{{$item->buku->image}}" alt="Book 5" src="{{$item->buku->image}}">
                                 </div>
                             </td>
                             <td class="px-6 py-4">
-                                <h4 class="font-arvo text-lg leading-7 text-left leading-none">
+                                <h4 class="font-arvo text-lg leading-7 text-left leading-none" style="font-size: 16px">
                                     {{$item->buku->judul}}
                                 </h4>
 
@@ -104,8 +108,8 @@
                                         @if($key!==0)
                                             , &nbsp
                                         @endif
-                                        <a class="hover:underline"
-                                        href="{{ route('author',strtolower(str_replace(' ','-',$value['key']))) }}">
+                                        <a class=""
+                                        href="javascript();" style="font-size: 13px">
                                                 {{ $value['text'] }}
                                         </a>
                                     @endforeach
@@ -120,9 +124,7 @@
 
                             <td class="px-6">
                                 <div class="rating">
-                                    <div class="review">Reviews ({{$item->buku->count_rating}} / 5)
-                                    </div>
-                                {{$item->buku->rating}}
+                                    {{$item->buku->rating}}
                                 </div>
                             </td>
                             <td class="px-6 py-4 text-right" >
@@ -140,7 +142,7 @@
 
                                 <p class="truncate text-xs leading-5 text-gray-500"> </p>
                                 <div class="w-full bg-gray-200 h-1.5  rounded dark:bg-gray-700 w-full">
-                                <div class="bg-blue-600 text-xs h-1.5  font-medium text-blue-100 text-center p-0.5 leading-none rounded" style="width: {!! (int)$percentage !!}%"> </div>
+                                <div class="bg-green-600 text-xs h-1.5  font-medium text-green-100 text-center p-0.5 leading-none rounded" style="width: {!! (int)$percentage !!}%"> </div>
                                 </div>
                             </td>
                         </tr>
@@ -237,7 +239,7 @@
                             <div class="reviewsRatings">
                                 <label for="">Rating</label>
                                 <select name="rating" id="rating" class="block w-full p-2  mb-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" required>
-                                    <option selected>Choose a Rating</option>
+                                    <option value="" >Choose a Rating</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -246,7 +248,7 @@
                                 </select>
 
                                 <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Review</label>
-                                <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+                                <textarea id="review" name="review" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
                             </div>
                         </div>
                     </div>

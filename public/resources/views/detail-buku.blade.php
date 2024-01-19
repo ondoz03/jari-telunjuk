@@ -447,10 +447,18 @@
                                             <p class="text-base">{{ $buku->isbn ?? '-' }}</p>
                                         </div>
                                     </li>
-
                                 </ul>
+
                             </section>
+
+                            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+
+                            @include('comment-review')
+
                         </div>
+
+
+
                     </section>
 
                     <section class="col-span-1 xl:col-span-4">
@@ -471,8 +479,11 @@
                             @endforeach
                         </div>
                     </section>
+
                 </div>
+
             </div>
+
         </main>
     </main>
 
