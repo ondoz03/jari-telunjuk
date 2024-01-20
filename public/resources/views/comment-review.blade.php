@@ -1,7 +1,7 @@
 
 
-<div class="flex items-center mb-5">
-    <p class="bg-blue-100 text-blue-800 text-sm font-semibold inline-flex items-center p-1.5 rounded dark:bg-blue-200 dark:text-blue-800">8.7</p>
+<div class="flex items-center mb-5 xl:border-t xl:border-stone-300 xl:pt-4 w-full">
+    <p class="bg-green-100 text-green-800 text-smfont-semibold inline-flex items-center p-1.5 rounded dark:bg-green-200 dark:text-green-800">8.7</p>
     <p class="ms-2 font-medium text-gray-900 dark:text-white">Excellent</p>
     <span class="w-1 h-1 mx-2 bg-gray-900 rounded-full dark:bg-gray-500"></span>
     <p class="text-sm font-medium text-gray-500 dark:text-gray-400">376 reviews</p>
@@ -9,54 +9,54 @@
 </div>
 <div class="gap-2 sm:grid" style="width: 100%">
     <div class="flex items-center ">
-        <a href="#" class="text-sm font-medium text-black-600 dark:text-black-500 hover:underline">5 star</a>
+        <a href="#" class="text-base font-medium text-black-600 dark:text-black-500 hover:underline">5 star</a>
         <div style="width: 80%" class="h-3 mx-4 bg-gray-200 rounded dark:bg-gray-700">
             <div class="h-3 bg-[#128C55] rounded" style="width: 70%"></div>
         </div>
-        <span class="text-sm font-medium text-gray-500 dark:text-gray-400">70%</span>
+        <span class="text-base font-medium text-gray-500 dark:text-gray-400">70%</span>
     </div>
     <div class="flex items-center ">
-        <a href="#" class="text-sm font-medium text-black-600 dark:text-black-500 hover:underline">4 star</a>
+        <a href="#" class="text-base font-medium text-black-600 dark:text-black-500 hover:underline">4 star</a>
         <div style="width: 80%" class="h-3 mx-4 bg-gray-200 rounded dark:bg-gray-700">
             <div class="h-3 bg-[#128C55] rounded" style="width: 17%"></div>
         </div>
-        <span class="text-sm font-medium text-gray-500 dark:text-gray-400">17%</span>
+        <span class="text-base font-medium text-gray-500 dark:text-gray-400">17%</span>
     </div>
     <div class="flex items-center ">
-        <a href="#" class="text-sm font-medium text-black-600 dark:text-black-500 hover:underline">3 star</a>
+        <a href="#" class="text-base font-medium text-black-600 dark:text-black-500 hover:underline">3 star</a>
         <div style="width: 80%" class="h-3 mx-4 bg-gray-200 rounded dark:bg-gray-700">
             <div class="h-3 bg-[#128C55] rounded" style="width: 8%"></div>
         </div>
-        <span class="text-sm font-medium text-gray-500 dark:text-gray-400">8%</span>
+        <span class="text-base font-medium text-gray-500 dark:text-gray-400">8%</span>
     </div>
     <div class="flex items-center ">
-        <a href="#" class="text-sm font-medium text-black-600 dark:text-black-500 hover:underline">2 star</a>
+        <a href="#" class="text-base font-medium text-black-600 dark:text-black-500 hover:underline">2 star</a>
         <div style="width: 80%" class="h-3 mx-4 bg-gray-200 rounded dark:bg-gray-700">
             <div class="h-3 bg-[#128C55] rounded" style="width: 4%"></div>
         </div>
-        <span class="text-sm font-medium text-gray-500 dark:text-gray-400">4%</span>
+        <span class="text-base font-medium text-gray-500 dark:text-gray-400">4%</span>
     </div>
     <div class="flex items-center ">
-        <a href="#" class="text-sm font-medium text-black-600 dark:text-black-500 hover:underline">1 star</a>
+        <a href="#" class="text-base font-medium text-black-600 dark:text-black-500 hover:underline">1 star</a>
         <div style="width: 80%" class="h-3 mx-4 bg-gray-200 rounded dark:bg-gray-700">
             <div class="h-3 bg-[#128C55] rounded" style="width: 1%"></div>
         </div>
-        <span class="text-sm font-medium text-gray-500 dark:text-gray-400">1%</span>
+        <span class="text-base font-medium text-gray-500 dark:text-gray-400">1%</span>
     </div>
 
 </div>
 
 <div class="xl:border-t xl:border-stone-300 xl:pt-4 w-full">
-    <p class="ms-auto text-xs text-gray-500 dark:text-gray-400 my-2">Remember, contributions to this topic should follow our <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</p>
+    <p class="ms-auto text-base text-gray-500 dark:text-gray-400 my-2" style="font-size: 0.9rem;">Remember, contributions to this topic should follow our <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</p>
 
     <form>
         <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50">
             <div class="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
                 <label for="comment" class="sr-only">Your comment</label>
-                <textarea id="comment" rows="4" class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write a comment..." required></textarea>
+                <textarea id="comment" rows="4" style="font-size: 0.9rem;" class="w-full px-0 text-base text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write a comment..." required></textarea>
             </div>
             <div class="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
-                <button type="submit" class="bg-blue-100 bg-[#128C55] inline-flex px-3 py-2 text-xs font-medium text-center text-white bg-green rounded-lg focus:ring-4">
+                <button type="submit" class="bg-blue-100 bg-[#128C55] inline-flex px-3 py-2 text-xs font-medium text-center text-white bg-green rounded-lg focus:ring-4" style="font-size: 0.9rem;">
                     Post comment
                 </button>
             </div>
