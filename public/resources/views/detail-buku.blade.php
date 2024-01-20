@@ -647,5 +647,23 @@
             },
         });
     });
+
+    const moreTextElements = document.getElementsByClassName('more-text');
+    const toggleBtnElements = document.getElementsByClassName('toggle-btn');
+    const hideBtnElements = document.getElementsByClassName('hide-btn');
+
+    for (let i = 0; i < toggleBtnElements.length; i++) {
+        toggleBtnElements[i].addEventListener('click', () => {
+            moreTextElements[i].classList.toggle('line-clamp-5');
+            toggleBtnElements[i].classList.toggle('hidden');
+            hideBtnElements[i].classList.toggle('hidden');
+        });
+
+        hideBtnElements[i].addEventListener('click', () => {
+            moreTextElements[i].classList.toggle('line-clamp-5');
+            toggleBtnElements[i].classList.toggle('hidden');
+            hideBtnElements[i].classList.toggle('hidden');
+        });
+    }
 </script>
 @endsection
