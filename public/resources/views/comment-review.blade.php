@@ -1,8 +1,11 @@
 
 
-<div class="flex items-center xl:border-t xl:border-stone-300 xl:pt-4 w-full mb-5">
+<div class="flex items-center mb-5">
     <p class="bg-blue-100 text-blue-800 text-sm font-semibold inline-flex items-center p-1.5 rounded dark:bg-blue-200 dark:text-blue-800">8.7</p>
     <p class="ms-2 font-medium text-gray-900 dark:text-white">Excellent</p>
+    <span class="w-1 h-1 mx-2 bg-gray-900 rounded-full dark:bg-gray-500"></span>
+    <p class="text-sm font-medium text-gray-500 dark:text-gray-400">376 reviews</p>
+    <a href="#" class="ms-auto text-sm font-medium text-blue-600 hover:underline dark:text-blue-500" style="margin-left: 10px"> Read all reviews</a>
 </div>
 <div class="gap-2 sm:grid" style="width: 100%">
     <div class="flex items-center ">
@@ -44,6 +47,8 @@
 </div>
 
 <div class="xl:border-t xl:border-stone-300 xl:pt-4 w-full">
+    <p class="ms-auto text-xs text-gray-500 dark:text-gray-400 my-2">Remember, contributions to this topic should follow our <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</p>
+
     <form>
         <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50">
             <div class="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
@@ -58,13 +63,6 @@
         </div>
      </form>
 
-     <p class="ms-auto text-xs text-gray-500 dark:text-gray-400 my-2">
-        <div class="flex items-center mb-5">
-            <span class="w-1 h-1 mx-2 bg-gray-900 rounded-full dark:bg-gray-500"></span>
-            <p class="text-sm font-medium text-gray-500 dark:text-gray-400">376 reviews</p>
-            <a href="#" class="ms-auto text-sm font-medium text-blue-600 hover:underline dark:text-blue-500" style="margin-left: 10px"> Read all reviews</a>
-        </div>
-     </p>
 
 
 </div>
