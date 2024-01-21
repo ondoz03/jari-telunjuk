@@ -129,21 +129,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($getLeaderBoard as $key => $item)
+                            @foreach ($data as $key => $item)
                                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                     <td class="text-base text-center">
                                         {{$key + 1}}
                                     </td>
                                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
                                         <div class="flex items-center">
-                                            <p class="ml-1">{{$item->name}}</p>
+                                            <p class="ml-1">{{$item['name']}}</p>
                                         </div>
                                     </th>
                                     <td class="px-6 py-4 text-center">
-                                        <span class="text-base me-2">{{$item->user_want_read->count()}}</span>
+                                        <span class="text-base me-2">{{$item['total_book']}}</span>
                                     </td>
                                     <td class="px-6 py-4 text-center">
-                                        <a href="#" class="font-medium text-black-600 dark:text-black-500 hover:underline">{{$item->user_want_read->sum('challenge.page_start')}}</a>
+                                        <a href="#" class="font-medium text-black-600 dark:text-black-500 hover:underline">{{$item['total_page']}}</a>
                                     </td>
                                 </tr>
                             @endforeach

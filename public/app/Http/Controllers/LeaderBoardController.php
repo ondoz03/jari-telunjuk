@@ -55,15 +55,33 @@ class LeaderBoardController extends Controller
             })->with(['user_want_read' => function ($q)  use ($request) {
                 $q->whereHas('challenge', function ($q) use ($request) {
                     $q->where('is_status', 'read')->whereMonth('end_date', '=', date('m'));
-                })->with('challenge');
+                })->with('challenge')->withSum('challenge', 'page_start');
             }])->paginate();
 
             $title = 'This Month';
         }
 
+
+        $data = self::mapping($getLeaderBoard);
+
         $filter = $request->type;
 
 
-        return view('leaderboard.index', compact('getLeaderBoard', 'filter', 'title'));
+        return view('leaderboard.index', compact('data', 'filter', 'title'));
+    }
+
+    public function mapping($data)
+    {
+        $map = $data->map(function ($q) {
+            $arr = [
+                'name' => $q->name,
+                'total_book' => $q->user_want_read->count(),
+                'total_page' => $q->user_want_read->sum('challenge_sum_page_start')
+            ];
+
+            return $arr;
+        });
+
+        return $data->setCollection(collect($map)->sortByDesc('total_page'));
     }
 }
