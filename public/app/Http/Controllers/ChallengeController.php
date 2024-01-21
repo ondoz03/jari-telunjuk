@@ -83,7 +83,11 @@ class ChallengeController extends Controller
             $page_start = $request->page_ended;
         } else {
             $status = $request->status;
-            $page_start = $request->page_started;
+            if ($request->status === 'read') {
+                $page_start = $request->page_ended;
+            } else {
+                $page_start = $request->page_started;
+            }
         }
 
         Challenge::updateorcreate([

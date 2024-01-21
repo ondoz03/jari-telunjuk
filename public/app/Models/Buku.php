@@ -211,4 +211,49 @@ class Buku extends Model implements HasMedia
     {
         return $this->reviews()->where('user_id', auth()->user()->id)->first();
     }
+
+    public function getReviewFiveAttribute()
+    {
+        if ($this->reviews()->where('star', 5)->count() > 0) {
+            return round($this->reviews()->where('star', 5)->count() / $this->reviews()->count()) * 100;
+        } else {
+            return 0;
+        }
+    }
+
+    public function getReviewFourAttribute()
+    {
+        if ($this->reviews()->where('star', 4)->count() > 0) {
+            return round($this->reviews()->where('star', 4)->count() / $this->reviews()->count()) * 100;
+        } else {
+            return 0;
+        }
+    }
+
+    public function getReviewThreeAttribute()
+    {
+        if ($this->reviews()->where('star', 3)->count() > 0) {
+            return round($this->reviews()->where('star', 3)->count() / $this->reviews()->count()) * 100;
+        } else {
+            return 0;
+        }
+    }
+
+    public function getReviewTwoAttribute()
+    {
+        if ($this->reviews()->where('star', 2)->count() > 0) {
+            return round($this->reviews()->where('star', 2)->count() / $this->reviews()->count()) * 100;
+        } else {
+            return 0;
+        }
+    }
+
+    public function getReviewOneAttribute()
+    {
+        if ($this->reviews()->where('star', 2)->count() > 0) {
+            return round($this->reviews()->where('star', 2)->count() / $this->reviews()->count()) * 100;
+        } else {
+            return 0;
+        }
+    }
 }

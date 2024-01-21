@@ -16,6 +16,7 @@ use App\Http\Controllers\PrivacyPolicyController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChallengeController;
+use App\Http\Controllers\LeaderBoardController;
 use App\Http\Controllers\VerificationController;
 use App\Models\Kategori;
 use Carbon\Carbon;
@@ -111,6 +112,12 @@ Route::group(['prefix' => 'challenge'], function () {
     Route::post('/store', [ChallengeController::class, 'store'])->name('challenge.store');
     Route::post('/store_dashboard/{type}', [ChallengeController::class, 'store_dashboard'])->name('challenge.store_dashboard');
 });
+
+
+Route::group(['prefix' => 'leaderboard'], function () {
+    Route::get('/', [LeaderBoardController::class, 'index'])->name('leaderboard.index');
+});
+
 
 Route::get('/', function () {
     return view('home');

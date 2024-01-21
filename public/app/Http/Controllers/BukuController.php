@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Buku;
 use App\Models\Kategori;
+use App\Models\Review;
 use App\Models\UserWantRead;
 use Illuminate\Http\Request;
 use Auth;
@@ -89,9 +90,7 @@ class BukuController extends Controller
     public function detail($category, $slug, Request $request)
     {
         $buku = Buku::where('slug', $slug)->with(['detail_buku', 'kategori'])->firstorfail();
-
         $kategori = Kategori::where('slug', $category)->first();
-
 
         if (!empty(Auth::user())) {
             $data = UserWantRead::where('user_id', Auth::user()->id)->where('buku_id', $buku->id)->first();
@@ -111,6 +110,7 @@ class BukuController extends Controller
 
             $user_want_read = (object)$array;
         }
+
         // return $buku;
 
         return view('detail-buku', compact('buku', 'kategori', 'user_want_read'));
@@ -238,5 +238,15 @@ class BukuController extends Controller
             ->take(14)->get();
 
         return response()->json($buku);
+    }
+
+    public function review(Request $request)
+    {
+        Review::updateorcreate([
+            'user_id' => auth()->user()->id,
+            'buku_id' => $request->buku_id
+        ], [
+            'review' => $request->review
+        ]);
     }
 }

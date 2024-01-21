@@ -280,7 +280,6 @@
 
                             <div class="flex w-full flex-col items-center justify-center gap-3 xl:hidden">
                                 <div class="flex flex-col items-center gap-3">
-
                                         <a onclick="wantToRead(this, '{{ $buku->id }}', 'add')" style="{{$user_want_read->status === '0' ||  $user_want_read->status === '2' ? '' : 'display: none'}}"
                                             class="wantToRead w-60 rounded-full bg-[#128C55] px-5 py-3 text-center text-base leading-6 text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
                                             Want to Read
@@ -309,10 +308,7 @@
                                                     Currently Read
                                                 </a>
                                             @endif
-
                                         @endif
-
-
                                 </div>
 
                                 <div class="mt-2 flex flex-col items-center">
@@ -363,13 +359,20 @@
                                             </a>
                                         @endif
 
+
                                     @endif
                             </div>
 
                             @guest
                             @else
+
+                                @if ($user_want_read->status === '2')
+                                    @if ($user_want_read->challenge->where('is_status', 'read')->first())
+                                    * Kamu Telah Membaca Buku Ini
+                                    @endif
+                                @endif
                                 @if (count(auth()->user()->user_want_read->where('status', '2')) >= 5)
-                                    *Kamu mencapai batas maksimum Currently Read (5)
+                                    * Kamu mencapai batas maksimum Currently Read (5)
                                 @endif
                             @endif
 
@@ -634,6 +637,11 @@
         $("#modal-login-review").hide();
     }
 
+    function openReviewWrite()
+    {
+        $("#modal-login-review").show();
+    }
+
     $(document).ready(function() {
         $.ajax({
             url: "{{ route('ajax.set-session-global') }}",
@@ -647,6 +655,23 @@
             },
         });
     });
+
+    function submit_ajax_review(){
+            // Get form data
+            var formData = $('#formChangesReview').serialize();
+            $.ajax({
+                type: 'POST',
+                url: $('#formChangesReview').attr('action'),
+                data: formData,
+                dataType: 'html',
+                success: function (data) {
+                    window.location.reload();
+                },
+                error: function (error) {
+                    console.error('Error submitting form:', error);
+                }
+            });
+        }
 
     const moreTextElements = document.getElementsByClassName('more-text');
     const toggleBtnElements = document.getElementsByClassName('toggle-btn');

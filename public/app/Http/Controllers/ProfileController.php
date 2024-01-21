@@ -100,11 +100,15 @@ class ProfileController extends Controller
 
     public function reviewBook(Request $request)
     {
+
+        $review = Review::where('user_id', Auth::user()->id)->where('buku_id', $request->buku_id)->first();
+
         Review::updateOrCreate([
             'user_id' => Auth::user()->id,
             'buku_id' => $request->buku_id
         ], [
-            'star' => $request->star
+            'star' => $request->has('star') ? $request->star : $review->star,
+            'review' =>  $request->has('review') ? $request->review : $review->review,
         ]);
 
         return true;
