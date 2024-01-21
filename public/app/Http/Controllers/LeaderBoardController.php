@@ -24,7 +24,7 @@ class LeaderBoardController extends Controller
             })->with(['user_want_read' => function ($q)  use ($years) {
                 $q->whereHas('challenge', function ($q) use ($years) {
                     $q->where('is_status', 'read')->whereYear('end_date', $years);
-                })->with('challenge');
+                })->with('challenge')->withSum('challenge', 'page_start');
             }])->paginate();
 
             $title = 'Year';
@@ -35,7 +35,7 @@ class LeaderBoardController extends Controller
             })->with(['user_want_read' => function ($q)  use ($starting, $threeOfQuarter) {
                 $q->whereHas('challenge', function ($q) use ($starting, $threeOfQuarter) {
                     $q->where('is_status', 'read')->whereBetween('end_date', [$starting, $threeOfQuarter]);
-                })->with('challenge');
+                })->with('challenge')->withSum('challenge', 'page_start');
             }])->paginate();
             $title = '3 Month';
         } else if ($request->type == '6month') {
@@ -45,7 +45,7 @@ class LeaderBoardController extends Controller
             })->with(['user_want_read' => function ($q)  use ($starting, $sixOfQuarter) {
                 $q->whereHas('challenge', function ($q) use ($starting, $sixOfQuarter) {
                     $q->where('is_status', 'read')->whereBetween('end_date', [$starting, $sixOfQuarter]);
-                })->with('challenge');
+                })->with('challenge')->withSum('challenge', 'page_start');
             }])->paginate();
             $title = '6 Month';
         } else {

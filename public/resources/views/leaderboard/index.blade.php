@@ -144,7 +144,7 @@
                                         <span class="text-base me-2">{{$item['total_book']}}</span>
                                     </td>
                                     <td class="px-6 py-4 text-center">
-                                        <a href="#" class="font-medium text-black-600 dark:text-black-500 hover:underline">{{$item['total_page']}}</a>
+                                        <span class="font-medium text-black-600 dark:text-black-500 hover:underline">{{$item['total_page']}}</span>
                                     </td>
                                 </tr>
                             @endforeach
