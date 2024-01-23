@@ -97,6 +97,9 @@ class ChallengeController extends Controller
                 $getBuku = UserWantRead::where('id', $request->id_want_read)->first()->update([
                     'status' => '0'
                 ]);
+            } else if ($request->status === 'reading') {
+                $status = 'reading';
+                $page_start = $request->page_started;
             } else {
                 $page_start = $request->page_started;
             }
@@ -104,10 +107,6 @@ class ChallengeController extends Controller
 
         if ($request->status === 'to_read') {
             $page_start = 0;
-        }
-
-        if ($request->review == '' || $request->rating == null || $request->rating == '') {
-            $status = 'reviewing';
         }
 
         Challenge::updateorcreate([
