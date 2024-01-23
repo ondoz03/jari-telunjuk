@@ -78,14 +78,11 @@
             @else
             @endif
             @else
-
-
-
-                 <i> Baca buku ini terlebih dahulu sebelum memberikan komentar. Tambahkan buku ke daftar bacaanmu, lalu tracking di halaman <p class="font-medium text-green-600 dark:text-green-500 hover:underline inline-flex">Reading Tracker
+                 <i> Baca buku ini terlebih dahulu sebelum memberikan komentar. Tambahkan buku ke daftar bacaanmu, lalu tracking di halaman <a href="{{route('challenge')}}" class="font-medium text-green-600 dark:text-green-500 hover:underline inline-flex">Reading Tracker
                     <svg class="ml-2" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.8965 5.48388C11.3513 4.98923 12.1 4.84698 12.7169 5.18274C13.3219 5.51199 13.6096 6.19721 13.4617 6.83703M10.8965 5.48388C10.815 5.57253 10.7429 5.67251 10.6827 5.78308C10.2868 6.51058 10.5556 7.42131 11.2831 7.81726C12.0106 8.2132 12.9213 7.94442 13.3173 7.21692C13.384 7.09438 13.4318 6.96664 13.4617 6.83703M10.8965 5.48388C11.5593 5.24502 13.0003 5.18126 13.4617 6.83703M10 10.6039C10.8889 10.6039 12.8667 10.4875 13.6667 10.0217C14.6667 9.43947 7.66667 20.7926 14 18.7549M10.5376 22.7916C11.0152 22.7207 22.5795 21.1781 22.0978 10.4211C22.0536 9.43274 21.9303 8.53367 21.7387 7.71865M10.5376 22.7916C16.876 22.3728 20.0969 19.8899 21.5383 16.9142M10.5376 22.7916C9.7707 22.9055 8.97982 22.8964 8.19743 22.7725M21.7387 7.71865C21.4988 6.69828 21.1518 5.80967 20.7188 5.04257M21.7387 7.71865C22.6022 10.1105 23.0542 13.7848 21.5383 16.9142M20.7188 5.04257C17.1684 -1.24629 7.83127 0.632493 4.27577 5.04257C2.88063 6.77451 -0.0433281 11.1668 1.38159 16.6571C2.27481 20.0988 5.17269 22.2936 8.19743 22.7725M20.7188 5.04257C22.0697 6.9404 24.0299 11.3848 22.3541 15.4153M21.5383 16.9142C21.8737 16.4251 22.1428 15.9235 22.3541 15.4153M8.19743 22.7725C12.1971 23.4683 20.6281 22.971 22.3541 15.4153" stroke="black" stroke-linecap="round"/>
                     </svg>
-                </p>
+                </a>
                  </i>
         @endif
     @endguest
@@ -99,7 +96,7 @@
     @else
         @php
             $dataReview = $buku->reviews()->where('user_id', '!=', auth()->user()->id)->get()->take(10);
-            $dataFirst = $buku->reviews()->where('user_id', auth()->user()->id)->first();
+            $dataFirst = $buku->reviews()->where('user_id', auth()->user()->id)->where('review', '!=' ,'')->first();
         @endphp
     @endguest
 
