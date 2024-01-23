@@ -60,14 +60,11 @@ class LeaderBoardController extends Controller
                 })->with('challenge')->withSum('challenge', 'page_start')->whereHas('buku.reviews')->with('buku.reviews');
             }])->where('join_leaderboard', '1')->paginate();
 
+
             $title = 'This Month';
         }
 
-
-        // return $getLeaderBoard;
         $data = self::mapping($getLeaderBoard);
-
-        return $data;
 
         $filter = $request->type;
 
@@ -80,12 +77,6 @@ class LeaderBoardController extends Controller
         $map = $data->map(function ($q) {
             $arr = [
                 'name' => $q->name,
-                'reviews' => $q->user_want_read->map(function ($que) use ($q) {
-                    return [
-                        'reviews' => $que->buku->reviews->where('user_id', $q->id),
-                        'buku' => $que->buku->id,
-                    ];
-                }),
                 'total_book' => $q->user_want_read->count(),
                 'total_page' => $q->user_want_read->sum('challenge_sum_page_start')
             ];
