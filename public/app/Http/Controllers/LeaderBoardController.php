@@ -49,19 +49,25 @@ class LeaderBoardController extends Controller
             }])->where('join_leaderboard', '1')->paginate();
             $title = '6 Month';
         } else {
-            $getLeaderBoard = User::wherehas('user_want_read.challenge', function ($q) use ($request) {
-                $q->where('is_status', 'read')
+
+
+            $getLeaderBoard = User::wherehas('user_want_read.challenge', function ($que) use ($request) {
+                $que->where('is_status', 'read')
                     ->whereMonth('end_date', '=', date('m'));
-            })->with(['user_want_read' => function ($q)  use ($request) {
-                $q->whereHas('challenge', function ($q) use ($request) {
+            })->with(['user_want_read' => function ($q) {
+                $q->whereHas('challenge', function ($q) {
                     $q->where('is_status', 'read')->whereMonth('end_date', '=', date('m'));
-                })->with('challenge')->withSum('challenge', 'page_start');
+                })->with('challenge')->withSum('challenge', 'page_start')->whereHas('buku.reviews')->with('buku.reviews');
             }])->where('join_leaderboard', '1')->paginate();
 
             $title = 'This Month';
         }
 
+
+        // return $getLeaderBoard;
         $data = self::mapping($getLeaderBoard);
+
+        return $data;
 
         $filter = $request->type;
 
@@ -74,6 +80,12 @@ class LeaderBoardController extends Controller
         $map = $data->map(function ($q) {
             $arr = [
                 'name' => $q->name,
+                'reviews' => $q->user_want_read->map(function ($que) use ($q) {
+                    return [
+                        'reviews' => $que->buku->reviews->where('user_id', $q->id),
+                        'buku' => $que->buku->id,
+                    ];
+                }),
                 'total_book' => $q->user_want_read->count(),
                 'total_page' => $q->user_want_read->sum('challenge_sum_page_start')
             ];

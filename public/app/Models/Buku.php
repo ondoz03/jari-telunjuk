@@ -178,6 +178,11 @@ class Buku extends Model implements HasMedia
         return $this->belongsToMany(Kategori::class, 'buku_kategori', 'buku_id', 'kategori_id');
     }
 
+    public function user_want_read()
+    {
+        return $this->hasMany(UserWantRead::class);
+    }
+
     public function reviews()
     {
         return $this->hasMany(Review::class);

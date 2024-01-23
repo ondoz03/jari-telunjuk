@@ -334,12 +334,11 @@
 
                             @guest
                             @else
-
-                                @if ($user_want_read->status === '2')
-                                    @if ($user_want_read->challenge->where('is_status', 'read')->first())
-                                    * Kamu Telah Membaca Buku Ini
-                                    @endif
+                                @if ($user_want_read->challenge->where('is_status', 'read')->first())
+                                * Kamu Telah Membaca Buku Ini
+                                <br>
                                 @endif
+
                                 @if (count(auth()->user()->user_want_read->where('status', '2')) >= 5)
                                     * Kamu mencapai batas maksimum Currently Read (5)
                                 @endif

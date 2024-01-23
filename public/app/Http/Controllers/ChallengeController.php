@@ -21,12 +21,15 @@ class ChallengeController extends Controller
         }
 
         $buku = self::list_book_reading();
+
         $user_id = auth()->user()->id;
 
         $buku_dashboard = ChallengeGoal::where('user_id', $user_id)->get();
 
         $total_book_read = UserWantRead::where('user_id', $user_id)->whereHas('challenge', function ($q) {
             $q->where('is_status', 'read');
+        })->whereHas('buku.reviews', function ($q) use ($user_id) {
+            $q->where('user_id', $user_id);
         })->count();
 
         $total_page_read =  UserWantRead::where('user_id', $user_id)
@@ -72,6 +75,7 @@ class ChallengeController extends Controller
     public function store(Request $request)
     {
 
+
         $dateStringS = $request->date_started;
         $carbonDateS = Carbon::createFromFormat('d/m/Y', $dateStringS);
 
@@ -85,8 +89,13 @@ class ChallengeController extends Controller
             $status = $request->status;
             if ($request->status === 'read') {
                 $page_start = $request->page_ended;
+
+                if ($request->review == '' || $request->rating == null || $request->rating == '') {
+                    $status = 'reviewing';
+                }
+
                 $getBuku = UserWantRead::where('id', $request->id_want_read)->first()->update([
-                    'status' => 0
+                    'status' => '0'
                 ]);
             } else {
                 $page_start = $request->page_started;
@@ -95,6 +104,10 @@ class ChallengeController extends Controller
 
         if ($request->status === 'to_read') {
             $page_start = 0;
+        }
+
+        if ($request->review == '' || $request->rating == null || $request->rating == '') {
+            $status = 'reviewing';
         }
 
         Challenge::updateorcreate([
@@ -107,7 +120,7 @@ class ChallengeController extends Controller
             'is_status' => $status,
         ]);
 
-        if ($request->review != null && $request->rating != null) {
+        if ($request->review != '' && $request->rating != null) {
             $getBuku = UserWantRead::where('id', $request->id_want_read)->first();
 
             Review::updateorcreate([

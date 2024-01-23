@@ -200,7 +200,7 @@
                 page.style.display = 'none';
                 reviews_rating.hide();
             } else {
-                if(status === 'read' || status === 'reviewed'){
+                if(status === 'read' || status === 'reviewed' || status === 'reviewing'){
                     reviews_rating.show();
                 }else{
                     reviews_rating.hide();

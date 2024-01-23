@@ -58,7 +58,7 @@
         </a>
     </div>
     @else
-        @if (!$buku->reviews()->where('user_id', auth()->user()->id)->first())
+        @if (!$buku->reviews()->where('user_id', auth()->user()->id)->first() && $user_want_read->challenge->where('is_status', 'read')->first())
             <form action="{{route('ajax.review-book')}}" method="post" id="formChangesReview">
                 @csrf
                 <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50">
