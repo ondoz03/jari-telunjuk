@@ -107,8 +107,8 @@ class ProfileController extends Controller
             'user_id' => Auth::user()->id,
             'buku_id' => $request->buku_id
         ], [
-            'star' => $request->has('star') ? $request->star : $review->star,
-            'review' =>  $request->has('review') ? $request->review : $review->review,
+            'star' => $request->has('star') ? $request->star : $review->star ?? '0',
+            'review' =>  $request->has('review') ? $request->review : $review->review ?? '',
         ]);
 
         return true;
