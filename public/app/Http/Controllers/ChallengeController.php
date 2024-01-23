@@ -25,11 +25,11 @@ class ChallengeController extends Controller
 
         $buku_dashboard = ChallengeGoal::where('user_id', $user_id)->get();
 
-        $total_book_read = UserWantRead::where('status', '!=', '0')->where('user_id', $user_id)->whereHas('challenge', function ($q) {
+        $total_book_read = UserWantRead::where('user_id', $user_id)->whereHas('challenge', function ($q) {
             $q->where('is_status', 'read');
         })->count();
 
-        $total_page_read =  UserWantRead::where('status', '!=', '0')->where('user_id', $user_id)
+        $total_page_read =  UserWantRead::where('user_id', $user_id)
             ->whereHas('challenge')
             ->withSum('challenge', 'page_start')
             ->get()->sum('challenge_sum_page_start');
