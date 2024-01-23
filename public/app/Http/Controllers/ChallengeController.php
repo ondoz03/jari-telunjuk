@@ -93,13 +93,20 @@ class ChallengeController extends Controller
                 if ($request->review == '' || $request->rating == null || $request->rating == '') {
                     $status = 'reviewing';
                 }
-
                 $getBuku = UserWantRead::where('id', $request->id_want_read)->first()->update([
                     'status' => '0'
                 ]);
             } else if ($request->status === 'reading') {
                 $status = 'reading';
                 $page_start = $request->page_started;
+
+                $getBuku = UserWantRead::where('id', $request->id_want_read)->first()->update([
+                    'status' => '2'
+                ]);
+            } else if ($request->status === 'to_read') {
+                $getBuku = UserWantRead::where('id', $request->id_want_read)->first()->update([
+                    'status' => '1'
+                ]);
             } else {
                 $page_start = $request->page_started;
             }
