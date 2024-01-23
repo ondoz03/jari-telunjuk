@@ -24,7 +24,7 @@ class LeaderBoardController extends Controller
             })->with(['user_want_read' => function ($q)  use ($years) {
                 $q->whereHas('challenge', function ($q) use ($years) {
                     $q->where('is_status', 'read')->whereYear('end_date', $years);
-                })->with('challenge')->withSum('challenge', 'page_start');
+                })->with('challenge')->withSum('challenge', 'page_start')->whereHas('buku.reviews')->with('buku.reviews');
             }])->where('join_leaderboard', '1')->paginate();
 
             $title = 'Year';
@@ -36,7 +36,7 @@ class LeaderBoardController extends Controller
                 $q->whereHas('challenge', function ($q) use ($starting, $threeOfQuarter) {
                     $q->where('is_status', 'read')->whereBetween('end_date', [$starting, $threeOfQuarter]);
                 })->with('challenge')->withSum('challenge', 'page_start');
-            }])->where('join_leaderboard', '1')->paginate();
+            }])->where('join_leaderboard', '1')->paginate()->whereHas('buku.reviews')->with('buku.reviews');
             $title = '3 Month';
         } else if ($request->type == '6month') {
             $getLeaderBoard = User::wherehas('user_want_read.challenge', function ($q) use ($starting, $sixOfQuarter) {
@@ -45,12 +45,10 @@ class LeaderBoardController extends Controller
             })->with(['user_want_read' => function ($q)  use ($starting, $sixOfQuarter) {
                 $q->whereHas('challenge', function ($q) use ($starting, $sixOfQuarter) {
                     $q->where('is_status', 'read')->whereBetween('end_date', [$starting, $sixOfQuarter]);
-                })->with('challenge')->withSum('challenge', 'page_start');
+                })->with('challenge')->withSum('challenge', 'page_start')->whereHas('buku.reviews')->with('buku.reviews');
             }])->where('join_leaderboard', '1')->paginate();
             $title = '6 Month';
         } else {
-
-
             $getLeaderBoard = User::wherehas('user_want_read.challenge', function ($que) use ($request) {
                 $que->where('is_status', 'read')
                     ->whereMonth('end_date', '=', date('m'));
@@ -59,8 +57,6 @@ class LeaderBoardController extends Controller
                     $q->where('is_status', 'read')->whereMonth('end_date', '=', date('m'));
                 })->with('challenge')->withSum('challenge', 'page_start')->whereHas('buku.reviews')->with('buku.reviews');
             }])->where('join_leaderboard', '1')->paginate();
-
-
             $title = 'This Month';
         }
 
