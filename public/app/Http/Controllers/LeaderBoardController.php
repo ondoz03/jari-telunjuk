@@ -35,8 +35,8 @@ class LeaderBoardController extends Controller
             })->with(['user_want_read' => function ($q)  use ($starting, $threeOfQuarter) {
                 $q->whereHas('challenge', function ($q) use ($starting, $threeOfQuarter) {
                     $q->where('is_status', 'read')->whereBetween('end_date', [$starting, $threeOfQuarter]);
-                })->with('challenge')->withSum('challenge', 'page_start');
-            }])->where('join_leaderboard', '1')->paginate()->whereHas('buku.reviews')->with('buku.reviews');
+                })->with('challenge')->withSum('challenge', 'page_start')->whereHas('buku.reviews')->with('buku.reviews');
+            }])->where('join_leaderboard', '1')->paginate();
             $title = '3 Month';
         } else if ($request->type == '6month') {
             $getLeaderBoard = User::wherehas('user_want_read.challenge', function ($q) use ($starting, $sixOfQuarter) {
