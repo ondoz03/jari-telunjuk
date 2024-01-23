@@ -107,7 +107,7 @@ Route::group(['prefix' => 'category'], function () {
     Route::get('/', [CategoryController::class, 'index'])->name('category');
 });
 
-Route::group(['prefix' => 'challenge'], function () {
+Route::group(['prefix' => 'reading-tracker'], function () {
     Route::get('/', [ChallengeController::class, 'index'])->name('challenge');
     Route::post('/store', [ChallengeController::class, 'store'])->name('challenge.store');
     Route::post('/store_dashboard/{type}', [ChallengeController::class, 'store_dashboard'])->name('challenge.store_dashboard');
