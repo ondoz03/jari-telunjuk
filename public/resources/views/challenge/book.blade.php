@@ -251,7 +251,6 @@
                                             <option value="reading">Reading</option>
                                             <option value="reviewing">Review</option>
                                             <option value="read">Read</option>
-                                            <option value="reviewed">Reviewed</option>
                                         </select>
                                     </td>
                                 </tr>
