@@ -18,7 +18,7 @@
         <section class="col-span-1 mt-5 lg:col-span-9 lg:mt-28" style="grid-column: span 12 / span 12;">
             <h1 class="mb-6 font-arvo text-[34px] leading-none"></h1>
             <article class="mb-6">
-                <h3 class="font-arvo mb-3 text-2xl xl:text-[42px] font-bold leading-8">Jari Telunjuk Reading Tracker </h3>
+                <h3 class="font-arvo mb-3 text-2xl xl:text-[42px] font-bold leading-8">Jari Telunjuk Reading Leaderboard </h3>
             </article>
         </section>
     </div>

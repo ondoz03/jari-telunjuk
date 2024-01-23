@@ -64,7 +64,7 @@ class ChallengeController extends Controller
     public function list_book_reading()
     {
         $user_id = auth()->user()->id;
-        $data = UserWantRead::where('status', '!=', '0')->where('user_id', $user_id)->with(['buku', 'challenge'])->get();
+        $data = UserWantRead::where('user_id', $user_id)->with(['buku', 'challenge'])->get();
 
         return $data;
     }
@@ -78,16 +78,23 @@ class ChallengeController extends Controller
         $dateStringN = $request->date_ended;
         $carbonDateN = Carbon::createFromFormat('d/m/Y', $dateStringN);
 
-        if ($request->page_started >= $request->page_ended) {
+        if ($request->page_started > $request->page_ended) {
             $status = 'read';
             $page_start = $request->page_ended;
         } else {
             $status = $request->status;
             if ($request->status === 'read') {
                 $page_start = $request->page_ended;
+                $getBuku = UserWantRead::where('id', $request->id_want_read)->first()->update([
+                    'status' => 0
+                ]);
             } else {
                 $page_start = $request->page_started;
             }
+        }
+
+        if ($request->status === 'to_read') {
+            $page_start = 0;
         }
 
         Challenge::updateorcreate([

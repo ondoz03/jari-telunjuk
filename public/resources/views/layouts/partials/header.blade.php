@@ -92,6 +92,9 @@
                         <a href="https://www.jaritelunjuk.com/blog/go/reading-tracker" class="block px-4 py-2 leading-5 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Reading Challenge</a>
                       </li>
                       <li>
+                        <a href="{{route('leaderboard.index')}}" class="block px-4 py-2 leading-5 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Leaderboard</a>
+                      </li>
+                      <li>
                         <a href="/buku" class="block px-4 py-2 leading-5 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Book</a>
                       </li>
                       <li>
@@ -175,6 +178,7 @@
 
                     <a class="text-base leading-5" href="{{route('user.profile')}}">Profile</a>
                     <a class="text-base leading-5" href="https://www.jaritelunjuk.com/blog/go/reading-tracker">Reading Challenge</a>
+                    <a class="text-base leading-5" href="{{route('leaderboard.index')}}">Leader Board</a>
                     <a class="text-base leading-5" href="/buku">Book</a>
                     <a class="text-base leading-5" href="#">Help</a>
                     <a class="text-base leading-5 text-red-500" href="{{route('user.logout')}}">Logout</a>

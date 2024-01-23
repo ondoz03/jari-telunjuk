@@ -166,11 +166,11 @@
                                         @if($key!==0)
                                             , &nbsp
                                         @endif
-                                        <a class=""
+                                        <span class=""
                                         href="javascript();" style="font-size: 11px">
                                     by
                                     {{ $value['text'] }}
-                                        </a>
+                                    </span>
                                     @endforeach
                                 </p>
                             </td>

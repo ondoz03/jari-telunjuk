@@ -25,7 +25,7 @@ class LeaderBoardController extends Controller
                 $q->whereHas('challenge', function ($q) use ($years) {
                     $q->where('is_status', 'read')->whereYear('end_date', $years);
                 })->with('challenge')->withSum('challenge', 'page_start');
-            }])->paginate();
+            }])->where('join_leaderboard', '1')->paginate();
 
             $title = 'Year';
         } else if ($request->type == '3month') {
@@ -36,7 +36,7 @@ class LeaderBoardController extends Controller
                 $q->whereHas('challenge', function ($q) use ($starting, $threeOfQuarter) {
                     $q->where('is_status', 'read')->whereBetween('end_date', [$starting, $threeOfQuarter]);
                 })->with('challenge')->withSum('challenge', 'page_start');
-            }])->paginate();
+            }])->where('join_leaderboard', '1')->paginate();
             $title = '3 Month';
         } else if ($request->type == '6month') {
             $getLeaderBoard = User::wherehas('user_want_read.challenge', function ($q) use ($starting, $sixOfQuarter) {
@@ -46,7 +46,7 @@ class LeaderBoardController extends Controller
                 $q->whereHas('challenge', function ($q) use ($starting, $sixOfQuarter) {
                     $q->where('is_status', 'read')->whereBetween('end_date', [$starting, $sixOfQuarter]);
                 })->with('challenge')->withSum('challenge', 'page_start');
-            }])->paginate();
+            }])->where('join_leaderboard', '1')->paginate();
             $title = '6 Month';
         } else {
             $getLeaderBoard = User::wherehas('user_want_read.challenge', function ($q) use ($request) {
@@ -56,11 +56,10 @@ class LeaderBoardController extends Controller
                 $q->whereHas('challenge', function ($q) use ($request) {
                     $q->where('is_status', 'read')->whereMonth('end_date', '=', date('m'));
                 })->with('challenge')->withSum('challenge', 'page_start');
-            }])->paginate();
+            }])->where('join_leaderboard', '1')->paginate();
 
             $title = 'This Month';
         }
-
 
         $data = self::mapping($getLeaderBoard);
 
@@ -83,5 +82,24 @@ class LeaderBoardController extends Controller
         });
 
         return $data->setCollection(collect($map)->sortByDesc('total_page'));
+    }
+
+    public function join_leaderboard()
+    {
+        $user = User::where('id', auth()->user()->id)->first();
+
+        if ($user->join_leaderboard === '0') {
+            $leader = '1';
+            $status = 'join';
+        } else {
+            $leader = '0';
+            $status = 'unjoin';
+        }
+
+        $user->update([
+            'join_leaderboard' => $leader
+        ]);
+
+        return $status;
     }
 }

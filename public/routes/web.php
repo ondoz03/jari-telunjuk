@@ -116,6 +116,7 @@ Route::group(['prefix' => 'challenge'], function () {
 
 Route::group(['prefix' => 'leaderboard'], function () {
     Route::get('/', [LeaderBoardController::class, 'index'])->name('leaderboard.index');
+    Route::get('/join', [LeaderBoardController::class, 'join_leaderboard'])->name('leaderboard.join');
 });
 
 
