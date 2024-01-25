@@ -1,2 +1,2 @@
 // require('./bootstrap');
-require('./Custom/scanQr');
+require('./Custom/searchAlgolia');

@@ -48,4 +48,9 @@ return [
         'redirect' => env('FACEBOOK_CLIENT_REDIRECT'),
     ],
 
+    'algolia' => [
+        'id' => env('ALGOLIA_APP_ID'),
+        'secret' => env('ALGOLIA_SECRET'),
+    ],
+
 ];

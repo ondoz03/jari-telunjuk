@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Helpers\GeneralHelper;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Ramsey\Uuid\Uuid;
@@ -22,9 +21,7 @@ use Str;
 
 class Buku extends Model implements HasMedia
 {
-    use HasFactory, InteractsWithMedia, Searchable, HasSlug;
-
-    //
+    use Searchable, HasFactory, InteractsWithMedia, HasSlug;
 
     protected $fillable = [
         'uuid',
@@ -151,11 +148,20 @@ class Buku extends Model implements HasMedia
      * @return array
      */
     #[SearchUsingPrefix(['judul'])]
+    #[SearchUsingPrefix(['penulis'])]
+
     public function toSearchableArray()
     {
         return [
             'judul' => $this->judul,
+            'penulis' => $this->penulis,
+
         ];
+    }
+
+    public function shouldBeSearchable()
+    {
+        return $this->isPublished();
     }
 
     public function getScoutModelsByIds(Builder $builder, array $ids)
