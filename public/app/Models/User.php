@@ -98,6 +98,12 @@ class User extends Authenticatable implements HasMedia, MustVerifyEmail
         return $this->hasMany(ChallengeGoal::class);
     }
 
+    public function review_like()
+    {
+        return $this->hasMany(ReviewLike::class);
+    }
+
+
     /**
      * Get the indexable data array for the model.
      *

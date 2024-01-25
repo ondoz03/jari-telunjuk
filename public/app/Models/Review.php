@@ -67,4 +67,8 @@ class Review extends Model
             }
         }
     }
+    public function review_like()
+    {
+        return $this->hasMany(ReviewLike::class);
+    }
 }

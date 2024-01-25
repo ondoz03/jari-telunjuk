@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Review;
+use App\Models\ReviewLike;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserDetails;
@@ -109,6 +110,19 @@ class ProfileController extends Controller
         ], [
             'star' => $request->has('star') ? $request->star : $review->star ?? '0',
             'review' =>  $request->has('review') ? $request->review : $review->review ?? '',
+        ]);
+
+        return true;
+    }
+
+    public function reviewLike(Request $request)
+    {
+
+        ReviewLike::updateorcreate([
+            'user_id' => auth()->user()->id,
+            'review_id' => $request->review
+        ], [
+            'is_status_response' => $request->status
         ]);
 
         return true;

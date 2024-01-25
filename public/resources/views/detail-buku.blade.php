@@ -629,20 +629,60 @@
 
     function submit_ajax_review(){
             // Get form data
-            var formData = $('#formChangesReview').serialize();
-            $.ajax({
-                type: 'POST',
-                url: $('#formChangesReview').attr('action'),
-                data: formData,
-                dataType: 'html',
-                success: function (data) {
-                    window.location.reload();
-                },
-                error: function (error) {
-                    console.error('Error submitting form:', error);
-                }
-            });
-        }
+        var formData = $('#formChangesReview').serialize();
+        $.ajax({
+            type: 'POST',
+            url: $('#formChangesReview').attr('action'),
+            data: formData,
+            dataType: 'html',
+            success: function (data) {
+                window.location.reload();
+            },
+            error: function (error) {
+                console.error('Error submitting form:', error);
+            }
+        });
+    }
+
+    function submitLike(id){
+
+        $.ajax({
+            type: 'POST',
+            url: "{{route('ajax.review-book-like')}}",
+            data: {
+                "_token": "{{ csrf_token() }}",
+                status: 'like',
+                review:id
+            },
+            dataType: 'json',
+            success: function (data) {
+                window.location.reload();
+            },
+            error: function (error) {
+                $("#modal-login-review").show();
+            }
+        });
+    }
+
+    function submit_ajax_unlike(id)
+    {
+        $.ajax({
+            type: 'POST',
+            url: "{{route('ajax.review-book-like')}}",
+            data: {
+                "_token": "{{ csrf_token() }}",
+                status: 'unlike',
+                review:id
+            },
+            dataType: 'json',
+            success: function (data) {
+                window.location.reload();
+            },
+            error: function (error) {
+                $("#modal-login-review").show();
+            }
+        });
+    }
 
     const moreTextElements = document.getElementsByClassName('more-text');
     const toggleBtnElements = document.getElementsByClassName('toggle-btn');

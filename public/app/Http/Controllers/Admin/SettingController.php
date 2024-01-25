@@ -15,46 +15,40 @@ class SettingController extends Controller
 
     public function update(Request $request)
     {
-       if($request->type == 'quotes') {
 
-           $by_q = Setting::where('key', 'by_quotes')->first();
-           $by_q->update([
-               'value' => $request->by_quotes
-           ]);
+        if ($request->type == 'quotes') {
 
-           $q_h = Setting::where('key', 'qoutes_header')->first();
-           $q_h->update([
-               'value' => $request->qoutes_header
-           ]);
+            $by_q = Setting::where('key', 'by_quotes')->first();
+            $by_q->update([
+                'value' => $request->by_quotes
+            ]);
 
-           return back();
-       }elseif($request->type == 'faq'){
+            $q_h = Setting::where('key', 'qoutes_header')->first();
+            $q_h->update([
+                'value' => $request->qoutes_header
+            ]);
 
-        $by_q = Setting::where('key', 'faq')->first();
+            return back();
+        } elseif ($request->type == 'about') {
 
-        $data = [];
+            $by_q = Setting::where('key', 'about')->first();
 
-        foreach ($request->title as $key => $value) {
-            $data[$key]['title'] = $value;
-            $data[$key]['description'] = $request['description'][$key];
+            $by_q->update([
+                'value' => $request->about
+            ]);
+
+            return back();
+        } else {
+            $setting = Setting::where('key', $request->key)->first();
+            if ($setting) {
+                $setting->update([
+                    'value' => $request->value
+                ]);
+
+                return true;
+            } else {
+                return false;
+            }
         }
-
-        $by_q->update([
-            'value' => json_encode($data)
-        ]);
-
-        return back();
-       }else{
-           $setting = Setting::where('key', $request->key)->first();
-           if ($setting) {
-               $setting->update([
-                   'value' => $request->value
-               ]);
-
-               return true;
-           } else {
-               return false;
-           }
-       }
     }
 }

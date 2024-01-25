@@ -54,7 +54,6 @@ Route::group(['prefix' => 'verify'], function () {
 });
 
 Route::group(['prefix' => 'ajax'], function () {
-
     Route::get('/book-homepage', [BukuController::class, 'getRandomBookHomepage'])->name('ajax.book-homepage');
     Route::get('/list-book-recommendation', [BukuController::class, 'getBookBySelectedCategory'])->name('ajax.list-book-recommendation');
     Route::post('/list-book-recommendation-search', [BukuController::class, 'getBookBySelectedCategorySearch'])->name('ajax.list-book-recommendation-search');
@@ -62,6 +61,7 @@ Route::group(['prefix' => 'ajax'], function () {
     Route::post('/set-session-global', [HomeController::class, 'setSession'])->name('ajax.set-session-global');
     Route::post('/set-want-to-read', [ProfileController::class, 'setWantToRead'])->name('ajax.set-want-to-read');
     Route::post('/review-book', [ProfileController::class, 'reviewBook'])->name('ajax.review-book');
+    Route::post('/review-book-like', [ProfileController::class, 'reviewLike'])->name('ajax.review-book-like');
 });
 
 Route::group(['prefix' => 'sign-in'], function () {
