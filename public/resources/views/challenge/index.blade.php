@@ -154,7 +154,29 @@
 <script>
 
         function openEditModal(ids, status,start_date, end_date, jumlah_halaman_start, jumlah_halaman_end, title, rating, review) {
-            // console.log(status)
+
+            @if(count(auth()->user()->user_want_read->where('status', '2')) < 5)
+                var checkStatusCount = true
+            @else
+                var checkStatusCount = false
+            @endif
+
+
+            if(status !== 'to_read' || checkStatusCount === true){
+                var optionsHTML = "<option selected>Choose a Status</option>" +
+                            "<option value='to_read'>To Read</option>" +
+                            "<option value='reading'>Reading</option>" +
+                            "<option value='reviewing'>Review</option>" +
+                            "<option value='read'>Read</option>";
+            }else{
+                var optionsHTML = "<option selected>Choose a Status</option>" +
+                            "<option value='to_read'>To Read</option>";
+            }
+
+            $('.destroyModalBuku').attr('data-id', ids);
+
+            document.getElementById("status").innerHTML = optionsHTML;
+
             document.getElementById('title-modal').innerHTML = title;
             document.getElementById('id_want_read').value = ids;
             document.getElementById('status').value = status;
@@ -166,6 +188,8 @@
             document.getElementById('review').value = review;
 
             updateFieldsBasedOnStatus();
+
+
         }
 
         function changeDateFormat(inputDate) {
@@ -253,6 +277,23 @@
 
                 },
             });
+        }
+
+        function removeListBuku()
+        {
+            var confirmation = window.confirm("Hapus buku dari daftar raeading tracker, progress bacaanmu juga akan ikut terhapus");
+            var ids =$('.destroyModalBuku').attr('data-id');
+            if (confirmation) {
+                $.ajax({
+                    url: "/reading-tracker/" + ids,
+                    type: "GET",
+                    success: function(e) {
+                        window.location.reload()
+                    },
+                });
+            } else {
+
+            }
         }
 
 

@@ -10,6 +10,7 @@ use App\Models\Review;
 use App\Models\Setting;
 use App\Models\User;
 use App\Models\UserKategori;
+use App\Models\UserWantRead;
 use Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
@@ -371,14 +372,23 @@ class GeneralHelper
                     ->where('judul', 'not like', '%' . 'Administrasi' . '%')
                     ->where('judul', 'not like', '%' . 'Penjas' . '%')
                     ->inRandomOrder()
-                    ->take(8)
-                    ->get();
+                    ->get()
+                    ->take(8);
             });
+
 
             return $buku;
         } else {
             return [];
         }
+    }
+
+    public static function refreshList()
+    {
+        $user_category = UserKategori::where('user_id', Auth::user()->id)->pluck('kategori_id')->toArray();
+        $cacheKey = 'buku_query_' . implode('_', $user_category);
+        Cache::forget($cacheKey);
+        return true;
     }
 
     public static function urlBot()
@@ -419,5 +429,29 @@ class GeneralHelper
                 return  '<span class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-900 dark:text-gray-300">To Read</span>';
                 break;
         }
+    }
+
+    public static function check_status_wantRead($buku_id)
+    {
+        if (!empty(Auth::user())) {
+            $data = UserWantRead::where('user_id', Auth::user()->id)->where('buku_id', $buku_id)->first();
+            if ($data) {
+                $user_want_read = $data;
+            } else {
+                $array = [
+                    'status' => '0'
+                ];
+
+                $user_want_read = (object)$array;
+            }
+        } else {
+            $array = [
+                'status' => '0'
+            ];
+
+            $user_want_read = (object)$array;
+        }
+
+        return $user_want_read;
     }
 }

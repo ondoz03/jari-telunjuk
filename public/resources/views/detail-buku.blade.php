@@ -327,8 +327,6 @@
                                                 Currently Read
                                             </a>
                                         @endif
-
-
                                     @endif
                             </div>
 

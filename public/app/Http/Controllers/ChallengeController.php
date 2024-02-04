@@ -172,4 +172,15 @@ class ChallengeController extends Controller
             return back();
         }
     }
+
+
+    public function destroy($id)
+    {
+        $getBuku = UserWantRead::where('id', $id)->first();
+        if ($getBuku) {
+            $getBuku->delete();
+        } else {
+            false;
+        }
+    }
 }

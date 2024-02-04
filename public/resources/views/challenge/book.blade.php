@@ -238,7 +238,6 @@
                 <div class="space-y-4">
                     <div class="relative overflow-x-auto sm:rounded-lg">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-
                             <tbody>
                                 <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -247,10 +246,6 @@
                                     <td class="px-6 py-4">
                                         <select name="status" onchange="updateFieldsBasedOnStatus()" id="status" class="block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" required>
                                             <option selected>Choose a Status</option>
-                                            <option value="to_read">To Read</option>
-                                            <option value="reading">Reading</option>
-                                            <option value="reviewing">Review</option>
-                                            <option value="read">Read</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -317,9 +312,14 @@
 
                 </div>
 
-                <div class="flex items-center justify-end p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-                    <button data-modal-hide="editModal" type="button" class="ms-3 mr-2 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">Decline</button>
-                    <button type="button" onclick="submit_ajax()" class=" rounded-lg px-5 py-2.5 items-center justify-center bg-[#128C55] font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 ">Save</button>
+                <div class="flex items-center justify-between p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                    <div class="justify-start">
+                        <a style="cursor: pointer" onclick="removeListBuku()" data-id="" class="destroyModalBuku w-40 rounded-lg bg-red-500 px-5 py-2.5 text-center text-base leading-6 text-white transition-all duration-300 ease-out ">Hapus Buku</a>
+                    </div>
+                    <div class="justify-end">
+                        <button data-modal-hide="editModal" type="button" class="ms-3 mr-2 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">Decline</button>
+                        <button type="button" onclick="submit_ajax()" class=" rounded-lg px-5 py-2.5 items-center justify-center bg-[#128C55] font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 ">Save</button>
+                    </div>
                 </div>
             </form>
 

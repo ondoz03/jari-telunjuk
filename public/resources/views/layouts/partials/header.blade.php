@@ -28,10 +28,6 @@
                 </form>
             </div>
 
-
-            <button id="docsearch">ini dia</button>
-
-
         </nav>
 
         <nav class="flex flex-shrink-0 items-center gap-4 xl:hidden">

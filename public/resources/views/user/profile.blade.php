@@ -30,7 +30,15 @@
                             @if ($item->status === '1')
                                 <figure class="space-y-2.5 lg:space-y-5">
                                     <img src="{{$item->buku->image}}" alt="Rekomendasi 1">
+                                    @if(count(auth()->user()->user_want_read->where('status', '2')) < 5)
 
+                                    <figcaption class="space-y-2 text-center">
+                                        <a onclick="wantToRead(this, '{{ $item->buku->id }}', 'update')" style="cursor: pointer;"
+                                            class="caWantToRead{{$item->buku->id}} rounded-full border-[1.5px] border-black bg-white stroke-black px-5 py-1 text-base leading-6 text-black transition-all duration-300 ease-out hover:bg-black/10">
+                                            Currently Read
+                                        </a>
+                                    </figcaption>
+                                    @endif
                                     <figcaption class="space-y-2">
                                         <a href="{{ route('detail-buku', ['buku', $item->buku->slug]) }}" class="hover:underline">
                                             <h5 class="line-clamp-2 text-base font-semibold leading-[1.25] lg:text-lg lg:leading-[1.125]">
@@ -58,28 +66,68 @@
 
                 <div class="my-8 hidden h-px w-full bg-[#dcdcdc] lg:block"></div>
 
-                <h1 class="mb-4 font-arvo text-2xl leading-7 lg:text-3xl">Rekomendasi untuk {{$user->name}}</h1>
+                <nav class="mb-4 flex items-center justify-between lg:mb-6">
+                    <h1 class="font-arvo text-2xl leading-7 lg:text-3xl">Rekomendasi untuk {{$user->name}}</h1>
+
+                    <div class="lg:block">
+                        <button type="button" id="refreshList" class="relative flex items-center justify-center rounded-full bg-[#128C55] px-8 py-2 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
+                            Refresh List
+                        </button>
+                    </div>
+                </nav>
+
 
                 @if(count($user->user_recommendation) > 0)
                     <div class="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
                         @foreach (\App\Helpers\GeneralHelper::recomendationItem() as $item)
-                            <figure class="space-y-2.5 lg:space-y-5">
-                                <img src="{{$item->image}}" alt="Rekomendasi 1" style="height: 251px;">
 
-                                <figcaption class="space-y-2">
-                                    <a href="{{ route('detail-buku', ['buku', $item->slug]) }}" class="hover:underline">
-                                        <h5 class="line-clamp-2 text-base font-semibold leading-[1.25] lg:text-lg lg:leading-[1.125]">
-                                            {{$item->judul}}
-                                        </h5>
-                                    </a>
+                        @if ( GeneralHelper::check_status_wantRead($item->id)->status !== '1' && GeneralHelper::check_status_wantRead($item->id)->status !== '2')
+                        <figure class="space-y-2.5 lg:space-y-5 text-center item-center" style="text-align: -webkit-center;">
+                            <img src="{{$item->image}}" alt="Rekomendasi 1" style="height: 251px;">
 
-                                    <a href="{{ route('author', $item->penulis) }}" class="text-sm text-[#515151] hover:underline">
-                                        by {{$item->penulis}}
-                                    </a>
-                                </figcaption>
-                            </figure>
+                            <figcaption class="space-y-2 text-center">
+
+                                <a onclick="wantToRead(this, '{{ $item->id }}', 'add')" style="{{GeneralHelper::check_status_wantRead($item->id)->status === '0' ||  GeneralHelper::check_status_wantRead($item->id)->status === '2' ? '' : 'display: none'}};cursor: pointer;"
+                                    class="wantToRead{{$item->id}} space-y-2 w-40 rounded-full bg-[#128C55] px-5 py-1 text-center text-base leading-6 text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
+                                    Want to Read
+                                </a>
+
+                                <a onclick="wantToRead(this, '{{ $item->id }}', 'delete')" style="{{ GeneralHelper::check_status_wantRead($item->id)->status === '1' ? ''  : 'display: none;'}}background-color: #f26b6b; transition: opacity 0.3s ease; cursor: pointer;"
+                                    class="noWantToRead{{$item->id}}-1 space-y-2 w-40 rounded-full px-5 py-1 text-center text-base leading-6 text-white" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+                                    Remove
+                                </a>
+                            </figcaption>
+                            @if(count(auth()->user()->user_want_read->where('status', '2')) < 5)
+
+                            <figcaption class="space-y-2 text-center">
+                                <a onclick="wantToRead(this, '{{ $item->id }}', 'delete')" style="{{GeneralHelper::check_status_wantRead($item->id)->status === '2' ? ''  : 'display: none;'}}background-color: #f26b6b; transition: opacity 0.3s ease; cursor: pointer;"
+                                    class="noWantToRead{{$item->id}}-2 w-40 rounded-full px-5 py-1 text-center text-base leading-6 text-white" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+                                    Remove
+                                </a>
+
+                                <a onclick="wantToRead(this, '{{ $item->id }}', 'update')" style="{{GeneralHelper::check_status_wantRead($item->id)->status === '0' || GeneralHelper::check_status_wantRead($item->id)->status === '1'  ? '' : 'display: none;'}};cursor: pointer;"
+                                    class="caWantToRead{{$item->id}} rounded-full border-[1.5px] border-black bg-white stroke-black px-5 py-1 text-base leading-6 text-black transition-all duration-300 ease-out hover:bg-black/10">
+                                    Currently Read
+                                </a>
+                            </figcaption>
+                            @endif
+
+                            <figcaption class="space-y-2">
+                                <a href="{{ route('detail-buku', ['buku', $item->slug]) }}" class="hover:underline">
+                                    <h5 class="line-clamp-2 text-base font-semibold leading-[1.25] lg:text-lg lg:leading-[1.125]">
+                                        {{$item->judul}}
+                                    </h5>
+                                </a>
+
+                                <a href="{{ route('author', $item->penulis) }}" class="text-sm text-[#515151] hover:underline">
+                                    by {{$item->penulis}}
+                                </a>
+                            </figcaption>
+                        </figure>
+                        @endif
 
                         @endforeach
+
                     </div>
                 @else
                     <div class="flex flex-col items-center gap-6">
@@ -225,7 +273,9 @@
                             @endforeach
                         </div>
                     @endif
-
+                    <a href="{{ route('challenge') }}" id="search-book" type="button" class="relative flex items-center justify-center rounded-full bg-[#128C55] px-8 py-2 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
+                        View Reading Tracker
+                    </a>
                 </section>
 
                 <div class="my-8 block h-px w-full bg-[#dcdcdc] lg:hidden"></div>
@@ -505,6 +555,12 @@
             }
         });
 
+        $('#refreshList').click(function(){
+            {{ GeneralHelper::refreshList()}}
+            window.location.reload();
+        });
+
+
         $('.modal-book-recommendation-new #overlay-index').click(function () {
             $(".modal-book-recommendation-new").addClass("hidden");
         });
@@ -772,6 +828,63 @@
             });
 
         })
+
+        function wantToRead(element, id, type){
+            if({{GeneralHelper::authCheck()}}){
+                $.ajax({
+                    url: "{{ route('ajax.set-want-to-read') }}",
+                    type: "POST",
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        buku_id: id,
+                        type: type
+                    },
+                    success: function(data) {
+                        if (type=='add') {
+                            $(".wantToRead"+id).hide();
+                            $(".noWantToRead" + id+"-1").show();
+                            $(".caWantToRead" + id).show();
+                        }
+
+                        if (type=='delete') {
+                            $(".caWantToRead" + id).show();
+                            $(".wantToRead" + id).show();
+                            $(".noWantToRead" +id +"-1").hide();
+                            $(".noWantToRead" +id + "-2").hide();
+
+                        }
+
+                        if(type == 'update') {
+                            $(".caWantToRead" +id).hide();
+                            $(".noWantToRead" + id + "-2").show();
+                            $(".wantToRead" + id).show();
+                        }
+
+
+
+                        window.location.reload();
+                    },
+                });
+            }else{
+                if(type === 'add'){
+                    var typeParam = "?type=want_to_read";
+                } else {
+                    var typeParam = "?type=currently_to_read";
+                }
+
+                var bukuParam = "&buku=" + id;
+
+                var googleLoginUrl = "{!! route('auth.google') !!}" + typeParam + bukuParam;
+
+                $("#google-login").attr('href', googleLoginUrl);
+                $("#modal-login-review").show();
+
+                $("#modal-login-review").show();
+            }
+        }
+
+
+
     </script>
     <script>
         //-----------------------------------------------------------------------------//
