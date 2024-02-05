@@ -120,24 +120,20 @@ class BukuController extends Controller
     public function search(Request $request)
     {
 
-        $query = $request->search;
-        // return $request;
+        $buku = Buku::where('judul', 'like', "%" . $request->search . "%")->orwhere('penulis', 'like', "%" . $request->search . "%")->paginate(5)->withQueryString();
+        if ($request->ajax()) {
+            $view = view('data-result-search', compact('buku'))->render();
 
-        // $buku = Buku::where('judul', 'like', "%" . $request->search . "%")->orwhere('penulis', 'like', "%" . $request->search . "%")->paginate(5)->withQueryString();
-        // if ($request->ajax()) {
-        //     $view = view('data-result-search', compact('buku'))->render();
-
-        //     return response()->json(['html' => $view]);
-        // }
-
-        $buku = Buku::search($query)->get();
-
-        return $buku;
+            return response()->json(['html' => $view]);
+        }
         return view('result-search', compact('buku', 'request'));
     }
 
     public function getRandomBookHomepage(Request $request)
     {
+
+
+
         $recomendasi = Cache::remember('recomendasi-image', now()->addDays(1), function () {
             return Buku::with(['detail_buku', 'kategori'])->whereHas('kategori', function ($q) {
                 $q->whereIn('slug', ['fiction-literature-ebook', 'nonfiksi', 'history-ebook', 'psychology-ebook', 'romantis']);
