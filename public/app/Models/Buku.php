@@ -149,20 +149,21 @@ class Buku extends Model implements HasMedia
      */
     #[SearchUsingPrefix(['judul'])]
     #[SearchUsingPrefix(['penulis'])]
+    #[SearchUsingPrefix(['slug'])]
 
     public function toSearchableArray()
     {
         return [
             'judul' => $this->judul,
             'penulis' => $this->penulis,
-
+            'slug' => $this->slug
         ];
     }
 
-    public function shouldBeSearchable()
-    {
-        return $this->isPublished();
-    }
+    // public function shouldBeSearchable()
+    // {
+    //     return $this->isPublished();
+    // }
 
     public function getScoutModelsByIds(Builder $builder, array $ids)
     {

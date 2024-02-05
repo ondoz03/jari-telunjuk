@@ -150,9 +150,10 @@ class BukuController extends Controller
     {
         $category_session = json_decode(session('category_session'));
 
+
         if (empty($category_session)) {
             $buku = Buku::whereHas('kategori', function ($q) use ($request) {
-                $q->whereIn('kategori_id', json_encode($request->data));
+                $q->whereIn('kategori_id', $request->data);
             })->where('judul', 'not like', '%' . 'cpns' . '%')
                 ->where('judul', 'not like', '%' . 'sd' . '%')
                 ->where('judul', 'not like', '%' . 'ipa' . '%')

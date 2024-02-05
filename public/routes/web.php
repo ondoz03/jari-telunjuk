@@ -45,7 +45,7 @@ Route::group(['prefix' => 'esteh'], function () {
 });
 
 
-// Route::get('/testing', [TestController::class, 'index'])->name('ajax.testing');
+Route::get('/testing', [TestController::class, 'index'])->name('ajax.testing');
 
 Route::group(['prefix' => 'verify'], function () {
     Route::get('/email/verify', [VerificationController::class, 'show'])->name('verification.notice');

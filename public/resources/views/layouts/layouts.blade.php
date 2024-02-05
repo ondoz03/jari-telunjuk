@@ -113,10 +113,9 @@
             src="{{ asset('assets') }}/front/hoisted.f5ae75b8.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-          {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" /> --}}
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
 
 
     <style>
@@ -173,20 +172,19 @@
 </head>
 
 <body class="layar-telunjuk relative font-source-sans text-[#2e2e2e]">
-<!-- Google Tag Manager (noscript) -->
+
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5X54CZG2"
         height="0" width="0" style="display:none;visibility:hidden">
         </iframe>
     </noscript>
-        <!-- End Google Tag Manager (noscript) -->
-    <!--begin::Header-->
+
     @include('layouts.partials.header')
-    <!--end::Header-->
-    <!--begin::Content-->
+
+    @include('modal-search');
+
     @yield('content')
-    <!--end::Content-->
-    <!--begin::Footer-->
+
     @include('layouts.partials.footer')
 
 
@@ -196,30 +194,12 @@
         data-micromodal-close style="display: none">
 
         <div class="relative z-10 ease-in " aria-labelledby="modal-title" role="dialog" aria-modal="true">
-            <!--
-            Background backdrop, show/hide based on modal state.
 
-            Entering: "ease-out duration-300"
-                From: "opacity-0"
-                To: "opacity-100"
-            Leaving: "ease-in duration-200"
-                From: "opacity-100"
-                To: "opacity-0"
-            -->
             <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity duration-200 ease-out duration-300s" ></div>
 
             <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
                 <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0 s">
-                    <!--
-                    Modal panel, show/hide based on modal state.
 
-                    Entering: "ease-out duration-300"
-                        From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                        To: "opacity-100 translate-y-0 sm:scale-100"
-                    Leaving: "ease-in duration-200"
-                        From: "opacity-100 translate-y-0 sm:scale-100"
-                        To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                    -->
                     <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg ease-out duration-300 ease-in duration-200">
                         <div class="bg-white px-4 py-4 sm:p-6 sm:pb-4">
                             <div class="sm:flex sm:items-start">
@@ -308,6 +288,8 @@
             </div>
         </div>
     </div>
+
+
     <script type="text/javascript">
 
         $('#btn-modal-login').click(function () {
@@ -363,18 +345,51 @@
         }
     </script>
 
-
-
 @yield('js')
-
-<script>
-     var appId = '{!! config('services.algolia.id') !!}'
-     var apiKey = '{!! config('services.algolia.secret') !!}'
-     var url = '{{ url("/") }}'
-</script>
 
 <script src="{{ mix('js/app.js') }}" defer></script>
 
+
+<script>
+    var algolia = algoliasearch('DO4PVW94TB', '68be649b56541a3aaaede24445f22bf2');
+    var index = algolia.initIndex('bukus');
+    const hitsPerPage = 5;
+
+    const searchInput = document.getElementById('default-search');
+    const searchResultsContainer = document.getElementById('search-results');
+
+    searchInput.addEventListener('input', function (event) {
+        const query = event.target.value;
+        index.search(query, { hitsPerPage }).then(({ hits }) => {
+            displaySearchResults(hits);
+        });
+    });
+
+    function displaySearchResults(results) {
+        searchResultsContainer.innerHTML = '';
+
+        results.forEach(result => {
+            const container = document.createElement('div');
+
+            container.innerHTML = `
+                <li class="group hover:bg-[#128C55]" aria-selected="true" id="myListItem">
+
+                        <a href="{{url('/buku/')}}/`+result.slug+`">
+                    <label for="job-1" class="inline-flex w-full cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-2 text-gray-900 hover:bg-[#128C55]/90 hover:text-white peer-checked:border-blue-600 peer-checked:text-blue-600 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500 dark:hover:text-gray-300 dark:peer-checked:text-blue-500">
+                        <div class="block">
+                            <div class="text-md w-full">` + result.judul +`</div>
+                            <div class="w-full text-sm hover:text-white">`+ result.penulis +`</div>
+                        </div>
+                        <svg class="ms-3 h-2 w-4 rtl:rotate-180 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" /></svg>
+                    </label>
+                    </a>
+                </li>
+            `;
+
+            searchResultsContainer.appendChild(container);
+        });
+    }
+</script>
 
 </body>
 

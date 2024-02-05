@@ -19,7 +19,8 @@
                     <input name="search"
                            class="w-full rounded-full border border-stone-300 px-6 py-2 text-sm text-[#2e2e2e] outline-none ring-2 ring-transparent placeholder:text-stone-500 focus:border-stone-300 focus:ring-[#DEDEDE]/25"
                            type="text"
-                           placeholder="Cari buku..." >
+                           placeholder="Cari buku..."  onclick="" data-modal-target="default-modal-search" data-modal-toggle="default-modal-search" readonly>
+
                     <input type="hidden"
                            name="type"
                            value="buku">
@@ -31,6 +32,11 @@
         </nav>
 
         <nav class="flex flex-shrink-0 items-center gap-4 xl:hidden">
+
+            <svg data-modal-target="default-modal-search" data-modal-toggle="default-modal-search" class="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+            </svg>
+
             <svg class="bar-3_icon h-6 w-6 cursor-pointer"
                  viewBox="0 0 24 24"
                  fill="none"
@@ -55,6 +61,8 @@
                       fill="#222222"></rect>
             </svg>
         </nav>
+
+
 
         <nav id="nav-standard" class="hidden items-center gap-6 {{(!GeneralHelper::authCheck()) ? 'xl:flex' : 'xl:hidden'}}">
             <div class="flex items-center gap-8">
@@ -121,6 +129,8 @@
            href="/">
             jari<span class="font-bold">telunjuk--</span>
         </a>
+
+
 
         <svg class="close_icon h-6 w-6 cursor-pointer"
              viewBox="0 0 24 24"
