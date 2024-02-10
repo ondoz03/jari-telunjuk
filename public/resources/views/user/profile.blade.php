@@ -29,7 +29,7 @@
                         @foreach ($user->user_want_read as $item)
                             @if ($item->status === '1')
                                 <figure class="space-y-2.5 lg:space-y-5">
-                                    <img src="{{$item->buku->image}}" alt="Rekomendasi 1">
+                                    <img src="{{$item->buku->image}}" alt="Rekomendasi 1" style="height: 251px;">
                                     @if(count(auth()->user()->user_want_read->where('status', '2')) < 5)
 
                                     <figcaption class="space-y-2 text-center">

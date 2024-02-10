@@ -351,7 +351,7 @@
 
 
 <script>
-    var algolia = algoliasearch('DO4PVW94TB', '68be649b56541a3aaaede24445f22bf2');
+    var algolia = algoliasearch('3KJH4QSAMM', '5d359af239e62fe96481726246adf1f5');
     var index = algolia.initIndex('bukus');
     const hitsPerPage = 5;
 
