@@ -29,12 +29,14 @@
                         @foreach ($user->user_want_read as $item)
                             @if ($item->status === '1')
                                 <figure class="space-y-2.5 lg:space-y-5">
-                                    <img src="{{$item->buku->image}}" alt="Rekomendasi 1" style="height: 251px;">
+
+                            <img src="{{$item->buku->image}}" alt="Rekomendasi 1" style="height: 291px; width:100%" class="relative flex">
+
                                     @if(count(auth()->user()->user_want_read->where('status', '2')) < 5)
 
                                     <figcaption class="space-y-2 text-center">
                                         <a onclick="wantToRead(this, '{{ $item->buku->id }}', 'update')" style="cursor: pointer;"
-                                            class="caWantToRead{{$item->buku->id}} rounded-full border-[1.5px] border-black bg-white stroke-black px-5 py-1 text-base leading-6 text-black transition-all duration-300 ease-out hover:bg-black/10">
+                                            class="caWantToRead{{$item->buku->id}} relative flex item-center justify-center rounded-full border-[1.5px] border-black bg-white stroke-black px-5 py-1 text-base leading-6 text-black transition-all duration-300 ease-out hover:bg-black/10">
                                             Currently Read
                                         </a>
                                     </figcaption>
@@ -83,12 +85,12 @@
 
                         @if ( GeneralHelper::check_status_wantRead($item->id)->status !== '1' && GeneralHelper::check_status_wantRead($item->id)->status !== '2')
                         <figure class="space-y-2.5 lg:space-y-5 text-center item-center" style="text-align: -webkit-center;">
-                            <img src="{{$item->image}}" alt="Rekomendasi 1" style="height: 251px;">
+                            <img src="{{$item->image}}" alt="Rekomendasi 1" style="height: 291px; width:100%" class="relative flex">
 
                             <figcaption class="space-y-2 text-center">
 
                                 <a onclick="wantToRead(this, '{{ $item->id }}', 'add')" style="{{GeneralHelper::check_status_wantRead($item->id)->status === '0' ||  GeneralHelper::check_status_wantRead($item->id)->status === '2' ? '' : 'display: none'}};cursor: pointer;"
-                                    class="wantToRead{{$item->id}} space-y-2 w-40 rounded-full bg-[#128C55] px-5 py-1 text-center text-base leading-6 text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
+                                    class="wantToRead{{$item->id}} relative flex items-center justify-center rounded-full space-y-2 rounded-full bg-[#128C55] px-4 py-1 text-center text-base leading-6 text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90">
                                     Want to Read
                                 </a>
 
@@ -106,7 +108,7 @@
                                 </a>
 
                                 <a onclick="wantToRead(this, '{{ $item->id }}', 'update')" style="{{GeneralHelper::check_status_wantRead($item->id)->status === '0' || GeneralHelper::check_status_wantRead($item->id)->status === '1'  ? '' : 'display: none;'}};cursor: pointer;"
-                                    class="caWantToRead{{$item->id}} rounded-full border-[1.5px] border-black bg-white stroke-black px-5 py-1 text-base leading-6 text-black transition-all duration-300 ease-out hover:bg-black/10">
+                                    class="caWantToRead{{$item->id}} relative flex items-center justify-center  rounded-full border border-black bg-white stroke-black px-4 py-1 text-base leading-6 text-black transition-all duration-300 ease-out hover:bg-black/10">
                                     Currently Read
                                 </a>
                             </figcaption>

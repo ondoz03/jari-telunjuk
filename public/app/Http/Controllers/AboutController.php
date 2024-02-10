@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         return view('about.index', compact([]));
     }
 }
