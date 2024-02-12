@@ -22,8 +22,7 @@
             <article class="mb-6">
                 <h3 class="font-arvo mb-3 text-2xl xl:text-[42px] font-bold leading-8">Jari Telunjuk Reading Tracker - Challenge</h3>
                 <p>
-                    Halo! Sebelum menggunakan template ini, lakukan setup Reading Challengemu terlebih dahulu, <br>
-                    langkah pertama → @Tentukan Reading Goalmu
+                    Membantu tracking buku bacaan favorimu, mengelola buku, dan membangun kebiasaan membaca dengan Tracking & Challenge dari Jari Telunjuk.
                 </p>
             </article>
         </section>
