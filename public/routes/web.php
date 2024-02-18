@@ -142,5 +142,8 @@ Route::middleware('optimizeImages')->group(function () {
 
 Route::get('/{slug}', [BukuController::class, 'index'])->name('buku');
 Route::get('/buku-page/{slug}', [BukuController::class, 'buku'])->name('buku-page');
+Route::get('/{category}/{slug}/review', [BukuController::class, 'review_details'])->name('buku-page.review');
+Route::get('/{category}/{slug}/review-page', [BukuController::class, 'review_details_page'])->name('buku-page.review-page');
+
 Route::get('/{category}/{slug}', [BukuController::class, 'detail'])->name('detail-buku');
 Route::get('/search-result', [BukuController::class, 'search'])->name('search-result');

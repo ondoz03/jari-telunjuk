@@ -112,7 +112,6 @@ class BukuController extends Controller
             $user_want_read = (object)$array;
         }
 
-        // return $buku;
 
         return view('detail-buku', compact('buku', 'kategori', 'user_want_read'));
     }
@@ -131,8 +130,6 @@ class BukuController extends Controller
 
     public function getRandomBookHomepage(Request $request)
     {
-
-
 
         $recomendasi = Cache::remember('recomendasi-image', now()->addDays(1), function () {
             return Buku::with(['detail_buku', 'kategori'])->whereHas('kategori', function ($q) {
@@ -254,5 +251,33 @@ class BukuController extends Controller
         ], [
             'review' => $request->review
         ]);
+    }
+
+    public function review_details($kategori, $buku, Request $request)
+    {
+        $kategori = Kategori::where('slug', $kategori)->first();
+        $buku = Buku::where('slug', $buku)->with('reviews')->first();
+
+        return view('comment-details', compact('kategori', 'buku'));
+    }
+
+    public function review_details_page($kategori, $buku, Request $request)
+    {
+        $kategori = Kategori::where('slug', $kategori)->first();
+        $buku = Buku::where('slug', $buku)->first();
+
+        if (Auth::guest()) {
+            $dataReview = Review::where('buku_id', $buku->id)->paginate(10);
+        } else {
+            $dataReview = Review::where('buku_id', $buku->id)->where('user_id', '!=', auth()->user()->id)->paginate(10);
+        }
+
+        if ($request->ajax()) {
+            $view = view('data-comment', compact('dataReview'))->render();
+
+            return response()->json(['html' => $view]);
+        }
+
+        return $buku;
     }
 }
