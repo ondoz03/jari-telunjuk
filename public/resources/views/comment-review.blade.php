@@ -4,7 +4,7 @@
     <p class="bg-green-100 text-green-800 text-smfont-semibold inline-flex items-center p-1.5 rounded dark:bg-green-200 dark:text-green-800">{{$buku->count_rating}}</p>
     <span class="w-1 h-1 mx-2 bg-gray-900 rounded-full dark:bg-gray-500"></span>
     <p class="text-sm font-medium text-gray-500 dark:text-gray-400">{{$buku->reviews->count()}} reviews</p>
-    <a href="#" class="ms-auto text-sm font-medium text-blue-600 hover:underline dark:text-blue-500" style="margin-left: 10px"> Read all reviews</a>
+    <a href="{{route('buku-page.review', ['buku', $buku->slug])}}" class="ms-auto text-sm font-medium text-blue-600 hover:underline dark:text-blue-500" style="margin-left: 10px"> Read all reviews</a>
 </div>
 <div class="gap-2 sm:grid" style="width: 100%">
     <div class="flex items-center ">
