@@ -151,7 +151,6 @@
                                         </svg>
                                     </a>
 
-
                                     <!-- Linkedin -->
                                     <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= url()->full()?>&title=<?= $buku->judul?>" target="_blank">
                                         <svg width="28" height="28" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">

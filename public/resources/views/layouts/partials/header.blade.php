@@ -1,5 +1,5 @@
 <header
-    class="Header fixed inset-0 z-50 flex h-14 w-full border-b border-b-gray-50 bg-white shadow-sm transition-all duration-300 ease-out xl:h-20">
+    class="Header fixed inset-0 z-10 flex h-14 w-full border-b border-b-gray-50 bg-white shadow-sm transition-all duration-300 ease-out xl:h-20">
     <div class="container mx-auto flex max-w-screen-xl items-center justify-between gap-3.5 px-4 xl:px-12">
         <nav class="flex items-center gap-8">
             <a class="hidden text-xl xl:block"

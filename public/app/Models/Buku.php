@@ -262,8 +262,8 @@ class Buku extends Model implements HasMedia
 
     public function getReviewOneAttribute()
     {
-        if ($this->reviews()->where('star', 2)->count() > 0) {
-            return round($this->reviews()->where('star', 2)->count() / $this->reviews()->count()) * 100;
+        if ($this->reviews()->where('star', 1)->count() > 0) {
+            return round($this->reviews()->where('star', 1)->count() / $this->reviews()->count()) * 100;
         } else {
             return 0;
         }
