@@ -67,6 +67,21 @@ class Review extends Model
             }
         }
     }
+
+    public function getRatingReviewAttribute()
+    {
+        $min_stars = 1;
+        $max_stars = 5;
+        $temp_stars = $this->attributes['star'];
+        for ($i = $min_stars; $i <= $max_stars; $i++) {
+            if ($temp_stars >= 1) {
+                echo '<span class="fa fa-star checked"></span>';
+                $temp_stars--;
+            } else {
+                echo '<span class="fa fa-star"></span>';
+            }
+        }
+    }
     public function review_like()
     {
         return $this->hasMany(ReviewLike::class);

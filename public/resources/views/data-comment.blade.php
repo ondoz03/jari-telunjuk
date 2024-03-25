@@ -8,7 +8,7 @@
                     <p>{{$item->user->name}}
                         <div class="text-xs flex text-gray-500 dark:text-gray-400 justify-between">
                             <div>
-                                {{$item->buku->rating}}
+                                {{$item->rating_review}}
                             </div>
 
                             <div class="text-base inline-flex">
