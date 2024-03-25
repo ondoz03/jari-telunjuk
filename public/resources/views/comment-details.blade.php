@@ -115,35 +115,35 @@
                             </div>
                             <div class="gap-2 sm:grid" style="width: 100%">
                                 <div class="flex items-center ">
-                                    <a href="#" class="xl:text-base text-sm font-medium text-black-600 dark:text-black-500 hover:underline">5 star</a>
+                                    <a style="width: 5%"  href="#" class="text-sm font-medium text-black-600 dark:text-black-500 hover:underline">5 star</a>
                                     <div style="width: 100%" class="h-3 mx-4 bg-gray-200 rounded dark:bg-gray-700">
                                         <div class="h-3 bg-[#128C55] rounded" style="width: {{$buku->review_five}}%"></div>
                                     </div>
                                     <span class="text-base font-medium text-gray-500 dark:text-gray-400">{{$buku->review_five}}%</span>
                                 </div>
                                 <div class="flex items-center ">
-                                    <a href="#" class="xl:text-base text-sm font-medium text-black-600 dark:text-black-500 hover:underline">4 star</a>
+                                    <a style="width: 5%" href="#" class="text-sm font-medium text-black-600 dark:text-black-500 hover:underline">4 star</a>
                                     <div style="width: 100%" class="h-3 mx-4 bg-gray-200 rounded dark:bg-gray-700">
                                         <div class="h-3 bg-[#128C55] rounded" style="width: {{$buku->review_four}}%"></div>
                                     </div>
                                     <span class="text-base font-medium text-gray-500 dark:text-gray-400">{{$buku->review_four}}%</span>
                                 </div>
                                 <div class="flex items-center ">
-                                    <a href="#" class="xl:text-base text-sm font-medium text-black-600 dark:text-black-500 hover:underline">3 star</a>
+                                    <a style="width: 5%" href="#" class="text-sm font-medium text-black-600 dark:text-black-500 hover:underline">3 star</a>
                                     <div style="width: 100%" class="h-3 mx-4 bg-gray-200 rounded dark:bg-gray-700">
                                         <div class="h-3 bg-[#128C55] rounded" style="width: {{$buku->review_three}}%"></div>
                                     </div>
                                     <span class="text-base font-medium text-gray-500 dark:text-gray-400">{{$buku->review_three}}%</span>
                                 </div>
                                 <div class="flex items-center ">
-                                    <a href="#" class="xl:text-base text-sm font-medium text-black-600 dark:text-black-500 hover:underline">2 star</a>
+                                    <a style="width: 5%" href="#" class="text-sm font-medium text-black-600 dark:text-black-500 hover:underline">2 star</a>
                                     <div style="width: 100%" class="h-3 mx-4 bg-gray-200 rounded dark:bg-gray-700">
                                         <div class="h-3 bg-[#128C55] rounded" style="width: {{$buku->review_two}}%"></div>
                                     </div>
                                     <span class="text-base font-medium text-gray-500 dark:text-gray-400">{{$buku->review_two}}%</span>
                                 </div>
                                 <div class="flex items-center ">
-                                    <a href="#" class="xl:text-base text-sm font-medium text-black-600 dark:text-black-500 hover:underline">1 star</a>
+                                    <a style="width: 5%" href="#" class="text-sm font-medium text-black-600 dark:text-black-500 hover:underline">1 star</a>
                                     <div style="width: 100%" class="h-3 mx-4 bg-gray-200 rounded dark:bg-gray-700">
                                         <div class="h-3 bg-[#128C55] rounded" style="width: {{$buku->review_one}}%"></div>
                                     </div>
